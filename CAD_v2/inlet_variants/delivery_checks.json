@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "files": {
+    "baseline_half_frame.FCStd": {
+      "bytes": 56857,
+      "sha256": "589119e21aae1e0440a8d675fb3166303e863953d31f9d9b79738bd4d789e0c1"
+    },
+    "baseline_half_frame.step": {
+      "bytes": 156014,
+      "sha256": "277a372408a67fd8de9c3d332372eb8b45da557a0500993ce059b9df55f477ab"
+    },
+    "inlet_top.FCStd": {
+      "bytes": 148439,
+      "sha256": "aabc7336340dd7201894e6fa80ceda6c0aff0bf02ffd458a45fdb095b25ad0ec"
+    },
+    "inlet_top.step": {
+      "bytes": 210038,
+      "sha256": "308caf2f7b2f99124ab1dc9082c35d18c3e4c0b5970f5227205f53dd68a8acb3"
+    },
+    "inlet_top.png": {
+      "bytes": 453601,
+      "sha256": "38e82b64a76e99494e207d48ce40b8d6a254283e5c4ac6117df53e9164f53ed6"
+    },
+    "inlet_tangential.FCStd": {
+      "bytes": 160048,
+      "sha256": "6114c1b73d0c2a5010bf0f980c225127ae082e5847e4f6c4d3f5d13a9da26e63"
+    },
+    "inlet_tangential.step": {
+      "bytes": 219815,
+      "sha256": "ff4b1c4b23aedb9315392df51f0323bcd166ac0dc00c34fc5c9432d49500d36f"
+    },
+    "inlet_tangential.png": {
+      "bytes": 460507,
+      "sha256": "e5c3a06b66e4d4689830489a8ac9b13b0c59dc097620505c5eb56083d9f33371"
+    },
+    "inlet_bottom_top.FCStd": {
+      "bytes": 142491,
+      "sha256": "eba64de6b0dc569f44c3ad224c0d5129137d49ffbff8033e6b570d01270de776"
+    },
+    "inlet_bottom_top.step": {
+      "bytes": 208442,
+      "sha256": "12880b3a7fe861c5966f82f417a0d3ee7054380c0ba0272a61b43ce43e7db37b"
+    },
+    "inlet_bottom_top.png": {
+      "bytes": 442633,
+      "sha256": "5e2a3fe3c485bae0c41684d51407311dfef0369a85d3ee93e03cffd15be92e51"
+    },
+    "inlet_multipoint.FCStd": {
+      "bytes": 144731,
+      "sha256": "83e8875c824c5cacd769fa425b2c0615fc3b3bd920f6c0b829410d0f9fd26081"
+    },
+    "inlet_multipoint.step": {
+      "bytes": 217805,
+      "sha256": "f4ab8f4add812a803be8cfb48a51c4c91b823dffda7bc2c6d516fe879d457c79"
+    },
+    "inlet_multipoint.png": {
+      "bytes": 452914,
+      "sha256": "c201aaa928b78a47f061ca6bb6cb50e165c229ee532475a95a6515b9a3f33a2c"
+    }
+  },
+  "variants": {
+    "inlet_top": {
+      "valid_single_solids": 8,
+      "electrodes_rods_holders_unchanged": true,
+      "only_designated_bores_changed": true,
+      "native_step_equal": true,
+      "png_pixels": [
+        2805,
+        1320
+      ]
+    },
+    "inlet_tangential": {
+      "valid_single_solids": 8,
+      "electrodes_rods_holders_unchanged": true,
+      "only_designated_bores_changed": true,
+      "native_step_equal": true,
+      "png_pixels": [
+        2805,
+        1320
+      ]
+    },
+    "inlet_bottom_top": {
+      "valid_single_solids": 8,
+      "electrodes_rods_holders_unchanged": true,
+      "only_designated_bores_changed": true,
+      "native_step_equal": true,
+      "png_pixels": [
+        2805,
+        1320
+      ]
+    },
+    "inlet_multipoint": {
+      "valid_single_solids": 8,
+      "electrodes_rods_holders_unchanged": true,
+      "only_designated_bores_changed": true,
+      "native_step_equal": true,
+      "png_pixels": [
+        2805,
+        1320
+      ]
+    }
+  }
+}

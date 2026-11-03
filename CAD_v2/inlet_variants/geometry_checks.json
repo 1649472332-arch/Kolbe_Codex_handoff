@@ -1,0 +1,435 @@
+{
+  "freecad_version": [
+    "1",
+    "0",
+    "0"
+  ],
+  "source": "reference/Kolbe_v37_104p7_shell_68_chamber_8bolts_centered_ports_shifted.scad",
+  "source_sha256": "d0c9aa0bd39869b97f817447e9fc5c86fa16205368a95558d0d2108085bc0469",
+  "minimum_screening_wall_mm": 3.0,
+  "source_comparison": {
+    "A": {
+      "scad_mesh_volume_mm3": 123668.3515625,
+      "freecad_exact_volume_mm3": 123663.57706130079,
+      "relative_volume_error": 3.8608790984928144e-05,
+      "max_bbox_error_mm": 1.5258789147765128e-06,
+      "note": "SCAD圆柱为96边网格，FreeCAD为精确圆弧；比较允许0.15%体积偏差"
+    },
+    "B": {
+      "scad_mesh_volume_mm3": 121602.0546875,
+      "freecad_exact_volume_mm3": 121597.34902781196,
+      "relative_volume_error": 3.869870293773145e-05,
+      "max_bbox_error_mm": 1.5258789147765128e-06,
+      "note": "SCAD圆柱为96边网格，FreeCAD为精确圆弧；比较允许0.15%体积偏差"
+    }
+  },
+  "baseline": {
+    "frames": {},
+    "step_roundtrip": {
+      "valid": true,
+      "solids": 8,
+      "relative_volume_error": 6.9886076222449175e-16
+    },
+    "native_reopened": true
+  },
+  "variants": {
+    "inlet_top": {
+      "frames": {
+        "A": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 123663.57706130079,
+          "final_volume_mm3": 122331.09019611233,
+          "removed_volume_mm3": 1332.4861089559154,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 52.0,
+          "ports": [
+            {
+              "name": "顶部进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 5.424999999999997,
+              "socket_distance_mm": 7.832745950421557,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "下侧液体出口",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 13.425000000185108,
+              "socket_distance_mm": 54.09143657959548,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部气液出口",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421553,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        },
+        "B": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 121597.34902781196,
+          "final_volume_mm3": 120264.86216005977,
+          "removed_volume_mm3": 1332.4861747136008,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 52.0,
+          "ports": [
+            {
+              "name": "顶部进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 5.424999999999997,
+              "socket_distance_mm": 41.74079934095691,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "下侧液体出口",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 13.425000000185108,
+              "socket_distance_mm": 54.52239096714719,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部气液出口",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 8.81724276862369,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        }
+      },
+      "step_roundtrip": {
+        "valid": true,
+        "solids": 8,
+        "relative_volume_error": 1.3582458128782895e-08
+      },
+      "native_reopened": true
+    },
+    "inlet_tangential": {
+      "frames": {
+        "A": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 123663.57706130079,
+          "final_volume_mm3": 122305.6663243609,
+          "removed_volume_mm3": 1357.9107778147854,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 59.0,
+          "ports": [
+            {
+              "name": "下侧偏置进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 8.424999999999997,
+              "socket_distance_mm": 60.647227179535655,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421553,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421554,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        },
+        "B": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 121597.34902781196,
+          "final_volume_mm3": 120239.43803300291,
+          "removed_volume_mm3": 1357.9108701997816,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 59.0,
+          "ports": [
+            {
+              "name": "下侧偏置进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 8.424999999999997,
+              "socket_distance_mm": 60.96666612802341,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 8.81724276862369,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 40.740799340956904,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        }
+      },
+      "step_roundtrip": {
+        "valid": true,
+        "solids": 8,
+        "relative_volume_error": 2.0398108789637396e-08
+      },
+      "native_reopened": true
+    },
+    "inlet_bottom_top": {
+      "frames": {
+        "A": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 123663.57706130079,
+          "final_volume_mm3": 122306.478382116,
+          "removed_volume_mm3": 1357.0982809718419,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 60.0,
+          "ports": [
+            {
+              "name": "底部进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 14.424999999999997,
+              "socket_distance_mm": 64.00780507749359,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421553,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421554,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        },
+        "B": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 121597.34902781196,
+          "final_volume_mm3": 120240.25009232492,
+          "removed_volume_mm3": 1357.0983460535026,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 60.0,
+          "ports": [
+            {
+              "name": "底部进口",
+              "seal_distance_mm": 7.48,
+              "bolt_distance_mm": 14.424999999999997,
+              "socket_distance_mm": 72.81362137263284,
+              "broad_face_wall_mm": 8.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 8.81724276862369,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 40.740799340956904,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        }
+      },
+      "step_roundtrip": {
+        "valid": true,
+        "solids": 8,
+        "relative_volume_error": 1.2988144735837585e-08
+      },
+      "native_reopened": true
+    },
+    "inlet_multipoint": {
+      "frames": {
+        "A": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 123663.57706130079,
+          "final_volume_mm3": 122018.23716503757,
+          "removed_volume_mm3": 1645.340014065397,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 11.0,
+          "ports": [
+            {
+              "name": "底部进口-26",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 12.924999999999997,
+              "socket_distance_mm": 64.09137762933153,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口-12",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 6.75,
+              "socket_distance_mm": 64.0175652939,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口12",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 6.75,
+              "socket_distance_mm": 64.0175652939,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口26",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 12.924999999999999,
+              "socket_distance_mm": 64.09137762933153,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421553,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 6.832745950421554,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        },
+        "B": {
+          "valid": true,
+          "solids": 1,
+          "base_volume_mm3": 121597.34902781196,
+          "final_volume_mm3": 119952.0088729795,
+          "removed_volume_mm3": 1645.3401033208424,
+          "protected_face_change_mm3": 0.0,
+          "min_channel_separation_mm": 11.0,
+          "ports": [
+            {
+              "name": "底部进口-26",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 12.924999999999997,
+              "socket_distance_mm": 64.22514732087159,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口-12",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 6.75,
+              "socket_distance_mm": 64.0,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口12",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 6.75,
+              "socket_distance_mm": 68.09105826935699,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "底部进口26",
+              "seal_distance_mm": 7.98,
+              "bolt_distance_mm": 12.924999999999999,
+              "socket_distance_mm": 74.03729709677796,
+              "broad_face_wall_mm": 8.5,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口-33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 8.81724276862369,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            },
+            {
+              "name": "顶部出口33",
+              "seal_distance_mm": 6.48,
+              "bolt_distance_mm": 4.424999999999997,
+              "socket_distance_mm": 40.740799340956904,
+              "broad_face_wall_mm": 7.0,
+              "chamber_connected": true,
+              "electrode_intersection_mm3": 0.0
+            }
+          ]
+        }
+      },
+      "step_roundtrip": {
+        "valid": true,
+        "solids": 8,
+        "relative_volume_error": 1.3474675631832956e-08
+      },
+      "native_reopened": true
+    }
+  }
+}

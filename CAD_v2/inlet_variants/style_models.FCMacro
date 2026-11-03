@@ -1,0 +1,42 @@
+"""可选：用FreeCAD GUI保存半透明框体及电极颜色，不改变几何。"""
+import json
+import os
+from pathlib import Path
+import traceback
+import FreeCAD as App
+import FreeCADGui as Gui
+
+# CLI传入KOLBE_VARIANTS_DIR；交互运行时从宏路径定位。
+folder = Path(os.environ.get('KOLBE_VARIANTS_DIR', str(Path(__file__).resolve().parent)))
+try:
+    for stem in ['baseline_half_frame', 'inlet_top', 'inlet_tangential',
+                 'inlet_bottom_top', 'inlet_multipoint']:
+        doc = App.openDocument(str(folder/(stem+'.FCStd')))
+        for which, color in [('A', (.25,.55,.85)), ('B', (.90,.60,.23))]:
+            body = doc.getObject('HalfFrame'+which)
+            body.ViewObject.ShapeColor = color
+            body.ViewObject.Transparency = 68
+            body.Visibility = True
+            for item in body.Group:
+                if hasattr(item, 'Shape') and item.ViewObject:
+                    item.ViewObject.ShapeColor = color
+                    item.ViewObject.Transparency = 68
+                    item.Visibility = item == body.Tip
+            for name in ('plate','rod','holder'):
+                ob = doc.getObject(which+name)
+                ob.ViewObject.ShapeColor = ((.05,.75,.53) if which == 'A' else (.88,.19,.38)) if name == 'plate' else (.23,.24,.26)
+                ob.ViewObject.LineColor = (.10,.12,.14)
+                ob.Visibility = True
+        Gui.activeDocument().activeView().viewAxonometric()
+        Gui.activeDocument().activeView().fitAll()
+        Gui.activeDocument().activeView().redraw()
+        doc.recompute()
+        doc.save()
+        App.closeDocument(doc.Name)
+    (folder/'appearance_status.json').write_text(json.dumps({'success': True,
+        'note': '五套原生文档已保存半透明框体、电极和夹具颜色；几何未改。'}, ensure_ascii=False, indent=2)+'\n')
+except Exception:
+    (folder/'appearance_status.json').write_text(json.dumps({'success': False,
+        'error': traceback.format_exc()}, ensure_ascii=False, indent=2)+'\n')
+finally:
+    Gui.getMainWindow().close()
