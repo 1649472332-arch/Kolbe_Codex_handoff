@@ -1,0 +1,38 @@
+[
+  {
+    "electrodes": 3,
+    "old_instances": 103,
+    "removed_instances": 19,
+    "current_instances": 84,
+    "unaffected_geometry_and_placements_unchanged": true,
+    "support_span_rods_replaced_with_plate_span_rods": true,
+    "chinese_labels": true,
+    "no_busbars_or_dedicated_hardware": true,
+    "step_valid": true,
+    "unresolved_intersections": 0
+  },
+  {
+    "electrodes": 5,
+    "old_instances": 135,
+    "removed_instances": 25,
+    "current_instances": 110,
+    "unaffected_geometry_and_placements_unchanged": true,
+    "support_span_rods_replaced_with_plate_span_rods": true,
+    "chinese_labels": true,
+    "no_busbars_or_dedicated_hardware": true,
+    "step_valid": true,
+    "unresolved_intersections": 0
+  },
+  {
+    "electrodes": 7,
+    "old_instances": 167,
+    "removed_instances": 31,
+    "current_instances": 136,
+    "unaffected_geometry_and_placements_unchanged": true,
+    "support_span_rods_replaced_with_plate_span_rods": true,
+    "chinese_labels": true,
+    "no_busbars_or_dedicated_hardware": true,
+    "step_valid": true,
+    "unresolved_intersections": 0
+  }
+]

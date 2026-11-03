@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Kolbe_3.FCStd",
+    "instances": 103,
+    "step_solids": 103,
+    "valid": true
+  },
+  {
+    "file": "Kolbe_5.FCStd",
+    "instances": 135,
+    "step_solids": 135,
+    "valid": true
+  },
+  {
+    "file": "Kolbe_5_exploded.FCStd",
+    "instances": 46,
+    "step_solids": 46,
+    "valid": true
+  },
+  {
+    "file": "Kolbe_7.FCStd",
+    "instances": 167,
+    "step_solids": 167,
+    "valid": true
+  }
+]

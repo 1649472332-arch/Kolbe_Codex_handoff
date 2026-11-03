@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420mm" height="297mm" viewBox="0 0 420 297"><rect x="0" y="0" width="420" height="297" fill="white"/><rect x="8" y="8" width="404" height="281" rx="1" fill="none" stroke="#243647" stroke-width=".55"/><text x="12.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.20" font-weight="bold" fill="#607283" text-anchor="start">KOLBE ELECTROCHEMICAL CELL  /  PROVISIONAL DESIGN REVIEW</text><text x="408.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="end">REV B1   |   DIMENSIONS mm</text><line x1="12.000" y1="21.000" x2="408.000" y2="21.000" stroke="#243647" stroke-width="0.45"/><text x="12.00" y="30.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="7.00" font-weight="bold" fill="#162331" text-anchor="start">KB-C5  |  C向五层铜梳排</text><text x="12.00" y="36.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="normal" fill="#435464" text-anchor="start">BREP-derived orthographic projections   |   First-angle orientation   |   Not for manufacture</text><g transform="translate(435.9231,151.0000) scale(3.2307692)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.108333"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -115 -4 L -115 4 " />
+<path id= "2" d=" M -115 -4 L -82 -4 " />
+<path id= "3" d=" M -82 4 L -115 4 " />
+<path id= "4" d=" M -82 -4 L -82 4 " />
+<circle cx ="-90" cy ="0" r ="2.25" /><path id= "6" d=" M -115 4 L -121 4 " />
+<path id= "7" d=" M -121 -4 L -115 -4 " />
+<path id= "8" d=" M -121 4 L -121 -4 " />
+</g>
+</g><g transform="translate(244.2269,170.0000) scale(1.6134454)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.216927"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 25.4 -4 L 27.75 -4 " />
+<path id= "2" d=" M 27.75 4 L 27.75 -4 " />
+<path id= "3" d=" M 25.4 4 L 27.75 4 " />
+<path id= "4" d=" M 25.4 4 L 25.4 -4 " />
+<path id= "5" d=" M -2 -4 L 0 -4 " />
+<path id= "6" d=" M 23.4 -4 L 25.4 -4 " />
+<path id= "7" d=" M 12.7 -4 L 23.4 -4 " />
+<path id= "8" d=" M 10.7 -4 L 12.7 -4 " />
+<path id= "9" d=" M 0 -4 L 10.7 -4 " />
+<path id= "10" d=" M -2 4 L 0 4 " />
+<path id= "11" d=" M 0 4 L 10.7 4 " />
+<path id= "12" d=" M 10.7 4 L 12.7 4 " />
+<path id= "13" d=" M 12.7 4 L 23.4 4 " />
+<path id= "14" d=" M 23.4 4 L 25.4 4 " />
+<path id= "15" d=" M 23.4 4 L 23.4 -4 " />
+<path id= "16" d=" M -2 4 L -2 -4 " />
+<path id= "17" d=" M 0 4 L 0 -4 " />
+<path d="M23.4 -1.51658 A1.65 1.65 0 1 0 23.4 1.51658" /><path id= "19" d=" M 12.7 4 L 12.7 -4 " />
+<path id= "20" d=" M 10.7 4 L 10.7 -4 " />
+<path d="M1.03251e-14 1.31244 A1.65 1.65 0 0 0 2.65 4.04133e-16" /><path d="M2.65 0 A1.65 1.65 0 0 0 1.12133e-14 -1.31244" /></g>
+</g><g transform="translate(449.8182,119.7525) scale(1.2342227)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.283579"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -99.2778 -39.845 L -99.2778 -33.3131 " />
+<path id= "2" d=" M -99.2778 -33.3131 L -100.939 -32.3537 " />
+<path id= "3" d=" M -100.939 -38.8856 L -100.939 -32.3537 " />
+<path id= "4" d=" M -99.2778 -39.845 L -100.939 -38.8856 " />
+<path id= "5" d=" M -99.2778 -39.845 L -75.9433 -26.3728 " />
+<path id= "6" d=" M -75.9433 -19.8409 L -99.2778 -33.3131 " />
+<path id= "7" d=" M -75.9433 -26.3728 L -75.9433 -19.8409 " />
+<path d="M-80.0091 -25.4543 A2.25 1.29904 60 0 1 -80.4751 -24.4243" />
+<path d="M-80.4751 -24.4243 A2.25 1.29904 60 0 1 -82.7251 -28.3214" />
+<path d="M-82.7251 -28.3214 A2.25 1.29904 60 0 1 -80.0091 -25.4543" />
+<path id= "11" d=" M -56.5685 -31.0269 L -57.9828 -30.2104 " />
+<path id= "12" d=" M -100.939 -32.3537 L -105.182 -34.8032 " />
+<path id= "13" d=" M -74.5291 -20.6574 L -75.9433 -19.8409 " />
+<path id= "14" d=" M -90.2975 -38.4978 L -92.2067 -37.3955 " />
+<path id= "15" d=" M -66.963 -25.0256 L -90.2975 -38.4978 " />
+<path id= "16" d=" M -65.5488 -25.8421 L -66.963 -25.0256 " />
+<path id= "17" d=" M -81.3173 -43.6826 L -83.2265 -42.5803 " />
+<path id= "18" d=" M -57.9828 -30.2104 L -81.3173 -43.6826 " />
+<path id= "19" d=" M -105.182 -41.3351 L -100.939 -38.8856 " />
+<path id= "20" d=" M -105.182 -34.8032 L -105.182 -41.3351 " />
+<path id= "21" d=" M -84.1457 -53.4805 L -105.182 -41.3351 " />
+<path id= "22" d=" M -84.1457 -53.4805 L -56.5685 -37.5588 " />
+<path id= "23" d=" M -56.5685 -37.5588 L -57.9828 -36.7423 " />
+<path id= "24" d=" M -81.3173 -50.2145 L -57.9828 -36.7423 " />
+<path id= "25" d=" M -81.3173 -50.2145 L -88.8833 -45.8463 " />
+<path id= "26" d=" M -88.8833 -45.8463 L -65.5488 -32.3741 " />
+<path id= "27" d=" M -65.5488 -32.3741 L -66.963 -31.5576 " />
+<path id= "28" d=" M -90.2975 -45.0298 L -66.963 -31.5576 " />
+<path id= "29" d=" M -90.2975 -45.0298 L -97.8636 -40.6615 " />
+<path id= "30" d=" M -97.8636 -40.6615 L -74.5291 -27.1893 " />
+<path id= "31" d=" M -74.5291 -27.1893 L -75.9433 -26.3728 " />
+<path id= "32" d=" M -74.5291 -27.1893 L -74.5291 -20.6574 " />
+<path d="M-80.018 -25.2655 A2.25 1.29904 60 0 1 -81.768 -28.2966" />
+<path id= "34" d=" M -56.5685 -37.5588 L -56.5685 -31.0269 " />
+<path id= "35" d=" M -57.9828 -36.7423 L -57.9828 -30.2104 " />
+<path d="M-62.0575 -35.635 A2.25 1.29904 60 0 1 -63.8075 -38.6661" />
+<path id= "37" d=" M -90.2975 -45.0298 L -90.2975 -38.4978 " />
+<path id= "38" d=" M -66.963 -31.5576 L -66.963 -25.0256 " />
+<path d="M-71.0289 -30.639 A2.25 1.29904 60 0 1 -71.4949 -29.609" />
+<path d="M-71.4949 -29.609 A2.25 1.29904 60 0 1 -73.7449 -33.5062" />
+<path d="M-73.7449 -33.5062 A2.25 1.29904 60 0 1 -71.0289 -30.639" />
+<path id= "42" d=" M -65.5488 -32.3741 L -65.5488 -25.8421 " />
+<path d="M-71.0378 -30.4503 A2.25 1.29904 60 0 1 -72.7878 -33.4814" />
+<path id= "44" d=" M -81.3173 -50.2145 L -81.3173 -48.0202 " />
+<path d="M-81.3173 -48.0202 A1.65 0.952628 120 0 0 -83.1911 -45.8667" />
+<path d="M-83.1911 -45.8667 A1.65 0.952628 120 0 0 -82.8494 -45.1114" />
+<path d="M-82.8494 -45.1114 A1.65 0.952628 120 0 0 -81.3173 -45.877" />
+<path id= "48" d=" M -81.3173 -45.877 L -81.3173 -43.6826 " />
+<path id= "49" d=" M -81.3173 -48.0202 L -81.3173 -45.877 " />
+<path d="M-62.0486 -35.8238 A2.25 1.29904 60 0 1 -62.5146 -34.7938" />
+<path d="M-62.5146 -34.7938 A2.25 1.29904 60 0 1 -64.7646 -38.6909" />
+<path d="M-64.7646 -38.6909 A2.25 1.29904 60 0 1 -62.0486 -35.8238" />
+</g>
+</g><g transform="translate(291.0500,127.0125) scale(0.7000000) rotate(90)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.500000"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -27.75 -115 L -25.4 -115 " />
+<path id= "2" d=" M -27.75 -115 L -27.75 -121 " />
+<path id= "3" d=" M -25.4 -92.25 L -25.4 -115 " />
+<path id= "4" d=" M -25.4 -82 L -25.4 -87.75 " />
+<path id= "5" d=" M -25.4 -82 L -23.4 -82 " />
+<path id= "6" d=" M -25.4 -87.75 L -23.4 -87.75 " />
+<path id= "7" d=" M -23.4 -92.25 L -25.4 -92.25 " />
+<path id= "8" d=" M -24.4 -121 L -27.75 -121 " />
+<path id= "9" d=" M -23.4 -82 L -23.4 -87.75 " />
+<path id= "10" d=" M -23.4 -92.25 L -23.4 -115 " />
+<path id= "11" d=" M 0 -82 L 2 -82 " />
+<path id= "12" d=" M 0 -82 L 0 -87.75 " />
+<path id= "13" d=" M 2 -87.75 L 2 -82 " />
+<path id= "14" d=" M 2 -121 L 2 -92.25 " />
+<path id= "15" d=" M 2 -121 L 0.65 -121 " />
+<path id= "16" d=" M 2 -92.25 L 0 -92.25 " />
+<path id= "17" d=" M 0 -87.75 L 2 -87.75 " />
+<path id= "18" d=" M 0.65 -115 L 0.65 -121 " />
+<path id= "19" d=" M -2.65 -121 L -21.1 -121 " />
+<path id= "20" d=" M -2.65 -121 L -2.65 -115 " />
+<path id= "21" d=" M -21.1 -115 L -21.1 -121 " />
+<path id= "22" d=" M -24.4 -121 L -24.4 -115 " />
+<path id= "23" d=" M -23.4 -115 L -24.4 -115 " />
+<path id= "24" d=" M -21.1 -115 L -12.7 -115 " />
+<path id= "25" d=" M -12.7 -92.25 L -12.7 -115 " />
+<path id= "26" d=" M -12.7 -82 L -12.7 -87.75 " />
+<path id= "27" d=" M -12.7 -82 L -10.7 -82 " />
+<path id= "28" d=" M -12.7 -87.75 L -10.7 -87.75 " />
+<path id= "29" d=" M -10.7 -92.25 L -12.7 -92.25 " />
+<path id= "30" d=" M -10.7 -82 L -10.7 -87.75 " />
+<path id= "31" d=" M -10.7 -92.25 L -10.7 -115 " />
+<path id= "32" d=" M -10.7 -115 L -2.65 -115 " />
+<path id= "33" d=" M 0 -92.25 L 0 -115 " />
+<path id= "34" d=" M 0.65 -115 L -1.15463e-14 -115 " />
+</g>
+</g><text x="108.00" y="231.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">PLAN / FRONT  (3.2:1)</text><text x="265.00" y="202.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SIDE / 侧视  (1.6:1)</text><text x="350.00" y="203.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">ISOMETRIC / 轴测  (1.2:1)</text><text x="220.00" y="138.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SECTION A-A / 剖视  (Y=0, Z=12.875)</text><line x1="45.000" y1="151.000" x2="171.000" y2="151.000" stroke="#B14B27" stroke-width="0.25" stroke-dasharray="1.4 1.0"/><text x="45.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><text x="171.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><line x1="45.000" y1="163.923" x2="45.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="171.000" y1="163.923" x2="171.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="45.000" y1="218.000" x2="171.000" y2="218.000" stroke="#246B8E" stroke-width="0.35"/><path d="M45.00,218.00 l2,-1 l0,2 z M171.00,218.00 l-2,-1 l0,2 z" fill="#246B8E"/><text x="108.00" y="216.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">39 O/A</text><line x1="45.000" y1="138.077" x2="37.400" y2="138.077" stroke="#526171" stroke-width="0.25"/><line x1="45.000" y1="163.923" x2="37.400" y2="163.923" stroke="#526171" stroke-width="0.25"/><line x1="36.000" y1="138.077" x2="36.000" y2="163.923" stroke="#246B8E" stroke-width="0.35"/><path d="M36.00,138.08 l-1,2 l2,0 z M36.00,163.92 l-1,-2 l2,0 z" fill="#246B8E"/><text x="35.00" y="151.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">8 O/A</text><line x1="12.000" y1="55.000" x2="408.000" y2="55.000" stroke="#243647" stroke-width="0.4"/><text x="12.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.40" font-weight="bold" fill="#162331" text-anchor="start">FEATURE / DIMENSION SCHEDULE  |  特征尺寸表</text><text x="14.00" y="69.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">01  5-layer C negative-X copper comb; 6 x 8 spine section</text><text x="14.00" y="74.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">02  Finger indices i=0,2,4; active height 25.75 mm; layer pitch 6.35</text><text x="14.00" y="79.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">03  Finger blank 34 x 8 x 2; through-hole Ø4.5 along Z at X=-90</text><text x="14.00" y="84.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">04  2 x M4x0.7 tapped cross-holes, core Ø3.3, through the 6 mm spine along X at Z=1 and H-3</text><line x1="256.000" y1="58.000" x2="256.000" y2="92.000" stroke="#B4C0CA" stroke-width="0.3"/><text x="262.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">MATERIAL / 材料</text><text x="262.00" y="68.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.70" font-weight="normal" fill="#243647" text-anchor="start">Copper, grade TBD; current rating not established</text><text x="262.00" y="76.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">TOLERANCES / 公差</text><text x="262.00" y="82.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.45" font-weight="normal" fill="#243647" text-anchor="start">Unspecified unless individually stated; confirm before release.</text><text x="262.00" y="90.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#9B4B2A" text-anchor="start">Copper grade TBD; allowable current rating not established; beam cross-section preliminary</text><rect x="12" y="260" width="396" height="22" fill="#F5F7F8" stroke="#526171" stroke-width=".35"/><line x1="250.000" y1="260.000" x2="250.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="322.000" y1="260.000" x2="322.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="366.000" y1="260.000" x2="366.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><text x="15.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">ASSEMBLY</text><text x="15.00" y="276.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="normal" fill="#162331" text-anchor="start">Compact plate-press cell</text><text x="253.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">PART / DRAWING</text><text x="253.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#162331" text-anchor="start">KB-C5 / DWG-KB-C5</text><text x="325.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">SCALE / 比例</text><text x="325.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#162331" text-anchor="start">See each view; dimensions govern</text><text x="369.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">STATUS</text><text x="369.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#9B4B2A" text-anchor="start">REVIEW</text><text x="12.00" y="253.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.55" font-weight="bold" fill="#9B4B2A" text-anchor="start">Copper grade/current rating unconfirmed; finger beam section is preliminary. No current capacity assigned.</text></svg>

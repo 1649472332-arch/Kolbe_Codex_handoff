@@ -1,0 +1,256 @@
+{
+  "revision": "B1",
+  "units": "mm",
+  "status": "ENGINEERING REVIEW - pressure, chemistry and manufacturing release pending",
+  "source": "design_basis.json and scripts/cad_common.py",
+  "parts": [
+    {
+      "code": "KP-101",
+      "file": "KP-101.FCStd",
+      "volume_mm3": 1494.0317202319459,
+      "valid": true,
+      "solids": 1,
+      "features": 6,
+      "material": "Platinum or Pt-Ti; final specification TBD"
+    },
+    {
+      "code": "KP-102",
+      "file": "KP-102.FCStd",
+      "volume_mm3": 1494.0317202319463,
+      "valid": true,
+      "solids": 1,
+      "features": 6,
+      "material": "Material TBD"
+    },
+    {
+      "code": "KP-601",
+      "file": "KP-601.FCStd",
+      "volume_mm3": 6283.72092041058,
+      "valid": true,
+      "solids": 1,
+      "features": 12,
+      "material": "PEEK precision film; supplier and grade TBD"
+    },
+    {
+      "code": "KP-602",
+      "file": "KP-602.FCStd",
+      "volume_mm3": 6283.720920410581,
+      "valid": true,
+      "solids": 1,
+      "features": 12,
+      "material": "PEEK precision film; supplier and grade TBD"
+    },
+    {
+      "code": "KP-201",
+      "file": "KP-201.FCStd",
+      "volume_mm3": 260872.6307616377,
+      "valid": true,
+      "solids": 1,
+      "features": 8,
+      "material": "Aluminum alloy TBD; coating and compatibility TBD"
+    },
+    {
+      "code": "KP-202",
+      "file": "KP-202.FCStd",
+      "volume_mm3": 306338.4599086393,
+      "valid": true,
+      "solids": 1,
+      "features": 16,
+      "material": "PEEK, unfilled; material grade TBD"
+    },
+    {
+      "code": "KP-203",
+      "file": "KP-203.FCStd",
+      "volume_mm3": 131307.16486439406,
+      "valid": true,
+      "solids": 1,
+      "features": 10,
+      "material": "PEEK, unfilled; material grade TBD"
+    },
+    {
+      "code": "KP-204",
+      "file": "KP-204.FCStd",
+      "volume_mm3": 263586.96681433934,
+      "valid": true,
+      "solids": 1,
+      "features": 6,
+      "material": "Aluminum alloy TBD; coating and compatibility TBD"
+    },
+    {
+      "code": "KP-301",
+      "file": "KP-301.FCStd",
+      "volume_mm3": 717.7118395343745,
+      "valid": true,
+      "solids": 1,
+      "features": 4,
+      "material": "PEEK, unfilled; material grade TBD"
+    },
+    {
+      "code": "KP-302",
+      "file": "KP-302.FCStd",
+      "volume_mm3": 6563.827487648066,
+      "valid": true,
+      "solids": 1,
+      "features": 4,
+      "material": "Copper, grade TBD"
+    },
+    {
+      "code": "KP-303",
+      "file": "KP-303.FCStd",
+      "volume_mm3": 192.19137438240332,
+      "valid": true,
+      "solids": 1,
+      "features": 4,
+      "material": "Copper foil, temper TBD"
+    },
+    {
+      "code": "KP-401",
+      "file": "KP-401.FCStd",
+      "volume_mm3": 424.11500823462205,
+      "valid": true,
+      "solids": 1,
+      "features": 2,
+      "material": "PEEK, unfilled; material grade TBD"
+    },
+    {
+      "code": "KP-501",
+      "file": "KP-501.FCStd",
+      "volume_mm3": 558.3002844510761,
+      "valid": true,
+      "solids": 1,
+      "features": 6,
+      "material": "316L stainless steel; M6x1 thread represented by nominal envelope"
+    },
+    {
+      "code": "KP-502",
+      "file": "KP-502.FCStd",
+      "volume_mm3": 4.021238596594935,
+      "valid": true,
+      "solids": 1,
+      "features": 2,
+      "material": "PTFE, unfilled; supplier TBD"
+    },
+    {
+      "code": "KP-503",
+      "file": "KP-503.FCStd",
+      "volume_mm3": 177.02874602978486,
+      "valid": true,
+      "solids": 1,
+      "features": 2,
+      "material": "PTFE, unfilled; pressure and chemical suitability TBD"
+    }
+  ],
+  "dimensions": {
+    "KP-101": {
+      "coupon": "56 x 56 x 0.35",
+      "outline_corner_radius": 2,
+      "tab": "anode A+x only; root x=24, tip x=100, width_y=16",
+      "tab_hole": "only \u00d84.5 at (90,0)",
+      "metal_perforations": "no manifold or locating holes",
+      "coupon_area_utilization": 79.56
+    },
+    "KP-102": {
+      "coupon": "56 x 56 x 0.35",
+      "outline_corner_radius": 2,
+      "tab": "cathode C-x only; root x=-24, tip x=-100, width_y=16",
+      "tab_hole": "only \u00d84.5 at (-90,0)",
+      "metal_perforations": "no manifold or locating holes",
+      "coupon_area_utilization": 79.56
+    },
+    "KP-601": {
+      "outer": "150 x 150 x 0.35",
+      "material": "PEEK precision film; black appearance is visual only",
+      "coupon_aperture": "56.10 square R2.05",
+      "terminal_slot": "width 16.10, open to +X outer edge, separate pocket",
+      "manifolds": "2 x \u00d88 at (0,\u00b162)",
+      "fasteners": "8 x \u00d89; locators 2 x \u00d83.2 through",
+      "thickness_tolerance": "0.35 \u00b10.01 mm provisional; supplier confirmation required"
+    },
+    "KP-602": {
+      "outer": "150 x 150 x 0.35",
+      "material": "PEEK precision film; black appearance is visual only",
+      "coupon_aperture": "56.10 square R2.05",
+      "terminal_slot": "width 16.10, open to -X outer edge, separate pocket",
+      "manifolds": "2 x \u00d88 at (0,\u00b162)",
+      "fasteners": "8 x \u00d89; locators 2 x \u00d83.2 through",
+      "thickness_tolerance": "0.35 \u00b10.01 mm provisional; supplier confirmation required"
+    },
+    "KP-201": {
+      "outer": "150 x 150 x 12",
+      "corner_radius": 5,
+      "through_holes": "8 x \u00d89 at design_basis bolt_points",
+      "inner_locator_blind_holes": "2 x \u00d83.2, depth 3 at design_basis locator_points",
+      "tool_access": "2 x \u00d812 through at (0,\u00b162); dry, no fluid ports"
+    },
+    "KP-202": {
+      "outer": "150 x 150 x 14",
+      "corner_radius": 5,
+      "through_holes": "8 x \u00d89 bolts and 2 x \u00d83.2 locators",
+      "front_ports_from_outer_z0": "M6x1 nominal properties; smooth \u00d86 clearance to z8, \u00d83.4 seat z8-10, \u00d82.2 pilot z10-11, \u00d88 manifold z11-14",
+      "inner_seal_grooves": "2 x annular, mean \u00d814, width 2.2, depth 1.1 on z14 face; uses manifold-specific parameters"
+    },
+    "KP-203": {
+      "outer": "150 x 150 x 6",
+      "corner_radius": 5,
+      "through_holes": "8 x \u00d89 at design_basis bolt_points",
+      "manifold_closures": "2 x blind \u00d88 x 2 at (0,\u00b162) from inner z0 face",
+      "inner_seal_grooves": "2 x annular, mean \u00d814, width 2.2, depth 1.1 on z0 face; uses manifold-specific parameters"
+    },
+    "KP-204": {
+      "outer": "150 x 150 x 12",
+      "corner_radius": 5,
+      "through_holes": "8 x \u00d89 at design_basis bolt_points",
+      "inner_locator_blind_holes": "2 x \u00d83.2, depth 3 at design_basis locator_points",
+      "fluid_ports": "none"
+    },
+    "KP-301": {
+      "size": "16 x 16 x 3",
+      "corner_radius": 1,
+      "hole": "\u00d84.5 through"
+    },
+    "KP-302": {
+      "section": "6 x 20",
+      "axial_length": 60,
+      "fixings": "2 x \u00d84.5 through thickness, 52 mm center spacing"
+    },
+    "KP-303": {
+      "size": "28 x 8 x 1",
+      "holes": "2 x \u00d84.5, centers at x=\u00b19; 2.75 end margin"
+    },
+    "KP-401": {
+      "diameter": 3,
+      "length": 60
+    },
+    "KP-501": {
+      "axis": "global +Y",
+      "thread_envelope": "M6 x 1 nominal, \u00d86 x 8 long",
+      "head": "\u00d89 x 7",
+      "bore": "\u00d83.1 through",
+      "note": "modeled thread is a nominal smooth envelope, not helical geometry"
+    },
+    "KP-502": {
+      "axis": "global +Y",
+      "outer_diameter": 3.4,
+      "modeled_bore": 3.0,
+      "free_state_bore": 2.95,
+      "length": 2,
+      "supplier": "TBD"
+    },
+    "KP-503": {
+      "axis": "global +Y",
+      "outer_diameter": 3,
+      "inner_diameter": 1.6,
+      "length": 35
+    }
+  },
+  "limitations": [
+    "Electrode materials are unresolved; KP-101 and KP-102 material labels are intentionally provisional.",
+    "KP-501 represents M6x1 with a nominal cylindrical envelope; helical threads are omitted.",
+    "No operating pressure, current, electrolyte, seal qualification, manufacturing tolerances, or material grades are inferred.",
+    "KP-202 and KP-203 are full-area support insulators, including under the electrode active area.",
+    "The 56 mm electrode coupons sit in separate carrier windows; manifold, fastener and locator features are in the carriers, not the metal coupons.",
+    "KP-601/KP-602 film thickness tolerance is provisional; confirm film grade, thickness tolerance, and supplier before release.",
+    "KP-202 port bores use a smooth \u00d86 clearance envelope with M6x1 nominal metadata; threads are not modeled helically.",
+    "KP-203 rear insulator grooves and blind manifold recesses are on the z=0 inner face; assembly may flip the panel to align the face."
+  ]
+}

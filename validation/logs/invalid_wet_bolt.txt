@@ -1,0 +1,2 @@
+ERROR: Assertion '((bolt_x_mm - (bolt_d_mm / 2)) > ((gasket_centerline_mm / 2) + (seal_w / 2)))' failed: "bolt holes intersect seal loop" in file kolbe_stack.scad, line 64
+TRACE: called by 'assert' in file kolbe_stack.scad, line 64

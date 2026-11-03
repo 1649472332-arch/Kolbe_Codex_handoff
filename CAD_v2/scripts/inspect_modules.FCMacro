@@ -1,0 +1,112 @@
+"""FreeCAD interactive inspection panel. Does not save changes to source files."""
+from pathlib import Path
+import FreeCAD as A, FreeCADGui as G
+from PySide import QtCore, QtWidgets
+
+ROOT = Path(__file__).resolve().parents[1]
+import sys
+sys.path.insert(0, str(ROOT/'scripts'))
+from build_assemblies import COLORS
+from chinese_names import file_label, localize_document
+
+class InspectionPanel(QtWidgets.QDockWidget):
+    def __init__(self):
+        super().__init__('Kolbe 模块检查', G.getMainWindow())
+        self.setObjectName('KolbeInspection')
+        w=QtWidgets.QWidget(); layout=QtWidgets.QVBoxLayout(w); self.setWidget(w)
+        self.files=QtWidgets.QComboBox()
+        import csv
+        active=set()
+        for n in (3,5,7):
+            with (ROOT/'drawings'/f'BOM_{n}.csv').open(encoding='utf-8-sig') as f:
+                active.update(row['Part number'] for row in csv.DictReader(f))
+        self.paths=sorted((ROOT/'assemblies').glob('*.FCStd'))+sorted((ROOT/'modules').glob('*.FCStd'))+[p for p in sorted((ROOT/'parts').glob('*.FCStd')) if p.stem in active]
+        for p in self.paths:self.files.addItem(file_label(p))
+        self.files.setCurrentIndex(next(i for i,p in enumerate(self.paths) if p.name=='Kolbe_5.FCStd'))
+        layout.addWidget(self.files)
+        self.button(layout,'打开选中文件', self.open_file)
+        self.items=QtWidgets.QListWidget(); self.items.setSelectionMode(QtWidgets.QAbstractItemView.ExtendedSelection)
+        layout.addWidget(self.items)
+        self.items.itemSelectionChanged.connect(self.select)
+        for label,fn in [('刷新当前文档零件',self.refresh),('只看选中零件',self.isolate),
+                         ('显示全部',self.show_all),('隐藏选中零件',self.hide_selected),
+                         ('打开选中零件的可编辑源文件',self.open_source),('适合窗口',self.fit)]:self.button(layout,label,fn)
+        row=QtWidgets.QHBoxLayout();layout.addLayout(row)
+        for label,axis in [('绕 X 转 15°',(1,0,0)),('绕 Y 转 15°',(0,1,0)),('绕 Z 转 15°',(0,0,1))]:
+            b=QtWidgets.QPushButton(label);b.clicked.connect(lambda checked=False,a=axis:self.rotate(a));row.addWidget(b)
+        self.info=QtWidgets.QLabel('');self.info.setWordWrap(True);layout.addWidget(self.info)
+        tip=QtWidgets.QLabel('列表支持 Ctrl 多选。旋转按钮可连续点击得到任意中间角度。\n鼠标操作请查看右下角导航模式：CAD 模式为按住中键，再按住左键拖动旋转；滚轮缩放。\n源零件可编辑；modules 是保留装配位置的独立检查实体。')
+        tip.setWordWrap(True);layout.addWidget(tip)
+        self.open_file()
+
+    def button(self,layout,label,fn):
+        b=QtWidgets.QPushButton(label);b.clicked.connect(fn);layout.addWidget(b)
+    def current(self):
+        d=A.ActiveDocument
+        if not d:return None,[]
+        links=[o for o in d.Objects if o.TypeId=='App::Link' and hasattr(o,'PartNumber')]
+        return d, links or [o for o in d.Objects if o.TypeId=='PartDesign::Body' or (hasattr(o,'Shape') and hasattr(o,'SourceObject'))]
+    def open_path(self,p):
+        existing=next((d for d in A.listDocuments().values() if d.FileName and Path(d.FileName).resolve()==p.resolve()),None)
+        d=existing or A.openDocument(str(p));A.setActiveDocument(d.Name)
+        localize_document(d)
+        stack=d.getObject('Stack')
+        if stack:stack.Visibility=True
+        for o in self.current()[1]:
+            o.Visibility=True
+            target=o.LinkedObject if o.TypeId=='App::Link' else o
+            if hasattr(target,'Tip') and target.Tip:
+                for child in target.Group:child.Visibility=False
+                target.Tip.Visibility=True
+            if o.TypeId=='App::Link':target.Visibility=False
+        d.recompute();G.updateGui()
+        self.refresh();G.activeDocument().activeView().viewAxonometric();self.fit()
+    def open_file(self):self.open_path(self.paths[self.files.currentIndex()])
+    def refresh(self):
+        self.items.clear();d,objects=self.current()
+        if not d:return
+        for o in objects:
+            item=QtWidgets.QListWidgetItem(o.Label);item.setData(QtCore.Qt.UserRole,o.Name);self.items.addItem(item)
+            if hasattr(o,'DisplayColor'):
+                target=o.LinkedObject if o.TypeId=='App::Link' else o
+                col=COLORS.get(o.DisplayColor,(.7,.7,.7))
+                target.ViewObject.ShapeColor=col
+                if hasattr(target,'Tip') and target.Tip:target.Tip.ViewObject.ShapeColor=col
+        self.info.setText(f'{d.Label}：{len(objects)} 个可检查对象')
+    def selected(self):
+        d=A.ActiveDocument
+        return [d.getObject(i.data(QtCore.Qt.UserRole)) for i in self.items.selectedItems()] if d else []
+    def select(self):
+        G.Selection.clearSelection();objects=self.selected()
+        for o in objects:G.Selection.addSelection(o)
+        if objects:
+            s=objects[0].Shape;b=s.BoundBox
+            self.info.setText(f'{objects[0].Label}\n包围尺寸 {b.XLength:.3f} × {b.YLength:.3f} × {b.ZLength:.3f} mm\n实体 {len(s.Solids)}，体积 {s.Volume:.3f} mm³；有效：{s.isValid()}')
+    def isolate(self):
+        selected=self.selected()
+        if not selected:return
+        for o in self.current()[1]:o.Visibility=o in selected
+        G.Selection.clearSelection();self.fit()
+    def show_all(self):
+        for o in self.current()[1]:o.Visibility=True
+        self.fit()
+    def hide_selected(self):
+        for o in self.selected():o.Visibility=False
+        G.Selection.clearSelection()
+    def open_source(self):
+        objects=self.selected()
+        if not objects:return
+        o=objects[0];code=getattr(o,'PartNumber','').replace('-COMP','')
+        p=ROOT/'parts'/(code+'.FCStd')
+        if p.exists():self.open_path(p)
+    def fit(self):
+        if G.activeDocument():G.activeDocument().activeView().fitAll()
+    def rotate(self,axis):
+        if G.activeDocument():
+            v=G.activeDocument().activeView();v.setAnimationEnabled(False)
+            v.setCameraOrientation(A.Rotation(A.Vector(*axis),15).multiply(v.getCameraOrientation()).Q)
+            G.updateGui()
+
+old=G.getMainWindow().findChild(QtWidgets.QDockWidget,'KolbeInspection')
+if old:old.close();old.deleteLater()
+panel=InspectionPanel();G.getMainWindow().addDockWidget(QtCore.Qt.RightDockWidgetArea,panel);panel.show()

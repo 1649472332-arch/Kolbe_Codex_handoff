@@ -1,0 +1,22 @@
+[
+  {
+    "case": "even_electrodes",
+    "rejected": true
+  },
+  {
+    "case": "oversize_port",
+    "rejected": true
+  },
+  {
+    "case": "seal_breakout",
+    "rejected": true
+  },
+  {
+    "case": "wet_bolt",
+    "rejected": true
+  },
+  {
+    "case": "small_electrode",
+    "rejected": true
+  }
+]

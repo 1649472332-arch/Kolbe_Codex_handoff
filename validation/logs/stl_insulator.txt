@@ -1,0 +1,10 @@
+ECHO: "electrodes=3 | each gap/frame=4 mm | active stack=9.05 mm | total stack=37.05 mm"
+ECHO: "gasket: cs=1 mm, groove w=1.4 mm, depth/face=0.75 mm, compressed section height=0.75 mm"
+ECHO: "ports: bore=1 mm, axis Z=2 mm; pressure rating TBD"
+Geometries in cache: 19
+Geometry cache size in bytes: 368448
+CGAL Polyhedrons in cache: 0
+CGAL cache size in bytes: 0
+Total rendering time: 0:00:00.004
+   Top level object is a 3D object:
+   Facets:       2348

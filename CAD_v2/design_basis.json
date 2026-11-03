@@ -1,0 +1,112 @@
+{
+  "revision": "B1",
+  "units": "mm",
+  "status": "ENGINEERING REVIEW - pressure, chemistry and manufacturing release pending",
+  "frame_size": 150.0,
+  "frame_corner": 5.0,
+  "gap": 6.0,
+  "window": 50.0,
+  "window_corner": 3.0,
+  "seal_centerline_size": 53.6,
+  "seal_corner": 4.8,
+  "seal_cs": 1.0,
+  "groove_width": 1.4,
+  "groove_depth": 0.75,
+  "electrode_thickness": 0.35,
+  "tab_tip": 100.0,
+  "tab_width": 16.0,
+  "tab_hole_x": 90.0,
+  "tab_hole_d": 4.5,
+  "bolt_points": [
+    [
+      -65,
+      -55
+    ],
+    [
+      -65,
+      -20
+    ],
+    [
+      -65,
+      20
+    ],
+    [
+      -65,
+      55
+    ],
+    [
+      65,
+      -55
+    ],
+    [
+      65,
+      -20
+    ],
+    [
+      65,
+      20
+    ],
+    [
+      65,
+      55
+    ]
+  ],
+  "bolt_clearance": 9.0,
+  "rod_d": 8.0,
+  "washer_od": 16.0,
+  "washer_id": 8.4,
+  "washer_t": 1.6,
+  "nut_af": 13.0,
+  "nut_t": 6.5,
+  "endplate_t": 12.0,
+  "locator_points": [
+    [
+      -51,
+      46
+    ],
+    [
+      51,
+      -46
+    ]
+  ],
+  "locator_d": 3.0,
+  "locator_clearance": 3.2,
+  "port_bore": 2.2,
+  "port_thread_major": 6.0,
+  "port_thread_minor": 5.0,
+  "port_thread_pitch": 1.0,
+  "port_thread_length": 8.0,
+  "port_seat_d": 3.4,
+  "port_seat_depth": 2.0,
+  "tube_od": 3.0,
+  "tube_id": 1.6,
+  "design_pressure_bar": null,
+  "operating_current_A": null,
+  "electrolyte": null,
+  "configuration": "front ports / internal parallel inlet and outlet manifolds",
+  "electrode_width": 56.0,
+  "electrode_height": 56.0,
+  "manifold_points": [
+    [
+      0,
+      -62
+    ],
+    [
+      0,
+      62
+    ]
+  ],
+  "manifold_d": 8.0,
+  "manifold_seal_mean_d": 14.0,
+  "front_insulator_t": 14.0,
+  "rear_insulator_t": 6.0,
+  "electrode_gap_status": "TBD after actual electrodes and flow; 6 mm mechanical review envelope only",
+  "carrier_size": 150.0,
+  "carrier_thickness": 0.35,
+  "carrier_clearance": 0.1,
+  "manifold_seal_cs": 1.5,
+  "manifold_groove_width": 2.2,
+  "manifold_groove_depth": 1.1,
+  "electrode_design": "small double-sided coupon with integral dry tab; thin insulating carrier handles manifolds and locators",
+  "electrical_connection": "铜排及专用支架/夹块/M4紧固件已移除；保留干侧极耳，外部电连接待定"
+}

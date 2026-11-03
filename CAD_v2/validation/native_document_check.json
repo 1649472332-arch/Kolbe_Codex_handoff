@@ -1,0 +1,23 @@
+[
+  {
+    "file": "C:/Users/16494/Desktop/Kolbe_Codex_handoff/CAD_v2/assemblies/Kolbe_3.FCStd",
+    "external_object_references": [],
+    "native_bodies": 18,
+    "sketches": 67,
+    "links": 84
+  },
+  {
+    "file": "C:/Users/16494/Desktop/Kolbe_Codex_handoff/CAD_v2/assemblies/Kolbe_5.FCStd",
+    "external_object_references": [],
+    "native_bodies": 18,
+    "sketches": 67,
+    "links": 110
+  },
+  {
+    "file": "C:/Users/16494/Desktop/Kolbe_Codex_handoff/CAD_v2/assemblies/Kolbe_7.FCStd",
+    "external_object_references": [],
+    "native_bodies": 18,
+    "sketches": 67,
+    "links": 136
+  }
+]

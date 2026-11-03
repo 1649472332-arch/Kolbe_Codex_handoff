@@ -1,0 +1,1662 @@
+{
+  "configuration": 5,
+  "body_stack_height_mm": 69.75,
+  "active_stack_height_mm": 25.75,
+  "gap_mm_provisional": 6,
+  "instances": 110,
+  "all_valid": true,
+  "unresolved_intersections": [],
+  "cosmetic_thread_engagement_intersections": [],
+  "parts": [
+    {
+      "name": "I_1",
+      "code": "KP-201",
+      "function": "Front pressure plate",
+      "valid": true,
+      "volume_mm3": 260872.6307616377,
+      "bounds": [
+        -75.0,
+        -75.0,
+        0.0,
+        75.0,
+        75.0,
+        12.0
+      ]
+    },
+    {
+      "name": "I_2",
+      "code": "KP-202",
+      "function": "Front insulating fluid adapter",
+      "valid": true,
+      "volume_mm3": 306338.4599086393,
+      "bounds": [
+        -75.0,
+        -75.0,
+        12.0,
+        75.0,
+        75.0,
+        26.0
+      ]
+    },
+    {
+      "name": "I_3",
+      "code": "KS-102-COMP",
+      "function": "Front manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585786,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        24.9,
+        8.022727272727273,
+        -53.97727272727273,
+        26.0
+      ]
+    },
+    {
+      "name": "I_4",
+      "code": "KS-102-COMP",
+      "function": "Front manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857866,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        24.9,
+        8.022727272727273,
+        70.02272727272728,
+        26.0
+      ]
+    },
+    {
+      "name": "I_5",
+      "code": "KP-602",
+      "function": "Precision insulating carrier 0 (C)",
+      "valid": true,
+      "volume_mm3": 6283.720920410589,
+      "bounds": [
+        -75.0,
+        -75.0,
+        26.0,
+        75.0,
+        75.0,
+        26.35
+      ]
+    },
+    {
+      "name": "I_6",
+      "code": "KP-102",
+      "function": "Electrode 0 (C), both faces exposed when internal",
+      "valid": true,
+      "volume_mm3": 1494.0317202319482,
+      "bounds": [
+        -100.0,
+        -28.0,
+        26.0,
+        28.0,
+        28.0,
+        26.35
+      ]
+    },
+    {
+      "name": "I_7",
+      "code": "KF-101",
+      "function": "Parallel flow channel 0",
+      "valid": true,
+      "volume_mm3": 114901.44548902378,
+      "bounds": [
+        -75.0,
+        -75.0,
+        26.35,
+        75.0,
+        75.0,
+        32.35
+      ]
+    },
+    {
+      "name": "I_8",
+      "code": "KS-101-COMP",
+      "function": "Channel 0 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.9171273205655,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        26.35,
+        27.46666666666667,
+        27.466666666666672,
+        27.1
+      ]
+    },
+    {
+      "name": "I_9",
+      "code": "KS-101-COMP",
+      "function": "Channel 0 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056553,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        31.6,
+        27.46666666666667,
+        27.466666666666672,
+        32.35
+      ]
+    },
+    {
+      "name": "I_10",
+      "code": "KS-102-COMP",
+      "function": "Channel 0 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857863,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        26.35,
+        8.022727272727273,
+        -53.97727272727273,
+        27.450000000000003
+      ]
+    },
+    {
+      "name": "I_11",
+      "code": "KS-102-COMP",
+      "function": "Channel 0 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        31.25,
+        8.022727272727273,
+        -53.97727272727273,
+        32.35
+      ]
+    },
+    {
+      "name": "I_12",
+      "code": "KS-102-COMP",
+      "function": "Channel 0 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857863,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        26.35,
+        8.022727272727273,
+        70.02272727272728,
+        27.450000000000003
+      ]
+    },
+    {
+      "name": "I_13",
+      "code": "KS-102-COMP",
+      "function": "Channel 0 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        31.25,
+        8.022727272727273,
+        70.02272727272728,
+        32.35
+      ]
+    },
+    {
+      "name": "I_14",
+      "code": "KH-901",
+      "function": "Channel 0 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.45886895904243,
+      "bounds": [
+        -2.750000000000001,
+        -77.3,
+        26.6,
+        2.749999999999999,
+        -69.3,
+        32.1
+      ]
+    },
+    {
+      "name": "I_15",
+      "code": "KH-902",
+      "function": "Channel 0 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.95193542022091,
+      "bounds": [
+        -2.75,
+        -75.3,
+        26.6,
+        2.75,
+        -74.8,
+        32.1
+      ]
+    },
+    {
+      "name": "I_16",
+      "code": "KH-901",
+      "function": "Channel 0 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.45886895904243,
+      "bounds": [
+        -2.75,
+        69.3,
+        26.6,
+        2.75,
+        77.3,
+        32.1
+      ]
+    },
+    {
+      "name": "I_17",
+      "code": "KH-902",
+      "function": "Channel 0 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.951935420220911,
+      "bounds": [
+        -2.75,
+        74.8,
+        26.6,
+        2.75,
+        75.3,
+        32.1
+      ]
+    },
+    {
+      "name": "I_18",
+      "code": "KP-601",
+      "function": "Precision insulating carrier 1 (A)",
+      "valid": true,
+      "volume_mm3": 6283.72092041059,
+      "bounds": [
+        -75.0,
+        -75.0,
+        32.35,
+        75.0,
+        75.0,
+        32.7
+      ]
+    },
+    {
+      "name": "I_19",
+      "code": "KP-101",
+      "function": "Electrode 1 (A), both faces exposed when internal",
+      "valid": true,
+      "volume_mm3": 1494.0317202319482,
+      "bounds": [
+        -28.0,
+        -28.0,
+        32.35,
+        100.0,
+        28.0,
+        32.7
+      ]
+    },
+    {
+      "name": "I_20",
+      "code": "KF-101",
+      "function": "Parallel flow channel 1",
+      "valid": true,
+      "volume_mm3": 114901.44548902374,
+      "bounds": [
+        -75.0,
+        -75.0,
+        32.7,
+        75.0,
+        75.0,
+        38.7
+      ]
+    },
+    {
+      "name": "I_21",
+      "code": "KS-101-COMP",
+      "function": "Channel 1 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056556,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        32.7,
+        27.46666666666667,
+        27.466666666666672,
+        33.45
+      ]
+    },
+    {
+      "name": "I_22",
+      "code": "KS-101-COMP",
+      "function": "Channel 1 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056567,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        37.95,
+        27.46666666666667,
+        27.466666666666672,
+        38.7
+      ]
+    },
+    {
+      "name": "I_23",
+      "code": "KS-102-COMP",
+      "function": "Channel 1 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        32.7,
+        8.022727272727273,
+        -53.97727272727273,
+        33.8
+      ]
+    },
+    {
+      "name": "I_24",
+      "code": "KS-102-COMP",
+      "function": "Channel 1 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        37.60000000000001,
+        8.022727272727273,
+        -53.97727272727273,
+        38.7
+      ]
+    },
+    {
+      "name": "I_25",
+      "code": "KS-102-COMP",
+      "function": "Channel 1 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        32.7,
+        8.022727272727273,
+        70.02272727272728,
+        33.8
+      ]
+    },
+    {
+      "name": "I_26",
+      "code": "KS-102-COMP",
+      "function": "Channel 1 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        37.60000000000001,
+        8.022727272727273,
+        70.02272727272728,
+        38.7
+      ]
+    },
+    {
+      "name": "I_27",
+      "code": "KH-901",
+      "function": "Channel 1 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.4588689590424,
+      "bounds": [
+        -2.750000000000001,
+        -77.3,
+        32.95,
+        2.749999999999999,
+        -69.3,
+        38.45
+      ]
+    },
+    {
+      "name": "I_28",
+      "code": "KH-902",
+      "function": "Channel 1 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.95193542022091,
+      "bounds": [
+        -2.75,
+        -75.3,
+        32.95,
+        2.75,
+        -74.8,
+        38.45
+      ]
+    },
+    {
+      "name": "I_29",
+      "code": "KH-901",
+      "function": "Channel 1 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.45886895904242,
+      "bounds": [
+        -2.75,
+        69.3,
+        32.95,
+        2.75,
+        77.3,
+        38.45
+      ]
+    },
+    {
+      "name": "I_30",
+      "code": "KH-902",
+      "function": "Channel 1 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.951935420220913,
+      "bounds": [
+        -2.75,
+        74.8,
+        32.95,
+        2.75,
+        75.3,
+        38.45
+      ]
+    },
+    {
+      "name": "I_31",
+      "code": "KP-602",
+      "function": "Precision insulating carrier 2 (C)",
+      "valid": true,
+      "volume_mm3": 6283.720920410589,
+      "bounds": [
+        -75.0,
+        -75.0,
+        38.7,
+        75.0,
+        75.0,
+        39.050000000000004
+      ]
+    },
+    {
+      "name": "I_32",
+      "code": "KP-102",
+      "function": "Electrode 2 (C), both faces exposed when internal",
+      "valid": true,
+      "volume_mm3": 1494.0317202319482,
+      "bounds": [
+        -100.0,
+        -28.0,
+        38.7,
+        28.0,
+        28.0,
+        39.050000000000004
+      ]
+    },
+    {
+      "name": "I_33",
+      "code": "KF-101",
+      "function": "Parallel flow channel 2",
+      "valid": true,
+      "volume_mm3": 114901.44548902374,
+      "bounds": [
+        -75.0,
+        -75.0,
+        39.050000000000004,
+        75.0,
+        75.0,
+        45.050000000000004
+      ]
+    },
+    {
+      "name": "I_34",
+      "code": "KS-101-COMP",
+      "function": "Channel 2 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056567,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        39.050000000000004,
+        27.46666666666667,
+        27.466666666666672,
+        39.800000000000004
+      ]
+    },
+    {
+      "name": "I_35",
+      "code": "KS-101-COMP",
+      "function": "Channel 2 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056567,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        44.300000000000004,
+        27.46666666666667,
+        27.466666666666672,
+        45.050000000000004
+      ]
+    },
+    {
+      "name": "I_36",
+      "code": "KS-102-COMP",
+      "function": "Channel 2 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        39.050000000000004,
+        8.022727272727273,
+        -53.97727272727273,
+        40.15
+      ]
+    },
+    {
+      "name": "I_37",
+      "code": "KS-102-COMP",
+      "function": "Channel 2 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        43.95000000000001,
+        8.022727272727273,
+        -53.97727272727273,
+        45.050000000000004
+      ]
+    },
+    {
+      "name": "I_38",
+      "code": "KS-102-COMP",
+      "function": "Channel 2 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        39.050000000000004,
+        8.022727272727273,
+        70.02272727272728,
+        40.15
+      ]
+    },
+    {
+      "name": "I_39",
+      "code": "KS-102-COMP",
+      "function": "Channel 2 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        43.95000000000001,
+        8.022727272727273,
+        70.02272727272728,
+        45.050000000000004
+      ]
+    },
+    {
+      "name": "I_40",
+      "code": "KH-901",
+      "function": "Channel 2 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.4588689590424,
+      "bounds": [
+        -2.750000000000001,
+        -77.3,
+        39.300000000000004,
+        2.749999999999999,
+        -69.3,
+        44.800000000000004
+      ]
+    },
+    {
+      "name": "I_41",
+      "code": "KH-902",
+      "function": "Channel 2 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.95193542022091,
+      "bounds": [
+        -2.75,
+        -75.3,
+        39.300000000000004,
+        2.75,
+        -74.8,
+        44.800000000000004
+      ]
+    },
+    {
+      "name": "I_42",
+      "code": "KH-901",
+      "function": "Channel 2 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.4588689590424,
+      "bounds": [
+        -2.75,
+        69.3,
+        39.300000000000004,
+        2.75,
+        77.3,
+        44.800000000000004
+      ]
+    },
+    {
+      "name": "I_43",
+      "code": "KH-902",
+      "function": "Channel 2 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.951935420220913,
+      "bounds": [
+        -2.75,
+        74.8,
+        39.300000000000004,
+        2.75,
+        75.3,
+        44.800000000000004
+      ]
+    },
+    {
+      "name": "I_44",
+      "code": "KP-601",
+      "function": "Precision insulating carrier 3 (A)",
+      "valid": true,
+      "volume_mm3": 6283.720920410588,
+      "bounds": [
+        -75.0,
+        -75.0,
+        45.05,
+        75.0,
+        75.0,
+        45.4
+      ]
+    },
+    {
+      "name": "I_45",
+      "code": "KP-101",
+      "function": "Electrode 3 (A), both faces exposed when internal",
+      "valid": true,
+      "volume_mm3": 1494.0317202319482,
+      "bounds": [
+        -28.0,
+        -28.0,
+        45.05,
+        100.0,
+        28.0,
+        45.4
+      ]
+    },
+    {
+      "name": "I_46",
+      "code": "KF-101",
+      "function": "Parallel flow channel 3",
+      "valid": true,
+      "volume_mm3": 114901.44548902375,
+      "bounds": [
+        -75.0,
+        -75.0,
+        45.4,
+        75.0,
+        75.0,
+        51.4
+      ]
+    },
+    {
+      "name": "I_47",
+      "code": "KS-101-COMP",
+      "function": "Channel 3 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056556,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        45.4,
+        27.46666666666667,
+        27.466666666666672,
+        46.15
+      ]
+    },
+    {
+      "name": "I_48",
+      "code": "KS-101-COMP",
+      "function": "Channel 3 perimeter seal",
+      "valid": true,
+      "volume_mm3": 161.91712732056567,
+      "bounds": [
+        -27.466666666666672,
+        -27.46666666666667,
+        50.65,
+        27.46666666666667,
+        27.466666666666672,
+        51.4
+      ]
+    },
+    {
+      "name": "I_49",
+      "code": "KS-102-COMP",
+      "function": "Channel 3 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        45.4,
+        8.022727272727273,
+        -53.97727272727273,
+        46.49999999999999
+      ]
+    },
+    {
+      "name": "I_50",
+      "code": "KS-102-COMP",
+      "function": "Channel 3 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        50.300000000000004,
+        8.022727272727273,
+        -53.97727272727273,
+        51.4
+      ]
+    },
+    {
+      "name": "I_51",
+      "code": "KS-102-COMP",
+      "function": "Channel 3 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.7231346585787,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        45.4,
+        8.022727272727273,
+        70.02272727272728,
+        46.49999999999999
+      ]
+    },
+    {
+      "name": "I_52",
+      "code": "KS-102-COMP",
+      "function": "Channel 3 manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        50.300000000000004,
+        8.022727272727273,
+        70.02272727272728,
+        51.4
+      ]
+    },
+    {
+      "name": "I_53",
+      "code": "KH-901",
+      "function": "Channel 3 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.45886895904242,
+      "bounds": [
+        -2.750000000000001,
+        -77.3,
+        45.65,
+        2.749999999999999,
+        -69.3,
+        51.15
+      ]
+    },
+    {
+      "name": "I_54",
+      "code": "KH-902",
+      "function": "Channel 3 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.951935420220912,
+      "bounds": [
+        -2.75,
+        -75.3,
+        45.65,
+        2.75,
+        -74.8,
+        51.15
+      ]
+    },
+    {
+      "name": "I_55",
+      "code": "KH-901",
+      "function": "Channel 3 crossdrill plug",
+      "valid": true,
+      "volume_mm3": 94.45886895904242,
+      "bounds": [
+        -2.75,
+        69.3,
+        45.65,
+        2.75,
+        77.3,
+        51.15
+      ]
+    },
+    {
+      "name": "I_56",
+      "code": "KH-902",
+      "function": "Channel 3 plug face washer",
+      "valid": true,
+      "volume_mm3": 4.951935420220913,
+      "bounds": [
+        -2.75,
+        74.8,
+        45.65,
+        2.75,
+        75.3,
+        51.15
+      ]
+    },
+    {
+      "name": "I_57",
+      "code": "KP-602",
+      "function": "Precision insulating carrier 4 (C)",
+      "valid": true,
+      "volume_mm3": 6283.72092041059,
+      "bounds": [
+        -75.0,
+        -75.0,
+        51.4,
+        75.0,
+        75.0,
+        51.75
+      ]
+    },
+    {
+      "name": "I_58",
+      "code": "KP-102",
+      "function": "Electrode 4 (C), both faces exposed when internal",
+      "valid": true,
+      "volume_mm3": 1494.0317202319482,
+      "bounds": [
+        -100.0,
+        -28.0,
+        51.4,
+        28.0,
+        28.0,
+        51.75
+      ]
+    },
+    {
+      "name": "I_59",
+      "code": "KP-203",
+      "function": "Rear insulating manifold closure",
+      "valid": true,
+      "volume_mm3": 131307.16486439406,
+      "bounds": [
+        -75.0,
+        -75.0,
+        51.75,
+        75.0,
+        75.0,
+        57.75
+      ]
+    },
+    {
+      "name": "I_60",
+      "code": "KS-102-COMP",
+      "function": "Rear manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        -70.02272727272728,
+        51.75,
+        8.022727272727273,
+        -53.97727272727273,
+        52.849999999999994
+      ]
+    },
+    {
+      "name": "I_61",
+      "code": "KS-102-COMP",
+      "function": "Rear manifold seal",
+      "valid": true,
+      "volume_mm3": 77.72313465857867,
+      "bounds": [
+        -8.022727272727273,
+        53.97727272727273,
+        51.75,
+        8.022727272727273,
+        70.02272727272728,
+        52.849999999999994
+      ]
+    },
+    {
+      "name": "I_62",
+      "code": "KP-204",
+      "function": "Rear pressure plate",
+      "valid": true,
+      "volume_mm3": 263586.96681433934,
+      "bounds": [
+        -75.0,
+        -75.0,
+        57.75,
+        75.0,
+        75.0,
+        69.75
+      ]
+    },
+    {
+      "name": "I_63",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.380147046431,
+      "bounds": [
+        -69.0,
+        -59.0,
+        -10.1,
+        -61.0,
+        -51.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_64",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        -73.0,
+        -63.0,
+        -1.6,
+        -57.0,
+        -47.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_65",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        -61.5,
+        -8.1,
+        -57.49444650053486,
+        -48.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_66",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        -73.0,
+        -63.0,
+        69.75,
+        -57.0,
+        -47.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_67",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        -61.5,
+        71.35,
+        -57.49444650053486,
+        -48.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_68",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.38014704643,
+      "bounds": [
+        -69.0,
+        -24.0,
+        -10.1,
+        -61.0,
+        -16.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_69",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        -73.0,
+        -28.0,
+        -1.6,
+        -57.0,
+        -12.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_70",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        -26.5,
+        -8.1,
+        -57.49444650053486,
+        -13.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_71",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        -73.0,
+        -28.0,
+        69.75,
+        -57.0,
+        -12.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_72",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        -26.5,
+        71.35,
+        -57.49444650053486,
+        -13.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_73",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.38014704643,
+      "bounds": [
+        -69.0,
+        16.0,
+        -10.1,
+        -61.0,
+        24.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_74",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        -73.0,
+        12.0,
+        -1.6,
+        -57.0,
+        28.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_75",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        13.5,
+        -8.1,
+        -57.49444650053486,
+        26.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_76",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        -73.0,
+        12.0,
+        69.75,
+        -57.0,
+        28.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_77",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        13.5,
+        71.35,
+        -57.49444650053486,
+        26.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_78",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.380147046431,
+      "bounds": [
+        -69.0,
+        51.0,
+        -10.1,
+        -61.0,
+        59.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_79",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        -73.0,
+        47.0,
+        -1.6,
+        -57.0,
+        63.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_80",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        48.5,
+        -8.1,
+        -57.49444650053486,
+        61.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_81",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        -73.0,
+        47.0,
+        69.75,
+        -57.0,
+        63.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_82",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        -72.50555349946514,
+        48.5,
+        71.35,
+        -57.49444650053486,
+        61.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_83",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.380147046431,
+      "bounds": [
+        61.0,
+        -59.0,
+        -10.1,
+        69.0,
+        -51.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_84",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        57.0,
+        -63.0,
+        -1.6,
+        73.0,
+        -47.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_85",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        -61.5,
+        -8.1,
+        72.50555349946514,
+        -48.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_86",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        57.0,
+        -63.0,
+        69.75,
+        73.0,
+        -47.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_87",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        -61.5,
+        71.35,
+        72.50555349946514,
+        -48.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_88",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.3801470464305,
+      "bounds": [
+        61.0,
+        -24.0,
+        -10.1,
+        69.0,
+        -16.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_89",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        57.0,
+        -28.0,
+        -1.6,
+        73.0,
+        -12.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_90",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627173,
+      "bounds": [
+        57.49444650053486,
+        -26.5,
+        -8.1,
+        72.50555349946514,
+        -13.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_91",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        57.0,
+        -28.0,
+        69.75,
+        73.0,
+        -12.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_92",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        -26.5,
+        71.35,
+        72.50555349946514,
+        -13.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_93",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.3801470464305,
+      "bounds": [
+        61.0,
+        16.0,
+        -10.1,
+        69.0,
+        24.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_94",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        57.0,
+        12.0,
+        -1.6,
+        73.0,
+        28.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_95",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627173,
+      "bounds": [
+        57.49444650053486,
+        13.5,
+        -8.1,
+        72.50555349946514,
+        26.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_96",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        57.0,
+        12.0,
+        69.75,
+        73.0,
+        28.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_97",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        13.5,
+        71.35,
+        72.50555349946514,
+        26.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_98",
+      "code": "STD-M8-ROD-5-PLATE",
+      "function": "Stack tie rod",
+      "valid": true,
+      "volume_mm3": 4521.380147046431,
+      "bounds": [
+        61.0,
+        51.0,
+        -10.1,
+        69.0,
+        59.0,
+        79.85000000000001
+      ]
+    },
+    {
+      "name": "I_99",
+      "code": "STD-M8-WASHER",
+      "function": "Front tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267644,
+      "bounds": [
+        57.0,
+        47.0,
+        -1.6,
+        73.0,
+        63.0,
+        0.0
+      ]
+    },
+    {
+      "name": "I_100",
+      "code": "STD-M8-NUT",
+      "function": "Front tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        48.5,
+        -8.1,
+        72.50555349946514,
+        61.5,
+        -1.5999999999999996
+      ]
+    },
+    {
+      "name": "I_101",
+      "code": "STD-M8-WASHER",
+      "function": "Rear tie washer",
+      "valid": true,
+      "volume_mm3": 233.03077667267615,
+      "bounds": [
+        57.0,
+        47.0,
+        69.75,
+        73.0,
+        63.0,
+        71.35
+      ]
+    },
+    {
+      "name": "I_102",
+      "code": "STD-M8-NUT",
+      "function": "Rear tie nut",
+      "valid": true,
+      "volume_mm3": 608.0627847627175,
+      "bounds": [
+        57.49444650053486,
+        48.5,
+        71.35,
+        72.50555349946514,
+        61.5,
+        77.85
+      ]
+    },
+    {
+      "name": "I_103",
+      "code": "STD-LOCATOR-5",
+      "function": "Insulating alignment pin",
+      "valid": true,
+      "volume_mm3": 364.3854779082461,
+      "bounds": [
+        -52.5,
+        44.5,
+        9.1,
+        -49.5,
+        47.5,
+        60.65
+      ]
+    },
+    {
+      "name": "I_104",
+      "code": "STD-LOCATOR-5",
+      "function": "Insulating alignment pin",
+      "valid": true,
+      "volume_mm3": 364.3854779082461,
+      "bounds": [
+        49.5,
+        -47.5,
+        9.1,
+        52.5,
+        -44.5,
+        60.65
+      ]
+    },
+    {
+      "name": "I_105",
+      "code": "KP-501",
+      "function": "Front M6x1 tube compression nut",
+      "valid": true,
+      "volume_mm3": 558.3002844510762,
+      "bounds": [
+        -4.5,
+        -66.5,
+        4.999999999999998,
+        4.5,
+        -57.5,
+        20.0
+      ]
+    },
+    {
+      "name": "I_106",
+      "code": "KP-502",
+      "function": "Front compression ferrule",
+      "valid": true,
+      "volume_mm3": 4.021238596594934,
+      "bounds": [
+        -1.7,
+        -63.7,
+        20.0,
+        1.7,
+        -60.3,
+        22.0
+      ]
+    },
+    {
+      "name": "I_107",
+      "code": "KP-503",
+      "function": "Front electrolyte tubing",
+      "valid": true,
+      "volume_mm3": 177.02874602978488,
+      "bounds": [
+        -1.5,
+        -63.500000000000014,
+        -13.0,
+        1.5,
+        -60.5,
+        22.0
+      ]
+    },
+    {
+      "name": "I_108",
+      "code": "KP-501",
+      "function": "Front M6x1 tube compression nut",
+      "valid": true,
+      "volume_mm3": 558.3002844510761,
+      "bounds": [
+        -4.5,
+        57.5,
+        4.999999999999998,
+        4.5,
+        66.5,
+        20.0
+      ]
+    },
+    {
+      "name": "I_109",
+      "code": "KP-502",
+      "function": "Front compression ferrule",
+      "valid": true,
+      "volume_mm3": 4.021238596594934,
+      "bounds": [
+        -1.7,
+        60.3,
+        20.0,
+        1.7,
+        63.7,
+        22.0
+      ]
+    },
+    {
+      "name": "I_110",
+      "code": "KP-503",
+      "function": "Front electrolyte tubing",
+      "valid": true,
+      "volume_mm3": 177.02874602978488,
+      "bounds": [
+        -1.5,
+        60.499999999999986,
+        -13.0,
+        1.5,
+        63.5,
+        22.0
+      ]
+    }
+  ]
+}

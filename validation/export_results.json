@@ -1,0 +1,503 @@
+[
+  {
+    "name": "csg_3_2",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_3_gap2.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=2",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_3_4",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_3_gap4.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_3_6",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_3_gap6.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=6",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_5_2",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_5_gap2.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=5",
+      "-D",
+      "gap_mm=2",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_5_4",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_5_gap4.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=5",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_5_6",
+    "ok": true,
+    "seconds": 0.19,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_5_gap6.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=5",
+      "-D",
+      "gap_mm=6",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_7_2",
+    "ok": true,
+    "seconds": 0.21,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_7_gap2.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=7",
+      "-D",
+      "gap_mm=2",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_7_4",
+    "ok": true,
+    "seconds": 0.2,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_7_gap4.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=7",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "csg_7_6",
+    "ok": true,
+    "seconds": 0.19,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\validation\\csg\\stack_7_gap6.csg",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=7",
+      "-D",
+      "gap_mm=6",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "assembly_3",
+    "ok": true,
+    "seconds": 3.19,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\assembly_3.png",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1600,1100",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "assembly_5",
+    "ok": true,
+    "seconds": 3.11,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\assembly_5.png",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=5",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1600,1100",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "assembly_7",
+    "ok": true,
+    "seconds": 3.41,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\assembly_7.png",
+      "-D",
+      "part=\"assembly\"",
+      "-D",
+      "electrode_count=7",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1600,1100",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "exploded",
+    "ok": true,
+    "seconds": 3.08,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\exploded.png",
+      "-D",
+      "part=\"exploded\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1800,1200",
+      "--viewall",
+      "--autocenter",
+      "-D",
+      "explode_step_mm=18",
+      "--camera=200,-260,130,0,0,90",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ],
+    "note": "Image regenerated with reviewed exploded camera; terminal_detail regenerated after local bus placement sync."
+  },
+  {
+    "name": "one_frame",
+    "ok": true,
+    "seconds": 0.47,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\one_frame.png",
+      "-D",
+      "part=\"one_frame\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1800,1200",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "flow_section",
+    "ok": true,
+    "seconds": 3.06,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\flow_section.png",
+      "-D",
+      "part=\"flow_section\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1800,1200",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "terminal_detail",
+    "ok": true,
+    "seconds": 0.47,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\renders\\terminal_detail.png",
+      "-D",
+      "part=\"terminal_detail\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "--imgsize=1800,1200",
+      "--viewall",
+      "--autocenter",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_one_frame",
+    "ok": true,
+    "seconds": 3.33,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\one_frame.stl",
+      "-D",
+      "part=\"one_frame\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_gasket",
+    "ok": true,
+    "seconds": 82.06,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\gasket.stl",
+      "-D",
+      "part=\"gasket\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_anode",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\anode.stl",
+      "-D",
+      "part=\"anode\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_cathode",
+    "ok": true,
+    "seconds": 0.17,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\cathode.stl",
+      "-D",
+      "part=\"cathode\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_endplate",
+    "ok": true,
+    "seconds": 0.22,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\endplate.stl",
+      "-D",
+      "part=\"endplate\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_insulator",
+    "ok": true,
+    "seconds": 0.22,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\insulator.stl",
+      "-D",
+      "part=\"insulator\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "stl_tube_adapter",
+    "ok": true,
+    "seconds": 0.38,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\models\\tube_adapter.stl",
+      "-D",
+      "part=\"tube_adapter\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "dxf_frame_profile",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\drawings\\frame_profile.dxf",
+      "-D",
+      "part=\"frame_profile\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "dxf_anode_profile",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\drawings\\anode_profile.dxf",
+      "-D",
+      "part=\"anode_profile\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "dxf_cathode_profile",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\drawings\\cathode_profile.dxf",
+      "-D",
+      "part=\"cathode_profile\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "dxf_endplate_profile",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\drawings\\endplate_profile.dxf",
+      "-D",
+      "part=\"endplate_profile\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  },
+  {
+    "name": "dxf_insulator_profile",
+    "ok": true,
+    "seconds": 0.16,
+    "command": [
+      "C:\\Program Files\\OpenSCAD\\openscad.COM",
+      "-o",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\drawings\\insulator_profile.dxf",
+      "-D",
+      "part=\"insulator_profile\"",
+      "-D",
+      "electrode_count=3",
+      "-D",
+      "gap_mm=4",
+      "C:\\Users\\16494\\Desktop\\Kolbe_Codex_handoff\\kolbe_stack.scad"
+    ]
+  }
+]

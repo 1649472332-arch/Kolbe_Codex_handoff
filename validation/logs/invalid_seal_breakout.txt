@@ -1,0 +1,2 @@
+ERROR: Assertion '((((port_axis_z_mm - (port_d_mm / 2)) - seal_h) > 0) && ((((frame_t - seal_h) - port_axis_z_mm) - (port_d_mm / 2)) > 0))' failed: "side port bore must remain separated from both face seal grooves" in file kolbe_stack.scad, line 56
+TRACE: called by 'assert' in file kolbe_stack.scad, line 56

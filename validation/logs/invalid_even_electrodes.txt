@@ -1,0 +1,2 @@
+ERROR: Assertion '((electrode_count >= 3) && ((electrode_count % 2) == 1))' failed: "electrode_count must be odd and >= 3" in file kolbe_stack.scad, line 49
+TRACE: called by 'assert' in file kolbe_stack.scad, line 49

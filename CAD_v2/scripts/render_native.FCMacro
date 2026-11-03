@@ -1,0 +1,60 @@
+import FreeCAD as A, FreeCADGui as G
+import sys,json,time,traceback
+from pathlib import Path
+ROOT=Path(r'C:/Users/16494/Desktop/Kolbe_Codex_handoff/CAD_v2')
+sys.path.insert(0,str(ROOT/'scripts'))
+from build_assemblies import COLORS
+log=[]
+try:
+    G.getMainWindow().hide()
+    for stem in ['Kolbe_3','Kolbe_5','Kolbe_7','Kolbe_5_exploded']:
+        doc=A.openDocument(str(ROOT/'assemblies'/(stem+'.FCStd')))
+        A.setActiveDocument(doc.Name)
+        links=[o for o in doc.Objects if o.TypeId=='App::Link' and hasattr(o,'DisplayColor')]
+        for ob in links:
+            col=COLORS.get(ob.DisplayColor,(.7,.7,.7))
+            src=ob.LinkedObject
+            try:
+                src.ViewObject.ShapeColor=col
+                src.ViewObject.LineColor=(.12,.13,.14)
+                src.ViewObject.DisplayMode='Flat Lines'
+                if hasattr(src,'Tip') and src.Tip:
+                    src.Tip.ViewObject.ShapeColor=col
+                    src.Tip.ViewObject.LineColor=(.12,.13,.14)
+                    src.Tip.Visibility=True
+            except Exception:pass
+            ob.Visibility=True
+        doc.recompute()
+        stack=doc.getObject('Stack')
+        stack.Visibility=True
+        stack.Placement=A.Placement(A.Vector(),A.Rotation(A.Vector(1,0,0),-90))
+        G.activeDocument().activeView().viewAxonometric()
+        G.activeDocument().activeView().fitAll()
+        G.updateGui()
+        G.activeDocument().activeView().saveImage(str(ROOT/'renders'/(stem+'_upright.png')),2000,1500,'White')
+        # Save normal datum coordinates, with native colors and usable viewport.
+        stack.Placement=A.Placement()
+        G.activeDocument().activeView().viewAxonometric()
+        G.activeDocument().activeView().fitAll()
+        G.updateGui()
+        G.activeDocument().activeView().saveImage(str(ROOT/'renders'/(stem+'.png')),2000,1500,'White')
+        doc.save()
+        A.closeDocument(doc.Name)
+        log.append({'document':stem,'rendered':True})
+    for code in ['KF-101','KP-101','KP-601','KP-202','KB-A7','KB-801']:
+        doc=A.openDocument(str(ROOT/'parts'/(code+'.FCStd')))
+        A.setActiveDocument(doc.Name)
+        body=[o for o in doc.Objects if o.TypeId=='PartDesign::Body'][0]
+        role='frame' if code.startswith('KF') else 'anode' if code=='KP-101' else 'copper' if code=='KB-A7' else 'insulator'
+        body.ViewObject.ShapeColor=COLORS[role];body.Tip.ViewObject.ShapeColor=COLORS[role]
+        for ob in body.Group:ob.Visibility=False
+        body.Tip.Visibility=True;body.Visibility=True
+        G.activeDocument().activeView().viewAxonometric();G.activeDocument().activeView().fitAll();G.updateGui()
+        G.activeDocument().activeView().saveImage(str(ROOT/'renders'/(code+'.png')),1600,1200,'White')
+        doc.save();A.closeDocument(doc.Name)
+        log.append({'part':code,'rendered':True})
+    (ROOT/'validation'/'native_render.json').write_text(json.dumps(log,indent=2),encoding='utf-8')
+except Exception:
+    (ROOT/'validation'/'render_error.txt').write_text(traceback.format_exc(),encoding='utf-8')
+finally:
+    G.getMainWindow().close()

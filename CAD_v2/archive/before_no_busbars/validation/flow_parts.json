@@ -1,0 +1,138 @@
+{
+  "revision": "B1",
+  "units": "mm",
+  "active_part": {
+    "code": "KF-101",
+    "file": "KF-101.FCStd",
+    "volume_mm3": 114901.44548902377,
+    "valid": true,
+    "solids": 1,
+    "features": 32,
+    "material": "PVDF provisional; chemistry and pressure rating pending",
+    "configuration": "internal parallel inlet/outlet manifolds; no external bosses or fluid ports",
+    "frame_envelope_mm": {
+      "x": 150.0,
+      "y": 150.0,
+      "z": 6.0,
+      "z_origin": "0"
+    },
+    "gap_status": "6 mm provisional mechanical envelope only; actual gap awaits measured electrodes and flow requirements",
+    "wet_geometry_mm": {
+      "window": 50.0,
+      "corner_radius": 3.0,
+      "headers": false
+    },
+    "electrode_envelope_mm": {
+      "width": 56.0,
+      "height": 56.0,
+      "main_seal_outer_size": 55.0,
+      "main_seal_outer_corner_radius": 5.5,
+      "active_foil_manifold_holes": false
+    },
+    "main_face_seal": {
+      "centerline_size": 53.6,
+      "corner_radius": 4.8,
+      "groove_width": 1.4,
+      "groove_depth_each_face": 0.75,
+      "nominal_cs": 1.0
+    },
+    "axial_manifolds": {
+      "centers_xy": [
+        [
+          0.0,
+          -62.0
+        ],
+        [
+          0.0,
+          62.0
+        ]
+      ],
+      "diameter": 8.0,
+      "through_z": true,
+      "seal_grooves_each_face": 2,
+      "groove_mean_diameter": 14.0,
+      "groove_width": 2.2,
+      "groove_depth": 1.1,
+      "nominal_cs": 1.5
+    },
+    "buried_branches": {
+      "diameter": 2.2,
+      "center_z": 3.0,
+      "upper_path": "y=+69 to +25, intersects manifold at (0,+62) and opens into window",
+      "lower_path": "y=-69 to -25, intersects manifold at (0,-62) and opens into window"
+    },
+    "plugged_manufacturing_access": {
+      "count": 2,
+      "locations_xyz": [
+        [
+          0,
+          75,
+          3
+        ],
+        [
+          0,
+          -75,
+          3
+        ]
+      ],
+      "thread": "M4x0.7",
+      "thread_minor_core_diameter": 3.3,
+      "engagement": 6.0,
+      "washer_spotface_diameter": 6.0,
+      "spotface_depth": 0.2,
+      "required_seal": "D6 x 1 mm sealing washer; thread and washer compatibility require qualification",
+      "functional_interface": false
+    },
+    "dry_features": {
+      "bolt_clearance_diameter": 9.0,
+      "bolt_points": [
+        [
+          -65,
+          -55
+        ],
+        [
+          -65,
+          -20
+        ],
+        [
+          -65,
+          20
+        ],
+        [
+          -65,
+          55
+        ],
+        [
+          65,
+          -55
+        ],
+        [
+          65,
+          -20
+        ],
+        [
+          65,
+          20
+        ],
+        [
+          65,
+          55
+        ]
+      ],
+      "locators": [
+        "round 3.2 mm at (-51,46)",
+        "3.2 x 4.2 mm slot at (51,-46)"
+      ]
+    },
+    "native_feature_count": 32,
+    "status": "PROVISIONAL - flow behavior/distribution and pressure testing TBD (no CFD); verify electrode/gap fit, chemistry, plug sealing and manufacturing access before release"
+  },
+  "superseded_legacy_files": [
+    "KF-01.FCStd / KF-01.step (front-boss configuration; exclude from current design)",
+    "KF-02.FCStd / KF-02.step (front-boss configuration; exclude from current design)",
+    "KF-03.FCStd / KF-03.step (front-boss configuration; exclude from current design)",
+    "KF-04.FCStd / KF-04.step (front-boss configuration; exclude from current design)",
+    "KF-05.FCStd / KF-05.step (front-boss configuration; exclude from current design)",
+    "KF-06.FCStd / KF-06.step (front-boss configuration; exclude from current design)"
+  ]
+}

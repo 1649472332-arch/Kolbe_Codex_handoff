@@ -1,0 +1,37 @@
+[
+  {
+    "file": "anode.stl",
+    "triangles": 544,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "cathode.stl",
+    "triangles": 544,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "endplate.stl",
+    "triangles": 2348,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "gasket.stl",
+    "triangles": 2656,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "insulator.stl",
+    "triangles": 2348,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "one_frame.stl",
+    "triangles": 4232,
+    "non_manifold_edges": 0
+  },
+  {
+    "file": "tube_adapter.stl",
+    "triangles": 512,
+    "non_manifold_edges": 0
+  }
+]

@@ -1,0 +1,549 @@
+{
+  "audit": "FreeCAD BRep geometry audit; not a pressure, fluid-dynamics, materials, or manufacturing qualification",
+  "revision": "B1",
+  "units": "mm",
+  "runtime": "FreeCAD bundled Python / Part BRep",
+  "active_stack_configurations": [
+    3,
+    5,
+    7
+  ],
+  "custom_part_count": 23,
+  "custom_parts": [
+    {
+      "code": "KB-801",
+      "source": "KB-801.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 22898.497298,
+      "bbox_mm": [
+        60.0,
+        130.0,
+        -30.0,
+        30.0,
+        -5.0,
+        31.5
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-802",
+      "source": "KB-802.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 22352.497298,
+      "bbox_mm": [
+        60.0,
+        130.0,
+        -30.0,
+        30.0,
+        -5.0,
+        25.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-A3",
+      "source": "KB-A3.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1211.955542,
+      "bbox_mm": [
+        82.0,
+        121.0,
+        -4.0,
+        4.0,
+        -2.0,
+        15.05
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-A5",
+      "source": "KB-A5.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 2317.746917,
+      "bbox_mm": [
+        82.0,
+        121.0,
+        -4.0,
+        4.0,
+        -2.0,
+        27.75
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-A7",
+      "source": "KB-A7.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 3423.538291,
+      "bbox_mm": [
+        82.0,
+        121.0,
+        -4.0,
+        4.0,
+        -2.0,
+        40.45
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-C3",
+      "source": "KB-C3.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1708.146917,
+      "bbox_mm": [
+        -121.0,
+        -82.0,
+        -4.0,
+        4.0,
+        -2.0,
+        15.05
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-C5",
+      "source": "KB-C5.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 2813.938291,
+      "bbox_mm": [
+        -121.0,
+        -82.0,
+        -4.0,
+        4.0,
+        -2.0,
+        27.75
+      ],
+      "pass": true
+    },
+    {
+      "code": "KB-C7",
+      "source": "KB-C7.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 3919.729666,
+      "bbox_mm": [
+        -121.0,
+        -82.0,
+        -4.0,
+        4.0,
+        -2.0,
+        40.45
+      ],
+      "pass": true
+    },
+    {
+      "code": "KF-101",
+      "source": "KF-101.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 114901.445489,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        -0.0,
+        6.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KH-901",
+      "source": "KH-901.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 94.458869,
+      "bbox_mm": [
+        -2.75,
+        2.75,
+        0.0,
+        8.0,
+        -2.75,
+        2.75
+      ],
+      "pass": true
+    },
+    {
+      "code": "KH-902",
+      "source": "KH-902.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 4.951935,
+      "bbox_mm": [
+        -2.75,
+        2.75,
+        0.0,
+        0.5,
+        -2.75,
+        2.75
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-101",
+      "source": "KP-101.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1494.03172,
+      "bbox_mm": [
+        -28.0,
+        100.0,
+        -28.0,
+        28.0,
+        0.0,
+        0.35
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-102",
+      "source": "KP-102.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 1494.03172,
+      "bbox_mm": [
+        -100.0,
+        28.0,
+        -28.0,
+        28.0,
+        0.0,
+        0.35
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-201",
+      "source": "KP-201.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 260872.630762,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        12.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-202",
+      "source": "KP-202.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 306338.459909,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        14.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-203",
+      "source": "KP-203.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 131307.164864,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        6.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-204",
+      "source": "KP-204.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 263586.966814,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        12.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-301",
+      "source": "KP-301.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 717.71184,
+      "bbox_mm": [
+        -8.0,
+        8.0,
+        -8.0,
+        8.0,
+        0.0,
+        3.0
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-501",
+      "source": "KP-501.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 558.300284,
+      "bbox_mm": [
+        -4.5,
+        4.5,
+        0.0,
+        15.0,
+        -4.5,
+        4.5
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-502",
+      "source": "KP-502.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 4.021239,
+      "bbox_mm": [
+        -1.7,
+        1.7,
+        0.0,
+        2.0,
+        -1.7,
+        1.7
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-503",
+      "source": "KP-503.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 177.028746,
+      "bbox_mm": [
+        -1.5,
+        1.5,
+        0.0,
+        35.0,
+        -1.5,
+        1.5
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-601",
+      "source": "KP-601.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 6283.72092,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        0.35
+      ],
+      "pass": true
+    },
+    {
+      "code": "KP-602",
+      "source": "KP-602.FCStd",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 6283.72092,
+      "bbox_mm": [
+        -75.0,
+        75.0,
+        -75.0,
+        75.0,
+        0.0,
+        0.35
+      ],
+      "pass": true
+    }
+  ],
+  "assembly_generated_seal_solids": [
+    {
+      "code": "KS-102-COMP",
+      "source": "assembly generated compressed seal",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 77.723135,
+      "pass": true
+    },
+    {
+      "code": "KS-101-COMP",
+      "source": "assembly generated compressed seal",
+      "valid": true,
+      "solid_count": 1,
+      "volume_mm3": 161.917127,
+      "pass": true
+    }
+  ],
+  "kf101": {
+    "file": "parts/KF-101.FCStd",
+    "valid": true,
+    "solid_count": 1,
+    "volume_mm3": 114901.445489,
+    "bbox_mm": [
+      -75.0,
+      75.0,
+      -75.0,
+      75.0,
+      -0.0,
+      6.0
+    ],
+    "feature_type_counts": {
+      "Sketcher::SketchObject": 16,
+      "PartDesign::Pad": 1,
+      "PartDesign::Pocket": 15
+    },
+    "flow_void_probes": [
+      {
+        "name": "upper_wet_window_to_M4_access_axis",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "upper_branch_to_axial_manifold_junction",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "upper_branch_to_window_junction",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "upper_D8_axial_manifold_axis",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "lower_wet_window_to_M4_access_axis",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "lower_branch_to_axial_manifold_junction",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "lower_branch_to_window_junction",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "name": "lower_D8_axial_manifold_axis",
+        "material_interference_mm3": 0.0,
+        "pass": true
+      }
+    ],
+    "main_perimeter_groove_closed_loop_samples": [
+      {
+        "face": "top",
+        "sample_count": 60,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "face": "bottom",
+        "sample_count": 60,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      }
+    ],
+    "manifold_groove_closed_loop_samples": [
+      {
+        "face": "top",
+        "center_xy": [
+          0,
+          -62
+        ],
+        "sample_count": 32,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "face": "top",
+        "center_xy": [
+          0,
+          62
+        ],
+        "sample_count": 32,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "face": "bottom",
+        "center_xy": [
+          0,
+          -62
+        ],
+        "sample_count": 32,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      },
+      {
+        "face": "bottom",
+        "center_xy": [
+          0,
+          62
+        ],
+        "sample_count": 32,
+        "max_material_interference_mm3": 0.0,
+        "pass": true
+      }
+    ]
+  },
+  "dimensional_metrics": {
+    "chamber_area_mm2": 2492.274334,
+    "electrode_coupon_area_mm2": 3132.566371,
+    "electrode_coupon_corner_radius_mm": 2.0,
+    "chamber_to_coupon_area_percent": 79.5601,
+    "main_gland": {
+      "cs_mm": 1.0,
+      "groove_width_mm": 1.4,
+      "depth_mm": 0.75,
+      "squeeze_percent": 25.0,
+      "fill_percent": 74.7998,
+      "outer_envelope_mm": 55.0,
+      "metal_coupon_outer_land_each_side_mm": 0.5,
+      "inner_envelope_mm": 52.2,
+      "window_edge_to_groove_inner_land_mm": 1.1
+    },
+    "manifold_gland": {
+      "cs_mm": 1.5,
+      "groove_width_mm": 2.2,
+      "depth_mm": 1.1,
+      "squeeze_percent": 26.6667,
+      "fill_percent": 73.0226
+    },
+    "minimum_branch_cover_to_main_groove_floor_mm": 1.15,
+    "minimum_branch_cover_to_manifold_groove_floor_mm": 0.8
+  },
+  "overall_pass": true,
+  "unresolved": [
+    "Actual electrode/foil and carrier dimensional tolerances require supplier confirmation.",
+    "Flow distribution, pressure rating, fluid compatibility, shunt-current effects, and plug/washer sealing are untested.",
+    "The 6 mm frame thickness is a provisional mechanical envelope; operating gap remains TBD."
+  ]
+}

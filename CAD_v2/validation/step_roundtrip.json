@@ -1,0 +1,20 @@
+[
+  {
+    "file": "Kolbe_3.FCStd",
+    "instances": 84,
+    "step_solids": 84,
+    "valid": true
+  },
+  {
+    "file": "Kolbe_5.FCStd",
+    "instances": 110,
+    "step_solids": 110,
+    "valid": true
+  },
+  {
+    "file": "Kolbe_7.FCStd",
+    "instances": 136,
+    "step_solids": 136,
+    "valid": true
+  }
+]

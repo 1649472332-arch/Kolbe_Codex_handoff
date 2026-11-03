@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420mm" height="297mm" viewBox="0 0 420 297"><rect x="0" y="0" width="420" height="297" fill="white"/><rect x="8" y="8" width="404" height="281" rx="1" fill="none" stroke="#243647" stroke-width=".55"/><text x="12.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.20" font-weight="bold" fill="#607283" text-anchor="start">KOLBE ELECTROCHEMICAL CELL  /  PROVISIONAL DESIGN REVIEW</text><text x="408.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="end">REV B1   |   DIMENSIONS mm</text><line x1="12.000" y1="21.000" x2="408.000" y2="21.000" stroke="#243647" stroke-width="0.45"/><text x="12.00" y="30.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="7.00" font-weight="bold" fill="#162331" text-anchor="start">KH-901  |  M4交叉孔堵头</text><text x="12.00" y="36.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="normal" fill="#435464" text-anchor="start">BREP-derived orthographic projections   |   First-angle orientation   |   Not for manufacture</text><g transform="translate(108.0000,167.0000) scale(4.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -1.65 6 L -1.65 0 " />
+<path id= "2" d=" M -2.75 7.2 L -2.75 6 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 1.65 0 L 1.65 6 " />
+<path d="M-1.65, 0 L-1.60863, 0  L-1.4866, 0  L-1.29002, 0  L-1.02876, 0  L-0.715908, 0  L-0.36716, 0  L-2.77556e-16, 0  L0.36716, 0  L0.715908, 0  L1.02876, 0  L1.29002, 0  L1.4866, 0  L1.60863, 0  L1.65, 0 " /><path d="M-2.75, 6 L-2.68105, 6  L-2.47766, 6  L-2.15004, 6  L-1.7146, 6  L-1.19318, 6  L-0.611933, 6  L-5.55112e-16, 6  L0.611933, 6  L1.19318, 6  L1.7146, 6  L2.15004, 6  L2.47766, 6  L2.68105, 6  L2.75, 6 " /><path id= "4" d=" M 2.75 6 L 2.75 7.2 " />
+<path d="M2.75, 7.2 Q2.74985, 7.2 2.70416, 7.2 " /><path id= "6" d=" M 2.70416 8 L 2.70416 7.2 " />
+<path d="M-2.70416, 8 L-2.55269, 8  L-2.30118, 8  L-1.9595, 8  L-1.54104, 8  L-1.06218, 8  L-0.541705, 8  L-5.44009e-15, 8  L0.541705, 8  L1.06218, 8  L1.54104, 8  L1.9595, 8  L2.30118, 8  L2.55269, 8  L2.70416, 8 " /><path id= "8" d=" M -2.70416 8 L -2.70416 7.2 " />
+<path d="M-2.70416, 7.2 Q-2.74985, 7.2 -2.75, 7.2 " /></g>
+</g><g transform="translate(265.0000,158.0000) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 1.65 -6 L 1.65 0 " />
+<path id= "2" d=" M -1.65 -6 L -1.65 0 " />
+<path id= "3" d=" M 2.75 -8 L 2.75 -6 " />
+<path id= "4" d=" M -2.75 -8 L -2.75 -6 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M0, 0 C-0.185375, 0 -0.369012, 0 -0.54496, 0  C-0.601943, 0 -0.658926, 0 -0.715908, 0  C-0.76989, 0 -0.823871, 0 -0.877853, 0  C-0.928155, 0 -0.978456, 0 -1.02876, 0  C-1.07475, 0 -1.12074, 0 -1.16673, 0  C-1.20782, 0 -1.24892, 0 -1.29002, 0  C-1.32571, 0 -1.3614, 0 -1.39709, 0  C-1.42693, 0 -1.45676, 0 -1.4866, 0  C-1.5102, 0 -1.5338, 0 -1.55741, 0  C-1.57448, 0 -1.59156, 0 -1.60863, 0  C-1.61896, 0 -1.62929, 0 -1.63963, 0  C-1.64308, 0 -1.64654, 0 -1.65, 0 " /><path d="M1.65, 0 Q1.64481, 0 1.63963, 0  Q1.62413, 0 1.60863, 0  Q1.58302, 0 1.55741, 0  Q1.522, 0 1.4866, 0  Q1.44185, 0 1.39709, 0  Q1.34356, 0 1.29002, 0  Q1.22837, 0 1.16673, 0  Q1.09774, 0 1.02876, 0  Q0.953306, 0 0.877853, 0  Q0.796881, 0 0.715908, 0  Q0.546882, 0 0.36716, 0  Q0.185393, 0 4.16334e-16, 0 " /><path d="M0, -6 Q-0.153951, -6 -0.307902, -6  Q-0.614091, -6 -0.908267, -6  Q-1.05072, -6 -1.19318, -6  Q-1.32813, -6 -1.46309, -6  Q-1.58884, -6 -1.7146, -6  Q-1.82957, -6 -1.94454, -6  Q-2.04729, -6 -2.15004, -6  Q-2.23926, -6 -2.32849, -6  Q-2.40308, -6 -2.47766, -6  Q-2.53667, -6 -2.59568, -6  Q-2.63837, -6 -2.68105, -6  Q-2.70688, -6 -2.73271, -6  Q-2.74135, -6 -2.75, -6 " /><path d="M2.75, -6 Q2.74135, -6 2.73271, -6  Q2.70688, -6 2.68105, -6  Q2.63837, -6 2.59568, -6  Q2.53667, -6 2.47766, -6  Q2.40308, -6 2.32849, -6  Q2.23926, -6 2.15004, -6  Q2.04729, -6 1.94454, -6  Q1.82957, -6 1.7146, -6  Q1.58884, -6 1.46309, -6  Q1.32813, -6 1.19318, -6  Q1.05072, -6 0.908267, -6  Q0.7601, -6 0.611933, -6  Q0.308988, -6 6.66134e-16, -6 " /><path d="M0, -7.2 Q0.252087, -7.2 0.5, -7.2 " /><path id= "6" d=" M 0.5 -8 L 0.5 -7.2 " />
+<path d="M2.75, -8 L2.7365, -8  L2.69612, -8  L2.62926, -8  L2.53659, -8  L2.419, -8  L2.27765, -8  L2.11394, -8  L1.92947, -8  L1.72605, -8  L1.50567, -8  L1.27052, -8  L1.02288, -8  L0.765197, -8  L0.5, -8 " /><path d="M-0.5, -8 L-0.765197, -8  L-1.02288, -8  L-1.27052, -8  L-1.50567, -8  L-1.72605, -8  L-1.92947, -8  L-2.11394, -8  L-2.27765, -8  L-2.419, -8  L-2.53659, -8  L-2.62926, -8  L-2.69612, -8  L-2.7365, -8  L-2.75, -8 " /><path id= "9" d=" M -0.5 -8 L -0.5 -7.2 " />
+<path d="M-0.5, -7.2 Q-0.252087, -7.2 -6.66134e-16, -7.2 " /></g>
+</g><g transform="translate(350.0000,175.7506) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -1.65 4.89898 L -1.65 0 " />
+<path id= "2" d=" M 1.65 4.89898 L 1.65 0 " />
+<path id= "3" d=" M -2.75 6.53197 L -2.75 4.89898 " />
+<path id= "4" d=" M 2.75 6.53197 L 2.75 4.89898 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M1.16673 0.67361 A1.65 0.952628 0 0 0 1.65 2.33327e-16" />
+<path d="M1.65 0 A1.65 0.952628 0 0 0 -1.65 -1.16663e-16" />
+<path d="M-1.65 -1.16663e-16 A1.65 0.952628 0 0 0 1.16673 0.67361" />
+<path d="M1.16673 5.57259 A1.65 0.952628 0 0 0 1.65 4.89898" />
+<path d="M-1.65 4.89898 A1.65 0.952628 0 0 0 1.16673 5.57259" />
+<path d="M1.94454 6.02166 A2.75 1.58771 0 0 0 2.75 4.89898" />
+<path d="M2.75 4.89898 A2.75 1.58771 0 0 0 1.65 3.62881" />
+<path d="M-1.65 3.62881 A2.75 1.58771 0 0 0 -2.75 4.89898" />
+<path d="M-2.75 4.89898 A2.75 1.58771 0 0 0 1.94454 6.02166" />
+<path d="M1.94454 7.00146 A2.75 1.58771 180 0 1 1.55858 7.18687" />
+<path id= "11" d=" M 1.55858 7.84007 L 1.55858 7.18687 " />
+<path d="M-2.75 6.53197 A2.75 1.58771 0 0 0 1.55858 7.84007" />
+<path d="M2.26569 7.43182 A2.75 1.58771 0 0 0 2.75 6.53197" />
+<path id= "14" d=" M 2.26569 7.43182 L 2.26569 6.77862 " />
+<path d="M2.26569 6.77862 A2.75 1.58771 180 0 1 1.94454 7.00146" />
+<path id= "16" d=" M 2.26569 7.43182 L 1.72081 7.11723 " />
+</g>
+</g><g transform="translate(220.0000,118.0000) scale(0.7000000) rotate(90)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.500000"
+   transform="scale(1, -1)"
+  >
+<circle cx ="0" cy ="0" r ="1.65" /></g>
+</g><text x="108.00" y="231.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">PLAN / FRONT  (4.0:1)</text><text x="265.00" y="202.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SIDE / 侧视  (3.0:1)</text><text x="350.00" y="203.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">ISOMETRIC / 轴测  (3.0:1)</text><text x="220.00" y="138.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SECTION A-A / 剖视  (Y=0, Z=0)</text><line x1="97.000" y1="151.000" x2="119.000" y2="151.000" stroke="#B14B27" stroke-width="0.25" stroke-dasharray="1.4 1.0"/><text x="97.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><text x="119.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><line x1="97.000" y1="167.000" x2="97.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="119.000" y1="167.000" x2="119.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="97.000" y1="218.000" x2="119.000" y2="218.000" stroke="#246B8E" stroke-width="0.35"/><path d="M97.00,218.00 l2,-1 l0,2 z M119.00,218.00 l-2,-1 l0,2 z" fill="#246B8E"/><text x="108.00" y="216.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">5.5 O/A</text><line x1="97.000" y1="135.000" x2="89.400" y2="135.000" stroke="#526171" stroke-width="0.25"/><line x1="97.000" y1="167.000" x2="89.400" y2="167.000" stroke="#526171" stroke-width="0.25"/><line x1="88.000" y1="135.000" x2="88.000" y2="167.000" stroke="#246B8E" stroke-width="0.35"/><path d="M88.00,135.00 l-1,2 l2,0 z M88.00,167.00 l-1,-2 l2,0 z" fill="#246B8E"/><text x="87.00" y="151.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">8 O/A</text><line x1="12.000" y1="55.000" x2="408.000" y2="55.000" stroke="#243647" stroke-width="0.4"/><text x="12.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.40" font-weight="bold" fill="#162331" text-anchor="start">FEATURE / DIMENSION SCHEDULE  |  特征尺寸表</text><text x="14.00" y="69.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">01  Axis global +Y; M4x0.7 nominal smooth Ø3.3 envelope x 6 long</text><text x="14.00" y="74.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">02  Low-profile head Ø5.5 x 2; driver slot 1.0 wide x 0.8 deep</text><text x="14.00" y="79.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">03  Thread is a smooth nominal envelope; helical thread is not modeled</text><text x="14.00" y="84.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">04  Fit/seal compatibility with plugged manufacturing access requires qualification</text><line x1="256.000" y1="58.000" x2="256.000" y2="92.000" stroke="#B4C0CA" stroke-width="0.3"/><text x="262.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">MATERIAL / 材料</text><text x="262.00" y="68.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.70" font-weight="normal" fill="#243647" text-anchor="start">316L stainless steel; exact grade and thread fit TBD</text><text x="262.00" y="76.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">TOLERANCES / 公差</text><text x="262.00" y="82.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.45" font-weight="normal" fill="#243647" text-anchor="start">Unspecified unless individually stated; confirm before release.</text><text x="262.00" y="90.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#9B4B2A" text-anchor="start">316L exact grade and thread fit TBD; no vendor certification implied</text><rect x="12" y="260" width="396" height="22" fill="#F5F7F8" stroke="#526171" stroke-width=".35"/><line x1="250.000" y1="260.000" x2="250.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="322.000" y1="260.000" x2="322.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="366.000" y1="260.000" x2="366.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><text x="15.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">ASSEMBLY</text><text x="15.00" y="276.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="normal" fill="#162331" text-anchor="start">Compact plate-press cell</text><text x="253.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">PART / DRAWING</text><text x="253.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#162331" text-anchor="start">KH-901 / DWG-KH-901</text><text x="325.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">SCALE / 比例</text><text x="325.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#162331" text-anchor="start">See each view; dimensions govern</text><text x="369.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">STATUS</text><text x="369.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#9B4B2A" text-anchor="start">REVIEW</text><text x="12.00" y="253.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.55" font-weight="bold" fill="#9B4B2A" text-anchor="start">Thread/washer fit and plug sealing require qualification; thread is not modeled helically.</text></svg>

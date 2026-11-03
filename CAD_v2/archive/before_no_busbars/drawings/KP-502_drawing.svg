@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420mm" height="297mm" viewBox="0 0 420 297"><rect x="0" y="0" width="420" height="297" fill="white"/><rect x="8" y="8" width="404" height="281" rx="1" fill="none" stroke="#243647" stroke-width=".55"/><text x="12.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.20" font-weight="bold" fill="#607283" text-anchor="start">KOLBE ELECTROCHEMICAL CELL  /  PROVISIONAL DESIGN REVIEW</text><text x="408.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="end">REV B1   |   DIMENSIONS mm</text><line x1="12.000" y1="21.000" x2="408.000" y2="21.000" stroke="#243647" stroke-width="0.45"/><text x="12.00" y="30.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="7.00" font-weight="bold" fill="#162331" text-anchor="start">KP-502  |  压缩密封圈</text><text x="12.00" y="36.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="normal" fill="#435464" text-anchor="start">BREP-derived orthographic projections   |   First-angle orientation   |   Not for manufacture</text><g transform="translate(108.0000,155.0000) scale(4.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -1.7 2 L -1.7 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 1.7 0 L 1.7 2 " />
+<path d="M-1.7, 0 L-1.65738, 0  L-1.53165, 0  L-1.32911, 0  L-1.05993, 0  L-0.737602, 0  L-0.378286, 0  L-3.33067e-16, 0  L0.378286, 0  L0.737602, 0  L1.05993, 0  L1.32911, 0  L1.53165, 0  L1.65738, 0  L1.7, 0 " /><path d="M-1.7, 2 L-1.65738, 2  L-1.53165, 2  L-1.32911, 2  L-1.05993, 2  L-0.737602, 2  L-0.378286, 2  L-3.33067e-16, 2  L0.378286, 2  L0.737602, 2  L1.05993, 2  L1.32911, 2  L1.53165, 2  L1.65738, 2  L1.7, 2 " /></g>
+</g><g transform="translate(265.0000,167.0000) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 1.7 -2 L 1.7 0 " />
+<path id= "2" d=" M -1.7 -2 L -1.7 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M0, 0 C-0.190992, 0 -0.380194, 0 -0.561474, 0  C-0.620184, 0 -0.678893, 0 -0.737602, 0  C-0.79322, 0 -0.848837, 0 -0.904455, 0  C-0.956281, 0 -1.00811, 0 -1.05993, 0  C-1.10732, 0 -1.1547, 0 -1.20208, 0  C-1.24443, 0 -1.28677, 0 -1.32911, 0  C-1.36589, 0 -1.40266, 0 -1.43943, 0  C-1.47017, 0 -1.50091, 0 -1.53165, 0  C-1.55597, 0 -1.58028, 0 -1.6046, 0  C-1.62219, 0 -1.63979, 0 -1.65738, 0  C-1.66802, 0 -1.67867, 0 -1.68931, 0  C-1.69287, 0 -1.69644, 0 -1.7, 0 " /><path d="M1.7, 0 Q1.69466, 0 1.68931, 0  Q1.67334, 0 1.65738, 0  Q1.63099, 0 1.6046, 0  Q1.56812, 0 1.53165, 0  Q1.48554, 0 1.43943, 0  Q1.38427, 0 1.32911, 0  Q1.2656, 0 1.20208, 0  Q1.13101, 0 1.05993, 0  Q0.982194, 0 0.904455, 0  Q0.821028, 0 0.737602, 0  Q0.563454, 0 0.378286, 0  Q0.191011, 0 4.16334e-16, 0 " /><path d="M0, -2 C-0.190992, -2 -0.380194, -2 -0.561474, -2  C-0.620184, -2 -0.678893, -2 -0.737602, -2  C-0.79322, -2 -0.848837, -2 -0.904455, -2  C-0.956281, -2 -1.00811, -2 -1.05993, -2  C-1.10732, -2 -1.1547, -2 -1.20208, -2  C-1.24443, -2 -1.28677, -2 -1.32911, -2  C-1.36589, -2 -1.40266, -2 -1.43943, -2  C-1.47017, -2 -1.50091, -2 -1.53165, -2  C-1.55597, -2 -1.58028, -2 -1.6046, -2  C-1.62219, -2 -1.63979, -2 -1.65738, -2  C-1.66802, -2 -1.67867, -2 -1.68931, -2  C-1.69287, -2 -1.69644, -2 -1.7, -2 " /><path d="M1.7, -2 Q1.69466, -2 1.68931, -2  Q1.67334, -2 1.65738, -2  Q1.63099, -2 1.6046, -2  Q1.56812, -2 1.53165, -2  Q1.48554, -2 1.43943, -2  Q1.38427, -2 1.32911, -2  Q1.2656, -2 1.20208, -2  Q1.13101, -2 1.05993, -2  Q0.982194, -2 0.904455, -2  Q0.821028, -2 0.737602, -2  Q0.563454, -2 0.378286, -2  Q0.191011, -2 4.16334e-16, -2 " /></g>
+</g><g transform="translate(350.0000,167.4495) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -1.7 1.63299 L -1.7 0 " />
+<path id= "2" d=" M 1.7 1.63299 L 1.7 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M1.20208 0.694022 A1.7 0.981495 0 0 0 1.7 2.40397e-16" />
+<path d="M1.7 0 A1.7 0.981495 0 0 0 -1.7 -1.20199e-16" />
+<path d="M-1.7 -1.20199e-16 A1.7 0.981495 0 0 0 1.20208 0.694022" />
+<path d="M1.20208 2.32702 A1.7 0.981495 0 0 0 1.7 1.63299" />
+<path d="M-1.7 1.63299 A1.7 0.981495 0 0 0 1.20208 2.32702" />
+<path d="M1.06066 0.612372 A1.5 0.866025 0 0 0 1.5 2.12115e-16" />
+<path d="M1.5 0 A1.5 0.866025 0 0 0 -1.5 -1.06058e-16" />
+<path d="M-1.5 -1.06058e-16 A1.5 0.866025 0 0 0 1.06066 0.612372" />
+<path d="M0.5 0.816497 A1.5 0.866025 0 0 0 -0.5 0.816497" />
+</g>
+</g><g transform="translate(265.0000,118.0000) scale(3.0000000) rotate(90)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<circle cx ="0" cy ="0" r ="1.7" /><circle cx ="0" cy ="0" r ="1.5" /></g>
+</g><text x="108.00" y="231.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">PLAN / FRONT  (4.0:1)</text><text x="265.00" y="202.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SIDE / 侧视  (3.0:1)</text><text x="350.00" y="203.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">ISOMETRIC / 轴测  (3.0:1)</text><text x="265.00" y="138.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SECTION A-A / 剖视  (Y=0, Z=0)</text><line x1="101.200" y1="151.000" x2="114.800" y2="151.000" stroke="#B14B27" stroke-width="0.25" stroke-dasharray="1.4 1.0"/><text x="101.20" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><text x="114.80" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><line x1="101.200" y1="155.000" x2="101.200" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="114.800" y1="155.000" x2="114.800" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="101.200" y1="218.000" x2="114.800" y2="218.000" stroke="#246B8E" stroke-width="0.35"/><path d="M101.20,218.00 l2,-1 l0,2 z M114.80,218.00 l-2,-1 l0,2 z" fill="#246B8E"/><text x="108.00" y="216.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">3.4 O/A</text><line x1="12.000" y1="55.000" x2="408.000" y2="55.000" stroke="#243647" stroke-width="0.4"/><text x="12.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.40" font-weight="bold" fill="#162331" text-anchor="start">FEATURE / DIMENSION SCHEDULE  |  特征尺寸表</text><text x="14.00" y="69.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">01  Compression seal: OD3.4 x 2 long</text><text x="14.00" y="74.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">02  Modeled bore D3.0; free-state bore D2.95</text><text x="14.00" y="79.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">03  PTFE supplier/fit TBD</text><line x1="256.000" y1="58.000" x2="256.000" y2="92.000" stroke="#B4C0CA" stroke-width="0.3"/><text x="262.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">MATERIAL / 材料</text><text x="262.00" y="68.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.70" font-weight="normal" fill="#243647" text-anchor="start">PTFE, unfilled; supplier TBD</text><text x="262.00" y="76.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">TOLERANCES / 公差</text><text x="262.00" y="82.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.45" font-weight="normal" fill="#243647" text-anchor="start">Unspecified unless individually stated; confirm before release.</text><text x="262.00" y="90.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#9B4B2A" text-anchor="start">PTFE, unfilled; supplier TBD</text><rect x="12" y="260" width="396" height="22" fill="#F5F7F8" stroke="#526171" stroke-width=".35"/><line x1="250.000" y1="260.000" x2="250.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="322.000" y1="260.000" x2="322.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="366.000" y1="260.000" x2="366.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><text x="15.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">ASSEMBLY</text><text x="15.00" y="276.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="normal" fill="#162331" text-anchor="start">Compact plate-press cell</text><text x="253.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">PART / DRAWING</text><text x="253.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#162331" text-anchor="start">KP-502 / DWG-KP-502</text><text x="325.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">SCALE / 比例</text><text x="325.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#162331" text-anchor="start">See each view; dimensions govern</text><text x="369.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">STATUS</text><text x="369.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#9B4B2A" text-anchor="start">REVIEW</text><text x="12.00" y="253.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.55" font-weight="bold" fill="#9B4B2A" text-anchor="start">GAP 6 mm IS A REVIEW ENVELOPE ONLY; FINAL ELECTRODE/GAP/FLOW ARE TBD. No pressure rating or final torque assigned.</text></svg>

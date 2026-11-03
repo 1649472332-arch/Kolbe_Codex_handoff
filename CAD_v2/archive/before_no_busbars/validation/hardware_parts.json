@@ -1,0 +1,233 @@
+{
+  "revision": "B1",
+  "units": "mm",
+  "status": "ENGINEERING REVIEW - pressure, chemistry and manufacturing release pending",
+  "source": "design_basis.json and scripts/cad_common.py",
+  "parts": [
+    {
+      "code": "KB-A3",
+      "file": "KB-A3.FCStd",
+      "volume_mm3": 1211.9555423896247,
+      "valid": true,
+      "solids": 1,
+      "features": 10,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-C3",
+      "file": "KB-C3.FCStd",
+      "volume_mm3": 1708.1469167720277,
+      "valid": true,
+      "solids": 1,
+      "features": 14,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-A5",
+      "file": "KB-A5.FCStd",
+      "volume_mm3": 2317.7469167720283,
+      "valid": true,
+      "solids": 1,
+      "features": 14,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-C5",
+      "file": "KB-C5.FCStd",
+      "volume_mm3": 2813.938291154432,
+      "valid": true,
+      "solids": 1,
+      "features": 18,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-A7",
+      "file": "KB-A7.FCStd",
+      "volume_mm3": 3423.538291154432,
+      "valid": true,
+      "solids": 1,
+      "features": 18,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-C7",
+      "file": "KB-C7.FCStd",
+      "volume_mm3": 3919.7296655368373,
+      "valid": true,
+      "solids": 1,
+      "features": 22,
+      "material": "Copper, grade TBD; current rating not established"
+    },
+    {
+      "code": "KB-801",
+      "file": "KB-801.FCStd",
+      "volume_mm3": 22898.497297986476,
+      "valid": true,
+      "solids": 1,
+      "features": 8,
+      "material": "PEEK, grade TBD; structural qualification pending"
+    },
+    {
+      "code": "KB-802",
+      "file": "KB-802.FCStd",
+      "volume_mm3": 22352.497297986483,
+      "valid": true,
+      "solids": 1,
+      "features": 8,
+      "material": "PEEK, grade TBD; structural qualification pending"
+    },
+    {
+      "code": "KH-901",
+      "file": "KH-901.FCStd",
+      "volume_mm3": 94.4588689590424,
+      "valid": true,
+      "solids": 1,
+      "features": 6,
+      "material": "316L stainless steel; exact grade and thread fit TBD"
+    },
+    {
+      "code": "KH-902",
+      "file": "KH-902.FCStd",
+      "volume_mm3": 4.951935420220911,
+      "valid": true,
+      "solids": 1,
+      "features": 2,
+      "material": "Washer stock TBD"
+    },
+    {
+      "code": "KS-101",
+      "file": "KS-101.FCStd",
+      "volume_mm3": 161.91712732056533,
+      "valid": true,
+      "solids": 1,
+      "features": 1,
+      "material": "Elastomer TBD; seal compound and hardness unresolved"
+    },
+    {
+      "code": "KS-102",
+      "file": "KS-102.FCStd",
+      "volume_mm3": 77.72313465857872,
+      "valid": true,
+      "solids": 1,
+      "features": 1,
+      "material": "Elastomer TBD; seal compound and hardness unresolved"
+    }
+  ],
+  "dimensions": {
+    "KB-A3": {
+      "spine": "X115..121, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        1
+      ],
+      "finger_interval": "x=82..116, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 13.05
+    },
+    "KB-C3": {
+      "spine": "X-121..-115, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        0,
+        2
+      ],
+      "finger_interval": "x=-116..-82, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=-90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 13.05
+    },
+    "KB-A5": {
+      "spine": "X115..121, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        1,
+        3
+      ],
+      "finger_interval": "x=82..116, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 25.75
+    },
+    "KB-C5": {
+      "spine": "X-121..-115, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        0,
+        2,
+        4
+      ],
+      "finger_interval": "x=-116..-82, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=-90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 25.75
+    },
+    "KB-A7": {
+      "spine": "X115..121, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        1,
+        3,
+        5
+      ],
+      "finger_interval": "x=82..116, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 38.45
+    },
+    "KB-C7": {
+      "spine": "X-121..-115, Y-4..4, Z-2..H+2",
+      "layer_indexing": "zero-based i=0..n-1",
+      "finger_indices": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "finger_interval": "x=-116..-82, y=-4..4, z=(i*6.35-2)..i*6.35",
+      "through_holes": "\u81344.5 along Z at x=-90 on each active finger",
+      "support_crossholes": "\u81344.5 along X through 6 mm spine at Z=1 and H-3; M4x0.7 tapped, core diameter 3.3",
+      "active_height": 38.45
+    },
+    "KB-801": {
+      "foot": "X60..130, Y-30..30, Z-5..0",
+      "foot_holes": "2 x \u81349 through at (65,\u536420)",
+      "post": "X121..128, Y-6..6, Z-0.5..31.5",
+      "attachment_hole": "\u81344.5 along X at Y=0,Z=27"
+    },
+    "KB-802": {
+      "foot": "X60..130, Y-30..30, Z-5..0",
+      "foot_holes": "2 x \u81349 through at (65,\u536420)",
+      "post": "X121..128, Y-6..6, Z-0.5..25",
+      "attachment_hole": "\u81344.5 along X at Y=0,Z=21",
+      "assembly": "flip 180 degrees about global X, translate to stack height"
+    },
+    "KH-901": {
+      "axis": "global +Y",
+      "thread": "M4x0.7 nominal smooth \u81343.3 envelope, L6",
+      "head": "\u81345.5 x 2, with 1.0 wide driver slot, depth 0.8"
+    },
+    "KH-902": {
+      "axis": "global +Y",
+      "outer_diameter": 5.5,
+      "inner_diameter": 4.2,
+      "thickness": 0.5
+    },
+    "KS-101": {
+      "centerline": "rounded square 53.6 x 53.6, R4.8",
+      "cross_section_diameter": 1,
+      "material": "elastomer TBD"
+    },
+    "KS-102": {
+      "mean_diameter": 14,
+      "cross_section_diameter": 1.5,
+      "material": "elastomer TBD"
+    }
+  },
+  "limitations": [
+    "Copper grade and allowable bus current are unconfirmed; 6 x 8 mm beam cross-section is preliminary.",
+    "PEEK support brackets are preliminary cantilevers and have not been structurally qualified.",
+    "Elastomer compound, hardness, compression, and chemical compatibility remain unspecified.",
+    "KH-901 M4x0.7 thread is a nominal smooth envelope, not helical thread geometry."
+  ]
+}

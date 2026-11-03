@@ -1,0 +1,30 @@
+[
+  {
+    "file": "Kolbe_3.FCStd",
+    "external_object_references": [],
+    "native_bodies": 27,
+    "sketches": 97,
+    "links": 103
+  },
+  {
+    "file": "Kolbe_5.FCStd",
+    "external_object_references": [],
+    "native_bodies": 27,
+    "sketches": 101,
+    "links": 135
+  },
+  {
+    "file": "Kolbe_5_exploded.FCStd",
+    "external_object_references": [],
+    "native_bodies": 9,
+    "sketches": 54,
+    "links": 46
+  },
+  {
+    "file": "Kolbe_7.FCStd",
+    "external_object_references": [],
+    "native_bodies": 27,
+    "sketches": 105,
+    "links": 167
+  }
+]

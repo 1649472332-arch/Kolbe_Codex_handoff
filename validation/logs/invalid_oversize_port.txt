@@ -1,0 +1,2 @@
+ERROR: Assertion '(((port_d_mm > 0) && (port_axis_z_mm > (port_d_mm / 2))) && (port_axis_z_mm < (frame_t - (port_d_mm / 2))))' failed: "port must lie inside the frame thickness" in file kolbe_stack.scad, line 55
+TRACE: called by 'assert' in file kolbe_stack.scad, line 55

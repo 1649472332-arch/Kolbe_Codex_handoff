@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="420mm" height="297mm" viewBox="0 0 420 297"><rect x="0" y="0" width="420" height="297" fill="white"/><rect x="8" y="8" width="404" height="281" rx="1" fill="none" stroke="#243647" stroke-width=".55"/><text x="12.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.20" font-weight="bold" fill="#607283" text-anchor="start">KOLBE ELECTROCHEMICAL CELL  /  PROVISIONAL DESIGN REVIEW</text><text x="408.00" y="17.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="end">REV B1   |   DIMENSIONS mm</text><line x1="12.000" y1="21.000" x2="408.000" y2="21.000" stroke="#243647" stroke-width="0.45"/><text x="12.00" y="30.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="7.00" font-weight="bold" fill="#162331" text-anchor="start">KH-902  |  堵头垫圈</text><text x="12.00" y="36.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="normal" fill="#435464" text-anchor="start">BREP-derived orthographic projections   |   First-angle orientation   |   Not for manufacture</text><g transform="translate(108.0000,152.0000) scale(4.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2.75 0.5 L -2.75 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.087500"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 2.75 0 L 2.75 0.5 " />
+<path d="M-2.75, 0 L-2.68105, 0  L-2.47766, 0  L-2.15004, 0  L-1.7146, 0  L-1.19318, 0  L-0.611933, 0  L-5.55112e-16, 0  L0.611933, 0  L1.19318, 0  L1.7146, 0  L2.15004, 0  L2.47766, 0  L2.68105, 0  L2.75, 0 " /><path d="M-2.75, 0.5 L-2.68105, 0.5  L-2.47766, 0.5  L-2.15004, 0.5  L-1.7146, 0.5  L-1.19318, 0.5  L-0.611933, 0.5  L-5.55112e-16, 0.5  L0.611933, 0.5  L1.19318, 0.5  L1.7146, 0.5  L2.15004, 0.5  L2.47766, 0.5  L2.68105, 0.5  L2.75, 0.5 " /></g>
+</g><g transform="translate(265.0000,169.2500) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M 2.75 -0.5 L 2.75 0 " />
+<path id= "2" d=" M -2.75 -0.5 L -2.75 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M0, 0 Q-0.153951, 0 -0.307902, 0  Q-0.614091, 0 -0.908267, 0  Q-1.05072, 0 -1.19318, 0  Q-1.32813, 0 -1.46309, 0  Q-1.58884, 0 -1.7146, 0  Q-1.82957, 0 -1.94454, 0  Q-2.04729, 0 -2.15004, 0  Q-2.23926, 0 -2.32849, 0  Q-2.40308, 0 -2.47766, 0  Q-2.53667, 0 -2.59568, 0  Q-2.63837, 0 -2.68105, 0  Q-2.70688, 0 -2.73271, 0  Q-2.74135, 0 -2.75, 0 " /><path d="M2.75, 0 Q2.74135, 0 2.73271, 0  Q2.70688, 0 2.68105, 0  Q2.63837, 0 2.59568, 0  Q2.53667, 0 2.47766, 0  Q2.40308, 0 2.32849, 0  Q2.23926, 0 2.15004, 0  Q2.04729, 0 1.94454, 0  Q1.82957, 0 1.7146, 0  Q1.58884, 0 1.46309, 0  Q1.32813, 0 1.19318, 0  Q1.05072, 0 0.908267, 0  Q0.7601, 0 0.611933, 0  Q0.308988, 0 6.66134e-16, 0 " /><path d="M0, -0.5 Q-0.153951, -0.5 -0.307902, -0.5  Q-0.614091, -0.5 -0.908267, -0.5  Q-1.05072, -0.5 -1.19318, -0.5  Q-1.32813, -0.5 -1.46309, -0.5  Q-1.58884, -0.5 -1.7146, -0.5  Q-1.82957, -0.5 -1.94454, -0.5  Q-2.04729, -0.5 -2.15004, -0.5  Q-2.23926, -0.5 -2.32849, -0.5  Q-2.40308, -0.5 -2.47766, -0.5  Q-2.53667, -0.5 -2.59568, -0.5  Q-2.63837, -0.5 -2.68105, -0.5  Q-2.70688, -0.5 -2.73271, -0.5  Q-2.74135, -0.5 -2.75, -0.5 " /><path d="M2.75, -0.5 Q2.74135, -0.5 2.73271, -0.5  Q2.70688, -0.5 2.68105, -0.5  Q2.63837, -0.5 2.59568, -0.5  Q2.53667, -0.5 2.47766, -0.5  Q2.40308, -0.5 2.32849, -0.5  Q2.23926, -0.5 2.15004, -0.5  Q2.04729, -0.5 1.94454, -0.5  Q1.82957, -0.5 1.7146, -0.5  Q1.58884, -0.5 1.46309, -0.5  Q1.32813, -0.5 1.19318, -0.5  Q1.05072, -0.5 0.908267, -0.5  Q0.7601, -0.5 0.611933, -0.5  Q0.308988, -0.5 6.66134e-16, -0.5 " /></g>
+</g><g transform="translate(350.0000,165.6124) scale(3.0000000)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path id= "1" d=" M -2.75 0.408248 L -2.75 0 " />
+<path id= "2" d=" M 2.75 0.408248 L 2.75 0 " />
+</g>
+<g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.116667"
+   transform="scale(1, -1)"
+  >
+<path d="M1.94454 1.12268 A2.75 1.58771 0 0 0 2.75 3.88878e-16" />
+<path d="M2.75 0 A2.75 1.58771 0 0 0 -2.75 -1.94439e-16" />
+<path d="M-2.75 -1.94439e-16 A2.75 1.58771 0 0 0 1.94454 1.12268" />
+<path d="M1.94454 1.53093 A2.75 1.58771 0 0 0 2.75 0.408248" />
+<path d="M-2.75 0.408248 A2.75 1.58771 0 0 0 1.94454 1.53093" />
+<path d="M1.48492 0.857321 A2.1 1.21244 0 0 0 2.1 2.96961e-16" />
+<path d="M2.1 0 A2.1 1.21244 0 0 0 -2.1 -1.48481e-16" />
+<path d="M-2.1 -1.48481e-16 A2.1 1.21244 0 0 0 1.48492 0.857321" />
+<path d="M2.07002 0.204124 A2.1 1.21244 0 0 0 -2.07002 0.204124" />
+</g>
+</g><g transform="translate(220.0000,118.0000) scale(0.7000000) rotate(90)"><g   fill="none"
+   stroke="rgb(0, 0, 0)"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-width="0.500000"
+   transform="scale(1, -1)"
+  >
+<circle cx ="0" cy ="0" r ="2.75" /><circle cx ="0" cy ="0" r ="2.1" /></g>
+</g><text x="108.00" y="231.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">PLAN / FRONT  (4.0:1)</text><text x="265.00" y="202.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SIDE / 侧视  (3.0:1)</text><text x="350.00" y="203.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">ISOMETRIC / 轴测  (3.0:1)</text><text x="220.00" y="138.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.60" font-weight="bold" fill="#435464" text-anchor="middle">SECTION A-A / 剖视  (Y=0, Z=0)</text><line x1="97.000" y1="151.000" x2="119.000" y2="151.000" stroke="#B14B27" stroke-width="0.25" stroke-dasharray="1.4 1.0"/><text x="97.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><text x="119.00" y="149.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.40" font-weight="bold" fill="#9B4B2A" text-anchor="middle">A</text><line x1="97.000" y1="152.000" x2="97.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="119.000" y1="152.000" x2="119.000" y2="219.400" stroke="#526171" stroke-width="0.25"/><line x1="97.000" y1="218.000" x2="119.000" y2="218.000" stroke="#246B8E" stroke-width="0.35"/><path d="M97.00,218.00 l2,-1 l0,2 z M119.00,218.00 l-2,-1 l0,2 z" fill="#246B8E"/><text x="108.00" y="216.80" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#14526F" text-anchor="middle">5.5 O/A</text><line x1="12.000" y1="55.000" x2="408.000" y2="55.000" stroke="#243647" stroke-width="0.4"/><text x="12.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.40" font-weight="bold" fill="#162331" text-anchor="start">FEATURE / DIMENSION SCHEDULE  |  特征尺寸表</text><text x="14.00" y="69.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">01  Washer OD5.5 / ID4.2 x 0.5 thick</text><text x="14.00" y="74.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">02  Used beneath KH-901 plug head</text><text x="14.00" y="79.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.75" font-weight="normal" fill="#243647" text-anchor="start">03  Stock/material and sealing fit TBD</text><line x1="256.000" y1="58.000" x2="256.000" y2="92.000" stroke="#B4C0CA" stroke-width="0.3"/><text x="262.00" y="62.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">MATERIAL / 材料</text><text x="262.00" y="68.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.70" font-weight="normal" fill="#243647" text-anchor="start">Washer stock TBD</text><text x="262.00" y="76.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.80" font-weight="bold" fill="#607283" text-anchor="start">TOLERANCES / 公差</text><text x="262.00" y="82.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.45" font-weight="normal" fill="#243647" text-anchor="start">Unspecified unless individually stated; confirm before release.</text><text x="262.00" y="90.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#9B4B2A" text-anchor="start">Washer stock and sealing fit TBD</text><rect x="12" y="260" width="396" height="22" fill="#F5F7F8" stroke="#526171" stroke-width=".35"/><line x1="250.000" y1="260.000" x2="250.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="322.000" y1="260.000" x2="322.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><line x1="366.000" y1="260.000" x2="366.000" y2="282.000" stroke="#526171" stroke-width="0.3"/><text x="15.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">ASSEMBLY</text><text x="15.00" y="276.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="normal" fill="#162331" text-anchor="start">Compact plate-press cell</text><text x="253.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">PART / DRAWING</text><text x="253.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#162331" text-anchor="start">KH-902 / DWG-KH-902</text><text x="325.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">SCALE / 比例</text><text x="325.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.20" font-weight="normal" fill="#162331" text-anchor="start">See each view; dimensions govern</text><text x="369.00" y="267.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.30" font-weight="bold" fill="#607283" text-anchor="start">STATUS</text><text x="369.00" y="277.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="3.00" font-weight="bold" fill="#9B4B2A" text-anchor="start">REVIEW</text><text x="12.00" y="253.00" font-family="Microsoft YaHei, Arial, sans-serif" font-size="2.55" font-weight="bold" fill="#9B4B2A" text-anchor="start">Thread/washer fit and plug sealing require qualification; thread is not modeled helically.</text></svg>

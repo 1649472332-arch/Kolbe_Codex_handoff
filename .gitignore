@@ -1,0 +1,31 @@
+# Temporary workspace files
+/tmp/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# FreeCAD automatic backups (retain the editable FCStd originals)
+*.FCBak
+*.FCStd1
+*.FCStd[0-9]
+*.fcstd1
+*~
+
+# Local credentials
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini

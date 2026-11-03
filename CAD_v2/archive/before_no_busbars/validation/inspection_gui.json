@@ -1,0 +1,255 @@
+{
+  "panel_created": true,
+  "isolation": true,
+  "show_all": true,
+  "arbitrary_rotation": true,
+  "editable_source_open": true,
+  "parts": [
+    {
+      "file": "KB-801.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-802.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-A3.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-A5.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-A7.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-C3.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-C5.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KB-C7.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-01.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-02.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-03.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-04.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-05.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-06.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KF-101.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KH-901.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KH-902.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-101.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-102.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-201.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-202.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-203.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-204.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-301.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-302.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-303.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-401.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-501.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-502.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-503.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-601.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KP-602.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KS-101.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "KS-102.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-LOCATOR-3.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-LOCATOR-5.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-LOCATOR-7.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M4-NUT.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M4-S10.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M4-S12.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M4-S20.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-NUT.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-3-PLATE.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-3-SUPPORT.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-5-PLATE.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-5-SUPPORT.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-7-PLATE.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-ROD-7-SUPPORT.FCStd",
+      "valid": true,
+      "solids": 1
+    },
+    {
+      "file": "STD-M8-WASHER.FCStd",
+      "valid": true,
+      "solids": 1
+    }
+  ],
+  "modules_saved_with_gui_view": true
+}

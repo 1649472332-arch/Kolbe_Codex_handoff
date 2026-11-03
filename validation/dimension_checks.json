@@ -1,0 +1,146 @@
+[
+  {
+    "electrodes": 3,
+    "gap_mm": 2,
+    "stack_mm": 33.05,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.649999999999999,
+      "port_to_groove_floor_ligament": 0.375,
+      "opposing_grooves_middle_web": 1.25,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 1.4500000000000002,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 3,
+    "gap_mm": 4,
+    "stack_mm": 37.05,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.300000000000001,
+      "port_to_groove_floor_ligament": 0.75,
+      "opposing_grooves_middle_web": 2.5,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 2.9499999999999997,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 3,
+    "gap_mm": 6,
+    "stack_mm": 41.05,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 3.9499999999999993,
+      "port_to_groove_floor_ligament": 1.125,
+      "opposing_grooves_middle_web": 3.75,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 4.449999999999999,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 5,
+    "gap_mm": 2,
+    "stack_mm": 37.75,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.649999999999999,
+      "port_to_groove_floor_ligament": 0.375,
+      "opposing_grooves_middle_web": 1.25,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 1.4500000000000002,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 5,
+    "gap_mm": 4,
+    "stack_mm": 45.75,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.300000000000001,
+      "port_to_groove_floor_ligament": 0.75,
+      "opposing_grooves_middle_web": 2.5,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 2.9499999999999997,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 5,
+    "gap_mm": 6,
+    "stack_mm": 53.75,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 3.9499999999999993,
+      "port_to_groove_floor_ligament": 1.125,
+      "opposing_grooves_middle_web": 3.75,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 4.449999999999999,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 7,
+    "gap_mm": 2,
+    "stack_mm": 42.45,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.649999999999999,
+      "port_to_groove_floor_ligament": 0.375,
+      "opposing_grooves_middle_web": 1.25,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 1.4500000000000002,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 7,
+    "gap_mm": 4,
+    "stack_mm": 54.45,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 4.300000000000001,
+      "port_to_groove_floor_ligament": 0.75,
+      "opposing_grooves_middle_web": 2.5,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 2.9499999999999997,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  },
+  {
+    "electrodes": 7,
+    "gap_mm": 6,
+    "stack_mm": 66.45,
+    "nominal_gasket_compression": 0.25,
+    "nominal_groove_fill": 0.7479982508547126,
+    "clearances_mm": {
+      "groove_inner_to_window_land": 3.9499999999999993,
+      "port_to_groove_floor_ligament": 1.125,
+      "opposing_grooves_middle_web": 3.75,
+      "bolt_to_electrode_body_clearance": 6.5,
+      "bolt_to_frame_edge_land": 6.5,
+      "tube_to_next_tube_clearance": 4.449999999999999,
+      "ear_to_nearest_washer_clearance": 4
+    }
+  }
+]

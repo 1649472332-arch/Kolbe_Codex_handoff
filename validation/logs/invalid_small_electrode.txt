@@ -1,0 +1,2 @@
+ERROR: Assertion '((ear_tip_x_mm > (frame_outer_mm / 2)) && (electrode_size_mm > (gasket_centerline_mm + seal_w)))' failed: "terminal ear or electrode plate must extend beyond the seal loop" in file kolbe_stack.scad, line 60
+TRACE: called by 'assert' in file kolbe_stack.scad, line 60

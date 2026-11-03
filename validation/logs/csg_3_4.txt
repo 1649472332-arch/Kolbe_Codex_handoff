@@ -1,0 +1,3 @@
+ECHO: "electrodes=3 | each gap/frame=4 mm | active stack=9.05 mm | total stack=37.05 mm"
+ECHO: "gasket: cs=1 mm, groove w=1.4 mm, depth/face=0.75 mm, compressed section height=0.75 mm"
+ECHO: "ports: bore=1 mm, axis Z=2 mm; pressure rating TBD"

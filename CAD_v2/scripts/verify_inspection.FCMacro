@@ -1,0 +1,44 @@
+import FreeCAD as A, FreeCADGui as G
+import runpy, json, traceback
+from pathlib import Path
+ROOT=Path(__file__).resolve().parents[1]
+try:
+    namespace=runpy.run_path(str(ROOT/'scripts'/'inspect_modules.FCMacro'))
+    panel=namespace['panel']
+    panel.items.item(4).setSelected(True)
+    chosen=panel.selected(); assert len(chosen)==1
+    panel.isolate()
+    assert sum(o.Visibility for o in panel.current()[1])==1
+    panel.rotate((1,0,0));panel.rotate((0,1,0))
+    G.updateGui()
+    G.activeDocument().activeView().saveImage(str(ROOT/'renders'/'inspection_isolated.png'),1400,1000,'White')
+    panel.show_all();assert all(o.Visibility for o in panel.current()[1])
+    before=tuple(G.activeDocument().activeView().getCameraOrientation().Q)
+    panel.rotate((0,0,1));after=tuple(G.activeDocument().activeView().getCameraOrientation().Q)
+    assert max(abs(a-b) for a,b in zip(before,after))>1e-6, (before,after)
+    G.activeDocument().activeView().saveImage(str(ROOT/'renders'/'inspection_free_angle.png'),1600,1200,'White')
+    panel.items.item(4).setSelected(True); panel.open_source()
+    assert 'parts' in str(Path(A.ActiveDocument.FileName).parent)
+    part_checks=[]
+    for path in sorted((ROOT/'parts').glob('*.FCStd')):
+        d=A.openDocument(str(path));bodies=[o for o in d.Objects if o.TypeId=='PartDesign::Body']
+        assert bodies and all(b.Shape.isValid() and len(b.Shape.Solids)==1 for b in bodies), path.name
+        part_checks.append({'file':path.name,'valid':True,'solids':sum(len(b.Shape.Solids) for b in bodies)})
+        A.closeDocument(d.Name)
+    for path in sorted((ROOT/'modules').glob('*.FCStd')):
+        panel.open_path(path)
+        G.activeDocument().activeView().viewAxonometric();panel.fit();G.updateGui()
+        A.ActiveDocument.save(); A.closeDocument(A.ActiveDocument.Name)
+    for path in sorted((ROOT/'assemblies').glob('*.FCStd')):
+        panel.open_path(path)
+        assert all(any('\u4e00'<=c<='\u9fff' for c in o.Label) for o in panel.current()[1])
+        G.activeDocument().activeView().viewAxonometric();panel.fit();G.updateGui()
+        G.activeDocument().activeView().saveImage(str(ROOT/'renders'/(path.stem+'.png')),1600,1200,'White')
+        A.ActiveDocument.save(); A.closeDocument(A.ActiveDocument.Name)
+    # Leave a usable complete assembly and panel open for the user.
+    panel.open_path(ROOT/'assemblies'/'Kolbe_5.FCStd')
+    (ROOT/'validation'/'inspection_gui.json').write_text(json.dumps({'panel_created':True,'isolation':True,
+        'show_all':True,'arbitrary_rotation':True,'editable_source_open':True,'parts':part_checks,
+        'modules_saved_with_gui_view':True},indent=2),encoding='utf-8')
+except Exception:
+    (ROOT/'validation'/'inspection_gui_error.txt').write_text(traceback.format_exc(),encoding='utf-8')
