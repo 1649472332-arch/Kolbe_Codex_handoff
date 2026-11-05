@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Kolbe · 非贯穿夹紧电解池 / STL assembly</title>
+<style>/* INLINE_STYLE */</style>
+<!-- Three.js r170, MIT License, Copyright 2010–2024 three.js authors.
+https://github.com/mrdoob/three.js/blob/r170/LICENSE
+esbuild v0.24.0, MIT License, Copyright Evan Wallace. All assets embedded. -->
+</head>
+<body>
+<div id="app">
+  <header><div class="brand"><span class="mark">K</span><div><h1>非贯穿夹紧电解池</h1><p>KOLBE / NON-THROUGH CLAMP · V2</p></div></div><span class="offline">● 离线模型 · 41 件</span></header>
+  <div class="workspace">
+    <aside id="panel">
+      <div class="panel-title"><strong>装配浏览 <span>ASSEMBLY</span></strong><button id="panel-toggle" aria-label="收起零件面板" aria-expanded="true">收起 −</button></div>
+      <div class="panel-body">
+        <div class="actions"><button id="show-all" aria-label="全部显示">全部显示 Show all</button><button id="reset" aria-label="复位装配">复位 Reset</button></div>
+        <section id="info" aria-live="polite"></section>
+        <div class="actions"><button id="prev" aria-label="上一个零件">← Prev</button><button id="next" aria-label="下一个零件">Next →</button></div>
+        <div class="actions"><button id="ghost" aria-label="淡化其他零件" aria-pressed="true">淡化 Ghost</button><button id="hide" aria-label="隐藏其他零件" aria-pressed="false">隐藏 Hide</button></div>
+        <button id="flip" class="wide" aria-label="翻面观察">翻面 Flip ↻</button>
+        <h2>中央层序 <span>15 PIECES</span></h2><div id="stack-list" class="chips"></div>
+        <h2>紧固与定位 <span>26 PIECES</span></h2><div id="hardware-list"></div>
+        <h2>显示 <span>APPEARANCE</span></h2>
+        <label class="field">密封件外观<select id="gasket-material" aria-label="密封件材质外观"><option>EPDM</option><option>FKM</option><option>PTFE</option></select></label>
+        <label class="field">电极外观<select id="metal-material" aria-label="电极材质外观"><option value="titanium">钛 Titanium</option><option value="platinum">铂 Platinum</option></select></label>
+        <button id="opaque" class="wide" aria-label="切换框透明度" aria-pressed="false">框不透明 Opaque</button>
+        <p class="note">材质外观预览，尺寸沿用当前 manifest。电极中央片 28×28 mm；导电边及桥也可能参与反应。</p>
+        <button id="section" class="wide" aria-label="切换剖切显示" aria-pressed="false">剖切 Section</button>
+        <label class="field" for="cut">剖切 X <output id="cut-value">34.75 mm</output></label>
+        <input id="cut" type="range" min="0" max="1" step="0.001" value="0.9695945945945946" aria-label="剖切位置">
+      </div>
+    </aside>
+    <main>
+      <div id="viewport" aria-label="可旋转缩放的三维装配"><div class="view-caption"><span id="view-title">完整装配</span><small>拖动旋转 · 双指缩放 / 平移</small></div><div id="error" role="alert" hidden></div><div class="view-footer"><span id="view-state">COMPRESSED STACK · 59.2 mm</span><span>mm / Y↑ Z→</span></div></div>
+      <div class="transport"><div class="transport-label"><strong>爆炸视图 <span>EXPLODED VIEW</span></strong><output id="explode-value">0%</output></div><div class="transport-controls"><button id="explode" aria-label="展开装配">展开 Explode</button><input id="explode-range" type="range" min="0" max="1" step="0.001" value="0" aria-label="爆炸展开百分比"><button id="collapse" aria-label="合拢装配">合拢 Collapse</button></div></div>
+    </main>
+  </div>
+</div>
+<script>/* INLINE_DATA */</script>
+<script>/* INLINE_APP */</script>
+</body>
+</html>

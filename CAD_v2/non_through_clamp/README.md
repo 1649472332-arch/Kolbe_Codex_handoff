@@ -1,8 +1,8 @@
-# 非贯穿夹紧 Kolbe 电解池 — CAD Phase A
+# 非贯穿夹紧 Kolbe 电解池 — CAD 与离线装配演示
 
-本目录实现 `PLAN.md` 的 Scope A，单位 mm，板面 XY，前板向后板为 +Z。八根 M6 仅穿过两块端板，在中间框外经过；中间的框、密封片、电极没有螺栓孔。属于机械概念样机，压力、密封及电化学性能尚未验证。
+本目录实现 `PLAN.md` 的 Scope A / B，单位 mm，板面 XY，前板向后板为 +Z。八根 M6 仅穿过两块端板，在中间框外经过；中间的框、密封片、电极没有螺栓孔。属于机械概念样机，压力、密封及电化学性能尚未验证。
 
-本轮未实现 Phase B 的 `demo_v2.html`、构建脚本和浏览器验收。后续离线演示默认入口约定为 `demo_v2.html`，当前应查看 `renders/` 与 OpenSCAD；历史 `demo.html` 原样保留，其旧几何不代表本设计。
+默认入口：[demo_v2.html](demo_v2.html)。直接双击即可离线打开：three.js r170、真实 STL、manifest 与界面均内嵌，无需服务或网络。历史 `demo.html` 原样保留，其旧几何不代表本设计。
 
 ## 零件和制造方式
 
@@ -124,6 +124,35 @@ openscad -D 'part="frame"' -o /tmp/frame.stl kolbe_non_through.scad
 
 `renders/cad_verification.json` 保存默认、变体、错误输入及复现检查；`stls/oring/cad_verification.json` 保存 O-ring 完整检查。检查覆盖：有限坐标、正体积、面/边/单连通/水密，全部实例及尺寸链，全对全 manifold 布尔干涉，限定前板两压入孔区域的唯一过盈，真实截面孔槽间隙、肩接触及移入 0.05 的碰撞、七处压缩、紧固通道与净距、销贯穿及金属避让、三轴翻转防错、闭合密封线、端口连通及电极桥。容差：长度/bbox 0.02，布尔接触碎片 0.01 mm³。CAD 检查不等于上述物理验证。
 
-正式渲染：`renders/assembly.png`、`exploded.png`、`frame_front.png`、`frame_rear.png`、`gasket.png` 均 1600×1200；两个新几何预览 1200×900。Phase B 约定命令 `node scripts/build_demo_v2.mjs` 和 `python3 scripts/shoot_demo_v2.py` 本轮尚不可用。
+正式渲染：`renders/assembly.png`、`exploded.png`、`frame_front.png`、`frame_rear.png`、`gasket.png` 均 1600×1200；两个新几何预览 1200×900。离线演示及浏览器截图的构建命令见下节。
 
 本次 Phase A 已通过：默认 563 项、N=1/4/6 分别 372/651/837 项、FKM 563 项、PTFE 558 项、O-ring 517 项；六种非法参数均断言失败，完整默认 STL 与 manifest 二次导出 hash 一致。七张 PNG 均已打开目视检查，尺寸正确、内容非空且未截断。所有单件 STL 为正体积、单连通、水密且无未许可实体干涉；接触总装临时并集的 PNG 警告保留在报告中。
+
+
+## 离线 demo_v2 的构建与验证
+
+```bash
+# 依赖安装在工作区之外；three 必须为 0.170.0。
+cd /workspace/kolbe_tools
+npm install --save-exact three@0.170.0 esbuild@0.24.0
+cd /workspace/Kolbe_Codex_handoff/CAD_v2/non_through_clamp
+python3 -m pip install --break-system-packages -r scripts/requirements-demo.txt
+node scripts/build_demo_v2.mjs
+python3 scripts/shoot_demo_v2.py --html demo_v2.html --out renders
+```
+
+界面包含 15 个中央层序 chip 和可展开的 26 个紧固/定位单件；Prev / Next 遍历全部 41 件。滑块恢复垫片自由厚度，五金不伸长。点选后相机飞至当前零件，可淡化/隐藏其他件及翻面；Show all 保持爆炸量并清除选择与剖切，Reset 同时恢复合拢和默认外观。透明框可切为不透明。剖切保留 X≤cut_x，默认 X=34.75，主网格和边线共同裁切，不添加封口面。外观切换不改变 manifest 的尺寸或压缩率。
+
+生成器校验 SCAD 与全部 STL 的 SHA256，焊接容差 1e-5 mm，按 25° 二面角分割法线；量化坐标最大误差 0.002 mm。若量化使薄三角形折叠或翻转，该几何回退到 Float32。保留全部源三角形，不简化、不启用压缩流。相同输入可复现相同 HTML SHA256，记录在 `renders/demo_v2_build.json`。源文件位于 `scripts/demo_v2/`，生成文件可独立复制分发。
+
+O-ring 预览可从已导出的对应 manifest 重建到独立文件；使用自由/压缩网格对应顶点插值，中心线路径保持不变：
+
+```bash
+node scripts/build_demo_v2.mjs stls/oring/stack_manifest.json /tmp/demo_oring.html
+```
+
+浏览器验收使用 `/usr/bin/google-chrome` 与 SwiftShader，直接以 file:// 打开并禁用网络。自动核对变换、几何共享、全部单件遍历、真实指针选择与拖拽/双指防误选、隔离、翻面、剖切、外观及移动布局；任何 console error、pageerror、失败资源请求或 HTTP(S) 请求都会失败。默认截图桌面 1440×1000、移动 390×844 CSS px（DPR 2）。报告 `renders/demo_v2_verification.json` 记录检查结果、URL 命中分类及软件渲染耗时，不代表真实手机 FPS。
+
+截图：`renders/demo_v2_assembled.png`、`demo_v2_exploded.png`、`demo_v2_frame_isolated.png`、`demo_v2_frame_reverse.png`、`demo_v2_gasket_isolated.png`、`demo_v2_section.png`、`demo_v2_mobile.png`。
+
+调试接口为 `window.__demo`：`ready`、`setExplode(v)`、`select(id)`、`showAll()`、`setSection(on,v)`、`whenIdle()`、`getState()`、`setIsolation(mode)`、`flipSelected()`、`fitAll()`。所有入口共用实际 UI 状态和场景，`whenIdle()` 等待动画、阻尼及两次渲染完成。
