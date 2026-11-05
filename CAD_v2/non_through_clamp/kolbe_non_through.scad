@@ -1,507 +1,551 @@
-// =============================================================================
-// Kolbe membrane-free filter-press cell — NON-THROUGH bolt clamp housing
-// Units: mm.  XY = plate plane;  Z = stack axis (front → rear = +Z).
-//
-// vs through-rod stacks (kolbe_stack.scad / CAD_v2 B1 / version2):
-//   * Only the two thick endplates carry clamp fasteners.
-//   * Short M6 bolts enter from the FRONT outer face and screw into the REAR
-//     endplate (heat-set insert pockets by default, or modeled tap drill).
-//   * Intermediate flow frames / electrodes have NO bolt holes; bolt shafts
-//     pass beside the frame outline between the oversized endplates.
-//   * Primary registration = polarized tongue/groove nest on every frame face
-//     and both endplate inner faces (print-friendly rectangular keys).
-//   * Secondary = optional Ø3 locator pins.
-//
-// Mechanical concept only — pressure / seal / chemistry NOT validated.
-// =============================================================================
-
-// --------------------------- Part selector ----------------------------------
-// assembly | exploded | front_endplate | rear_endplate | frame |
-// electrode_tab | electrode_plain | locator_pin
+// Kolbe non-through clamp. mm; plate XY, front -> rear +Z.
+// Mechanical concept; physical pressure, chemistry and insulation unverified.
+// Public parameters (PLAN.md section 2). All output coordinates derive here.
 part = "assembly";
-
-// --------------------------- Stack composition ------------------------------
-frame_count        = 3;
-electrode_count    = 3;
-use_tabbed_first   = true;
-explode_gap_mm     = 14;
-
-// --------------------------- Outer envelopes --------------------------------
-frame_w_mm         = 74;
-frame_h_mm         = 82;
-frame_t_mm         = 4;
-frame_corner_r_mm  = 4;
-
-endplate_w_mm      = 96;
-endplate_h_mm      = 106;
-endplate_t_mm      = 20;
+frame_count = 3;
+electrode_count = 3;
+seal_mode = "flat_gasket";
+gasket_material = "EPDM";
+electrode_material = "titanium";
+explode_gap_mm = 14;
+hardware_explode_stagger_mm = 2;
+frame_w_mm = 74;
+frame_h_mm = 82;
+frame_t_mm = 4;
+frame_corner_r_mm = 4;
+endplate_w_mm = 112;
+endplate_h_mm = 120;
+endplate_t_mm = 20;
 endplate_corner_r_mm = 6;
-
-plate_style        = "rect";   // "rect" | "octagon"
-octagon_chamfer_mm = 14;
-
-// --------------------------- Active window / seal ---------------------------
-window_w_mm        = 43;
-window_h_mm        = 63;
+window_w_mm = 43;
+window_h_mm = 63;
 window_corner_r_mm = 3;
-
-seal_cs_mm         = 1.2;
-seal_groove_w_mm   = 1.5;
-seal_groove_d_mm   = 0.7;
-seal_centerline_pad_mm = 2.0;
-
-// --------------------------- Electrodes -------------------------------------
-electrode_w_mm     = 28;
-electrode_h_mm     = 28;
-electrode_t_mm     = 1.0;
+$fn = 96;
+csg_eps_mm = 0.01;
+gasket_w_mm = 66;
+gasket_h_mm = 74;
+gasket_corner_r_mm = 3;
+gasket_t_mm = 0.8;
+gasket_compression_ratio = gasket_material == "PTFE" ? 0.10 : 0.25;
+gasket_pin_d_mm = 4.6;
+gasket_slot_extra_mm = 0.6;
+oring_cs_mm = 1.2;
+oring_compression_ratio = 0.25;
+oring_centerline_pad_mm = 2.5;
+oring_groove_w_mm = 1.8;
+oring_groove_d_mm = 0.3;
+electrode_w_mm = 28;
+electrode_h_mm = 28;
+electrode_t_mm = 1;
 electrode_corner_r_mm = 1.5;
-tab_w_mm           = 8;
-tab_len_mm         = 22;
-tab_hole_d_mm      = 3.2;
+electrode_flange_w_mm = 66;
+electrode_flange_h_mm = 74;
+electrode_flange_r_mm = 3;
+electrode_bridge_w_mm = 4;
+electrode_bridge_overlap_mm = 0.5;
+electrode_pin_d_mm = 6.6;
+tab_w_mm = 8;
+tab_len_mm = 28;
+tab_overlap_mm = 0.5;
+tab_x_offsets_mm = [-14,14];
+tab_offset_mm = -14;
+tab_hole_d_mm = 3.2;
 tab_hole_offset_mm = 6;
-
-// --------------------------- Secondary locators (pins) ----------------------
-locator_d_mm       = 3.0;
-locator_clear_d_mm = 3.2;
-locator_len_mm     = 10;
-locator_points     = [[ 28,  35], [-28, -35]];
-show_locator_pins  = true;
-
-// --------------------------- Primary nest: tongue / groove ------------------
-// Polarized stack registration (print-friendly rectangular keys on land):
-//   * Each FRAME: groove pockets on -Z face, raised tongues on +Z face
-//     (same XY centers). Frame N tongue seats into frame N+1 groove.
-//   * FRONT endplate inner (+Z) face: raised tongues → first frame grooves.
-//   * REAR  endplate inner (-Z / local z=0) face: groove pockets → last
-//     frame tongues.
-// Tongues are undersized vs grooves for FDM clearance.
-nest_enable        = true;
-nest_count         = 4;          // keys at mid-sides: +X -X +Y -Y
-nest_tongue_w_mm   = 3.8;        // radial width of tongue (toward center)
-nest_tongue_l_mm   = 11.0;       // length along perimeter
-nest_tongue_h_mm   = 0.9;        // raised height
-nest_groove_w_mm   = 4.2;        // groove slightly wider
-nest_groove_l_mm   = 11.4;
-nest_groove_d_mm   = 1.05;       // groove slightly deeper than tongue
-nest_inset_mm      = 4.0;        // key center inset from outer edge toward center
-nest_fillet_hint_mm = 0.6;       // used as corner radius on key rectangles
-// Keep nest keys outside seal groove and inside outer edge.
-nest_min_wall_mm   = 1.0;
-
-// --------------------------- Clamp fasteners (endplates ONLY) ---------------
-bolt_clear_d_mm    = 6.6;
-bolt_points        = [
-    [ 42,  47], [-42,  47],
-    [ 42, -47], [-42, -47],
-    [ 42,   0], [-42,   0]
-];
-
-// rear_fastener_mode: "heatset" (FDM recommended) | "tap" (machined only)
-// heatset → counterbore Ø8 × 8 from outer face for M6 brass heat-set insert
-// tap     → blind drill Ø5.0 × 13 (M6×1.0 tap drill model)
+tab_channel_clearance_mm = 0.3;
+tab_gasket_notch_depth_mm = 0.5;
+nest_radial_clearance_mm = 0.25;
+nest_lip_w_mm = 2;
+nest_lip_h_mm = 1.2;
+nest_rabbet_d_mm = 1.5;
+nest_leadin_mm = 0.3;
+nest_side_x_mm = 34.75;
+nest_side_len_mm = 60;
+nest_end_y_mm = 38.75;
+nest_end_len_mm = 54;
+nest_segment_r_mm = 0.5;
+shoulder_inner_clearance_mm = 0.25;
+min_structural_wall_mm = 1;
+locator_points = [[-29,20],[29,-17]];
+locator_d_mm = 4;
+locator_press_d_mm = 3.96;
+locator_press_depth_mm = 6;
+locator_slip_d_mm = 4.4;
+locator_slot_extra_mm = 0.6;
+locator_rear_depth_mm = 6;
+locator_rear_engagement_mm = 4.8;
+locator_tip_chamfer_mm = 0.3;
+bolt_points = [[46,50],[0,50],[-46,50],[-46,0],[-46,-50],[0,-50],[46,-50],[46,0]];
+bolt_clear_d_mm = 6.6;
+bolt_shank_d_mm = 6;
+bolt_head_d_mm = 10;
+bolt_head_h_mm = 6;
+bolt_socket_af_mm = 5;
+bolt_socket_depth_mm = 3;
+bolt_head_chamfer_mm = 0.3;
+bolt_tip_chamfer_mm = 0.5;
+bolt_standard_lengths_mm = [40,45,50,55,60,65,70,75,80,85,90];
+bolt_min_engagement_mm = 6;
+bolt_max_rear_projection_mm = 3.5;
+washer_od_mm = 12;
+washer_id_mm = 6.4;
+washer_t_mm = 1.6;
 rear_fastener_mode = "heatset";
-heatset_od_mm      = 8.0;
-heatset_depth_mm   = 8.0;
-tap_drill_d_mm     = 5.0;
-tap_drill_depth_mm = 13.0;
-
-bolt_shank_d_mm    = 6.0;
-bolt_head_d_mm     = 10.0;
-bolt_head_h_mm     = 6.0;
-washer_od_mm       = 12.0;
-washer_t_mm        = 1.5;
-
-// --------------------------- Front fluid ports ------------------------------
-port_y_mm          = 27;
-port_x_mm          = 0;
-port_through_d_mm  = 6.0;
+heatset_od_mm = 8;
+heatset_depth_mm = 8;
+heatset_bore_d_mm = 6.2;
+heatset_pocket_d_mm = 8;
+port_x_mm = 0;
+port_y_mm = 27;
+port_through_d_mm = 6;
 port_counterbore_d_mm = 10.5;
-port_counterbore_depth_mm = 3.0;
-port_boss_od_mm    = 14.0;
-port_boss_h_mm     = 8.0;
-port_boss_flat_mm  = 12.0;
+port_counterbore_depth_mm = 3;
+port_boss_od_mm = 14;
+port_boss_h_mm = 8;
+port_boss_flat_mm = 12;
 
-$fn = 48;
+// Derived: no second set of stack constants in Python.
+gasket_count = 2*frame_count+1;
+gasket_compressed_t = gasket_t_mm*(1-gasket_compression_ratio);
+oring_compressed_h = oring_cs_mm*(1-oring_compression_ratio);
+oring_compressed_w = oring_cs_mm*oring_cs_mm/oring_compressed_h;
+seal_gap = seal_mode == "flat_gasket" ? gasket_compressed_t : oring_compressed_h-oring_groove_d_mm;
+free_gap = seal_mode == "flat_gasket" ? gasket_t_mm : oring_cs_mm-oring_groove_d_mm;
+front_stop_h = seal_gap;
+frame_stop_h = 2*seal_gap+electrode_t_mm;
+nest_axial_gap = nest_rabbet_d_mm-nest_lip_h_mm;
+active_stack_t = frame_count*(frame_t_mm+electrode_t_mm)+gasket_count*seal_gap;
+total_stack_t = 2*endplate_t_mm+active_stack_t;
+free_total_stack_t = 2*endplate_t_mm+frame_count*(frame_t_mm+electrode_t_mm)+gasket_count*free_gap;
+rear_z = endplate_t_mm+active_stack_t;
+heatset_z = total_stack_t-heatset_depth_mm;
+pin_z = endplate_t_mm-locator_press_depth_mm;
+locator_len_mm = active_stack_t+locator_press_depth_mm+locator_rear_engagement_mm;
+// 1e-9 only absorbs arithmetic roundoff at an exact standard-length boundary.
+bolt_candidates = [for (l=bolt_standard_lengths_mm) if (min(heatset_depth_mm,l-washer_t_mm-heatset_z)+1e-9>=bolt_min_engagement_mm && max(0,l-washer_t_mm-total_stack_t)<=bolt_max_rear_projection_mm+1e-9) l];
+bolt_length_mm = len(bolt_candidates)>0 ? min(bolt_candidates) : 0;
+bolt_engagement_mm = min(heatset_depth_mm,bolt_length_mm-washer_t_mm-heatset_z);
+bolt_rear_projection_mm = max(0,bolt_length_mm-washer_t_mm-total_stack_t);
+bolt_tip_recess_mm = total_stack_t-(bolt_length_mm-washer_t_mm);
+locator_rear_clearance_mm = locator_rear_depth_mm-locator_rear_engagement_mm;
+seal_cl_w = window_w_mm+2*oring_centerline_pad_mm;
+seal_cl_h = window_h_mm+2*oring_centerline_pad_mm;
+seal_cl_r = window_corner_r_mm+oring_centerline_pad_mm;
+tab_start_y = electrode_flange_h_mm/2-tab_overlap_mm;
+tab_end_y = tab_start_y+tab_len_mm;
+slot_angle = atan2(locator_points[1][1]-locator_points[0][1],locator_points[1][0]-locator_points[0][0]);
+side_wall_mm = frame_w_mm/2-(nest_side_x_mm+nest_lip_w_mm/2+nest_radial_clearance_mm);
+end_wall_mm = frame_h_mm/2-(nest_end_y_mm+nest_lip_w_mm/2+nest_radial_clearance_mm);
+front_bbox_max_z = endplate_t_mm+front_stop_h+nest_lip_h_mm;
+frame_bbox_h = frame_t_mm+frame_stop_h+nest_lip_h_mm;
+seal_free_h = seal_mode == "flat_gasket" ? gasket_t_mm : oring_cs_mm;
 
-// --------------------------- Derived ----------------------------------------
-seal_cl_w = window_w_mm + 2*seal_centerline_pad_mm;
-seal_cl_h = window_h_mm + 2*seal_centerline_pad_mm;
-seal_outer_w = seal_cl_w + seal_groove_w_mm;
-seal_outer_h = seal_cl_h + seal_groove_w_mm;
-seal_inner_w = seal_cl_w - seal_groove_w_mm;
-seal_inner_h = seal_cl_h - seal_groove_w_mm;
-seal_corner_r = window_corner_r_mm + seal_centerline_pad_mm;
-
-// Frames seat land-to-land so tongue/groove nests engage. Electrodes live in the
-// window cavities and do NOT add to peripheral stack height (1 mm << 4 mm chamber).
-active_stack_t = frame_count * frame_t_mm;
-total_stack_t  = 2*endplate_t_mm + active_stack_t;
-
-frame_half_w = frame_w_mm/2;
-frame_half_h = frame_h_mm/2;
-
-// Nest key centers: mid-side, inset from frame outer edge
-nest_cx = frame_half_w - nest_inset_mm;
-nest_cy = frame_half_h - nest_inset_mm;
-// 4 mid-side positions: +X, -X, +Y, -Y
-nest_centers = [
-    [ nest_cx, 0],
-    [-nest_cx, 0],
-    [0,  nest_cy],
-    [0, -nest_cy]
-];
-// Rotation of each key so length runs along the perimeter
-nest_rots = [90, 90, 0, 0];
-
-// --------------------------- Asserts ----------------------------------------
-assert(part == "assembly" || part == "exploded" || part == "front_endplate"
-    || part == "rear_endplate" || part == "frame" || part == "electrode_tab"
-    || part == "electrode_plain" || part == "locator_pin",
-    "unknown part= value");
-assert(frame_count >= 1 && electrode_count >= 1);
-assert(frame_w_mm > window_w_mm + 2*seal_groove_w_mm + 8);
-assert(frame_h_mm > window_h_mm + 2*seal_groove_w_mm + 8);
-assert(endplate_w_mm > frame_w_mm);
-assert(endplate_h_mm > frame_h_mm);
-assert(endplate_t_mm >= 12);
-assert(seal_groove_d_mm*2 < frame_t_mm);
-assert(nest_groove_d_mm + seal_groove_d_mm < frame_t_mm - 0.5,
-    "nest groove + seal groove leave too little core thickness");
-assert(nest_tongue_h_mm <= nest_groove_d_mm,
-    "tongue must be shorter/equal depth than groove");
-assert(nest_tongue_w_mm < nest_groove_w_mm && nest_tongue_l_mm < nest_groove_l_mm,
-    "tongue must be smaller than groove for clearance");
-assert(nest_inset_mm > nest_groove_w_mm/2 + nest_min_wall_mm,
-    "nest key too close to outer edge");
-assert(rear_fastener_mode == "heatset" || rear_fastener_mode == "tap");
-assert(heatset_depth_mm < endplate_t_mm - 2);
-assert(tap_drill_depth_mm < endplate_t_mm - 2);
-assert(len(bolt_points) == 6);
-assert(len(locator_points) == 2);
-
-for (p = bolt_points) {
-    assert(abs(p[0]) > frame_half_w || abs(p[1]) > frame_half_h,
-        str("bolt at ", p, " intersects frame — move outboard"));
-    assert(abs(p[0]) + bolt_clear_d_mm/2 < endplate_w_mm/2 - 1);
-    assert(abs(p[1]) + bolt_clear_d_mm/2 < endplate_h_mm/2 - 1);
+// Assertions are active even for manifest-only exports.
+assert(frame_count>=1 && frame_count<=6 && frame_count==floor(frame_count), "frame_count must be integer 1..6");
+assert(electrode_count==frame_count, "electrode_count must equal frame_count");
+assert(seal_mode=="flat_gasket" || seal_mode=="oring", "invalid seal_mode");
+assert(gasket_material=="EPDM" || gasket_material=="FKM" || gasket_material=="PTFE", "invalid gasket_material");
+assert(electrode_material=="titanium" || electrode_material=="platinum", "invalid electrode_material");
+assert(!(gasket_material=="PTFE" && seal_mode=="oring"), "PTFE oring not supported");
+assert(rear_fastener_mode=="heatset", "only heatset supported");
+assert(len(bolt_points)==8 && len(locator_points)==2);
+assert(seal_gap>0 && gasket_compression_ratio>=0 && gasket_compression_ratio<1);
+assert(nest_axial_gap>0, "nest axial clearance must be positive");
+assert(min(side_wall_mm,end_wall_mm)>=min_structural_wall_mm, "insufficient rabbet outer wall");
+assert(min(side_wall_mm,end_wall_mm)-nest_leadin_mm>=0.7-0.000001);
+assert(nest_leadin_mm>0 && nest_leadin_mm<nest_lip_h_mm && nest_leadin_mm<nest_rabbet_d_mm);
+assert(2*oring_groove_d_mm<frame_t_mm && oring_compressed_w<oring_groove_w_mm);
+assert(locator_rear_clearance_mm>0 && locator_press_depth_mm<endplate_t_mm);
+assert(bolt_length_mm>0, "no standard bolt satisfies engagement and projection");
+assert(heatset_depth_mm<endplate_t_mm && bolt_clear_d_mm>bolt_shank_d_mm);
+for (b=bolt_points) {
+    assert(norm([max(abs(b[0])-frame_w_mm/2,0),max(abs(b[1])-frame_h_mm/2,0)])-washer_od_mm/2>=2);
+    assert(endplate_w_mm/2-abs(b[0])-washer_od_mm/2>=3 && endplate_h_mm/2-abs(b[1])-washer_od_mm/2>=3);
 }
-for (p = locator_points) {
-    assert(abs(p[0]) + locator_clear_d_mm/2 < frame_half_w - 2);
-    assert(abs(p[1]) + locator_clear_d_mm/2 < frame_half_h - 2);
-    // Outside window rectangle with ≥2 mm land (OR of axis clearances).
-    assert(abs(p[0]) >= window_w_mm/2 + 2 || abs(p[1]) >= window_h_mm/2 + 2,
-        str("locator ", p, " too close to / inside window"));
-}
-// Nest keys must sit outside seal outer and not hit window
-for (p = nest_centers) {
-    assert(abs(p[0]) + nest_groove_w_mm/2 < frame_half_w - nest_min_wall_mm
-        || abs(p[1]) + nest_groove_w_mm/2 < frame_half_h - nest_min_wall_mm
-        || true); // mid-side keys: check radial clearance below
-}
-assert(nest_cx - nest_groove_w_mm/2 > seal_outer_w/2 + nest_min_wall_mm
-    || nest_cy - nest_groove_w_mm/2 > seal_outer_h/2 + nest_min_wall_mm,
-    "nest keys collide with seal groove — increase nest_inset or shrink seal");
-// Stronger: X-side keys clear seal in X; Y-side keys clear seal in Y
-assert(nest_cx - nest_groove_w_mm/2 > seal_outer_w/2 + 0.3,
-    "±X nest keys overlap seal land");
-assert(nest_cy - nest_groove_w_mm/2 > seal_outer_h/2 + 0.3,
-    "±Y nest keys overlap seal land");
+// Chunk checkpoint: geometry and dispatch are appended below.
 
-echo(str("NON-THROUGH Kolbe: frames=", frame_count,
-    " electrodes=", electrode_count,
-    " active=", active_stack_t, " mm total=", total_stack_t, " mm",
-    " rear=", rear_fastener_mode, " nest=", nest_enable));
-echo(str("frame ", frame_w_mm, "x", frame_h_mm, "x", frame_t_mm,
-    " | endplate ", endplate_w_mm, "x", endplate_h_mm, "x", endplate_t_mm,
-    " | window ", window_w_mm, "x", window_h_mm));
-echo("bolts OUTSIDE frame; frames have NO bolt holes; tongue/groove nest on all layers");
-
-// --------------------------- 2D helpers -------------------------------------
-module rounded_rect_2d(w, h, r) {
-    rr = min(r, w/2 - 0.01, h/2 - 0.01);
-    offset(r = rr) square([w - 2*rr, h - 2*rr], center = true);
+// 2D helpers. Slot axis follows the line between the two dowels.
+module rr(w,h,r) { offset(r=r) square([w-2*r,h-2*r],center=true); }
+module window2d() { rr(window_w_mm,window_h_mm,window_corner_r_mm); }
+module slot2d(d,extra) {
+    rotate(slot_angle) hull() for (x=[-extra/2,extra/2]) translate([x,0]) circle(d=d);
 }
-
-module octagon_2d(w, h, chamfer) {
-    c = min(chamfer, w/2 - 1, h/2 - 1);
-    polygon([
-        [ w/2 - c, -h/2 ], [ w/2, -h/2 + c ],
-        [ w/2,  h/2 - c ], [ w/2 - c,  h/2 ],
-        [-w/2 + c,  h/2 ], [-w/2,  h/2 - c ],
-        [-w/2, -h/2 + c ], [-w/2 + c, -h/2 ]
-    ]);
+module locator_holes2d(d,extra=0) {
+    for (i=[0:1]) translate(locator_points[i]) if (i==0) circle(d=d); else slot2d(d,extra);
 }
-
-module plate_outline_2d(w, h, r, style = plate_style) {
-    if (style == "octagon") octagon_2d(w, h, octagon_chamfer_mm);
-    else rounded_rect_2d(w, h, r);
+module tab_channels2d() {
+    for (x=tab_x_offsets_mm) translate([x,tab_start_y+frame_h_mm/2])
+        square([tab_w_mm+2*tab_channel_clearance_mm,frame_h_mm],center=true);
 }
-
-module seal_groove_2d() {
+module shoulder2d() {
     difference() {
-        rounded_rect_2d(seal_outer_w, seal_outer_h, seal_corner_r + seal_groove_w_mm/2);
-        rounded_rect_2d(seal_inner_w, seal_inner_h, max(0.5, seal_corner_r - seal_groove_w_mm/2));
+        rr(frame_w_mm,frame_h_mm,frame_corner_r_mm);
+        rr(electrode_flange_w_mm+2*shoulder_inner_clearance_mm,
+           electrode_flange_h_mm+2*shoulder_inner_clearance_mm,
+           electrode_flange_r_mm+shoulder_inner_clearance_mm);
+        tab_channels2d();
     }
 }
-
-module locator_holes_2d(d = locator_clear_d_mm) {
-    for (p = locator_points) translate(p) circle(d = d);
-}
-
-module bolt_holes_2d(d = bolt_clear_d_mm) {
-    for (p = bolt_points) translate(p) circle(d = d);
-}
-
-// Key rectangle in XY; length along local X before rotation
-module nest_key_2d(len, wid, r = nest_fillet_hint_mm) {
-    rounded_rect_2d(len, wid, min(r, len/2 - 0.05, wid/2 - 0.05));
-}
-
-module nest_tongues_solid(h = nest_tongue_h_mm) {
-    if (nest_enable) {
-        for (i = [0:len(nest_centers) - 1]) {
-            translate([nest_centers[i][0], nest_centers[i][1], 0])
-                rotate([0, 0, nest_rots[i]])
-                    linear_extrude(height = h)
-                        nest_key_2d(nest_tongue_l_mm, nest_tongue_w_mm);
-        }
-    }
-}
-
-module nest_grooves_cut(d = nest_groove_d_mm) {
-    if (nest_enable) {
-        for (i = [0:len(nest_centers) - 1]) {
-            translate([nest_centers[i][0], nest_centers[i][1], 0])
-                rotate([0, 0, nest_rots[i]])
-                    translate([0, 0, -0.02])
-                        linear_extrude(height = d + 0.04)
-                            nest_key_2d(nest_groove_l_mm, nest_groove_w_mm);
-        }
-    }
-}
-
-// --------------------------- Solid parts ------------------------------------
-module frame_solid() {
-    // NO bolt holes. -Z face = grooves; +Z face = tongues.
+module rails2d() {
     difference() {
         union() {
-            linear_extrude(height = frame_t_mm)
-                difference() {
-                    rounded_rect_2d(frame_w_mm, frame_h_mm, frame_corner_r_mm);
-                    rounded_rect_2d(window_w_mm, window_h_mm, window_corner_r_mm);
-                    locator_holes_2d();
-                }
-            // Tongues overlap 0.2 mm into +Z face for a single CGAL volume
-            translate([0, 0, frame_t_mm - 0.2])
-                nest_tongues_solid(nest_tongue_h_mm + 0.2);
+            for (x=[-nest_side_x_mm,nest_side_x_mm]) translate([x,0]) rr(nest_lip_w_mm,nest_side_len_mm,nest_segment_r_mm);
+            for (y=[-nest_end_y_mm,nest_end_y_mm]) translate([0,y]) rr(nest_end_len_mm,nest_lip_w_mm,nest_segment_r_mm);
         }
-        // Dual-face seal grooves
-        translate([0, 0, -0.01])
-            linear_extrude(height = seal_groove_d_mm + 0.01) seal_groove_2d();
-        translate([0, 0, frame_t_mm - seal_groove_d_mm])
-            linear_extrude(height = seal_groove_d_mm + 0.01) seal_groove_2d();
-        // Nest grooves on -Z face
-        nest_grooves_cut(nest_groove_d_mm);
+        tab_channels2d();
     }
 }
-
-module electrode_solid(with_tab = true) {
-    linear_extrude(height = electrode_t_mm)
-        difference() {
-            union() {
-                rounded_rect_2d(electrode_w_mm, electrode_h_mm, electrode_corner_r_mm);
-                if (with_tab)
-                    translate([-tab_w_mm/2, electrode_h_mm/2 - 0.5])
-                        square([tab_w_mm, tab_len_mm + 0.5], center = false);
-            }
-            if (with_tab)
-                translate([0, electrode_h_mm/2 + tab_len_mm - tab_hole_offset_mm])
-                    circle(d = tab_hole_d_mm);
+// Chamfer each connected rail individually; hulling the entire rail set
+// would incorrectly bridge the window and create a disconnected cover sheet.
+module rail_piece(i) {
+    if (i<2) translate([(i==0 ? -1 : 1)*nest_side_x_mm,0]) rr(nest_lip_w_mm,nest_side_len_mm,nest_segment_r_mm);
+    else if (i==2) translate([0,-nest_end_y_mm]) rr(nest_end_len_mm,nest_lip_w_mm,nest_segment_r_mm);
+    else let(c=tab_w_mm/2+tab_channel_clearance_mm,
+        ranges=[[-nest_end_len_mm/2,tab_x_offsets_mm[0]-c],
+                [tab_x_offsets_mm[0]+c,tab_x_offsets_mm[1]-c],
+                [tab_x_offsets_mm[1]+c,nest_end_len_mm/2]],r=ranges[i-3])
+        intersection() {
+            translate([0,nest_end_y_mm]) rr(nest_end_len_mm,nest_lip_w_mm,nest_segment_r_mm);
+            translate([(r[0]+r[1])/2,nest_end_y_mm]) square([r[1]-r[0],nest_lip_w_mm+2],center=true);
         }
 }
-
-module locator_pin_solid() {
-    cylinder(d = locator_d_mm, h = locator_len_mm);
+module lip() {
+    for (i=[0:5]) {
+        translate([0,0,-csg_eps_mm]) linear_extrude(nest_lip_h_mm-nest_leadin_mm+csg_eps_mm) rail_piece(i);
+        translate([0,0,nest_lip_h_mm-nest_leadin_mm]) hull() {
+            translate([0,0,-csg_eps_mm]) linear_extrude(csg_eps_mm) rail_piece(i);
+            translate([0,0,nest_leadin_mm-csg_eps_mm]) linear_extrude(csg_eps_mm)
+                offset(delta=-nest_leadin_mm) rail_piece(i);
+        }
+    }
 }
-
-module front_port_boss() {
+module rabbet_cut() {
+    for (i=[0:5]) {
+        translate([0,0,-csg_eps_mm]) linear_extrude(nest_rabbet_d_mm+csg_eps_mm)
+            offset(r=nest_radial_clearance_mm) rail_piece(i);
+        translate([0,0,-csg_eps_mm]) hull() {
+            linear_extrude(csg_eps_mm) offset(r=nest_radial_clearance_mm+nest_leadin_mm) rail_piece(i);
+            translate([0,0,nest_leadin_mm]) linear_extrude(csg_eps_mm)
+                offset(r=nest_radial_clearance_mm) rail_piece(i);
+        }
+    }
+}
+module shoulder_lip(z,h) {
+    translate([0,0,z-csg_eps_mm]) linear_extrude(h+csg_eps_mm) shoulder2d();
+    translate([0,0,z+h]) lip();
+}
+module seal_band2d(width) {
+    difference() {
+        rr(seal_cl_w+width,seal_cl_h+width,seal_cl_r+width/2);
+        rr(seal_cl_w-width,seal_cl_h-width,seal_cl_r-width/2);
+    }
+}
+module oring_groove(z) {
+    translate([0,0,z]) linear_extrude(oring_groove_d_mm+csg_eps_mm) seal_band2d(oring_groove_w_mm);
+}
+module flat_gasket() {
+    linear_extrude(gasket_t_mm) difference() {
+        rr(gasket_w_mm,gasket_h_mm,gasket_corner_r_mm);
+        window2d();
+        locator_holes2d(gasket_pin_d_mm,gasket_slot_extra_mm);
+        for (x=tab_x_offsets_mm) translate([x,gasket_h_mm/2])
+            square([tab_w_mm+2*tab_channel_clearance_mm,2*tab_gasket_notch_depth_mm],center=true);
+    }
+}
+module electrode(tab=true,x=tab_offset_mm) {
+    linear_extrude(electrode_t_mm) difference() {
+        union() {
+            difference() { rr(electrode_flange_w_mm,electrode_flange_h_mm,electrode_flange_r_mm); window2d(); }
+            rr(electrode_w_mm,electrode_h_mm,electrode_corner_r_mm);
+            for (s=[-1,1]) translate([0,s*(electrode_h_mm/2+window_h_mm/2)/2])
+                square([electrode_bridge_w_mm,(window_h_mm-electrode_h_mm)/2+2*electrode_bridge_overlap_mm],center=true);
+            if (tab) translate([x,tab_start_y+tab_len_mm/2]) square([tab_w_mm,tab_len_mm],center=true);
+        }
+        locator_holes2d(electrode_pin_d_mm);
+        if (tab) translate([x,tab_end_y-tab_hole_offset_mm]) circle(d=tab_hole_d_mm);
+    }
+}
+// Explicit sweep: identical vertices/faces in both seal states, fixed centerline.
+// The four corner arcs include their endpoints; connecting quads form straights.
+ring_steps = $fn/4;
+ring_path = [for (q=[0:3],j=[0:ring_steps]) let(a=q*90+j*90/ring_steps,
+    cx=(q==0 || q==3 ? 1 : -1)*(seal_cl_w/2-seal_cl_r),
+    cy=(q<2 ? 1 : -1)*(seal_cl_h/2-seal_cl_r))
+    [cx+seal_cl_r*cos(a),cy+seal_cl_r*sin(a),cos(a),sin(a)]];
+module gasket_oring(compressed=false) {
+    h=compressed ? oring_compressed_h : oring_cs_mm;
+    w=compressed ? oring_compressed_w : oring_cs_mm;
+    n=len(ring_path); m=$fn;
+    points=[for (p=ring_path,j=[0:m-1]) let(a=j*360/m)
+        [p[0]+p[2]*w/2*cos(a),p[1]+p[3]*w/2*cos(a),h/2+h/2*sin(a)]];
+    faces=[for (i=[0:n-1],j=[0:m-1]) each let(a=i*m+j,b=((i+1)%n)*m+j,
+        c=((i+1)%n)*m+(j+1)%m,d=i*m+(j+1)%m) [[a,c,b],[a,d,c]]];
+    polyhedron(points=points,faces=faces,convexity=10);
+}
+module frame() {
     difference() {
         union() {
-            cylinder(d = port_boss_od_mm, h = port_boss_h_mm);
-            translate([0, 0, port_boss_h_mm*0.35])
-                cylinder(d = port_boss_flat_mm * 1.1547, h = port_boss_h_mm*0.4, $fn = 6);
+            linear_extrude(frame_t_mm) difference() { rr(frame_w_mm,frame_h_mm,frame_corner_r_mm); window2d(); }
+            shoulder_lip(frame_t_mm,frame_stop_h);
         }
-        translate([0, 0, -0.1])
-            cylinder(d = port_through_d_mm, h = port_boss_h_mm + 0.2);
+        rabbet_cut();
+        translate([0,0,-csg_eps_mm]) linear_extrude(frame_bbox_h+2*csg_eps_mm) locator_holes2d(locator_slip_d_mm,locator_slot_extra_mm);
+        if (seal_mode=="oring") { oring_groove(-csg_eps_mm); oring_groove(frame_t_mm-oring_groove_d_mm); }
     }
 }
-
-module front_endplate_solid() {
-    // Outer face near z=0 (bosses toward -Z); inner face at z=endplate_t_mm.
-    // Inner face carries NEST TONGUES that engage the first frame's grooves.
-    // Tongues are unioned into the plate before hole cuts so CGAL stays one volume.
+module front_endplate() {
     difference() {
         union() {
-            linear_extrude(height = endplate_t_mm)
-                plate_outline_2d(endplate_w_mm, endplate_h_mm, endplate_corner_r_mm);
-            // Tongues on inner face (overlap 0.2 mm into plate for robust union)
-            translate([0, 0, endplate_t_mm - 0.2])
-                nest_tongues_solid(nest_tongue_h_mm + 0.2);
-            // Overlap bosses 0.3 mm into plate so union is watertight
-            for (sy = [-1, 1])
-                translate([port_x_mm, sy*port_y_mm, 0.3])
-                    rotate([180, 0, 0]) front_port_boss();
-        }
-        // Through features
-        translate([0, 0, -0.1])
-            linear_extrude(height = endplate_t_mm + 0.2) {
-                bolt_holes_2d(bolt_clear_d_mm);
-                locator_holes_2d();
-                for (sy = [-1, 1])
-                    translate([port_x_mm, sy*port_y_mm])
-                        circle(d = port_through_d_mm);
+            linear_extrude(endplate_t_mm) rr(endplate_w_mm,endplate_h_mm,endplate_corner_r_mm);
+            shoulder_lip(endplate_t_mm,front_stop_h);
+            // Outer wrench section plus a true cylindrical base, both united
+            // with the plate. The counterbore starts at the exact outer end.
+            for (s=[-1,1]) translate([port_x_mm,s*port_y_mm,-port_boss_h_mm]) {
+                cylinder(d=port_boss_flat_mm/cos(30),h=port_boss_h_mm/2+csg_eps_mm,$fn=6);
+                translate([0,0,port_boss_h_mm/2]) cylinder(d=port_boss_od_mm,h=port_boss_h_mm/2);
             }
-        for (sy = [-1, 1])
-            translate([port_x_mm, sy*port_y_mm, -port_counterbore_depth_mm])
-                cylinder(d = port_counterbore_d_mm, h = port_counterbore_depth_mm + 0.05);
+        }
+        for (p=bolt_points) translate([p[0],p[1],-csg_eps_mm]) cylinder(d=bolt_clear_d_mm,h=endplate_t_mm+2*csg_eps_mm);
+        translate([0,0,pin_z]) linear_extrude(locator_press_depth_mm+csg_eps_mm) locator_holes2d(locator_press_d_mm);
+        for (s=[-1,1]) {
+            translate([port_x_mm,s*port_y_mm,-port_boss_h_mm-csg_eps_mm]) cylinder(d=port_through_d_mm,h=port_boss_h_mm+endplate_t_mm+2*csg_eps_mm);
+            translate([port_x_mm,s*port_y_mm,-port_boss_h_mm-csg_eps_mm]) cylinder(d=port_counterbore_d_mm,h=port_counterbore_depth_mm+csg_eps_mm);
+        }
     }
 }
-
-module rear_endplate_solid() {
-    // Local: inner face at z=0 (toward stack), outer at z=endplate_t_mm.
-    // Inner face has NEST GROOVES to accept the last frame's tongues.
-    // Outer face has heatset/tap pockets for M6.
+module rear_endplate() {
     difference() {
-        linear_extrude(height = endplate_t_mm)
-            plate_outline_2d(endplate_w_mm, endplate_h_mm, endplate_corner_r_mm);
-        // Locator through-holes
-        translate([0, 0, -0.1])
-            linear_extrude(height = endplate_t_mm + 0.2)
-                locator_holes_2d();
-        // Nest grooves on inner face
-        nest_grooves_cut(nest_groove_d_mm);
-        // Blind fastener features from OUTER face
-        for (p = bolt_points) {
-            if (rear_fastener_mode == "heatset") {
-                // FDM: M6 brass heat-set insert Ø8 × 8. Do not rely on printed threads.
-                translate([p[0], p[1], endplate_t_mm - heatset_depth_mm])
-                    cylinder(d = heatset_od_mm, h = heatset_depth_mm + 0.05);
-            } else {
-                // Machined POM/PEEK/metal only: M6 tap drill Ø5.0 × 13.
-                translate([p[0], p[1], endplate_t_mm - tap_drill_depth_mm])
-                    cylinder(d = tap_drill_d_mm, h = tap_drill_depth_mm + 0.05);
-            }
+        linear_extrude(endplate_t_mm) rr(endplate_w_mm,endplate_h_mm,endplate_corner_r_mm);
+        rabbet_cut();
+        translate([0,0,-csg_eps_mm]) linear_extrude(locator_rear_depth_mm+csg_eps_mm) locator_holes2d(locator_slip_d_mm,locator_slot_extra_mm);
+        for (p=bolt_points) {
+            translate([p[0],p[1],-csg_eps_mm]) cylinder(d=bolt_clear_d_mm,h=endplate_t_mm+2*csg_eps_mm);
+            translate([p[0],p[1],endplate_t_mm-heatset_depth_mm]) cylinder(d=heatset_pocket_d_mm,h=heatset_depth_mm+csg_eps_mm);
         }
+        if (seal_mode=="oring") oring_groove(-csg_eps_mm);
     }
 }
-
-module bolt_visual(shank_len) {
-    color([0.72, 0.73, 0.75]) {
-        translate([0, 0, -washer_t_mm])
-            difference() {
-                cylinder(d = washer_od_mm, h = washer_t_mm);
-                translate([0, 0, -0.1]) cylinder(d = bolt_shank_d_mm + 0.4, h = washer_t_mm + 0.2);
-            }
-        translate([0, 0, -washer_t_mm - bolt_head_h_mm])
-            cylinder(d = bolt_head_d_mm, h = bolt_head_h_mm, $fn = 6);
-        cylinder(d = bolt_shank_d_mm, h = shank_len);
-    }
+module locator_pin() {
+    c=locator_tip_chamfer_mm;
+    cylinder(d1=locator_d_mm-2*c,d2=locator_d_mm,h=c);
+    translate([0,0,c]) cylinder(d=locator_d_mm,h=locator_len_mm-2*c);
+    translate([0,0,locator_len_mm-c]) cylinder(d1=locator_d_mm,d2=locator_d_mm-2*c,h=c);
 }
-
-// --------------------------- Assembly ---------------------------------------
-// Interleave: electrode, frame, electrode, frame, ... then leftover electrodes.
-// Z pitch accounts for nest tongue sticking into the next part's groove, so
-// mating solid faces still meet: tongue height is absorbed by groove depth.
-// Electrodes sit in the window and do not change peripheral land contact;
-// for simplicity we still stack thicknesses additively (conservative gap).
-
-module place_one_electrode(idx, z) {
-    with_tab = (idx % 2 == 0) ? use_tabbed_first : !use_tabbed_first;
-    tab_shift = (idx - (electrode_count - 1)/2) * (tab_w_mm + 2);
-    translate([tab_shift, 0, z])
-        color(with_tab ? [0.90, 0.70, 0.25] : [0.62, 0.68, 0.72])
-            electrode_solid(with_tab = with_tab);
-}
-
-module place_one_frame(z) {
-    translate([0, 0, z])
-        color([0.18, 0.18, 0.20])
-            frame_solid();
-}
-
-module place_stack_layers(z0, gap = 0) {
-    // Frames only set axial pitch (land-to-land). Electrodes are centered in
-    // each frame window so nest tongues still reach the next groove.
-    n_f = frame_count;
-    n_e = electrode_count;
-    for (i = [0:n_f - 1]) {
-        zf = z0 + i * (frame_t_mm + gap);
-        place_one_frame(zf);
-        if (i < n_e) {
-            // Center electrode in this frame's cavity
-            ze = zf + (frame_t_mm - electrode_t_mm) / 2;
-            place_one_electrode(i, ze);
+module bolt() {
+    difference() {
+        union() {
+            translate([0,0,-bolt_head_h_mm]) cylinder(d1=bolt_head_d_mm-2*bolt_head_chamfer_mm,d2=bolt_head_d_mm,h=bolt_head_chamfer_mm);
+            translate([0,0,-bolt_head_h_mm+bolt_head_chamfer_mm]) cylinder(d=bolt_head_d_mm,h=bolt_head_h_mm-bolt_head_chamfer_mm);
+            cylinder(d=bolt_shank_d_mm,h=bolt_length_mm-bolt_tip_chamfer_mm);
+            translate([0,0,bolt_length_mm-bolt_tip_chamfer_mm]) cylinder(d1=bolt_shank_d_mm,d2=bolt_shank_d_mm-2*bolt_tip_chamfer_mm,h=bolt_tip_chamfer_mm);
         }
-    }
-    // Extra electrodes beyond frame_count: park after last frame (visual only)
-    if (n_e > n_f) {
-        for (i = [n_f:n_e - 1]) {
-            ze = z0 + n_f * (frame_t_mm + gap) + (i - n_f) * (electrode_t_mm + gap);
-            place_one_electrode(i, ze);
-        }
+        translate([0,0,-bolt_head_h_mm-csg_eps_mm]) cylinder(d=bolt_socket_af_mm/cos(30),h=bolt_socket_depth_mm+csg_eps_mm,$fn=6);
     }
 }
+module washer() { difference() { cylinder(d=washer_od_mm,h=washer_t_mm); translate([0,0,-csg_eps_mm]) cylinder(d=washer_id_mm,h=washer_t_mm+2*csg_eps_mm); } }
+module heatset_nut() { difference() { cylinder(d=heatset_od_mm,h=heatset_depth_mm); translate([0,0,-csg_eps_mm]) cylinder(d=heatset_bore_d_mm,h=heatset_depth_mm+2*csg_eps_mm); } }
 
-module locator_pins_in_stack(z_mid) {
-    if (show_locator_pins) {
-        for (p = locator_points)
-            translate([p[0], p[1], z_mid - locator_len_mm/2])
-                color([0.55, 0.55, 0.58]) locator_pin_solid();
+// Instance records. Fields are fixed and echoed as JSON-compatible arrays:
+// id,part,translation,scale,exploded_translation,exploded_scale,zh,en,
+// material,nominal_dims,assembled_dims,group,sequence_index,hardware_index.
+function frame_z(i,t=seal_gap)=endplate_t_mm+t+i*(frame_t_mm+electrode_t_mm+2*t);
+function electrode_z(i,t=seal_gap)=frame_z(i,t)+frame_t_mm+t;
+function central_count()=4*frame_count+3;
+function central_kind(s)=s==0 ? "front_endplate" : s==central_count()-1 ? "rear_endplate" :
+    s==1 || (s-2)%4==1 || (s-2)%4==3 ? (seal_mode=="flat_gasket" ? "gasket" : "gasket_oring") :
+    (s-2)%4==0 ? "frame" : "electrode_tab";
+function seal_number(s)=s==1 ? 1 : (s-2)%4==1 ? 2*floor((s-2)/4)+2 : 2*floor((s-2)/4)+3;
+function central_z(s,t=seal_gap)=s==0 ? 0 : s==central_count()-1 ? endplate_t_mm+frame_count*(frame_t_mm+electrode_t_mm)+(2*frame_count+1)*t :
+    s==1 ? endplate_t_mm : let(i=floor((s-2)/4),k=(s-2)%4)
+    k==0 ? frame_z(i,t) : k==1 ? frame_z(i,t)+frame_t_mm : k==2 ? electrode_z(i,t) : electrode_z(i,t)+electrode_t_mm;
+function central_h(s)=s==0 ? front_bbox_max_z : s==central_count()-1 ? endplate_t_mm :
+    central_kind(s)=="frame" ? frame_bbox_h : central_kind(s)=="electrode_tab" ? electrode_t_mm : seal_free_h;
+function pin_exploded_z(i)=front_bbox_max_z+explode_gap_mm+i*(locator_len_mm+explode_gap_mm);
+function central_exploded_z(s)=s==0 ? 0 : s==1 ? pin_exploded_z(1)+locator_len_mm+explode_gap_mm : central_exploded_z(s-1)+central_h(s-1)+explode_gap_mm;
+function washer_exploded_z(i)=-port_boss_h_mm-explode_gap_mm-washer_t_mm-i*hardware_explode_stagger_mm;
+function bolt_exploded_z(i)=washer_exploded_z(0)-explode_gap_mm-bolt_length_mm-i*hardware_explode_stagger_mm;
+function heatset_exploded_z(i)=central_exploded_z(central_count()-1)+endplate_t_mm+explode_gap_mm+i*hardware_explode_stagger_mm;
+function rec(id,k,pos,sc,ex,esc,zh,en,mat,nom,adim,grp,seq=-1,hw=-1)=[id,k,pos,sc,ex,esc,zh,en,mat,nom,adim,grp,seq,hw];
+function central_record(s)=let(k=central_kind(s),i=floor((s-2)/4),
+    is_seal=k=="gasket" || k=="gasket_oring",n=is_seal ? seal_number(s) : i+1,
+    id=is_seal ? str("gasket_",n) : k=="frame" ? str("frame_",n) : k=="electrode_tab" ? str("electrode_",n) : k,
+    kp=k=="electrode_tab" && tab_x_offsets_mm[i%len(tab_x_offsets_mm)]>0 ? "electrode_tab_right" : k,
+    nom=k=="front_endplate" || k=="rear_endplate" ? [endplate_w_mm,endplate_h_mm,endplate_t_mm] :
+        k=="frame" ? [frame_w_mm,frame_h_mm,frame_t_mm] : k=="electrode_tab" ? [electrode_flange_w_mm,tab_end_y+electrode_flange_h_mm/2,electrode_t_mm] :
+        k=="gasket" ? [gasket_w_mm,gasket_h_mm,gasket_t_mm] : [seal_cl_w+oring_cs_mm,seal_cl_h+oring_cs_mm,oring_cs_mm],
+    adim=is_seal ? (k=="gasket" ? [gasket_w_mm,gasket_h_mm,gasket_compressed_t] : [seal_cl_w+oring_compressed_w,seal_cl_h+oring_compressed_w,oring_compressed_h]) : nom,
+    z=central_z(s)+(k=="gasket_oring" && n%2==0 ? -oring_groove_d_mm : 0),
+    zh=is_seal ? str("密封件",n) : k=="frame" ? str("框",n) : k=="electrode_tab" ? str("电极",n) : k=="front_endplate" ? "前端板" : "后端板",
+    en=is_seal ? str("Gasket ",n) : k=="frame" ? str("Frame ",n) : k=="electrode_tab" ? str("Electrode ",n) : k,
+    mat=is_seal ? gasket_material : k=="electrode_tab" ? electrode_material : "polymer")
+    rec(id,kp,[0,0,z],[1,1,k=="gasket" ? gasket_compressed_t/gasket_t_mm : 1],[0,0,central_exploded_z(s)],[1,1,1],zh,en,mat,nom,adim,"stack",s);
+function instance_records()=concat(
+    [for (s=[0:central_count()-1]) central_record(s)],
+    [for (i=[0:7]) rec(str("bolt_",i+1),"bolt",concat(bolt_points[i],[-washer_t_mm]),[1,1,1],concat(bolt_points[i],[bolt_exploded_z(i)]),[1,1,1],str("螺栓",i+1),str("Bolt ",i+1),"steel",[bolt_shank_d_mm,bolt_length_mm,bolt_head_h_mm],[bolt_shank_d_mm,bolt_length_mm,bolt_head_h_mm],"bolts",-1,i)],
+    [for (i=[0:7]) rec(str("washer_",i+1),"washer",concat(bolt_points[i],[-washer_t_mm]),[1,1,1],concat(bolt_points[i],[washer_exploded_z(i)]),[1,1,1],str("垫圈",i+1),str("Washer ",i+1),"steel",[washer_od_mm,washer_id_mm,washer_t_mm],[washer_od_mm,washer_id_mm,washer_t_mm],"washers",-1,i)],
+    [for (i=[0:7]) rec(str("heatset_",i+1),"heatset_nut",concat(bolt_points[i],[heatset_z]),[1,1,1],concat(bolt_points[i],[heatset_exploded_z(i)]),[1,1,1],str("热熔螺母",i+1),str("Heatset ",i+1),"brass",[heatset_od_mm,heatset_depth_mm],[heatset_od_mm,heatset_depth_mm],"heatsets",-1,i)],
+    [for (i=[0:1]) rec(str("locator_pin_",i+1),"locator_pin",concat(locator_points[i],[pin_z]),[1,1,1],concat(locator_points[i],[pin_exploded_z(i)]),[1,1,1],str("定位销",i+1),str("Locator pin ",i+1),"steel",[locator_d_mm,locator_len_mm],[locator_d_mm,locator_len_mm],"locators",-1,i)]);
+
+module geometry(k,compressed=false) {
+    if (k=="front_endplate") front_endplate();
+    else if (k=="rear_endplate") rear_endplate();
+    else if (k=="frame") frame();
+    else if (k=="gasket") { if (seal_mode=="flat_gasket") flat_gasket(); else gasket_oring(compressed); }
+    else if (k=="gasket_oring" || k=="gasket_oring_compressed") gasket_oring(compressed || k=="gasket_oring_compressed");
+    else if (k=="electrode_tab") electrode();
+    else if (k=="electrode_tab_right") electrode(true,abs(tab_x_offsets_mm[1]));
+    else if (k=="electrode_plain") electrode(false);
+    else if (k=="locator_pin") locator_pin();
+    else if (k=="bolt") bolt();
+    else if (k=="washer") washer();
+    else if (k=="heatset_nut") heatset_nut();
+    else if (k=="bolt_with_washer") { bolt(); washer(); }
+}
+module assembly(exploded=false) {
+    for (r=instance_records()) {
+        c=r[11]=="stack" ? (r[1]=="frame" ? [0.55,0.72,0.85] : r[8]=="polymer" ? [0.24,0.28,0.34] : r[1]=="gasket" || r[1]=="gasket_oring" ? [0.16,0.16,0.16] : [0.68,0.69,0.72]) : r[11]=="heatsets" ? [0.72,0.52,0.20] : [0.75,0.78,0.81];
+        color(c) translate(exploded ? r[4] : r[2]) scale(exploded ? r[5] : r[3]) geometry(r[1],!exploded);
     }
 }
-
-module bolts_in_assembly(z_front_outer, z_rear_outer) {
-    engage = (rear_fastener_mode == "heatset") ? heatset_depth_mm*0.85
-                                               : tap_drill_depth_mm*0.85;
-    shank = (z_rear_outer - z_front_outer) + engage;
-    for (p = bolt_points)
-        translate([p[0], p[1], z_front_outer])
-            bolt_visual(shank);
+// Manifest parameter and derived echo definitions are appended next.
+if (part=="assembly" || part=="exploded") assembly(part=="exploded");
+else if (part!="manifest") {
+    assert(len([for (k=["front_endplate","rear_endplate","frame","gasket","gasket_oring","gasket_oring_compressed","electrode_tab","electrode_plain","locator_pin","bolt","washer","heatset_nut","bolt_with_washer"]) if (k==part) k])>0,"unknown part");
+    geometry(part);
 }
 
-module assembly_view(exploded = false) {
-    gap = exploded ? explode_gap_mm : 0;
-    color([0.12, 0.12, 0.14]) front_endplate_solid();
-
-    z_stack0 = endplate_t_mm + gap;
-    // Explode gaps between frames (+ optional trailing gap before rear plate)
-    active_draw_t = active_stack_t + (frame_count - 1)*gap;
-
-    place_stack_layers(z_stack0, gap);
-
-    z_rear_inner = z_stack0 + active_draw_t + gap;
-    translate([0, 0, z_rear_inner])
-        color([0.12, 0.12, 0.14]) rear_endplate_solid();
-
-    locator_pins_in_stack(z_stack0 + (exploded ? active_draw_t : active_stack_t)/2);
-    bolts_in_assembly(0, z_rear_inner + endplate_t_mm);
+module manifest_echo() {
+    echo(["KOLBE_V1","parameter",["part",part]]);
+    echo(["KOLBE_V1","parameter",["frame_count",frame_count]]);
+    echo(["KOLBE_V1","parameter",["electrode_count",electrode_count]]);
+    echo(["KOLBE_V1","parameter",["seal_mode",seal_mode]]);
+    echo(["KOLBE_V1","parameter",["gasket_material",gasket_material]]);
+    echo(["KOLBE_V1","parameter",["electrode_material",electrode_material]]);
+    echo(["KOLBE_V1","parameter",["explode_gap_mm",explode_gap_mm]]);
+    echo(["KOLBE_V1","parameter",["hardware_explode_stagger_mm",hardware_explode_stagger_mm]]);
+    echo(["KOLBE_V1","parameter",["frame_w_mm",frame_w_mm]]);
+    echo(["KOLBE_V1","parameter",["frame_h_mm",frame_h_mm]]);
+    echo(["KOLBE_V1","parameter",["frame_t_mm",frame_t_mm]]);
+    echo(["KOLBE_V1","parameter",["frame_corner_r_mm",frame_corner_r_mm]]);
+    echo(["KOLBE_V1","parameter",["endplate_w_mm",endplate_w_mm]]);
+    echo(["KOLBE_V1","parameter",["endplate_h_mm",endplate_h_mm]]);
+    echo(["KOLBE_V1","parameter",["endplate_t_mm",endplate_t_mm]]);
+    echo(["KOLBE_V1","parameter",["endplate_corner_r_mm",endplate_corner_r_mm]]);
+    echo(["KOLBE_V1","parameter",["window_w_mm",window_w_mm]]);
+    echo(["KOLBE_V1","parameter",["window_h_mm",window_h_mm]]);
+    echo(["KOLBE_V1","parameter",["window_corner_r_mm",window_corner_r_mm]]);
+    echo(["KOLBE_V1","parameter",["$fn",$fn]]);
+    echo(["KOLBE_V1","parameter",["csg_eps_mm",csg_eps_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_w_mm",gasket_w_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_h_mm",gasket_h_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_corner_r_mm",gasket_corner_r_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_t_mm",gasket_t_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_compression_ratio",gasket_compression_ratio]]);
+    echo(["KOLBE_V1","parameter",["gasket_pin_d_mm",gasket_pin_d_mm]]);
+    echo(["KOLBE_V1","parameter",["gasket_slot_extra_mm",gasket_slot_extra_mm]]);
+    echo(["KOLBE_V1","parameter",["oring_cs_mm",oring_cs_mm]]);
+    echo(["KOLBE_V1","parameter",["oring_compression_ratio",oring_compression_ratio]]);
+    echo(["KOLBE_V1","parameter",["oring_centerline_pad_mm",oring_centerline_pad_mm]]);
+    echo(["KOLBE_V1","parameter",["oring_groove_w_mm",oring_groove_w_mm]]);
+    echo(["KOLBE_V1","parameter",["oring_groove_d_mm",oring_groove_d_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_w_mm",electrode_w_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_h_mm",electrode_h_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_t_mm",electrode_t_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_corner_r_mm",electrode_corner_r_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_flange_w_mm",electrode_flange_w_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_flange_h_mm",electrode_flange_h_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_flange_r_mm",electrode_flange_r_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_bridge_w_mm",electrode_bridge_w_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_bridge_overlap_mm",electrode_bridge_overlap_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_pin_d_mm",electrode_pin_d_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_w_mm",tab_w_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_len_mm",tab_len_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_overlap_mm",tab_overlap_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_x_offsets_mm",tab_x_offsets_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_offset_mm",tab_offset_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_hole_d_mm",tab_hole_d_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_hole_offset_mm",tab_hole_offset_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_channel_clearance_mm",tab_channel_clearance_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_gasket_notch_depth_mm",tab_gasket_notch_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_radial_clearance_mm",nest_radial_clearance_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_lip_w_mm",nest_lip_w_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_lip_h_mm",nest_lip_h_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_rabbet_d_mm",nest_rabbet_d_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_leadin_mm",nest_leadin_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_side_x_mm",nest_side_x_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_side_len_mm",nest_side_len_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_end_y_mm",nest_end_y_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_end_len_mm",nest_end_len_mm]]);
+    echo(["KOLBE_V1","parameter",["nest_segment_r_mm",nest_segment_r_mm]]);
+    echo(["KOLBE_V1","parameter",["shoulder_inner_clearance_mm",shoulder_inner_clearance_mm]]);
+    echo(["KOLBE_V1","parameter",["min_structural_wall_mm",min_structural_wall_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_points",locator_points]]);
+    echo(["KOLBE_V1","parameter",["locator_d_mm",locator_d_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_press_d_mm",locator_press_d_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_press_depth_mm",locator_press_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_slip_d_mm",locator_slip_d_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_slot_extra_mm",locator_slot_extra_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_rear_depth_mm",locator_rear_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_rear_engagement_mm",locator_rear_engagement_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_tip_chamfer_mm",locator_tip_chamfer_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_points",bolt_points]]);
+    echo(["KOLBE_V1","parameter",["bolt_clear_d_mm",bolt_clear_d_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_shank_d_mm",bolt_shank_d_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_head_d_mm",bolt_head_d_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_head_h_mm",bolt_head_h_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_socket_af_mm",bolt_socket_af_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_socket_depth_mm",bolt_socket_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_head_chamfer_mm",bolt_head_chamfer_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_tip_chamfer_mm",bolt_tip_chamfer_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_standard_lengths_mm",bolt_standard_lengths_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_min_engagement_mm",bolt_min_engagement_mm]]);
+    echo(["KOLBE_V1","parameter",["bolt_max_rear_projection_mm",bolt_max_rear_projection_mm]]);
+    echo(["KOLBE_V1","parameter",["washer_od_mm",washer_od_mm]]);
+    echo(["KOLBE_V1","parameter",["washer_id_mm",washer_id_mm]]);
+    echo(["KOLBE_V1","parameter",["washer_t_mm",washer_t_mm]]);
+    echo(["KOLBE_V1","parameter",["rear_fastener_mode",rear_fastener_mode]]);
+    echo(["KOLBE_V1","parameter",["heatset_od_mm",heatset_od_mm]]);
+    echo(["KOLBE_V1","parameter",["heatset_depth_mm",heatset_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["heatset_bore_d_mm",heatset_bore_d_mm]]);
+    echo(["KOLBE_V1","parameter",["heatset_pocket_d_mm",heatset_pocket_d_mm]]);
+    echo(["KOLBE_V1","parameter",["port_x_mm",port_x_mm]]);
+    echo(["KOLBE_V1","parameter",["port_y_mm",port_y_mm]]);
+    echo(["KOLBE_V1","parameter",["port_through_d_mm",port_through_d_mm]]);
+    echo(["KOLBE_V1","parameter",["port_counterbore_d_mm",port_counterbore_d_mm]]);
+    echo(["KOLBE_V1","parameter",["port_counterbore_depth_mm",port_counterbore_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["port_boss_od_mm",port_boss_od_mm]]);
+    echo(["KOLBE_V1","parameter",["port_boss_h_mm",port_boss_h_mm]]);
+    echo(["KOLBE_V1","parameter",["port_boss_flat_mm",port_boss_flat_mm]]);
+    echo(["KOLBE_V1","derived",["gasket_count",gasket_count]]);
+    echo(["KOLBE_V1","derived",["gasket_compressed_t",gasket_compressed_t]]);
+    echo(["KOLBE_V1","derived",["oring_compressed_h",oring_compressed_h]]);
+    echo(["KOLBE_V1","derived",["oring_compressed_w",oring_compressed_w]]);
+    echo(["KOLBE_V1","derived",["seal_gap",seal_gap]]);
+    echo(["KOLBE_V1","derived",["free_gap",free_gap]]);
+    echo(["KOLBE_V1","derived",["front_stop_h",front_stop_h]]);
+    echo(["KOLBE_V1","derived",["frame_stop_h",frame_stop_h]]);
+    echo(["KOLBE_V1","derived",["nest_axial_gap",nest_axial_gap]]);
+    echo(["KOLBE_V1","derived",["active_stack_t",active_stack_t]]);
+    echo(["KOLBE_V1","derived",["total_stack_t",total_stack_t]]);
+    echo(["KOLBE_V1","derived",["free_total_stack_t",free_total_stack_t]]);
+    echo(["KOLBE_V1","derived",["rear_z",rear_z]]);
+    echo(["KOLBE_V1","derived",["heatset_z",heatset_z]]);
+    echo(["KOLBE_V1","derived",["pin_z",pin_z]]);
+    echo(["KOLBE_V1","derived",["locator_len_mm",locator_len_mm]]);
+    echo(["KOLBE_V1","derived",["bolt_length_mm",bolt_length_mm]]);
+    echo(["KOLBE_V1","derived",["bolt_engagement_mm",bolt_engagement_mm]]);
+    echo(["KOLBE_V1","derived",["bolt_rear_projection_mm",bolt_rear_projection_mm]]);
+    echo(["KOLBE_V1","derived",["bolt_tip_recess_mm",bolt_tip_recess_mm]]);
+    echo(["KOLBE_V1","derived",["locator_rear_clearance_mm",locator_rear_clearance_mm]]);
+    echo(["KOLBE_V1","derived",["seal_cl_w",seal_cl_w]]);
+    echo(["KOLBE_V1","derived",["seal_cl_h",seal_cl_h]]);
+    echo(["KOLBE_V1","derived",["seal_cl_r",seal_cl_r]]);
+    echo(["KOLBE_V1","derived",["tab_start_y",tab_start_y]]);
+    echo(["KOLBE_V1","derived",["tab_end_y",tab_end_y]]);
+    echo(["KOLBE_V1","derived",["slot_angle",slot_angle]]);
+    echo(["KOLBE_V1","derived",["side_wall_mm",side_wall_mm]]);
+    echo(["KOLBE_V1","derived",["end_wall_mm",end_wall_mm]]);
+    echo(["KOLBE_V1","derived",["front_bbox_max_z",front_bbox_max_z]]);
+    echo(["KOLBE_V1","derived",["frame_bbox_h",frame_bbox_h]]);
+    for (r=instance_records()) echo(["KOLBE_V1","instance",r]);
 }
-
-// --------------------------- Part dispatch ----------------------------------
-if (part == "front_endplate") {
-    front_endplate_solid();
-} else if (part == "rear_endplate") {
-    rear_endplate_solid();
-} else if (part == "frame") {
-    frame_solid();
-} else if (part == "electrode_tab") {
-    electrode_solid(true);
-} else if (part == "electrode_plain") {
-    electrode_solid(false);
-} else if (part == "locator_pin") {
-    locator_pin_solid();
-} else if (part == "exploded") {
-    assembly_view(true);
-} else {
-    assembly_view(false);
-}
+if (part=="manifest") manifest_echo();
