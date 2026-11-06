@@ -1,13 +1,13 @@
 {
   "three": "0.170.0",
   "esbuild": "0.24.0",
-  "source_sha256": "563fca159c29ea2ad9ba658bef438488d200e9986652bc13abf731ca4135387c",
+  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
   "inputs": {
     "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
-    "scripts/demo_v2/app.js": "1d892527bbb0d4ae17ec053d6ecf20ad6455b6271ca117cf38da07a20979b201",
+    "scripts/demo_v2/app.js": "b8beb2aa69f30a3430226a6566513c8c7f752f48d5045929994b8c7dcc78a78f",
     "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
-    "scripts/demo_v2/template.html": "907fc803fe3715225cf1a7096f55f4c3b1e01fe2afdbb43f04b4d61e32022a6b",
-    "stack_manifest.json": "8385905c2b71edcb06fd6ee328cc24e2024f6cf9c5da1fd9906c566286aceb1d"
+    "scripts/demo_v2/template.html": "2c498634082d597b720583196fc87d0bcc5fbf3c9786dc3ef1318ad98e47a165",
+    "stack_manifest.json": "d1584e1949fed413a57b45a768240240d179557516a5e41d3cd4273e1ed305bf"
   },
   "geometry": {
     "stls/bolt.stl": {
@@ -45,9 +45,9 @@
       "retained_triangles": 1172
     },
     "stls/electrode_tab.stl": {
-      "triangles": 2416,
-      "source_vertices": 1200,
-      "vertices": 2424,
+      "triangles": 2376,
+      "source_vertices": 1184,
+      "vertices": 2376,
       "source_bbox": [
         [
           -33,
@@ -76,12 +76,12 @@
       "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 0,
-      "retained_triangles": 2416
+      "retained_triangles": 2376
     },
     "stls/electrode_tab_right.stl": {
-      "triangles": 2416,
-      "source_vertices": 1200,
-      "vertices": 2424,
+      "triangles": 2376,
+      "source_vertices": 1184,
+      "vertices": 2376,
       "source_bbox": [
         [
           -33,
@@ -110,7 +110,7 @@
       "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 0,
-      "retained_triangles": 2416
+      "retained_triangles": 2376
     },
     "stls/frame.stl": {
       "triangles": 10464,
@@ -351,6 +351,6 @@
       "retained_triangles": 768
     }
   },
-  "html_bytes": 1940769,
-  "html_sha256": "12882d8de2b21c493d4d4090bb06afe08762061b2270da5bc1f2fbbeeedcd600"
+  "html_bytes": 1940417,
+  "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
 }

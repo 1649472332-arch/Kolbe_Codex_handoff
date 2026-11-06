@@ -7,6 +7,7 @@
     {
       "check": "mesh bolt.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 1172,
       "volume_mm3": 2097.5926957751713
@@ -41,10 +42,11 @@
     },
     {
       "check": "mesh electrode_plain.stl",
-      "components": 1,
+      "components": 2,
+      "expected_components": 2,
       "pass": true,
-      "triangles": 2012,
-      "volume_mm3": 3028.6883795494746
+      "triangles": 1972,
+      "volume_mm3": 2888.6883795494755
     },
     {
       "actual": [
@@ -76,10 +78,11 @@
     },
     {
       "check": "mesh electrode_tab.stl",
-      "components": 1,
+      "components": 2,
+      "expected_components": 2,
       "pass": true,
-      "triangles": 2416,
-      "volume_mm3": 3240.651580203789
+      "triangles": 2376,
+      "volume_mm3": 3100.651580203789
     },
     {
       "actual": [
@@ -111,10 +114,11 @@
     },
     {
       "check": "mesh electrode_tab_right.stl",
-      "components": 1,
+      "components": 2,
+      "expected_components": 2,
       "pass": true,
-      "triangles": 2416,
-      "volume_mm3": 3240.651580203789
+      "triangles": 2376,
+      "volume_mm3": 3100.651580203789
     },
     {
       "actual": [
@@ -147,6 +151,7 @@
     {
       "check": "mesh frame.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 12064,
       "volume_mm3": 15003.503218466292
@@ -182,6 +187,7 @@
     {
       "check": "mesh front_endplate.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 9908,
       "volume_mm3": 263970.91276933666
@@ -217,6 +223,7 @@
     {
       "check": "mesh gasket.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 19200,
       "volume_mm3": 251.50258627379208
@@ -252,6 +259,7 @@
     {
       "check": "mesh gasket_oring.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 19200,
       "volume_mm3": 251.50258627379208
@@ -287,6 +295,7 @@
     {
       "check": "mesh gasket_oring_compressed.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 19200,
       "volume_mm3": 251.49969672930592
@@ -322,6 +331,7 @@
     {
       "check": "mesh heatset_nut.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 768,
       "volume_mm3": 160.48377490113504
@@ -357,6 +367,7 @@
     {
       "check": "mesh locator_pin.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 764,
       "volume_mm3": 375.64841698717055
@@ -392,6 +403,7 @@
     {
       "check": "mesh rear_endplate.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 14148,
       "volume_mm3": 260546.09182202202
@@ -427,6 +439,7 @@
     {
       "check": "mesh washer.stl",
       "components": 1,
+      "expected_components": 1,
       "pass": true,
       "triangles": 768,
       "volume_mm3": 129.39144567611652
@@ -4174,15 +4187,201 @@
       "pass": true
     },
     {
+      "check": "isolated central pad electrode_tab",
+      "components": 2,
+      "pass": true,
+      "support": "none; separate support/fixing and electrical connection required",
+      "symmetric_difference_mm3": 0.00017966710279386419
+    },
+    {
+      "actual": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "check": "isolated pad bbox electrode_tab",
+      "expected": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "check": "no bridges anywhere in window electrode_tab",
+      "pass": true,
+      "unexpected_volume_mm3": 0.0002196529790297674
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "check": "tab remains on outer carrier electrode_tab",
+      "pass": true
+    },
+    {
+      "check": "isolated central pad electrode_tab_right",
+      "components": 2,
+      "pass": true,
+      "support": "none; separate support/fixing and electrical connection required",
+      "symmetric_difference_mm3": 0.00017966710279386419
+    },
+    {
+      "actual": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "check": "isolated pad bbox electrode_tab_right",
+      "expected": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "check": "no bridges anywhere in window electrode_tab_right",
+      "pass": true,
+      "unexpected_volume_mm3": 0.0002196529790297674
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab_right/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab_right/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "check": "tab remains on outer carrier electrode_tab_right",
+      "pass": true
+    },
+    {
+      "check": "isolated central pad electrode_plain",
+      "components": 2,
+      "pass": true,
+      "support": "none; separate support/fixing and electrical connection required",
+      "symmetric_difference_mm3": 0.00017966710279386419
+    },
+    {
+      "actual": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "check": "isolated pad bbox electrode_plain",
+      "expected": [
+        [
+          -14.0,
+          -14.0,
+          0.0
+        ],
+        [
+          14.0,
+          14.0,
+          1.0
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "check": "no bridges anywhere in window electrode_plain",
+      "pass": true,
+      "unexpected_volume_mm3": 0.0002196529790293233
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_plain/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_empty": true,
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_plain/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
       "check": "central electrode pad electrode_1",
-      "pass": true
-    },
-    {
-      "check": "electrode bridge electrode_1-1",
-      "pass": true
-    },
-    {
-      "check": "electrode bridge electrode_11",
       "pass": true
     },
     {
@@ -4206,14 +4405,6 @@
       "pass": true
     },
     {
-      "check": "electrode bridge electrode_2-1",
-      "pass": true
-    },
-    {
-      "check": "electrode bridge electrode_21",
-      "pass": true
-    },
-    {
       "actual": 64.5,
       "check": "electrode tab end electrode_2",
       "expected": 64.5,
@@ -4231,14 +4422,6 @@
     },
     {
       "check": "central electrode pad electrode_3",
-      "pass": true
-    },
-    {
-      "check": "electrode bridge electrode_3-1",
-      "pass": true
-    },
-    {
-      "check": "electrode bridge electrode_31",
       "pass": true
     },
     {
@@ -5519,11 +5702,12 @@
     "gasket_material": "EPDM",
     "seal_mode": "oring"
   },
+  "electrode_support": "unresolved: central pad floats independently; no support/fixing or tab connection is modeled",
   "instance_count": 41,
   "pass": true,
   "physical_validation": "not_run: pressure, loads, chemistry, insulation, creep and service life",
   "schema_version": 1,
-  "source_sha256": "563fca159c29ea2ad9ba658bef438488d200e9986652bc13abf731ca4135387c",
+  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
   "tolerances": {
     "bbox_mm": 0.02,
     "length_mm": 0.02,
@@ -5537,7 +5721,7 @@
     "trimesh": "5.2.0"
   },
   "verification_inputs": {
-    "manifest_sha256": "06a4cb0b928fdf9b3b2d9d3941973a2c2b3493a25b6ecc886e415c18a520ff68",
-    "verifier_sha256": "bebc348926a5d1c3d8682385a3e9efef7f70d25da5ba8ddaacfc0b71aed84e86"
+    "manifest_sha256": "176c3fd207c2d75024041e191e3dca68999b136ac017eed30c36e5e5b64f1a3a",
+    "verifier_sha256": "3e33f2fea6b5a08f16136c6a2e16b964b569f31c2d0625c58c84e280488147e9"
   }
 }

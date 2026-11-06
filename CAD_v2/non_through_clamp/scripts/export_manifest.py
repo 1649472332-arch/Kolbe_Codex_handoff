@@ -136,6 +136,8 @@ def make_manifest(out, defines=(), stl_dir='stls'):
             r['stl'] = (Path(stl_dir) / (r['part'] + '.stl')).as_posix()
             if r['part'].startswith('electrode'):
                 r['active_pad_dims_mm'] = [params[f'electrode_{a}_mm'] for a in ['w', 'h', 't']]
+                r['central_pad_support'] = 'none; independent floating solid, separate support/fixing required'
+                r['central_pad_connected_to_tab'] = False
             if r['part'] == 'gasket_oring':
                 r['compressed_stl'] = (Path(stl_dir) / 'gasket_oring_compressed.stl').as_posix()
                 r['deformation'] = {'type': 'corresponding_vertices', 'assembled': 'compressed_stl',
@@ -154,7 +156,9 @@ def make_manifest(out, defines=(), stl_dir='stls'):
         mesh = trimesh.load_mesh(out.parent / rel, process=True)
         meshes[rel] = mesh
         files[rel] = {'sha256': sha(out.parent / rel), 'local_bbox_mm': mesh.bounds.tolist(),
-                      'triangles': len(mesh.faces), 'vertices': len(mesh.vertices)}
+                      'triangles': len(mesh.faces), 'vertices': len(mesh.vertices),
+                      'components': len(mesh.split(only_watertight=False)),
+                      'volume_mm3': float(mesh.volume)}
     for r in instances:
         for state, output_key in [('assembled', 'assembled_bbox_mm'), ('exploded', 'exploded_bbox_mm')]:
             assembled = state == 'assembled'
@@ -168,6 +172,9 @@ def make_manifest(out, defines=(), stl_dir='stls'):
                 'parameters': params, 'derived': derived, 'source_sha256': sha(SCAD),
                 'seal_mode': params['seal_mode'], 'gasket_material': params['gasket_material'],
                 'exploded_gap_mm': params['explode_gap_mm'], 'files': files, 'instances': instances,
+                'electrode_design': {'bridge_count': 0, 'components_per_stl': 2,
+                                     'central_pad_supported': False, 'central_pad_connected_to_tab': False,
+                                     'manufacturing_status': 'not a manufacturable one-piece electrode; user/future design must add support/fixing and electrical connection'},
                 'groups': {g: [r['id'] for r in instances if r['group'] == g]
                            for g in ['stack', 'bolts', 'washers', 'heatsets', 'locators']},
                 'tools': {'openscad': subprocess.run([OSC, '--version'], capture_output=True, text=True).stderr.strip(),

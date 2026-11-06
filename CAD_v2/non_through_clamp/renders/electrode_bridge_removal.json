@@ -1,0 +1,74 @@
+{
+  "baseline_source_sha256": "563fca159c29ea2ad9ba658bef438488d200e9986652bc13abf731ca4135387c",
+  "checks": [
+    {
+      "check": "unchanged non-electrode mesh stls/bolt.stl",
+      "pass": true,
+      "sha256": "638eaa5819e764831a2e44d6f37d37faf4ce7b9271cc0a95471b0ee977748267"
+    },
+    {
+      "added_volume_mm3": 0.0,
+      "baseline_sha256": "38a292a8d5af7f8e214d0e1f16e71f3f47191ae74c40f7bc90053780850bd278",
+      "check": "only two original bridges removed stls/electrode_plain.stl",
+      "pass": true,
+      "removal_shape_symmetric_difference_mm3": 0.0,
+      "removed_volume_mm3": 140.0,
+      "sha256": "085b6ccc2bd1ff361d90c04ae9e2a7dff4b5154e20504155391e63bd18e155a5"
+    },
+    {
+      "added_volume_mm3": 0.0,
+      "baseline_sha256": "40c40133097c7698944982ceb3e7ac80a4e2f23358f4124dabf766a68def328f",
+      "check": "only two original bridges removed stls/electrode_tab.stl",
+      "pass": true,
+      "removal_shape_symmetric_difference_mm3": 0.0,
+      "removed_volume_mm3": 140.0,
+      "sha256": "b342e39335effa30e0d9df7769ed94a4c529808a3c8b1a7dbba5325da8410fd7"
+    },
+    {
+      "added_volume_mm3": 0.0,
+      "baseline_sha256": "a842b5fc524a380a4102dea00ba9c97f1cab5e8f8bbb10266df9650e843111c5",
+      "check": "only two original bridges removed stls/electrode_tab_right.stl",
+      "pass": true,
+      "removal_shape_symmetric_difference_mm3": 0.0,
+      "removed_volume_mm3": 140.0,
+      "sha256": "b6efdb34f0f90717c94a3cb6c957026c9392d79ab3317bf60cb3fec60ec15c39"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/frame.stl",
+      "pass": true,
+      "sha256": "b98bcb92c901dc70fd6edb5545a2bfea0c8ddb15660ee56f76b43cc6abe65dd1"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/front_endplate.stl",
+      "pass": true,
+      "sha256": "794e6eafb0bfae45d775a1f7ffd5e6c8e67aef5b7d4215f4eed1b9c4f6d738a1"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/gasket.stl",
+      "pass": true,
+      "sha256": "f8b4f4920cf5f08c2de44841a9c39567b4f7754f6f14b3a2ab394b73a594ea82"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/heatset_nut.stl",
+      "pass": true,
+      "sha256": "daa8ed268f61ac6be645d23b73c8bac9d4b3ef93c36e82ef8eb05d7a01db99ce"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/locator_pin.stl",
+      "pass": true,
+      "sha256": "c8a784fcb9fa4ef213ebb324ebcac83f818eecb255ffb2dca5be6f338ee8ac0f"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/rear_endplate.stl",
+      "pass": true,
+      "sha256": "0abd2f6da557faae4a572db01ad2d91be06dd8120061a7782fb03829262e8ba2"
+    },
+    {
+      "check": "unchanged non-electrode mesh stls/washer.stl",
+      "pass": true,
+      "sha256": "eabe3cd49278ad41fec9af5955b07d0859d976a64ac528662647a752c04279e8"
+    }
+  ],
+  "pass": true,
+  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7"
+}

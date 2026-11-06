@@ -162,6 +162,7 @@ render('exploded.png','exploded',(0,-115,0))
 render('frame_front.png','frame',(20,0,0))
 render('frame_rear.png','frame',(160,0,0))
 render('gasket.png','gasket',(20,0,0))
+render('electrode_isolated.png','electrode_tab',(0,0,0))
 render('assembly_preview.png','assembly',(125,0,145),(1200,900))
 render('exploded_preview.png','exploded',(0,-115,0),(1200,900))
 

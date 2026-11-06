@@ -12,7 +12,7 @@ esbuild v0.24.0, MIT License, Copyright Evan Wallace. All assets embedded. -->
 </head>
 <body>
 <div id="app">
-  <header><div class="brand"><span class="mark">K</span><div><h1>非贯穿夹紧电解池</h1><p>KOLBE / NON-THROUGH CLAMP · V2</p></div></div><span class="offline">● 离线模型 · 41 件</span></header>
+  <header><div class="brand"><span class="mark">K</span><div><h1>非贯穿夹紧电解池</h1><p>KOLBE / NON-THROUGH CLAMP · V2</p></div></div><span class="offline">● 离线模型 · 41 实例</span></header>
   <div class="workspace">
     <aside id="panel">
       <div class="panel-title"><strong>装配浏览 <span>ASSEMBLY</span></strong><button id="panel-toggle" aria-label="收起零件面板" aria-expanded="true">收起 −</button></div>
@@ -28,7 +28,7 @@ esbuild v0.24.0, MIT License, Copyright Evan Wallace. All assets embedded. -->
         <label class="field">密封件外观<select id="gasket-material" aria-label="密封件材质外观"><option>EPDM</option><option>FKM</option><option>PTFE</option></select></label>
         <label class="field">电极外观<select id="metal-material" aria-label="电极材质外观"><option value="titanium">钛 Titanium</option><option value="platinum">铂 Platinum</option></select></label>
         <button id="opaque" class="wide" aria-label="切换框透明度" aria-pressed="false">框不透明 Opaque</button>
-        <p class="note">材质外观预览，尺寸沿用当前 manifest。电极中央片 28×28 mm；导电边及桥也可能参与反应。</p>
+        <p class="note">材质外观预览，尺寸沿用当前 manifest。28×28 mm 中央片已去桥，独立悬浮；当前没有支承/固定结构，也未与顶部引片导通，需后续补充方案，不能直接制造为一体电极。金属外圈及引片仍可能参与反应。</p>
         <button id="section" class="wide" aria-label="切换剖切显示" aria-pressed="false">剖切 Section</button>
         <label class="field" for="cut">剖切 X <output id="cut-value">34.75 mm</output></label>
         <input id="cut" type="range" min="0" max="1" step="0.001" value="0.9695945945945946" aria-label="剖切位置">

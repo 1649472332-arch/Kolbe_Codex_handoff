@@ -4,13 +4,13 @@
     "reproducible_build": {
       "status": "pass",
       "detail": [
-        "12882d8de2b21c493d4d4090bb06afe08762061b2270da5bc1f2fbbeeedcd600",
-        "12882d8de2b21c493d4d4090bb06afe08762061b2270da5bc1f2fbbeeedcd600"
+        "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa",
+        "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
       ]
     },
     "file_size": {
       "status": "pass",
-      "detail": 1940769
+      "detail": 1940417
     },
     "static_offline_resources": {
       "status": "pass",
@@ -68,9 +68,9 @@
           "retained_triangles": 1172
         },
         "stls/electrode_tab.stl": {
-          "triangles": 2416,
-          "source_vertices": 1200,
-          "vertices": 2424,
+          "triangles": 2376,
+          "source_vertices": 1184,
+          "vertices": 2376,
           "source_bbox": [
             [
               -33,
@@ -99,12 +99,12 @@
           "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 0,
-          "retained_triangles": 2416
+          "retained_triangles": 2376
         },
         "stls/electrode_tab_right.stl": {
-          "triangles": 2416,
-          "source_vertices": 1200,
-          "vertices": 2424,
+          "triangles": 2376,
+          "source_vertices": 1184,
+          "vertices": 2376,
           "source_bbox": [
             [
               -33,
@@ -133,7 +133,7 @@
           "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 0,
-          "retained_triangles": 2416
+          "retained_triangles": 2376
         },
         "stls/frame.stl": {
           "triangles": 10464,
@@ -402,9 +402,9 @@
           1000
         ],
         "stddev": [
-          64.26230699409072,
-          63.5013587217229,
-          62.11185329198883
+          64.27304541953113,
+          63.5095390449395,
+          62.11971684729342
         ]
       }
     },
@@ -425,9 +425,9 @@
           1000
         ],
         "stddev": [
-          39.8221022448918,
-          37.79775997643508,
-          36.58844656741576
+          39.82816631776524,
+          37.801583841564536,
+          36.59364223407225
         ]
       }
     },
@@ -447,9 +447,9 @@
           1000
         ],
         "stddev": [
-          26.69878662209657,
-          20.83059947089882,
-          17.987369445494004
+          26.707357516583123,
+          20.83688833117594,
+          17.997201320987493
         ]
       }
     },
@@ -465,9 +465,9 @@
           1000
         ],
         "stddev": [
-          37.701238628232964,
-          29.981971980857477,
-          25.71171617247611
+          37.70632302411313,
+          29.98551790931424,
+          25.71759311647013
         ]
       }
     },
@@ -487,9 +487,27 @@
           1000
         ],
         "stddev": [
-          57.153472567292226,
-          53.37149865949952,
-          50.903355726317244
+          57.15544091051703,
+          53.372435762462224,
+          50.90529571440826
+        ]
+      }
+    },
+    "electrode_isolation_and_support_notice": {
+      "status": "pass",
+      "detail": null
+    },
+    "pixels_demo_v2_electrode_isolated.png": {
+      "status": "pass",
+      "detail": {
+        "size": [
+          1440,
+          1000
+        ],
+        "stddev": [
+          38.41508729744871,
+          34.40570689213963,
+          31.65905960996499
         ]
       }
     },
@@ -637,9 +655,9 @@
           1000
         ],
         "stddev": [
-          38.45832690663544,
-          37.53895879618815,
-          37.129771998430414
+          38.45935353381844,
+          37.537704593832295,
+          37.129919389949784
         ]
       }
     },
@@ -746,9 +764,9 @@
           1688
         ],
         "stddev": [
-          43.02566758818777,
-          40.95832311014765,
-          39.72873754994235
+          43.019838994156984,
+          40.95211294257481,
+          39.72215918538184
         ]
       }
     },
@@ -779,6 +797,7 @@
     "renders/demo_v2_frame_isolated.png",
     "renders/demo_v2_frame_reverse.png",
     "renders/demo_v2_gasket_isolated.png",
+    "renders/demo_v2_electrode_isolated.png",
     "renders/demo_v2_section.png",
     "renders/demo_v2_mobile.png"
   ],
@@ -791,9 +810,9 @@
     "file:///workspace/Kolbe_Codex_handoff/CAD_v2/non_through_clamp/demo_v2.html"
   ],
   "http_requests": [],
-  "html_bytes": 1940769,
-  "html_mib": 1.8508615493774414,
-  "html_sha256": "12882d8de2b21c493d4d4090bb06afe08762061b2270da5bc1f2fbbeeedcd600",
+  "html_bytes": 1940417,
+  "html_mib": 1.8505258560180664,
+  "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa",
   "url_hits": [
     {
       "url": "http://www.w3.org/1999/xhtml",
@@ -807,13 +826,13 @@
   "build": {
     "three": "0.170.0",
     "esbuild": "0.24.0",
-    "source_sha256": "563fca159c29ea2ad9ba658bef438488d200e9986652bc13abf731ca4135387c",
+    "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
     "inputs": {
       "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
-      "scripts/demo_v2/app.js": "1d892527bbb0d4ae17ec053d6ecf20ad6455b6271ca117cf38da07a20979b201",
+      "scripts/demo_v2/app.js": "b8beb2aa69f30a3430226a6566513c8c7f752f48d5045929994b8c7dcc78a78f",
       "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
-      "scripts/demo_v2/template.html": "907fc803fe3715225cf1a7096f55f4c3b1e01fe2afdbb43f04b4d61e32022a6b",
-      "stack_manifest.json": "8385905c2b71edcb06fd6ee328cc24e2024f6cf9c5da1fd9906c566286aceb1d"
+      "scripts/demo_v2/template.html": "2c498634082d597b720583196fc87d0bcc5fbf3c9786dc3ef1318ad98e47a165",
+      "stack_manifest.json": "d1584e1949fed413a57b45a768240240d179557516a5e41d3cd4273e1ed305bf"
     },
     "geometry": {
       "stls/bolt.stl": {
@@ -851,9 +870,9 @@
         "retained_triangles": 1172
       },
       "stls/electrode_tab.stl": {
-        "triangles": 2416,
-        "source_vertices": 1200,
-        "vertices": 2424,
+        "triangles": 2376,
+        "source_vertices": 1184,
+        "vertices": 2376,
         "source_bbox": [
           [
             -33,
@@ -882,12 +901,12 @@
         "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 0,
-        "retained_triangles": 2416
+        "retained_triangles": 2376
       },
       "stls/electrode_tab_right.stl": {
-        "triangles": 2416,
-        "source_vertices": 1200,
-        "vertices": 2424,
+        "triangles": 2376,
+        "source_vertices": 1184,
+        "vertices": 2376,
         "source_bbox": [
           [
             -33,
@@ -916,7 +935,7 @@
         "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 0,
-        "retained_triangles": 2416
+        "retained_triangles": 2376
       },
       "stls/frame.stl": {
         "triangles": 10464,
@@ -1157,29 +1176,29 @@
         "retained_triangles": 768
       }
     },
-    "html_bytes": 1940769,
-    "html_sha256": "12882d8de2b21c493d4d4090bb06afe08762061b2270da5bc1f2fbbeeedcd600"
+    "html_bytes": 1940417,
+    "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
   },
   "browser": "156.0.8078.47",
   "three": "170",
   "desktop_performance": {
-    "renderedFrames": 186,
-    "samples": 186,
-    "frame_time_samples": 173,
-    "frame_time_ms_median": 183.1999999999971,
-    "frame_time_ms_p95": 650,
-    "render_ms_median": 0.7000000001862645,
-    "render_ms_p95": 454.70000000018626
+    "renderedFrames": 205,
+    "samples": 205,
+    "frame_time_samples": 191,
+    "frame_time_ms_median": 150,
+    "frame_time_ms_p95": 716.6999999999971,
+    "render_ms_median": 0.6000000014901161,
+    "render_ms_p95": 284.90000000037253
   },
   "mobile_performance": {
-    "renderedFrames": 103,
-    "samples": 103,
-    "frame_time_samples": 97,
-    "frame_time_ms_median": 200.10000000000036,
-    "frame_time_ms_p95": 350,
-    "render_ms_median": 0.7000000001862645,
-    "render_ms_p95": 1.5
+    "renderedFrames": 109,
+    "samples": 109,
+    "frame_time_samples": 103,
+    "frame_time_ms_median": 183.29999999999927,
+    "frame_time_ms_p95": 366.6999999999971,
+    "render_ms_median": 0.6999999992549419,
+    "render_ms_p95": 2.600000001490116
   },
   "performance_note": "Software SwiftShader active-frame intervals and render submission times; not physical phone FPS. Includes shader compilation.",
-  "elapsed_seconds": 78.93
+  "elapsed_seconds": 80.14
 }

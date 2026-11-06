@@ -112,6 +112,7 @@ class Audit:
                 'configuration': {k: self.p[k] for k in ['frame_count', 'seal_mode', 'gasket_material']},
                 'tolerances': {'length_mm': LENGTH_TOL, 'bbox_mm': LENGTH_TOL, 'volume_mm3': VOLUME_TOL},
                 'instance_count': len(self.records), 'checks': self.results,
+                'electrode_support': 'unresolved: central pad floats independently; no support/fixing or tab connection is modeled',
                 'physical_validation': 'not_run: pressure, loads, chemistry, insulation, creep and service life'}
 
     def integrity(self):
@@ -121,13 +122,16 @@ class Audit:
             mesh = trimesh.load_mesh(path, process=True)
             self.meshes[rel], self.local[rel] = mesh, solid(mesh)
             edge_counts = np.bincount(mesh.edges_unique_inverse)
+            components = mesh.split(only_watertight=False)
+            expected_components = 2 if Path(rel).stem.startswith('electrode') else 1
             self.check('mesh '+rel, sha(path) == info['sha256'] and
                        np.isfinite(mesh.vertices).all() and mesh.volume > 0 and
                        mesh.is_watertight and mesh.is_winding_consistent and
                        np.all(edge_counts == 2) and np.all(mesh.area_faces > 1e-12) and
-                       len(mesh.split(only_watertight=False)) == 1,
+                       len(components) == expected_components and
+                       all(c.is_watertight and c.is_winding_consistent and c.volume > 0 for c in components),
                        triangles=len(mesh.faces), volume_mm3=float(mesh.volume),
-                       components=len(mesh.split(only_watertight=False)))
+                       components=len(components), expected_components=expected_components)
             self.near('local bbox '+rel, mesh.bounds, info['local_bbox_mm'])
         # Compare echo records with parsed fields using precisely the stored parameters.
         defines = [k+'='+json.dumps(v) for k, v in self.p.items() if k != 'part']
@@ -339,13 +343,53 @@ class Audit:
                        triangles=len(a),max_correspondence_error_mm=error)
             self.near('oring free bbox',free.extents,[d['seal_cl_w']+p['oring_cs_mm'],d['seal_cl_h']+p['oring_cs_mm'],p['oring_cs_mm']])
             self.near('oring compressed bbox',compressed.extents,[d['seal_cl_w']+d['oring_compressed_w'],d['seal_cl_h']+d['oring_compressed_w'],d['oring_compressed_h']])
+        # Inspect every electrode asset, including the unused plain spare. Exactly
+        # two components plus an unchanged isolated pad rules out any neck to the
+        # carrier, including a connection via the top tab. The entire window gap
+        # must be empty across the full metal thickness, not just at sample points.
+        thickness = p['electrode_t_mm']
+        pad = mf.CrossSection([rr_points(p['electrode_w_mm'],p['electrode_h_mm'],
+                                        p['electrode_corner_r_mm'],n=24)]).extrude(thickness)
+        window = mf.CrossSection([rr_points(p['window_w_mm'],p['window_h_mm'],
+                                           p['window_corner_r_mm'],n=24)]).extrude(thickness)
+        for name in ['electrode_tab','electrode_tab_right','electrode_plain']:
+            local = self.get(name)
+            components = self.meshes[self.file_for(name)].split(only_watertight=False)
+            pad_extent = np.array([p['electrode_w_mm'],p['electrode_h_mm'],thickness])
+            central = min(components,key=lambda c: np.linalg.norm(c.extents-pad_extent))
+            central_solid = solid(central)
+            delta = (central_solid-pad).volume()+(pad-central_solid).volume()
+            self.check('isolated central pad '+name,len(components)==2 and delta<=VOLUME_TOL,
+                       components=len(components),symmetric_difference_mm3=max(0.,delta),
+                       support='none; separate support/fixing and electrical connection required')
+            self.near('isolated pad bbox '+name,central.bounds,
+                      [[-p['electrode_w_mm']/2,-p['electrode_h_mm']/2,0],
+                       [p['electrode_w_mm']/2,p['electrode_h_mm']/2,thickness]])
+            extra = ((window-pad) ^ local).volume()
+            self.check('no bridges anywhere in window '+name,extra<=VOLUME_TOL,
+                       unexpected_volume_mm3=max(0.,extra))
+            for sign in [-1,1]:
+                # Historical bridges were 4 mm wide; probe their whole clear span.
+                gap = (p['window_h_mm']-p['electrode_h_mm'])/2
+                y = sign*(p['electrode_h_mm']/2+p['window_h_mm']/2)/2
+                probe = box([4,gap-0.02,thickness],[-2,y-(gap-0.02)/2,0])
+                volume = max(0.,(probe ^ local).volume())
+                center_empty = not inside_xy(local,thickness/2,[0,y])
+                self.check('old bridge region empty '+name+'/'+str(sign),
+                           center_empty and volume<=VOLUME_TOL,
+                           center_mm=[0,y,thickness/2],center_empty=center_empty,volume_mm3=volume)
+            if name!='electrode_plain':
+                carrier = max(components,key=lambda c: c.extents[1])
+                carrier_solid = solid(carrier)
+                x = p['tab_x_offsets_mm'][1] if name.endswith('_right') else p['tab_offset_mm']
+                self.check('tab remains on outer carrier '+name,
+                           inside_xy(carrier_solid,thickness/2,[x,d['tab_start_y']+0.1]) and
+                           inside_xy(carrier_solid,thickness/2,[x,d['tab_end_y']-1]))
         for i in range(1,p['frame_count']+1):
             r = self.records[f'electrode_{i}']; s = self.world[r['id']]; local = self.local[r['stl']]
             z = p['electrode_t_mm']/2
             pad_probe = box([p['electrode_w_mm']-2*p['electrode_corner_r_mm'],p['electrode_h_mm']-2*p['electrode_corner_r_mm'],0.1],[-(p['electrode_w_mm']-2*p['electrode_corner_r_mm'])/2,-(p['electrode_h_mm']-2*p['electrode_corner_r_mm'])/2,z-0.05])
             self.check('central electrode pad '+r['id'],(pad_probe-local).volume()<=VOLUME_TOL)
-            for sign in [-1,1]:
-                self.check('electrode bridge '+r['id']+str(sign),inside_xy(local,z,[0,sign*(p['electrode_h_mm']/2+p['window_h_mm']/2)/2]))
             self.near('electrode tab end '+r['id'],bounds(local)[1,1],d['tab_end_y'])
             x = p['tab_x_offsets_mm'][(i-1)%len(p['tab_x_offsets_mm'])]
             y = d['tab_end_y']-p['tab_hole_offset_mm']

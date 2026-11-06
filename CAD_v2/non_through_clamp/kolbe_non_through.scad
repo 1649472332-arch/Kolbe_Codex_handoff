@@ -41,8 +41,8 @@ electrode_corner_r_mm = 1.5;
 electrode_flange_w_mm = 66;
 electrode_flange_h_mm = 74;
 electrode_flange_r_mm = 3;
-electrode_bridge_w_mm = 4;
-electrode_bridge_overlap_mm = 0.5;
+// No bridges or necks: the central pad is a separate, unsupported solid.
+// The outer carrier and its top tab remain joined; neither fixes/powers the pad.
 electrode_pin_d_mm = 6.6;
 tab_w_mm = 8;
 tab_len_mm = 28;
@@ -252,12 +252,12 @@ module flat_gasket() {
     }
 }
 module electrode(tab=true,x=tab_offset_mm) {
+    // Two disconnected solids in one STL. A separate support and electrical
+    // connection scheme is still required; this is not a one-piece electrode.
     linear_extrude(electrode_t_mm) difference() {
         union() {
             difference() { rr(electrode_flange_w_mm,electrode_flange_h_mm,electrode_flange_r_mm); window2d(); }
             rr(electrode_w_mm,electrode_h_mm,electrode_corner_r_mm);
-            for (s=[-1,1]) translate([0,s*(electrode_h_mm/2+window_h_mm/2)/2])
-                square([electrode_bridge_w_mm,(window_h_mm-electrode_h_mm)/2+2*electrode_bridge_overlap_mm],center=true);
             if (tab) translate([x,tab_start_y+tab_len_mm/2]) square([tab_w_mm,tab_len_mm],center=true);
         }
         locator_holes2d(electrode_pin_d_mm);
@@ -454,8 +454,6 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["electrode_flange_w_mm",electrode_flange_w_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_flange_h_mm",electrode_flange_h_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_flange_r_mm",electrode_flange_r_mm]]);
-    echo(["KOLBE_V1","parameter",["electrode_bridge_w_mm",electrode_bridge_w_mm]]);
-    echo(["KOLBE_V1","parameter",["electrode_bridge_overlap_mm",electrode_bridge_overlap_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_pin_d_mm",electrode_pin_d_mm]]);
     echo(["KOLBE_V1","parameter",["tab_w_mm",tab_w_mm]]);
     echo(["KOLBE_V1","parameter",["tab_len_mm",tab_len_mm]]);
@@ -516,6 +514,10 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["port_boss_h_mm",port_boss_h_mm]]);
     echo(["KOLBE_V1","parameter",["port_boss_flat_mm",port_boss_flat_mm]]);
     echo(["KOLBE_V1","derived",["gasket_count",gasket_count]]);
+    echo(["KOLBE_V1","derived",["electrode_bridge_count",0]]);
+    echo(["KOLBE_V1","derived",["electrode_components",2]]);
+    echo(["KOLBE_V1","derived",["central_pad_support_provided",false]]);
+    echo(["KOLBE_V1","derived",["central_pad_connected_to_tab",false]]);
     echo(["KOLBE_V1","derived",["gasket_compressed_t",gasket_compressed_t]]);
     echo(["KOLBE_V1","derived",["oring_compressed_h",oring_compressed_h]]);
     echo(["KOLBE_V1","derived",["oring_compressed_w",oring_compressed_w]]);

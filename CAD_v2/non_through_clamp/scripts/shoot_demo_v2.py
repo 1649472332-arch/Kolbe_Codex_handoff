@@ -188,6 +188,13 @@ def main():
             action(page, '__demo.select("gasket_4");__demo.setIsolation("hide")')
             check('gasket_card', '0.800 mm' in page.locator('#info').inner_text() and 'gasket_4' in page.locator('#info').inner_text(), None)
             snap(page, 'demo_v2_gasket_isolated.png', (1440, 1000))
+            action(page, '__demo.select("electrode_2");__demo.setIsolation("hide")')
+            electrode = state(page)
+            check('electrode_isolation_and_support_notice',
+                  [i['id'] for i in electrode['instances'] if i['visible']] == ['electrode_2'] and
+                  '独立悬浮' in page.locator('#info').inner_text() and
+                  '无支承/固定结构' in page.locator('#info').inner_text(), None)
+            snap(page, 'demo_v2_electrode_isolated.png', (1440, 1000))
             for id in ['bolt_8', 'locator_pin_2']:
                 action(page, f'__demo.select("{id}")')
                 check('selection_'+id, state(page)['selected'] == id and id in page.locator('#info').inner_text(), None)

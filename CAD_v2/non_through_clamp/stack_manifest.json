@@ -9,6 +9,10 @@
     "bolt_length_mm": 60,
     "bolt_rear_projection_mm": 0,
     "bolt_tip_recess_mm": 0.8,
+    "central_pad_connected_to_tab": false,
+    "central_pad_support_provided": false,
+    "electrode_bridge_count": 0,
+    "electrode_components": 2,
     "end_wall_mm": 1,
     "frame_bbox_h": 7.4,
     "frame_stop_h": 2.2,
@@ -36,9 +40,17 @@
     "tab_start_y": 36.5,
     "total_stack_t": 59.2
   },
+  "electrode_design": {
+    "bridge_count": 0,
+    "central_pad_connected_to_tab": false,
+    "central_pad_supported": false,
+    "components_per_stl": 2,
+    "manufacturing_status": "not a manufacturable one-piece electrode; user/future design must add support/fixing and electrical connection"
+  },
   "exploded_gap_mm": 14,
   "files": {
     "stls/bolt.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -5.0,
@@ -53,9 +65,11 @@
       ],
       "sha256": "638eaa5819e764831a2e44d6f37d37faf4ce7b9271cc0a95471b0ee977748267",
       "triangles": 1172,
-      "vertices": 588
+      "vertices": 588,
+      "volume_mm3": 2097.5926957751713
     },
     "stls/electrode_plain.stl": {
+      "components": 2,
       "local_bbox_mm": [
         [
           -33.0,
@@ -68,11 +82,13 @@
           1.0
         ]
       ],
-      "sha256": "38a292a8d5af7f8e214d0e1f16e71f3f47191ae74c40f7bc90053780850bd278",
-      "triangles": 2012,
-      "vertices": 1000
+      "sha256": "085b6ccc2bd1ff361d90c04ae9e2a7dff4b5154e20504155391e63bd18e155a5",
+      "triangles": 1972,
+      "vertices": 984,
+      "volume_mm3": 2888.6883795494755
     },
     "stls/electrode_tab.stl": {
+      "components": 2,
       "local_bbox_mm": [
         [
           -33.0,
@@ -85,11 +101,13 @@
           1.0
         ]
       ],
-      "sha256": "40c40133097c7698944982ceb3e7ac80a4e2f23358f4124dabf766a68def328f",
-      "triangles": 2416,
-      "vertices": 1200
+      "sha256": "b342e39335effa30e0d9df7769ed94a4c529808a3c8b1a7dbba5325da8410fd7",
+      "triangles": 2376,
+      "vertices": 1184,
+      "volume_mm3": 3100.651580203789
     },
     "stls/electrode_tab_right.stl": {
+      "components": 2,
       "local_bbox_mm": [
         [
           -33.0,
@@ -102,11 +120,13 @@
           1.0
         ]
       ],
-      "sha256": "a842b5fc524a380a4102dea00ba9c97f1cab5e8f8bbb10266df9650e843111c5",
-      "triangles": 2416,
-      "vertices": 1200
+      "sha256": "b6efdb34f0f90717c94a3cb6c957026c9392d79ab3317bf60cb3fec60ec15c39",
+      "triangles": 2376,
+      "vertices": 1184,
+      "volume_mm3": 3100.651580203789
     },
     "stls/frame.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -37.0,
@@ -121,9 +141,11 @@
       ],
       "sha256": "b98bcb92c901dc70fd6edb5545a2bfea0c8ddb15660ee56f76b43cc6abe65dd1",
       "triangles": 10464,
-      "vertices": 5228
+      "vertices": 5228,
+      "volume_mm3": 15243.838167373833
     },
     "stls/front_endplate.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -56.0,
@@ -138,9 +160,11 @@
       ],
       "sha256": "794e6eafb0bfae45d775a1f7ffd5e6c8e67aef5b7d4215f4eed1b9c4f6d738a1",
       "triangles": 9908,
-      "vertices": 4936
+      "vertices": 4936,
+      "volume_mm3": 263970.91276933666
     },
     "stls/gasket.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -33.0,
@@ -155,9 +179,11 @@
       ],
       "sha256": "f8b4f4920cf5f08c2de44841a9c39567b4f7754f6f14b3a2ab394b73a594ea82",
       "triangles": 1616,
-      "vertices": 804
+      "vertices": 804,
+      "volume_mm3": 1704.340722415697
     },
     "stls/heatset_nut.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -4.0,
@@ -172,9 +198,11 @@
       ],
       "sha256": "daa8ed268f61ac6be645d23b73c8bac9d4b3ef93c36e82ef8eb05d7a01db99ce",
       "triangles": 768,
-      "vertices": 384
+      "vertices": 384,
+      "volume_mm3": 160.48377490113504
     },
     "stls/locator_pin.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -2.0,
@@ -189,9 +217,11 @@
       ],
       "sha256": "c8a784fcb9fa4ef213ebb324ebcac83f818eecb255ffb2dca5be6f338ee8ac0f",
       "triangles": 764,
-      "vertices": 384
+      "vertices": 384,
+      "volume_mm3": 375.64841698717055
     },
     "stls/rear_endplate.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -56.0,
@@ -206,9 +236,11 @@
       ],
       "sha256": "0abd2f6da557faae4a572db01ad2d91be06dd8120061a7782fb03829262e8ba2",
       "triangles": 13348,
-      "vertices": 6660
+      "vertices": 6660,
+      "volume_mm3": 260666.25910547437
     },
     "stls/washer.stl": {
+      "components": 1,
       "local_bbox_mm": [
         [
           -6.0,
@@ -223,7 +255,8 @@
       ],
       "sha256": "eabe3cd49278ad41fec9af5955b07d0859d976a64ac528662647a752c04279e8",
       "triangles": 768,
-      "vertices": 384
+      "vertices": 384,
+      "volume_mm3": 129.39144567611652
     }
   },
   "gasket_material": "EPDM",
@@ -680,6 +713,8 @@
         101.5,
         1
       ],
+      "central_pad_connected_to_tab": false,
+      "central_pad_support": "none; independent floating solid, separate support/fixing required",
       "display_name": {
         "en": "Electrode 1",
         "zh": "电极1"
@@ -1061,6 +1096,8 @@
         101.5,
         1
       ],
+      "central_pad_connected_to_tab": false,
+      "central_pad_support": "none; independent floating solid, separate support/fixing required",
       "display_name": {
         "en": "Electrode 2",
         "zh": "电极2"
@@ -1442,6 +1479,8 @@
         101.5,
         1
       ],
+      "central_pad_connected_to_tab": false,
+      "central_pad_support": "none; independent floating solid, separate support/fixing required",
       "display_name": {
         "en": "Electrode 3",
         "zh": "电极3"
@@ -4191,8 +4230,6 @@
     ],
     "bolt_tip_chamfer_mm": 0.5,
     "csg_eps_mm": 0.01,
-    "electrode_bridge_overlap_mm": 0.5,
-    "electrode_bridge_w_mm": 4,
     "electrode_corner_r_mm": 1.5,
     "electrode_count": 3,
     "electrode_flange_h_mm": 74,
@@ -4293,7 +4330,7 @@
   },
   "schema_version": 1,
   "seal_mode": "flat_gasket",
-  "source_sha256": "563fca159c29ea2ad9ba658bef438488d200e9986652bc13abf731ca4135387c",
+  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
   "tools": {
     "manifold3d": "3.5.4",
     "numpy": "2.5.4",
