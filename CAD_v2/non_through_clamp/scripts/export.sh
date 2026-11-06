@@ -94,6 +94,8 @@ for label, definitions in [
     ('PTFE O-ring',['gasket_material="PTFE"','seal_mode="oring"']),
     ('zero axial clearance',['nest_rabbet_d_mm=1.2']),
     ('thin structural wall',['nest_radial_clearance_mm=0.5']),
+    ('slot cuts sealing land',['tab_slot_start_y_mm=34.5']),
+    ('wrong tab side clearance',['tab_channel_clearance_mm=0.1']),
 ]:
     try:
         ex.echo_records(definitions)
@@ -117,7 +119,14 @@ if not all(repro.values()):
 # bboxes. OpenSCAD's orthographic vertical FOV is 22.5 degrees. The gimbal
 # view matrix is Rx(-x) Ry(-y) Rz(-z); no GUI camera state or fixed distance.
 def render(name, part, angle, size=(1600,1200)):
-    if part in ['assembly','exploded']:
+    if part in ['tab_fit_left','tab_fit_right']:
+        number=1 if part.endswith('left') else 2
+        group=default['groups']['tab_fit_'+str(number)]
+        boxes=np.array([r['assembled_bbox_mm'] for r in default['instances'] if r['id'] in group])
+        x=default['parameters']['tab_x_offsets_mm'][number-1]
+        bbox=np.array([[x-10,31,boxes[:,0,2].min()],[x+10,65,boxes[:,1,2].max()]])
+        fill=0.8
+    elif part in ['assembly','exploded']:
         key='assembled_bbox_mm' if part=='assembly' else 'exploded_bbox_mm'
         boxes=np.array([r[key] for r in default['instances']])
         bbox=np.array([boxes[:,0].min(axis=0),boxes[:,1].max(axis=0)])
@@ -162,7 +171,12 @@ render('exploded.png','exploded',(0,-115,0))
 render('frame_front.png','frame',(20,0,0))
 render('frame_rear.png','frame',(160,0,0))
 render('gasket.png','gasket',(20,0,0))
+render('gasket_left_slot.png','gasket_tab_left',(20,0,0))
+render('gasket_right_slot.png','gasket_tab_right',(20,0,0))
 render('electrode_isolated.png','electrode_tab',(0,0,0))
+render('electrode_right.png','electrode_tab_right',(0,0,0))
+render('tab_fit_left.png','tab_fit_left',(55,0,15))
+render('tab_fit_right.png','tab_fit_right',(55,0,-15))
 render('assembly_preview.png','assembly',(125,0,145),(1200,900))
 render('exploded_preview.png','exploded',(0,-115,0),(1200,900))
 

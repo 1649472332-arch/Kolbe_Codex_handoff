@@ -42,11 +42,11 @@
     },
     {
       "check": "mesh electrode_plain.stl",
-      "components": 2,
-      "expected_components": 2,
+      "components": 1,
+      "expected_components": 1,
       "pass": true,
-      "triangles": 1972,
-      "volume_mm3": 2888.6883795494755
+      "triangles": 1996,
+      "volume_mm3": 3263.6883795494746
     },
     {
       "actual": [
@@ -78,11 +78,11 @@
     },
     {
       "check": "mesh electrode_tab.stl",
-      "components": 2,
-      "expected_components": 2,
+      "components": 1,
+      "expected_components": 1,
       "pass": true,
-      "triangles": 2376,
-      "volume_mm3": 3100.651580203789
+      "triangles": 2400,
+      "volume_mm3": 3475.651580203789
     },
     {
       "actual": [
@@ -114,11 +114,11 @@
     },
     {
       "check": "mesh electrode_tab_right.stl",
-      "components": 2,
-      "expected_components": 2,
+      "components": 1,
+      "expected_components": 1,
       "pass": true,
-      "triangles": 2376,
-      "volume_mm3": 3100.651580203789
+      "triangles": 2400,
+      "volume_mm3": 3475.651580203789
     },
     {
       "actual": [
@@ -153,8 +153,8 @@
       "components": 1,
       "expected_components": 1,
       "pass": true,
-      "triangles": 12064,
-      "volume_mm3": 15003.503218466292
+      "triangles": 10928,
+      "volume_mm3": 14629.249694239197
     },
     {
       "actual": [
@@ -324,6 +324,78 @@
           24.799999237060547,
           34.79999923706055,
           0.8999999761581421
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "check": "mesh gasket_tab_left.stl",
+      "components": 1,
+      "expected_components": 1,
+      "pass": true,
+      "triangles": 1600,
+      "volume_mm3": 1700.900722593319
+    },
+    {
+      "actual": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "check": "local bbox gasket_tab_left.stl",
+      "expected": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "pass": true
+    },
+    {
+      "check": "mesh gasket_tab_right.stl",
+      "components": 1,
+      "expected_components": 1,
+      "pass": true,
+      "triangles": 1600,
+      "volume_mm3": 1700.900722593319
+    },
+    {
+      "actual": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "check": "local bbox gasket_tab_right.stl",
+      "expected": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
         ]
       ],
       "pass": true
@@ -3263,9 +3335,9 @@
     },
     {
       "check": "interference front_endplate/frame_1",
-      "forbidden_volume_mm3": 0.00014940914711168775,
+      "forbidden_volume_mm3": 0.00014940914713647356,
       "pass": true,
-      "raw_volume_mm3": 0.00014940914711168775
+      "raw_volume_mm3": 0.00014940914713647356
     },
     {
       "check": "interference front_endplate/bolt_1",
@@ -3869,9 +3941,9 @@
         },
         {
           "axis": 0,
-          "female": 9.949999809265137,
+          "female": 27.25,
           "gap_mm": 0.25,
-          "male": 9.699999809265137,
+          "male": 27.0,
           "other": 38.75
         }
       ],
@@ -3885,8 +3957,9 @@
     },
     {
       "check": "whole rabbet offset profile",
+      "excluded": "two through-open tab exits, separately verified at 0.3 mm per side",
       "pass": true,
-      "symmetric_difference_mm2": 0.0006354173584541545
+      "symmetric_difference_mm2": 0.0005874104192632179
     },
     {
       "check": "rabbet bottom frame",
@@ -3923,14 +3996,14 @@
       "pass": true
     },
     {
-      "area_mm2": 391.90565290196037,
+      "area_mm2": 391.9056529013992,
       "check": "hard-stop contact front_endplate",
       "pass": true
     },
     {
       "check": "hard-stop shift collision front_endplate",
       "pass": true,
-      "volume_mm3": 19.881885716195566
+      "volume_mm3": 19.88188571619554
     },
     {
       "actual": 26.8,
@@ -3952,7 +4025,7 @@
     {
       "check": "hard-stop shift collision frame_1",
       "pass": true,
-      "volume_mm3": 19.881654768935146
+      "volume_mm3": 19.881654768935135
     },
     {
       "actual": 33.0,
@@ -3974,7 +4047,7 @@
     {
       "check": "hard-stop shift collision frame_2",
       "pass": true,
-      "volume_mm3": 19.881654768932236
+      "volume_mm3": 19.881654768932243
     },
     {
       "actual": 39.2,
@@ -4187,47 +4260,18 @@
       "pass": true
     },
     {
-      "check": "isolated central pad electrode_tab",
-      "components": 2,
+      "check": "one-piece supported pad electrode_tab",
+      "components": 1,
       "pass": true,
-      "support": "none; separate support/fixing and electrical connection required",
-      "symmetric_difference_mm3": 0.00017966710279386419
+      "support": "broad lateral lands to perimeter flange"
     },
     {
-      "actual": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
-      "check": "isolated pad bbox electrode_tab",
-      "expected": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
+      "check": "full broad lateral lands electrode_tab",
+      "height_mm": 25,
+      "metal_thickness_mm": 1,
       "pass": true
     },
     {
-      "check": "no bridges anywhere in window electrode_tab",
-      "pass": true,
-      "unexpected_volume_mm3": 0.0002196529790297674
-    },
-    {
-      "center_empty": true,
       "center_mm": [
         0,
         -22.75,
@@ -4238,7 +4282,10 @@
       "volume_mm3": 0.0
     },
     {
-      "center_empty": true,
+      "check": "electrode fluid bypass electrode_tab/-1",
+      "pass": true
+    },
+    {
       "center_mm": [
         0,
         22.75,
@@ -4249,51 +4296,27 @@
       "volume_mm3": 0.0
     },
     {
-      "check": "tab remains on outer carrier electrode_tab",
+      "check": "electrode fluid bypass electrode_tab/1",
       "pass": true
     },
     {
-      "check": "isolated central pad electrode_tab_right",
-      "components": 2,
+      "check": "integral tab to pad electrode_tab",
       "pass": true,
-      "support": "none; separate support/fixing and electrical connection required",
-      "symmetric_difference_mm3": 0.00017966710279386419
+      "tab_x_mm": -14
     },
     {
-      "actual": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
-      "check": "isolated pad bbox electrode_tab_right",
-      "expected": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
+      "check": "one-piece supported pad electrode_tab_right",
+      "components": 1,
+      "pass": true,
+      "support": "broad lateral lands to perimeter flange"
+    },
+    {
+      "check": "full broad lateral lands electrode_tab_right",
+      "height_mm": 25,
+      "metal_thickness_mm": 1,
       "pass": true
     },
     {
-      "check": "no bridges anywhere in window electrode_tab_right",
-      "pass": true,
-      "unexpected_volume_mm3": 0.0002196529790297674
-    },
-    {
-      "center_empty": true,
       "center_mm": [
         0,
         -22.75,
@@ -4304,7 +4327,10 @@
       "volume_mm3": 0.0
     },
     {
-      "center_empty": true,
+      "check": "electrode fluid bypass electrode_tab_right/-1",
+      "pass": true
+    },
+    {
       "center_mm": [
         0,
         22.75,
@@ -4315,51 +4341,27 @@
       "volume_mm3": 0.0
     },
     {
-      "check": "tab remains on outer carrier electrode_tab_right",
+      "check": "electrode fluid bypass electrode_tab_right/1",
       "pass": true
     },
     {
-      "check": "isolated central pad electrode_plain",
-      "components": 2,
+      "check": "integral tab to pad electrode_tab_right",
       "pass": true,
-      "support": "none; separate support/fixing and electrical connection required",
-      "symmetric_difference_mm3": 0.00017966710279386419
+      "tab_x_mm": 14
     },
     {
-      "actual": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
-      "check": "isolated pad bbox electrode_plain",
-      "expected": [
-        [
-          -14.0,
-          -14.0,
-          0.0
-        ],
-        [
-          14.0,
-          14.0,
-          1.0
-        ]
-      ],
+      "check": "one-piece supported pad electrode_plain",
+      "components": 1,
+      "pass": true,
+      "support": "broad lateral lands to perimeter flange"
+    },
+    {
+      "check": "full broad lateral lands electrode_plain",
+      "height_mm": 25,
+      "metal_thickness_mm": 1,
       "pass": true
     },
     {
-      "check": "no bridges anywhere in window electrode_plain",
-      "pass": true,
-      "unexpected_volume_mm3": 0.0002196529790293233
-    },
-    {
-      "center_empty": true,
       "center_mm": [
         0,
         -22.75,
@@ -4370,7 +4372,10 @@
       "volume_mm3": 0.0
     },
     {
-      "center_empty": true,
+      "check": "electrode fluid bypass electrode_plain/-1",
+      "pass": true
+    },
+    {
       "center_mm": [
         0,
         22.75,
@@ -4379,6 +4384,10 @@
       "check": "old bridge region empty electrode_plain/1",
       "pass": true,
       "volume_mm3": 0.0
+    },
+    {
+      "check": "electrode fluid bypass electrode_plain/1",
+      "pass": true
     },
     {
       "check": "central electrode pad electrode_1",
@@ -4438,6 +4447,296 @@
       "actual": 3.200000762939453,
       "check": "tab hole diameter electrode_3",
       "expected": 3.2,
+      "pass": true
+    },
+    {
+      "actual": 8.6,
+      "check": "tab slot design width",
+      "expected": 8.6,
+      "pass": true
+    },
+    {
+      "actual": 0.2999999999999998,
+      "check": "tab slot per-side allowance",
+      "expected": 0.3,
+      "pass": true
+    },
+    {
+      "check": "slot root outside seal and window",
+      "groove_outer_margin_mm": 0.6,
+      "pass": true,
+      "window_margin_mm": 4.0
+    },
+    {
+      "check": "frame full-height open tab channel -14",
+      "pass": true,
+      "volume_mm3": 2.152252257407771e-05
+    },
+    {
+      "actual": [
+        -18.299999237060547,
+        -9.699999809265137
+      ],
+      "check": "measured tab body walls -14",
+      "expected": [
+        -18.3,
+        -9.7
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.2999992370605469,
+        0.3000001907348633
+      ],
+      "check": "measured tab body clearances -14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        -18.299999237060547,
+        -9.699999809265137
+      ],
+      "check": "measured tab shoulder walls -14",
+      "expected": [
+        -18.3,
+        -9.7
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.2999992370605469,
+        0.3000001907348633
+      ],
+      "check": "measured tab shoulder clearances -14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        -18.299999237060547,
+        -9.699999809265137
+      ],
+      "check": "measured tab lip walls -14",
+      "expected": [
+        -18.3,
+        -9.7
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.2999992370605469,
+        0.3000001907348633
+      ],
+      "check": "measured tab lip clearances -14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "check": "front stop open tab channel -14",
+      "pass": true
+    },
+    {
+      "check": "frame full-height open tab channel 14",
+      "pass": true,
+      "volume_mm3": 2.15225224767627e-05
+    },
+    {
+      "actual": [
+        9.699999809265137,
+        18.299999237060547
+      ],
+      "check": "measured tab body walls 14",
+      "expected": [
+        9.7,
+        18.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.3000001907348633,
+        0.2999992370605469
+      ],
+      "check": "measured tab body clearances 14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        9.699999809265137,
+        18.299999237060547
+      ],
+      "check": "measured tab shoulder walls 14",
+      "expected": [
+        9.7,
+        18.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.3000001907348633,
+        0.2999992370605469
+      ],
+      "check": "measured tab shoulder clearances 14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        9.699999809265137,
+        18.299999237060547
+      ],
+      "check": "measured tab lip walls 14",
+      "expected": [
+        9.7,
+        18.3
+      ],
+      "pass": true
+    },
+    {
+      "actual": [
+        0.3000001907348633,
+        0.2999992370605469
+      ],
+      "check": "measured tab lip clearances 14",
+      "expected": [
+        0.3,
+        0.3
+      ],
+      "pass": true
+    },
+    {
+      "check": "front stop open tab channel 14",
+      "pass": true
+    },
+    {
+      "check": "O-ring outside dry slot gasket_oring/-14",
+      "pass": true
+    },
+    {
+      "check": "O-ring outside dry slot gasket_oring/14",
+      "pass": true
+    },
+    {
+      "check": "O-ring outside dry slot gasket_oring_compressed/-14",
+      "pass": true
+    },
+    {
+      "check": "O-ring outside dry slot gasket_oring_compressed/14",
+      "pass": true
+    },
+    {
+      "check": "O-ring slot compatibility",
+      "compatible": true,
+      "groove_margin_mm": 0.6,
+      "pass": true,
+      "reason": "closed ring/groove inside slot root; no O-ring notch"
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_1",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": -14,
+      "z_mm": [
+        25.2,
+        26.2
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_1",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "actual": 25.199999976158143,
+      "check": "adjacent gasket meets metal plane gasket_2",
+      "expected": 25.2,
+      "pass": true
+    },
+    {
+      "actual": 26.2,
+      "check": "adjacent gasket meets metal plane gasket_3",
+      "expected": 26.2,
+      "pass": true
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_2",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": 14,
+      "z_mm": [
+        31.4,
+        32.4
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_2",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": 14
+    },
+    {
+      "actual": 31.399999976158142,
+      "check": "adjacent gasket meets metal plane gasket_4",
+      "expected": 31.4,
+      "pass": true
+    },
+    {
+      "actual": 32.4,
+      "check": "adjacent gasket meets metal plane gasket_5",
+      "expected": 32.4,
+      "pass": true
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_3",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": -14,
+      "z_mm": [
+        37.6,
+        38.6
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_3",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "actual": 37.599999976158145,
+      "check": "adjacent gasket meets metal plane gasket_6",
+      "expected": 37.6,
+      "pass": true
+    },
+    {
+      "actual": 38.6,
+      "check": "adjacent gasket meets metal plane gasket_7",
+      "expected": 38.6,
       "pass": true
     },
     {
@@ -5583,16 +5882,8 @@
       "check": "reject Z180 frame_1",
       "collisions": [
         {
-          "other": "front_endplate",
-          "volume_mm3": 37.062137183553126
-        },
-        {
           "other": "electrode_1",
           "volume_mm3": 30.000000000000007
-        },
-        {
-          "other": "frame_2",
-          "volume_mm3": 37.06200477218711
         },
         {
           "other": "locator_pin_1",
@@ -5610,7 +5901,7 @@
       "collisions": [
         {
           "other": "front_endplate",
-          "volume_mm3": 3229.7039159317005
+          "volume_mm3": 3189.971925464639
         },
         {
           "other": "locator_pin_1",
@@ -5654,7 +5945,7 @@
         },
         {
           "other": "locator_pin_2",
-          "volume_mm3": 5.9348962922771555
+          "volume_mm3": 5.934896292277157
         }
       ],
       "pass": true
@@ -5702,12 +5993,12 @@
     "gasket_material": "EPDM",
     "seal_mode": "oring"
   },
-  "electrode_support": "unresolved: central pad floats independently; no support/fixing or tab connection is modeled",
+  "electrode_support": "modeled: integral 25 mm lateral lands and clamped perimeter flange; mechanical/electrical ratings unvalidated",
   "instance_count": 41,
   "pass": true,
   "physical_validation": "not_run: pressure, loads, chemistry, insulation, creep and service life",
   "schema_version": 1,
-  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
   "tolerances": {
     "bbox_mm": 0.02,
     "length_mm": 0.02,
@@ -5721,7 +6012,7 @@
     "trimesh": "5.2.0"
   },
   "verification_inputs": {
-    "manifest_sha256": "176c3fd207c2d75024041e191e3dca68999b136ac017eed30c36e5e5b64f1a3a",
-    "verifier_sha256": "3e33f2fea6b5a08f16136c6a2e16b964b569f31c2d0625c58c84e280488147e9"
+    "manifest_sha256": "cb437ecb39b7b0f02dd8785049ae486e8f8e2029045018ecbb47c0786bc98237",
+    "verifier_sha256": "7d2be99d126cc8f188aeae1f66d782a08e38baaa6c32012fa3d96c4782d80855"
   }
 }

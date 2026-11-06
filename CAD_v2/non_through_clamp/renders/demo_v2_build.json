@@ -1,13 +1,13 @@
 {
   "three": "0.170.0",
   "esbuild": "0.24.0",
-  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
   "inputs": {
     "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
-    "scripts/demo_v2/app.js": "b8beb2aa69f30a3430226a6566513c8c7f752f48d5045929994b8c7dcc78a78f",
+    "scripts/demo_v2/app.js": "b53578d0baebc012624b3507ae04d1bf41776a62774a4b9f5bcb75a581fa0df7",
     "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
-    "scripts/demo_v2/template.html": "2c498634082d597b720583196fc87d0bcc5fbf3c9786dc3ef1318ad98e47a165",
-    "stack_manifest.json": "d1584e1949fed413a57b45a768240240d179557516a5e41d3cd4273e1ed305bf"
+    "scripts/demo_v2/template.html": "b4edb3c5597666c9855477d8dddbeb2d4bcf10f30bcd1a39d94f9c658e15277b",
+    "stack_manifest.json": "5cb0709493afcde450f3b5c365191585af9b33964f7fa6c5d74728ae5fd7c84c"
   },
   "geometry": {
     "stls/bolt.stl": {
@@ -45,9 +45,9 @@
       "retained_triangles": 1172
     },
     "stls/electrode_tab.stl": {
-      "triangles": 2376,
-      "source_vertices": 1184,
-      "vertices": 2376,
+      "triangles": 2400,
+      "source_vertices": 1192,
+      "vertices": 2408,
       "source_bbox": [
         [
           -33,
@@ -76,12 +76,12 @@
       "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 0,
-      "retained_triangles": 2376
+      "retained_triangles": 2400
     },
     "stls/electrode_tab_right.stl": {
-      "triangles": 2376,
-      "source_vertices": 1184,
-      "vertices": 2376,
+      "triangles": 2400,
+      "source_vertices": 1192,
+      "vertices": 2408,
       "source_bbox": [
         [
           -33,
@@ -110,12 +110,12 @@
       "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 0,
-      "retained_triangles": 2376
+      "retained_triangles": 2400
     },
     "stls/frame.stl": {
-      "triangles": 10464,
-      "source_vertices": 5228,
-      "vertices": 10504,
+      "triangles": 9328,
+      "source_vertices": 4660,
+      "vertices": 9400,
       "source_bbox": [
         [
           -37,
@@ -140,11 +140,11 @@
           7.400000095367432
         ]
       ],
-      "max_error_mm": 0,
-      "encoding": "float32",
+      "max_error_mm": 0.0006250568464665207,
+      "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
-      "quantized_flipped_triangles": 2,
-      "retained_triangles": 10464
+      "quantized_flipped_triangles": 0,
+      "retained_triangles": 9328
     },
     "stls/front_endplate.stl": {
       "triangles": 9908,
@@ -181,9 +181,9 @@
       "retained_triangles": 9908
     },
     "stls/gasket.stl": {
-      "triangles": 1616,
-      "source_vertices": 804,
-      "vertices": 1624,
+      "triangles": 1584,
+      "source_vertices": 788,
+      "vertices": 1576,
       "source_bbox": [
         [
           -33,
@@ -212,7 +212,75 @@
       "encoding": "uint16",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 0,
-      "retained_triangles": 1616
+      "retained_triangles": 1584
+    },
+    "stls/gasket_tab_left.stl": {
+      "triangles": 1600,
+      "source_vertices": 796,
+      "vertices": 1600,
+      "source_bbox": [
+        [
+          -33,
+          -37,
+          0
+        ],
+        [
+          33,
+          37,
+          0.800000011920929
+        ]
+      ],
+      "decoded_bbox": [
+        [
+          -33,
+          -37,
+          0
+        ],
+        [
+          33,
+          37,
+          0.800000011920929
+        ]
+      ],
+      "max_error_mm": 0.0005639734498856797,
+      "encoding": "uint16",
+      "quantized_collapsed_triangles": 0,
+      "quantized_flipped_triangles": 0,
+      "retained_triangles": 1600
+    },
+    "stls/gasket_tab_right.stl": {
+      "triangles": 1600,
+      "source_vertices": 796,
+      "vertices": 1600,
+      "source_bbox": [
+        [
+          -33,
+          -37,
+          0
+        ],
+        [
+          33,
+          37,
+          0.800000011920929
+        ]
+      ],
+      "decoded_bbox": [
+        [
+          -33,
+          -37,
+          0
+        ],
+        [
+          33,
+          37,
+          0.800000011920929
+        ]
+      ],
+      "max_error_mm": 0.0005639734498856797,
+      "encoding": "uint16",
+      "quantized_collapsed_triangles": 0,
+      "quantized_flipped_triangles": 0,
+      "retained_triangles": 1600
     },
     "stls/heatset_nut.stl": {
       "triangles": 768,
@@ -351,6 +419,6 @@
       "retained_triangles": 768
     }
   },
-  "html_bytes": 1940417,
-  "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
+  "html_bytes": 1911467,
+  "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
 }

@@ -1,0 +1,246 @@
+{
+  "baseline_source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+  "checks": [
+    {
+      "check": "unchanged front_endplate",
+      "pass": true,
+      "sha256": "794e6eafb0bfae45d775a1f7ffd5e6c8e67aef5b7d4215f4eed1b9c4f6d738a1"
+    },
+    {
+      "check": "unchanged rear_endplate",
+      "pass": true,
+      "sha256": "0abd2f6da557faae4a572db01ad2d91be06dd8120061a7782fb03829262e8ba2"
+    },
+    {
+      "check": "unchanged locator_pin",
+      "pass": true,
+      "sha256": "c8a784fcb9fa4ef213ebb324ebcac83f818eecb255ffb2dca5be6f338ee8ac0f"
+    },
+    {
+      "check": "unchanged bolt",
+      "pass": true,
+      "sha256": "638eaa5819e764831a2e44d6f37d37faf4ce7b9271cc0a95471b0ee977748267"
+    },
+    {
+      "check": "unchanged washer",
+      "pass": true,
+      "sha256": "eabe3cd49278ad41fec9af5955b07d0859d976a64ac528662647a752c04279e8"
+    },
+    {
+      "check": "unchanged heatset_nut",
+      "pass": true,
+      "sha256": "daa8ed268f61ac6be645d23b73c8bac9d4b3ef93c36e82ef8eb05d7a01db99ce"
+    },
+    {
+      "added_mm3": 375.0,
+      "added_shape_difference_mm3": 0.0,
+      "check": "only broad side lands added electrode_tab",
+      "pass": true,
+      "removed_mm3": 0.0
+    },
+    {
+      "added_mm3": 375.0,
+      "added_shape_difference_mm3": 0.0,
+      "check": "only broad side lands added electrode_tab_right",
+      "pass": true,
+      "removed_mm3": 0.0
+    },
+    {
+      "added_mm3": 375.0,
+      "added_shape_difference_mm3": 0.0,
+      "check": "only broad side lands added electrode_plain",
+      "pass": true,
+      "removed_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab_right/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_tab_right/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        -22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_plain/-1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "center_mm": [
+        0,
+        22.75,
+        0.5
+      ],
+      "check": "old bridge region empty electrode_plain/1",
+      "pass": true,
+      "volume_mm3": 0.0
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_1",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": -14,
+      "z_mm": [
+        25.2,
+        26.2
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_1",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "matched gasket tab side gasket_2",
+      "part": "gasket_tab_left",
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_2",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455168719195e-07
+    },
+    {
+      "check": "matched gasket tab side gasket_3",
+      "part": "gasket_tab_left",
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_3",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455168719186e-07
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_2",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": 14,
+      "z_mm": [
+        31.4,
+        32.4
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_2",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": 14
+    },
+    {
+      "check": "matched gasket tab side gasket_4",
+      "part": "gasket_tab_right",
+      "pass": true,
+      "tab_x_mm": 14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_4",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455152909621e-07
+    },
+    {
+      "check": "matched gasket tab side gasket_5",
+      "part": "gasket_tab_right",
+      "pass": true,
+      "tab_x_mm": 14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_5",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455152909621e-07
+    },
+    {
+      "check": "handle clearance all assembled parts electrode_3",
+      "collisions": [],
+      "pass": true,
+      "per_side_mm": 0.3,
+      "tab_x_mm": -14,
+      "z_mm": [
+        37.6,
+        38.6
+      ]
+    },
+    {
+      "check": "all three pads connected to own tab electrode_3",
+      "metal_components": 1,
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "matched gasket tab side gasket_6",
+      "part": "gasket_tab_left",
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_6",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455186482755e-07
+    },
+    {
+      "check": "matched gasket tab side gasket_7",
+      "part": "gasket_tab_left",
+      "pass": true,
+      "tab_x_mm": -14
+    },
+    {
+      "check": "assembled gasket full-thickness slot gasket_7",
+      "pass": true,
+      "thickness_mm": 0.6000000089406967,
+      "volume_mm3": 6.866455186482772e-07
+    }
+  ],
+  "pass": true,
+  "rationale": "1 mm tab lies between seals; G1 intact; only adjacent dry-side gasket slots. Broad lateral lands support and power the pad without old upper/lower bridges.",
+  "reference_read_only": [
+    "../scripts/model_parts.py:make_electrode/make_carrier",
+    "../scripts/model_flow.py:main perimeter seal"
+  ],
+  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e"
+}

@@ -79,9 +79,9 @@ function flyTo(position,target){
   controls.update();fly={start:performance.now(),from:camera.position.clone(),to:position.clone(),fromTarget:controls.target.clone(),toTarget:target.clone()};
   dirty=true;settledFrames=0;
 }
-function fit(ids=currentIDs(),direction){
+function fit(ids=currentIDs(),direction,region){
   if(!camera)return;
-  const b=bounds(ids),center=b.getCenter(new THREE.Vector3()),size=b.getSize(new THREE.Vector3());
+  const b=region||bounds(ids),center=b.getCenter(new THREE.Vector3()),size=b.getSize(new THREE.Vector3());
   let dir=direction?.clone()||camera.position.clone().sub(controls.target).normalize();
   if(dir.length()<.1)dir=defaultDirection.clone();
   const right=new THREE.Vector3().crossVectors(camera.up,dir).normalize(),up=new THREE.Vector3().crossVectors(dir,right).normalize();
@@ -119,7 +119,9 @@ function updateInfo(){
     content=`<h3>${i.display_name.zh}</h3><div class="en">${i.display_name.en} · ${i.id}</div><dl><dt>材质</dt><dd>${seal?S.gasket:i.part.startsWith('electrode')?S.metal:i.material}</dd><dt>名义尺寸</dt><dd>${fmt(i.nominal_dims_mm)} mm</dd><dt>当前 bbox</dt><dd>${fmt(b.toArray())} mm</dd>${seal?`<dt>当前厚度</dt><dd>${thickness.toFixed(3)} mm · 压缩 ${((1-thickness/i.nominal_dims_mm[2])*100).toFixed(1)}%</dd><dt>自由厚度</dt><dd>${i.nominal_dims_mm[2]} mm</dd>`:''}${i.active_pad_dims_mm?`<dt>中央片</dt><dd>${fmt(i.active_pad_dims_mm)} mm</dd>`:''}</dl><p class="hint">${S.section?'剖切显示 · 无封口面':i.part==='frame'?'主体 4 mm · 肩 2.2 · 唇 1.2 · 母槽 1.5':seal?(i.part==='gasket_oring'?'闭合 O-ring · 单面槽定位 · 椭圆压缩包络':'独立密封薄片 · 圆孔 + 长孔定位'):'真实 STL 几何 · 尺寸以当前 manifest 为准'}</p>`;
   }else if(S.group){const ids=M.groups[S.group],i=records.get(ids[0]);content=`<h3>${groupNames[S.group]}</h3><div class="en">${S.group} · ${ids.length} pieces</div><dl><dt>数量</dt><dd>${ids.length}</dd><dt>单件尺寸</dt><dd>${fmt(i.nominal_dims_mm)} mm</dd><dt>材质</dt><dd>${i.material}</dd></dl>`;
   }else content=`<h3>${S.section?'剖切显示':'41 个实例 · 概念装配'}</h3><div class="en">3 FRAMES / 3 ELECTRODES / 7 GASKETS</div><dl><dt>装配厚度</dt><dd>${M.derived.total_stack_t} mm</dd><dt>垫片厚度</dt><dd>${(THREE.MathUtils.lerp(M.seal_mode==='oring'?M.derived.oring_compressed_h:M.derived.gasket_compressed_t,M.seal_mode==='oring'?M.parameters.oring_cs_mm:M.parameters.gasket_t_mm,S.actual)).toFixed(3)} mm</dd><dt>压缩比例</dt><dd>${(M.parameters.gasket_compression_ratio*100*(1-S.actual)).toFixed(1)}% · 自由 ${M.seal_mode==='oring'?M.parameters.oring_cs_mm:M.parameters.gasket_t_mm} mm</dd><dt>螺栓</dt><dd>8 × M6 · L${M.derived.bolt_length_mm}</dd></dl><p class="hint">${S.section?'X=34.75 mm 截过右侧止口；拖动旋转检查肩、唇与母槽。':'点选零件查看尺寸，使用 Prev / Next 逐件浏览。'}</p>`;
-  if(S.selected&&records.get(S.selected).part.startsWith('electrode'))content+='<p class="hint">中央片与外圈无连接桥，独立悬浮；模型无支承/固定结构，未接通引片。需另设支承与电连接，不能直接制造为一体电极。</p>';
+  if(S.selected&&records.get(S.selected).part.startsWith('electrode'))content+='<p class="hint">中央片通过 25 mm 宽面侧法兰连到夹持外圈及单偏置柄，一体导电；中央上下旧桥保持留空。强度、接触电阻及密封性能仍待试验。</p>';
+  if(S.selected&&records.get(S.selected).part.startsWith('gasket_tab_'))content+='<p class="hint">'+(records.get(S.selected).part.endsWith('left')?'左':'右')+'柄槽 8.6 mm，Y≥35.5 向外开放，全厚切穿；每侧 0.3 mm，内侧密封带保留。</p>';
+  if(S.group?.startsWith('tab_fit_'))content='<h3>'+groupNames[S.group]+'</h3><p class="hint">局部爆炸细节：框体、止口及相邻 G 的真实 STL。槽宽 8.6 mm，柄宽 8 mm；每侧 0.3 mm。槽根 Y=35.5，位于闭合密封线外。</p>';
   $('info').innerHTML=content;
 }
 function setExplode(v){S.target=THREE.MathUtils.clamp(Number(v),0,1);flipBack=null;updateUI();fit(currentIDs(),S.selected||S.group?undefined:allDirection());dirty=true;settledFrames=0;}
@@ -128,6 +130,16 @@ function select(id){
   selectionEvents++;S.selected=id;S.group=null;document.querySelector('.panel-body').scrollTop=0;S.isolation='ghost';flipBack=null;applyMaterials();updateUI();
   const i=records.get(id),direction=i.part==='frame'?vec([.48,.32,1.5]):i.part.includes('gasket')||i.part.startsWith('electrode')?vec([.18,.24,1.6]):defaultDirection;
   fit([id],direction.normalize());
+}
+function inspectTabFit(number){
+  const group='tab_fit_'+number;if(!M.groups[group])throw new Error('Unknown tab module');
+  const electrode=records.get('electrode_'+number),x=M.parameters.tab_x_offsets_mm[(number-1)%M.parameters.tab_x_offsets_mm.length];
+  groupNames[group]=(x<0?'左':'右')+'柄让位 · E'+number+' / G'+(2*number)+' / G'+(2*number+1);
+  S.selected=null;S.group=group;S.isolation='hide';S.opaque=true;S.section=false;clipping.splice(0);S.target=.18;flipBack=null;
+  applyMaterials();updateUI();const b=bounds(M.groups[group],S.target);
+  const region=new THREE.Box3(vec([x-11+root.position.x,31+root.position.y,b.min.z]),vec([x+11+root.position.x,46+root.position.y,b.max.z]));
+  fit(M.groups[group],vec([.48,.72,1.5]).normalize(),region);dirty=true;settledFrames=0;
+  document.querySelector('.panel-body').scrollTop=0;
 }
 function selectGroup(group){document.querySelector('.panel-body').scrollTop=0;S.selected=null;S.group=group;S.isolation='ghost';flipBack=null;applyMaterials();updateUI();fit(M.groups[group]);}
 function setIsolation(mode){if(!['ghost','hide'].includes(mode))throw new Error('Isolation must be ghost or hide');S.isolation=mode;applyMaterials();updateUI();}
@@ -148,7 +160,7 @@ function flipSelected(){
 const groupNames={bolts:'螺栓 ×8',washers:'垫圈 ×8',heatsets:'热熔螺母 ×8',locators:'定位销 ×2'};
 function buildUI(){
   function chip(id){const i=records.get(id),button=document.createElement('button');button.className='chip';button.dataset.piece=id;
-    const short=i.part==='gasket'?`G${id.split('_').pop()}`:i.part==='frame'?`F${id.split('_').pop()}`:i.part.startsWith('electrode')?`E${id.split('_').pop()}`:i.group==='stack'?i.display_name.zh:id.replace('locator_pin','P').replace('heatset','N').replace('washer','W').replace('bolt','B').replace('_','');
+    const short=i.part.includes('gasket')?`G${id.split('_').pop()}`:i.part==='frame'?`F${id.split('_').pop()}`:i.part.startsWith('electrode')?`E${id.split('_').pop()}`:i.group==='stack'?i.display_name.zh:id.replace('locator_pin','P').replace('heatset','N').replace('washer','W').replace('bolt','B').replace('_','');
     button.innerHTML=`${short}<span>${i.display_name.zh}</span>`;button.setAttribute('aria-label',`${i.display_name.zh} ${id}`);button.onclick=()=>select(id);return button;}
   for(const id of M.groups.stack)$('stack-list').append(chip(id));
   for(const group of ['bolts','washers','heatsets','locators']){
@@ -157,6 +169,7 @@ function buildUI(){
     expand.textContent='＋';expand.setAttribute('aria-label',`展开${groupNames[group]}单件`);expand.setAttribute('aria-expanded','false');expand.onclick=()=>{list.hidden=!list.hidden;expand.textContent=list.hidden?'＋':'−';expand.setAttribute('aria-expanded',!list.hidden);};
     for(const id of M.groups[group])list.append(chip(id));row.append(button,expand);$('hardware-list').append(row,list);
   }
+  $('tab-left').onclick=()=>inspectTabFit(1);$('tab-right').onclick=()=>inspectTabFit(2);
   $('explode-range').oninput=e=>setExplode(e.target.value);$('explode').onclick=()=>setExplode(1);$('collapse').onclick=()=>setExplode(0);
   $('show-all').onclick=showAll;$('reset').onclick=reset;$('ghost').onclick=()=>setIsolation('ghost');$('hide').onclick=()=>setIsolation('hide');$('flip').onclick=flipSelected;
   const step=delta=>{let idx=S.group?order.indexOf(M.groups[S.group][0]):S.selected?order.indexOf(S.selected):-1;select(order[S.group?idx:idx<0?(delta>0?0:order.length-1):(idx+delta+order.length)%order.length]);};
@@ -264,7 +277,7 @@ function init(){
   fill=new THREE.DirectionalLight('#e6f2ff',1);fill.position.set(-150,90,260);scene.add(fill);scene.add(new THREE.HemisphereLight('#ffffff','#cad4dc',.45));
   buildUI();applyMaterials();updateUI();pointerEvents();resize();
   new ResizeObserver(resize).observe($('viewport'));window.addEventListener('resize',resize);
-  window.__demo={ready:false,setExplode,select,showAll,setSection,whenIdle,getState:state,setIsolation,flipSelected,fitAll};
+  window.__demo={ready:false,setExplode,select,showAll,setSection,whenIdle,getState:state,setIsolation,flipSelected,fitAll,inspectTabFit};
   requestAnimationFrame(tick);whenIdle().then(()=>{window.__demo.ready=true;});
 }
 try{init();}catch(e){$('error').hidden=false;$('error').textContent=`模型启动失败：${e.message}`;console.error(e);}

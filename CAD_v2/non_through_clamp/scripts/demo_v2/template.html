@@ -22,13 +22,15 @@ esbuild v0.24.0, MIT License, Copyright Evan Wallace. All assets embedded. -->
         <div class="actions"><button id="prev" aria-label="上一个零件">← Prev</button><button id="next" aria-label="下一个零件">Next →</button></div>
         <div class="actions"><button id="ghost" aria-label="淡化其他零件" aria-pressed="true">淡化 Ghost</button><button id="hide" aria-label="隐藏其他零件" aria-pressed="false">隐藏 Hide</button></div>
         <button id="flip" class="wide" aria-label="翻面观察">翻面 Flip ↻</button>
+        <h2>柄槽细节 <span>TAB CLEARANCE</span></h2>
+        <div class="actions"><button id="tab-left" aria-label="查看左柄让位槽">左柄 / G2·G3</button><button id="tab-right" aria-label="查看右柄让位槽">右柄 / G4·G5</button></div>
         <h2>中央层序 <span>15 PIECES</span></h2><div id="stack-list" class="chips"></div>
         <h2>紧固与定位 <span>26 PIECES</span></h2><div id="hardware-list"></div>
         <h2>显示 <span>APPEARANCE</span></h2>
         <label class="field">密封件外观<select id="gasket-material" aria-label="密封件材质外观"><option>EPDM</option><option>FKM</option><option>PTFE</option></select></label>
         <label class="field">电极外观<select id="metal-material" aria-label="电极材质外观"><option value="titanium">钛 Titanium</option><option value="platinum">铂 Platinum</option></select></label>
         <button id="opaque" class="wide" aria-label="切换框透明度" aria-pressed="false">框不透明 Opaque</button>
-        <p class="note">材质外观预览，尺寸沿用当前 manifest。28×28 mm 中央片已去桥，独立悬浮；当前没有支承/固定结构，也未与顶部引片导通，需后续补充方案，不能直接制造为一体电极。金属外圈及引片仍可能参与反应。</p>
+        <p class="note">材质外观预览，尺寸沿用当前 manifest。三片中央电极均以宽面侧法兰连到夹持外圈及偏置柄，中央上下旧桥留空。柄槽宽 8.6 mm、向外开放；G1 完整，相邻 G 按左/右全厚开槽。几何连通不代表强度、接触电阻或密封已验证。</p>
         <button id="section" class="wide" aria-label="切换剖切显示" aria-pressed="false">剖切 Section</button>
         <label class="field" for="cut">剖切 X <output id="cut-value">34.75 mm</output></label>
         <input id="cut" type="range" min="0" max="1" step="0.001" value="0.9695945945945946" aria-label="剖切位置">

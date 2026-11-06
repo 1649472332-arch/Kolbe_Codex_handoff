@@ -17,7 +17,7 @@ import trimesh
 ROOT = Path(__file__).resolve().parents[1]
 SCAD = ROOT / 'kolbe_non_through.scad'
 OSC = '/usr/bin/openscad'
-PARTS = ['front_endplate', 'rear_endplate', 'frame', 'gasket', 'electrode_tab',
+PARTS = ['front_endplate', 'rear_endplate', 'frame', 'gasket', 'gasket_tab_left', 'gasket_tab_right', 'electrode_tab',
          'electrode_tab_right', 'electrode_plain', 'locator_pin', 'bolt', 'washer', 'heatset_nut']
 FIELDS = ['id', 'part', 'translation', 'scale', 'exploded_translation', 'exploded_scale',
           'zh', 'en', 'material', 'nominal_dims_mm', 'assembled_dims_mm', 'group',
@@ -42,7 +42,7 @@ def run_scad(output, part, defines=(), extra=(), render=False):
     # have non-manifold contacts even though every individual STL is manifold.
     # Keep this diagnostic visible; it never exempts any part or Boolean pair.
     composite_warning = 'WARNING: Object may not be a valid 2-manifold and may need repair!'
-    permitted = render and part in ['assembly','exploded'] and Path(output).suffix == '.png'
+    permitted = render and part in ['assembly','exploded','tab_fit_left','tab_fit_right'] and Path(output).suffix == '.png'
     unexpected = [w for w in warnings if not (permitted and w == composite_warning)]
     if result.returncode or 'ERROR:' in result.stderr or unexpected:
         raise RuntimeError(f'OpenSCAD failed ({part}):\n{result.stderr}')
@@ -136,8 +136,13 @@ def make_manifest(out, defines=(), stl_dir='stls'):
             r['stl'] = (Path(stl_dir) / (r['part'] + '.stl')).as_posix()
             if r['part'].startswith('electrode'):
                 r['active_pad_dims_mm'] = [params[f'electrode_{a}_mm'] for a in ['w', 'h', 't']]
-                r['central_pad_support'] = 'none; independent floating solid, separate support/fixing required'
-                r['central_pad_connected_to_tab'] = False
+                r['central_pad_support'] = 'integral broad lateral lands -> clamped perimeter flange -> single offset tab'
+                r['central_pad_connected_to_tab'] = True
+                number = int(r['id'].split('_')[-1])
+                r['adjacent_gaskets'] = [f'gasket_{2*number}',f'gasket_{2*number+1}']
+            if r['part'].startswith('gasket_tab_'):
+                r['tab_slot_x_mm'] = params['tab_x_offsets_mm'][0 if r['part'].endswith('left') else 1]
+                r['tab_slot_through_thickness'] = True
             if r['part'] == 'gasket_oring':
                 r['compressed_stl'] = (Path(stl_dir) / 'gasket_oring_compressed.stl').as_posix()
                 r['deformation'] = {'type': 'corresponding_vertices', 'assembled': 'compressed_stl',
@@ -172,14 +177,24 @@ def make_manifest(out, defines=(), stl_dir='stls'):
                 'parameters': params, 'derived': derived, 'source_sha256': sha(SCAD),
                 'seal_mode': params['seal_mode'], 'gasket_material': params['gasket_material'],
                 'exploded_gap_mm': params['explode_gap_mm'], 'files': files, 'instances': instances,
-                'electrode_design': {'bridge_count': 0, 'components_per_stl': 2,
-                                     'central_pad_supported': False, 'central_pad_connected_to_tab': False,
-                                     'manufacturing_status': 'not a manufacturable one-piece electrode; user/future design must add support/fixing and electrical connection'},
+                'electrode_design': {'central_upper_lower_bridge_count': 0, 'components_per_stl': 1,
+                                     'central_pad_supported': True, 'central_pad_connected_to_tab': True,
+                                     'support_scheme': 'one-piece broad lateral lands and perimeter flange; flange clamped between seals',
+                                     'lateral_land_height_mm': params['electrode_land_h_mm'],
+                                     'manufacturing_status': 'geometrically continuous one-piece metal blank; strength, contact resistance, coating and sealing remain unqualified'},
+                'tab_clearance': {'width_mm': derived['tab_slot_w_mm'], 'per_side_mm': params['tab_channel_clearance_mm'],
+                                  'start_y_mm': params['tab_slot_start_y_mm'], 'open_to': '+Y exterior',
+                                  'flat_gaskets': 'G1 intact; G2/G3 -> E1; G4/G5 -> E2; etc.; full Z cuts in dry land only',
+                                  'oring_compatible': True, 'oring_reason': 'closed ring and 1.8 mm groove end below slot root, with measured dry-land clearance',
+                                  'groove_outer_margin_mm': derived['tab_slot_seal_margin_mm']},
                 'groups': {g: [r['id'] for r in instances if r['group'] == g]
                            for g in ['stack', 'bolts', 'washers', 'heatsets', 'locators']},
                 'tools': {'openscad': subprocess.run([OSC, '--version'], capture_output=True, text=True).stderr.strip(),
                           'python': platform.python_version(),
                           **{n: importlib.metadata.version(n) for n in ['numpy', 'trimesh', 'manifold3d']}}}
+    for n in range(1,params['frame_count']+1):
+        manifest['groups']['tab_fit_'+str(n)] = [f'frame_{n}',f'gasket_{2*n}',f'electrode_{n}',f'gasket_{2*n+1}',
+                                                f'frame_{n+1}' if n<params['frame_count'] else 'rear_endplate']
     write_json(out, manifest)
     return manifest
 

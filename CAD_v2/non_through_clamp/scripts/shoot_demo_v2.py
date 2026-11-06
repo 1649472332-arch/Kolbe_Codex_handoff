@@ -152,7 +152,7 @@ def main():
             page = attach(desktop)
             s = state(page)
             report['three'] = s['three']
-            check('instance_and_geometry_identity', len(s['instances']) == 41 and s['sharedGeometry'] and s['geometryCount'] == 10 and
+            check('instance_and_geometry_identity', len(s['instances']) == 41 and s['sharedGeometry'] and s['geometryCount'] == 12 and
                   all(n == build['geometry'][f]['triangles'] for f, n in s['geometryTriangles'].items()),
                   {'instances': len(s['instances']), 'geometries': s['geometryCount']})
             geometry_state(page, 0, manifest)
@@ -192,9 +192,22 @@ def main():
             electrode = state(page)
             check('electrode_isolation_and_support_notice',
                   [i['id'] for i in electrode['instances'] if i['visible']] == ['electrode_2'] and
-                  '独立悬浮' in page.locator('#info').inner_text() and
-                  '无支承/固定结构' in page.locator('#info').inner_text(), None)
+                  '一体导电' in page.locator('#info').inner_text() and
+                  '旧桥保持留空' in page.locator('#info').inner_text(), None)
             snap(page, 'demo_v2_electrode_isolated.png', (1440, 1000))
+            for number,side in [(1,'left'),(2,'right')]:
+                page.locator('#tab-'+side).click()
+                action(page, '')
+                fit=state(page)
+                expected=manifest['groups']['tab_fit_'+str(number)]
+                check('tab_fit_'+side, sorted(i['id'] for i in fit['instances'] if i['visible'])==sorted(expected) and
+                      '0.3 mm' in page.locator('#info').inner_text(), expected)
+                snap(page, 'demo_v2_tab_fit_'+side+'.png', (1440, 1000))
+            action(page, '__demo.showAll();__demo.setExplode(1)')
+            action(page, '__demo.select("gasket_2");__demo.setIsolation("hide")')
+            snap(page, 'demo_v2_gasket_left_slot.png', (1440, 1000))
+            action(page, '__demo.select("gasket_4");__demo.setIsolation("hide")')
+            snap(page, 'demo_v2_gasket_right_slot.png', (1440, 1000))
             for id in ['bolt_8', 'locator_pin_2']:
                 action(page, f'__demo.select("{id}")')
                 check('selection_'+id, state(page)['selected'] == id and id in page.locator('#info').inner_text(), None)

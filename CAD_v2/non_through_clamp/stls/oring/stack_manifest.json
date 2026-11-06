@@ -9,10 +9,10 @@
     "bolt_length_mm": 60,
     "bolt_rear_projection_mm": 0,
     "bolt_tip_recess_mm": 0.8,
-    "central_pad_connected_to_tab": false,
-    "central_pad_support_provided": false,
+    "central_pad_connected_to_tab": true,
+    "central_pad_support_provided": true,
     "electrode_bridge_count": 0,
-    "electrode_components": 2,
+    "electrode_components": 1,
     "end_wall_mm": 1,
     "frame_bbox_h": 7.4,
     "frame_stop_h": 2.2,
@@ -37,15 +37,19 @@
     "side_wall_mm": 1,
     "slot_angle": -32.5351,
     "tab_end_y": 64.5,
+    "tab_slot_seal_margin_mm": 0.6,
+    "tab_slot_w_mm": 8.6,
     "tab_start_y": 36.5,
     "total_stack_t": 59.2
   },
   "electrode_design": {
-    "bridge_count": 0,
-    "central_pad_connected_to_tab": false,
-    "central_pad_supported": false,
-    "components_per_stl": 2,
-    "manufacturing_status": "not a manufacturable one-piece electrode; user/future design must add support/fixing and electrical connection"
+    "central_pad_connected_to_tab": true,
+    "central_pad_supported": true,
+    "central_upper_lower_bridge_count": 0,
+    "components_per_stl": 1,
+    "lateral_land_height_mm": 25,
+    "manufacturing_status": "geometrically continuous one-piece metal blank; strength, contact resistance, coating and sealing remain unqualified",
+    "support_scheme": "one-piece broad lateral lands and perimeter flange; flange clamped between seals"
   },
   "exploded_gap_mm": 14,
   "files": {
@@ -69,7 +73,7 @@
       "volume_mm3": 2097.5926957751713
     },
     "electrode_plain.stl": {
-      "components": 2,
+      "components": 1,
       "local_bbox_mm": [
         [
           -33.0,
@@ -82,13 +86,13 @@
           1.0
         ]
       ],
-      "sha256": "085b6ccc2bd1ff361d90c04ae9e2a7dff4b5154e20504155391e63bd18e155a5",
-      "triangles": 1972,
-      "vertices": 984,
-      "volume_mm3": 2888.6883795494755
+      "sha256": "3b1baecab853458beb087f28dec3001ce8ebaaefb9e5f724d83c88a762fe26c3",
+      "triangles": 1996,
+      "vertices": 992,
+      "volume_mm3": 3263.6883795494746
     },
     "electrode_tab.stl": {
-      "components": 2,
+      "components": 1,
       "local_bbox_mm": [
         [
           -33.0,
@@ -101,13 +105,13 @@
           1.0
         ]
       ],
-      "sha256": "b342e39335effa30e0d9df7769ed94a4c529808a3c8b1a7dbba5325da8410fd7",
-      "triangles": 2376,
-      "vertices": 1184,
-      "volume_mm3": 3100.651580203789
+      "sha256": "bc3f592b77f2b1565ce0b0fc821282ce8588bc47a1a50f667ec83b6461754f91",
+      "triangles": 2400,
+      "vertices": 1192,
+      "volume_mm3": 3475.651580203789
     },
     "electrode_tab_right.stl": {
-      "components": 2,
+      "components": 1,
       "local_bbox_mm": [
         [
           -33.0,
@@ -120,10 +124,10 @@
           1.0
         ]
       ],
-      "sha256": "b6efdb34f0f90717c94a3cb6c957026c9392d79ab3317bf60cb3fec60ec15c39",
-      "triangles": 2376,
-      "vertices": 1184,
-      "volume_mm3": 3100.651580203789
+      "sha256": "226071e419265a7ecd90f00a2958e8e776a6af4c1be04279d5e6e1e7be89c705",
+      "triangles": 2400,
+      "vertices": 1192,
+      "volume_mm3": 3475.651580203789
     },
     "frame.stl": {
       "components": 1,
@@ -139,10 +143,10 @@
           7.400000095367432
         ]
       ],
-      "sha256": "eb5613f802ff9b4536ff867e3e9a3d492364a037ab2244154731efb641eb0f53",
-      "triangles": 12064,
-      "vertices": 6028,
-      "volume_mm3": 15003.503218466292
+      "sha256": "d4740b2dc362ef0ac5ae7cdb1cf00c56b66be2ea1e3083dcefb8b8924e88f209",
+      "triangles": 10928,
+      "vertices": 5460,
+      "volume_mm3": 14629.249694239197
     },
     "front_endplate.stl": {
       "components": 1,
@@ -219,6 +223,44 @@
       "triangles": 19200,
       "vertices": 9600,
       "volume_mm3": 251.49969672930592
+    },
+    "gasket_tab_left.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "sha256": "6f49cde80a4156b7f0902e423c0839d1c7efae8bdae51e49c389ac552bbb5ea4",
+      "triangles": 1600,
+      "vertices": 796,
+      "volume_mm3": 1700.900722593319
+    },
+    "gasket_tab_right.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "sha256": "c5cdbca3035eb2175a24ba72fc2077e6b39fbb0b04e2fcd5d2cb8a7cd61bd3c8",
+      "triangles": 1600,
+      "vertices": 796,
+      "volume_mm3": 1700.900722593319
     },
     "heatset_nut.stl": {
       "components": 1,
@@ -334,6 +376,27 @@
       "gasket_4",
       "electrode_2",
       "gasket_5",
+      "frame_3",
+      "gasket_6",
+      "electrode_3",
+      "gasket_7",
+      "rear_endplate"
+    ],
+    "tab_fit_1": [
+      "frame_1",
+      "gasket_2",
+      "electrode_1",
+      "gasket_3",
+      "frame_2"
+    ],
+    "tab_fit_2": [
+      "frame_2",
+      "gasket_4",
+      "electrode_2",
+      "gasket_5",
+      "frame_3"
+    ],
+    "tab_fit_3": [
       "frame_3",
       "gasket_6",
       "electrode_3",
@@ -748,6 +811,10 @@
         28,
         1
       ],
+      "adjacent_gaskets": [
+        "gasket_2",
+        "gasket_3"
+      ],
       "assembled_bbox_mm": [
         [
           -33.0,
@@ -765,8 +832,8 @@
         101.5,
         1
       ],
-      "central_pad_connected_to_tab": false,
-      "central_pad_support": "none; independent floating solid, separate support/fixing required",
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
       "display_name": {
         "en": "Electrode 1",
         "zh": "电极1"
@@ -1145,6 +1212,10 @@
         28,
         1
       ],
+      "adjacent_gaskets": [
+        "gasket_4",
+        "gasket_5"
+      ],
       "assembled_bbox_mm": [
         [
           -33.0,
@@ -1162,8 +1233,8 @@
         101.5,
         1
       ],
-      "central_pad_connected_to_tab": false,
-      "central_pad_support": "none; independent floating solid, separate support/fixing required",
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
       "display_name": {
         "en": "Electrode 2",
         "zh": "电极2"
@@ -1542,6 +1613,10 @@
         28,
         1
       ],
+      "adjacent_gaskets": [
+        "gasket_6",
+        "gasket_7"
+      ],
       "assembled_bbox_mm": [
         [
           -33.0,
@@ -1559,8 +1634,8 @@
         101.5,
         1
       ],
-      "central_pad_connected_to_tab": false,
-      "central_pad_support": "none; independent floating solid, separate support/fixing required",
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
       "display_name": {
         "en": "Electrode 3",
         "zh": "电极3"
@@ -4323,6 +4398,8 @@
     "electrode_flange_r_mm": 3,
     "electrode_flange_w_mm": 66,
     "electrode_h_mm": 28,
+    "electrode_land_h_mm": 25,
+    "electrode_land_overlap_mm": 0.5,
     "electrode_material": "titanium",
     "electrode_pin_d_mm": 6.6,
     "electrode_t_mm": 1,
@@ -4397,12 +4474,12 @@
     "seal_mode": "oring",
     "shoulder_inner_clearance_mm": 0.25,
     "tab_channel_clearance_mm": 0.3,
-    "tab_gasket_notch_depth_mm": 0.5,
     "tab_hole_d_mm": 3.2,
     "tab_hole_offset_mm": 6,
     "tab_len_mm": 28,
     "tab_offset_mm": -14,
     "tab_overlap_mm": 0.5,
+    "tab_slot_start_y_mm": 35.5,
     "tab_w_mm": 8,
     "tab_x_offsets_mm": [
       -14,
@@ -4417,7 +4494,17 @@
   },
   "schema_version": 1,
   "seal_mode": "oring",
-  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+  "tab_clearance": {
+    "flat_gaskets": "G1 intact; G2/G3 -> E1; G4/G5 -> E2; etc.; full Z cuts in dry land only",
+    "groove_outer_margin_mm": 0.6,
+    "open_to": "+Y exterior",
+    "oring_compatible": true,
+    "oring_reason": "closed ring and 1.8 mm groove end below slot root, with measured dry-land clearance",
+    "per_side_mm": 0.3,
+    "start_y_mm": 35.5,
+    "width_mm": 8.6
+  },
   "tools": {
     "manifold3d": "3.5.4",
     "numpy": "2.5.4",

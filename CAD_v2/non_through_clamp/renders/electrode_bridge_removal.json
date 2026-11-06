@@ -70,5 +70,7 @@
     }
   ],
   "pass": true,
-  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7"
+  "scope_note": "Comparisons apply only to the previous bridge-removal commit; current slot/flange geometry is verified in cad_verification.json.",
+  "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+  "status": "historical_superseded_by_tab_mounted_lateral_flange_design"
 }

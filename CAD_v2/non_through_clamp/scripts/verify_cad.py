@@ -105,6 +105,7 @@ class Audit:
         self.interference()
         self.nesting()
         self.seals_and_electrodes()
+        self.tab_clearances()
         self.fasteners_and_pins()
         self.polarity()
         return {'pass': all(r['pass'] for r in self.results), 'schema_version': 1,
@@ -112,7 +113,7 @@ class Audit:
                 'configuration': {k: self.p[k] for k in ['frame_count', 'seal_mode', 'gasket_material']},
                 'tolerances': {'length_mm': LENGTH_TOL, 'bbox_mm': LENGTH_TOL, 'volume_mm3': VOLUME_TOL},
                 'instance_count': len(self.records), 'checks': self.results,
-                'electrode_support': 'unresolved: central pad floats independently; no support/fixing or tab connection is modeled',
+                'electrode_support': 'modeled: integral 25 mm lateral lands and clamped perimeter flange; mechanical/electrical ratings unvalidated',
                 'physical_validation': 'not_run: pressure, loads, chemistry, insulation, creep and service life'}
 
     def integrity(self):
@@ -123,7 +124,7 @@ class Audit:
             self.meshes[rel], self.local[rel] = mesh, solid(mesh)
             edge_counts = np.bincount(mesh.edges_unique_inverse)
             components = mesh.split(only_watertight=False)
-            expected_components = 2 if Path(rel).stem.startswith('electrode') else 1
+            expected_components = 1
             self.check('mesh '+rel, sha(path) == info['sha256'] and
                        np.isfinite(mesh.vertices).all() and mesh.volume > 0 and
                        mesh.is_watertight and mesh.is_winding_consistent and
@@ -182,6 +183,7 @@ class Audit:
         counts = {k: 0 for k in expected}
         for r in self.records.values():
             k = r['part'].replace('electrode_tab_right', 'electrode_tab').replace('gasket_oring', 'gasket')
+            if k.startswith('gasket_tab_'): k = 'gasket'
             counts[k] += 1
             rel = r.get('compressed_stl', r['stl'])
             self.world[r['id']] = self.local[rel].scale(r['scale']).translate(r['translation'])
@@ -244,7 +246,7 @@ class Audit:
                    (1,p['nest_side_x_mm'],p['nest_side_len_mm']/2,1),
                    (1,0,-p['nest_end_y_mm']-p['nest_lip_w_mm']/2,-1),
                    (0,-p['nest_end_y_mm'],p['nest_end_len_mm']/2,1),
-                   (0,p['nest_end_y_mm'],p['tab_x_offsets_mm'][1]-p['tab_w_mm']/2-p['tab_channel_clearance_mm'],1)]
+                   (0,p['nest_end_y_mm'],p['nest_end_len_mm']/2,1)]
         # Rail end centerline enters the semicircular end radius at a tangent;
         # sample a nearby parallel ray to avoid degenerate coincident edges.
         for axis, other, nominal, direction in samples:
@@ -264,9 +266,15 @@ class Audit:
         self.near('45 degree male lead-in',measured,base-p['nest_leadin_mm']/2,0.001)
         male_profile = self.get('frame').slice(d['frame_stop_h']+p['frame_t_mm']+0.4)
         expected_profile = male_profile.offset(p['nest_radial_clearance_mm'], circular_segments=p['$fn'])
+        # Through-open tab exits intentionally have no female end wall. Their
+        # 0.3-per-side clearance is measured independently in tab_clearances().
+        for x in p['tab_x_offsets_mm']:
+            expected_profile -= box([d['tab_slot_w_mm'],20,1],
+                                    [x-d['tab_slot_w_mm']/2,p['tab_slot_start_y_mm'],0]).slice(0.5)
         groove_profile = receiving.slice(p['frame_t_mm']/2)-receiving.slice(0.6)
         difference = (expected_profile-groove_profile).area()+(groove_profile-expected_profile).area()
-        self.check('whole rabbet offset profile',difference<0.05,symmetric_difference_mm2=difference)
+        self.check('whole rabbet offset profile',difference<0.05,symmetric_difference_mm2=difference,
+                   excluded='two through-open tab exits, separately verified at 0.3 mm per side')
         for name in ['frame','rear_endplate']:
             s = self.get(name)
             probe = [p['nest_side_x_mm'], 0]
@@ -343,48 +351,37 @@ class Audit:
                        triangles=len(a),max_correspondence_error_mm=error)
             self.near('oring free bbox',free.extents,[d['seal_cl_w']+p['oring_cs_mm'],d['seal_cl_h']+p['oring_cs_mm'],p['oring_cs_mm']])
             self.near('oring compressed bbox',compressed.extents,[d['seal_cl_w']+d['oring_compressed_w'],d['seal_cl_h']+d['oring_compressed_w'],d['oring_compressed_h']])
-        # Inspect every electrode asset, including the unused plain spare. Exactly
-        # two components plus an unchanged isolated pad rules out any neck to the
-        # carrier, including a connection via the top tab. The entire window gap
-        # must be empty across the full metal thickness, not just at sample points.
+        # One-piece metal continuity is required; the historical central bridges
+        # stay empty. Broad side lands carry pad -> clamped flange -> offset tab.
         thickness = p['electrode_t_mm']
         pad = mf.CrossSection([rr_points(p['electrode_w_mm'],p['electrode_h_mm'],
                                         p['electrode_corner_r_mm'],n=24)]).extrude(thickness)
-        window = mf.CrossSection([rr_points(p['window_w_mm'],p['window_h_mm'],
-                                           p['window_corner_r_mm'],n=24)]).extrude(thickness)
         for name in ['electrode_tab','electrode_tab_right','electrode_plain']:
             local = self.get(name)
             components = self.meshes[self.file_for(name)].split(only_watertight=False)
-            pad_extent = np.array([p['electrode_w_mm'],p['electrode_h_mm'],thickness])
-            central = min(components,key=lambda c: np.linalg.norm(c.extents-pad_extent))
-            central_solid = solid(central)
-            delta = (central_solid-pad).volume()+(pad-central_solid).volume()
-            self.check('isolated central pad '+name,len(components)==2 and delta<=VOLUME_TOL,
-                       components=len(components),symmetric_difference_mm3=max(0.,delta),
-                       support='none; separate support/fixing and electrical connection required')
-            self.near('isolated pad bbox '+name,central.bounds,
-                      [[-p['electrode_w_mm']/2,-p['electrode_h_mm']/2,0],
-                       [p['electrode_w_mm']/2,p['electrode_h_mm']/2,thickness]])
-            extra = ((window-pad) ^ local).volume()
-            self.check('no bridges anywhere in window '+name,extra<=VOLUME_TOL,
-                       unexpected_volume_mm3=max(0.,extra))
+            self.check('one-piece supported pad '+name,len(components)==1 and (pad-local).volume()<=VOLUME_TOL,
+                       components=len(components),support='broad lateral lands to perimeter flange')
+            land = box([p['window_w_mm']+2*p['electrode_land_overlap_mm'],p['electrode_land_h_mm'],thickness],
+                       [-p['window_w_mm']/2-p['electrode_land_overlap_mm'],-p['electrode_land_h_mm']/2,0])
+            self.check('full broad lateral lands '+name,(land-local).volume()<=VOLUME_TOL,
+                       height_mm=p['electrode_land_h_mm'],metal_thickness_mm=thickness)
             for sign in [-1,1]:
-                # Historical bridges were 4 mm wide; probe their whole clear span.
                 gap = (p['window_h_mm']-p['electrode_h_mm'])/2
                 y = sign*(p['electrode_h_mm']/2+p['window_h_mm']/2)/2
                 probe = box([4,gap-0.02,thickness],[-2,y-(gap-0.02)/2,0])
                 volume = max(0.,(probe ^ local).volume())
-                center_empty = not inside_xy(local,thickness/2,[0,y])
                 self.check('old bridge region empty '+name+'/'+str(sign),
-                           center_empty and volume<=VOLUME_TOL,
-                           center_mm=[0,y,thickness/2],center_empty=center_empty,volume_mm3=volume)
+                           not inside_xy(local,thickness/2,[0,y]) and volume<=VOLUME_TOL,
+                           center_mm=[0,y,thickness/2],volume_mm3=volume)
+                # A through-flow path at each original port position remains open.
+                flow = cylinder(p['port_through_d_mm'],thickness,[p['port_x_mm'],sign*p['port_y_mm'],0])
+                self.check('electrode fluid bypass '+name+'/'+str(sign),(flow ^ local).volume()<=VOLUME_TOL)
             if name!='electrode_plain':
-                carrier = max(components,key=lambda c: c.extents[1])
-                carrier_solid = solid(carrier)
                 x = p['tab_x_offsets_mm'][1] if name.endswith('_right') else p['tab_offset_mm']
-                self.check('tab remains on outer carrier '+name,
-                           inside_xy(carrier_solid,thickness/2,[x,d['tab_start_y']+0.1]) and
-                           inside_xy(carrier_solid,thickness/2,[x,d['tab_end_y']-1]))
+                tab = box([p['tab_w_mm'],p['tab_len_mm']-p['tab_hole_offset_mm']-p['tab_hole_d_mm'],thickness],
+                          [x-p['tab_w_mm']/2,d['tab_start_y'],0])
+                self.check('integral tab to pad '+name,len(components)==1 and (tab-local).volume()<=VOLUME_TOL and
+                           inside_xy(local,thickness/2,[x,d['tab_end_y']-1]),tab_x_mm=x)
         for i in range(1,p['frame_count']+1):
             r = self.records[f'electrode_{i}']; s = self.world[r['id']]; local = self.local[r['stl']]
             z = p['electrode_t_mm']/2
@@ -396,6 +393,90 @@ class Audit:
             self.check('tab hole '+r['id'],not inside_xy(local,z,[x,y]))
             hits = section_hits(local,z,0,y)
             self.near('tab hole diameter '+r['id'],min(hits,key=lambda v:abs(v-x-p['tab_hole_d_mm']/2))-min(hits,key=lambda v:abs(v-x+p['tab_hole_d_mm']/2)),p['tab_hole_d_mm'])
+
+    def tab_clearances(self):
+        p,d = self.p,self.d
+        root,width = p['tab_slot_start_y_mm'],d['tab_slot_w_mm']
+        self.near('tab slot design width',width,8.6,1e-6)
+        self.near('tab slot per-side allowance',(width-p['tab_w_mm'])/2,0.3,1e-6)
+        self.check('slot root outside seal and window',
+                   root>(d['seal_cl_h']+p['oring_groove_w_mm'])/2 and root>p['window_h_mm']/2,
+                   groove_outer_margin_mm=d['tab_slot_seal_margin_mm'],
+                   window_margin_mm=root-p['window_h_mm']/2)
+        # Volume probes span the ENTIRE frame body, shoulder and lip, not samples
+        # only. Side-wall measurements at the body and lip prove the 8.6 opening.
+        for x in p['tab_x_offsets_mm']:
+            opening = box([width,20,d['frame_bbox_h']], [x-width/2,root,0])
+            volume = max(0.,(opening ^ self.get('frame')).volume())
+            self.check('frame full-height open tab channel '+str(x),volume<=VOLUME_TOL,volume_mm3=volume)
+            for label,y,z in [('body',root+0.5,p['frame_t_mm']/2),
+                              ('shoulder',p['nest_end_y_mm'],p['frame_t_mm']+d['frame_stop_h']/2),
+                              ('lip',p['nest_end_y_mm'],p['frame_t_mm']+d['frame_stop_h']+0.4)]:
+                hits=section_hits(self.get('frame'),z,0,y)
+                edges=[min(hits,key=lambda v:abs(v-x+width/2)),min(hits,key=lambda v:abs(v-x-width/2))]
+                self.near('measured tab '+label+' walls '+str(x),edges,[x-width/2,x+width/2],0.001)
+                self.near('measured tab '+label+' clearances '+str(x),
+                          [x-p['tab_w_mm']/2-edges[0],edges[1]-x-p['tab_w_mm']/2],[0.3,0.3],0.001)
+            front_opening=box([width,20,d['front_stop_h']+p['nest_lip_h_mm']],
+                              [x-width/2,root,p['endplate_t_mm']])
+            self.check('front stop open tab channel '+str(x),
+                       (front_opening ^ self.get('front_endplate')).volume()<=VOLUME_TOL)
+        if p['seal_mode']=='flat_gasket':
+            # Only actual adjacent layers get a slot; G1 has no tab at its Z.
+            g1=self.world['gasket_1']
+            for x in p['tab_x_offsets_mm']:
+                patch=box([width,0.8,d['gasket_compressed_t']],
+                          [x-width/2,root+0.1,self.records['gasket_1']['translation'][2]])
+                self.check('G1 intact dry land '+str(x),(patch-g1).volume()<=VOLUME_TOL)
+            for name,x in [('gasket_tab_left',p['tab_x_offsets_mm'][0]),
+                           ('gasket_tab_right',p['tab_x_offsets_mm'][1])]:
+                local=self.get(name)
+                probe=box([width,20,p['gasket_t_mm']],[x-width/2,root,0])
+                self.check('free gasket full-thickness slot '+name,(probe ^ local).volume()<=VOLUME_TOL)
+                # The unused mirror slot is absent, so unnecessary cuts cannot pass.
+                other=box([width,0.8,p['gasket_t_mm']],[-x-width/2,root+0.1,0])
+                self.check('gasket unused side intact '+name,(other-local).volume()<=VOLUME_TOL)
+                for z in [0.01,p['gasket_t_mm']/2,p['gasket_t_mm']-0.01]:
+                    hits=section_hits(local,z,0,root+0.5)
+                    edges=[min(hits,key=lambda v:abs(v-x+width/2)),min(hits,key=lambda v:abs(v-x-width/2))]
+                    self.near('gasket measured slot '+name+'/'+str(z),edges,[x-width/2,x+width/2],0.001)
+        else:
+            # Closed O-rings sit inside the dry slots; never cut a ring to mimic
+            # a slotted flat gasket. Check free/compressed meshes AND groove bands.
+            for name in ['gasket_oring','gasket_oring_compressed']:
+                ring=self.get(name)
+                for x in p['tab_x_offsets_mm']:
+                    probe=box([width,20,p['oring_cs_mm']],[x-width/2,root,0])
+                    self.check('O-ring outside dry slot '+name+'/'+str(x),(probe ^ ring).volume()<=VOLUME_TOL)
+            self.check('O-ring slot compatibility',d['tab_slot_seal_margin_mm']>=0.5,
+                       compatible=True,reason='closed ring/groove inside slot root; no O-ring notch',
+                       groove_margin_mm=d['tab_slot_seal_margin_mm'])
+        for number in range(1,p['frame_count']+1):
+            r=self.records[f'electrode_{number}']
+            x=p['tab_x_offsets_mm'][(number-1)%len(p['tab_x_offsets_mm'])]
+            low=r['translation'][2]; high=low+p['electrode_t_mm']
+            envelope=box([width,p['tab_len_mm'],p['electrode_t_mm']],
+                         [x-width/2,d['tab_start_y'],low])
+            collisions=[]
+            for sid,other in self.world.items():
+                if sid==r['id']: continue
+                volume=max(0.,(envelope ^ other).volume())
+                if volume>VOLUME_TOL: collisions.append({'other':sid,'volume_mm3':volume})
+            self.check('handle clearance all assembled parts '+r['id'],not collisions,
+                       tab_x_mm=x,z_mm=[low,high],collisions=collisions,per_side_mm=0.3)
+            self.check('all three pads connected to own tab '+r['id'],
+                       len(self.world[r['id']].decompose())==1 and r['part']==('electrode_tab' if x<0 else 'electrode_tab_right'),
+                       tab_x_mm=x,metal_components=len(self.world[r['id']].decompose()))
+            for sn,expected_z in [(2*number,low),(2*number+1,high)]:
+                seal=self.records[f'gasket_{sn}']; sb=bounds(self.world[seal['id']])
+                self.near('adjacent gasket meets metal plane '+seal['id'],sb[1 if sn%2==0 else 0,2],expected_z)
+                if p['seal_mode']=='flat_gasket':
+                    expected_part='gasket_tab_left' if x<0 else 'gasket_tab_right'
+                    self.check('matched gasket tab side '+seal['id'],seal['part']==expected_part,part=seal['part'],tab_x_mm=x)
+                    probe=box([width,20,sb[1,2]-sb[0,2]],[x-width/2,root,sb[0,2]])
+                    volume=max(0.,(probe ^ self.world[seal['id']]).volume())
+                    self.check('assembled gasket full-thickness slot '+seal['id'],volume<=VOLUME_TOL,
+                               thickness_mm=sb[1,2]-sb[0,2],volume_mm3=volume)
 
     def fasteners_and_pins(self):
         p, d = self.p, self.d

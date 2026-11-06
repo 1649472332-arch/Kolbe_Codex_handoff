@@ -4,13 +4,13 @@
     "reproducible_build": {
       "status": "pass",
       "detail": [
-        "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa",
-        "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
+        "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731",
+        "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
       ]
     },
     "file_size": {
       "status": "pass",
-      "detail": 1940417
+      "detail": 1911467
     },
     "static_offline_resources": {
       "status": "pass",
@@ -68,9 +68,9 @@
           "retained_triangles": 1172
         },
         "stls/electrode_tab.stl": {
-          "triangles": 2376,
-          "source_vertices": 1184,
-          "vertices": 2376,
+          "triangles": 2400,
+          "source_vertices": 1192,
+          "vertices": 2408,
           "source_bbox": [
             [
               -33,
@@ -99,12 +99,12 @@
           "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 0,
-          "retained_triangles": 2376
+          "retained_triangles": 2400
         },
         "stls/electrode_tab_right.stl": {
-          "triangles": 2376,
-          "source_vertices": 1184,
-          "vertices": 2376,
+          "triangles": 2400,
+          "source_vertices": 1192,
+          "vertices": 2408,
           "source_bbox": [
             [
               -33,
@@ -133,12 +133,12 @@
           "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 0,
-          "retained_triangles": 2376
+          "retained_triangles": 2400
         },
         "stls/frame.stl": {
-          "triangles": 10464,
-          "source_vertices": 5228,
-          "vertices": 10504,
+          "triangles": 9328,
+          "source_vertices": 4660,
+          "vertices": 9400,
           "source_bbox": [
             [
               -37,
@@ -163,11 +163,11 @@
               7.400000095367432
             ]
           ],
-          "max_error_mm": 0,
-          "encoding": "float32",
+          "max_error_mm": 0.0006250568464665207,
+          "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
-          "quantized_flipped_triangles": 2,
-          "retained_triangles": 10464
+          "quantized_flipped_triangles": 0,
+          "retained_triangles": 9328
         },
         "stls/front_endplate.stl": {
           "triangles": 9908,
@@ -204,9 +204,9 @@
           "retained_triangles": 9908
         },
         "stls/gasket.stl": {
-          "triangles": 1616,
-          "source_vertices": 804,
-          "vertices": 1624,
+          "triangles": 1584,
+          "source_vertices": 788,
+          "vertices": 1576,
           "source_bbox": [
             [
               -33,
@@ -235,7 +235,75 @@
           "encoding": "uint16",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 0,
-          "retained_triangles": 1616
+          "retained_triangles": 1584
+        },
+        "stls/gasket_tab_left.stl": {
+          "triangles": 1600,
+          "source_vertices": 796,
+          "vertices": 1600,
+          "source_bbox": [
+            [
+              -33,
+              -37,
+              0
+            ],
+            [
+              33,
+              37,
+              0.800000011920929
+            ]
+          ],
+          "decoded_bbox": [
+            [
+              -33,
+              -37,
+              0
+            ],
+            [
+              33,
+              37,
+              0.800000011920929
+            ]
+          ],
+          "max_error_mm": 0.0005639734498856797,
+          "encoding": "uint16",
+          "quantized_collapsed_triangles": 0,
+          "quantized_flipped_triangles": 0,
+          "retained_triangles": 1600
+        },
+        "stls/gasket_tab_right.stl": {
+          "triangles": 1600,
+          "source_vertices": 796,
+          "vertices": 1600,
+          "source_bbox": [
+            [
+              -33,
+              -37,
+              0
+            ],
+            [
+              33,
+              37,
+              0.800000011920929
+            ]
+          ],
+          "decoded_bbox": [
+            [
+              -33,
+              -37,
+              0
+            ],
+            [
+              33,
+              37,
+              0.800000011920929
+            ]
+          ],
+          "max_error_mm": 0.0005639734498856797,
+          "encoding": "uint16",
+          "quantized_collapsed_triangles": 0,
+          "quantized_flipped_triangles": 0,
+          "retained_triangles": 1600
         },
         "stls/heatset_nut.stl": {
           "triangles": 768,
@@ -379,7 +447,7 @@
       "status": "pass",
       "detail": {
         "instances": 41,
-        "geometries": 10
+        "geometries": 12
       }
     },
     "transforms_0": {
@@ -402,9 +470,9 @@
           1000
         ],
         "stddev": [
-          64.27304541953113,
-          63.5095390449395,
-          62.11971684729342
+          64.31307401280458,
+          63.54440206710471,
+          62.1525627952153
         ]
       }
     },
@@ -425,9 +493,9 @@
           1000
         ],
         "stddev": [
-          39.82816631776524,
-          37.801583841564536,
-          36.59364223407225
+          39.89348355433034,
+          37.86456138365755,
+          36.65523320852003
         ]
       }
     },
@@ -447,9 +515,9 @@
           1000
         ],
         "stddev": [
-          26.707357516583123,
-          20.83688833117594,
-          17.997201320987493
+          26.874968907348823,
+          21.015506153314373,
+          18.179323546520248
         ]
       }
     },
@@ -465,9 +533,9 @@
           1000
         ],
         "stddev": [
-          37.70632302411313,
-          29.98551790931424,
-          25.71759311647013
+          37.54237453753493,
+          29.889798482856406,
+          25.665089355317495
         ]
       }
     },
@@ -487,9 +555,9 @@
           1000
         ],
         "stddev": [
-          57.15544091051703,
-          53.372435762462224,
-          50.90529571440826
+          57.12396056919215,
+          53.33813266523948,
+          50.87427809436092
         ]
       }
     },
@@ -505,9 +573,85 @@
           1000
         ],
         "stddev": [
-          38.41508729744871,
-          34.40570689213963,
-          31.65905960996499
+          39.690461006311715,
+          35.724682371775614,
+          32.940411602797724
+        ]
+      }
+    },
+    "tab_fit_left": {
+      "status": "pass",
+      "detail": [
+        "frame_1",
+        "gasket_2",
+        "electrode_1",
+        "gasket_3",
+        "frame_2"
+      ]
+    },
+    "pixels_demo_v2_tab_fit_left.png": {
+      "status": "pass",
+      "detail": {
+        "size": [
+          1440,
+          1000
+        ],
+        "stddev": [
+          43.36290113929662,
+          38.39852745674283,
+          35.39210625279543
+        ]
+      }
+    },
+    "tab_fit_right": {
+      "status": "pass",
+      "detail": [
+        "frame_2",
+        "gasket_4",
+        "electrode_2",
+        "gasket_5",
+        "frame_3"
+      ]
+    },
+    "pixels_demo_v2_tab_fit_right.png": {
+      "status": "pass",
+      "detail": {
+        "size": [
+          1440,
+          1000
+        ],
+        "stddev": [
+          46.89580139300918,
+          42.22513543936524,
+          39.20606517456235
+        ]
+      }
+    },
+    "pixels_demo_v2_gasket_left_slot.png": {
+      "status": "pass",
+      "detail": {
+        "size": [
+          1440,
+          1000
+        ],
+        "stddev": [
+          57.13422757647313,
+          53.348392893266855,
+          50.88438463669358
+        ]
+      }
+    },
+    "pixels_demo_v2_gasket_right_slot.png": {
+      "status": "pass",
+      "detail": {
+        "size": [
+          1440,
+          1000
+        ],
+        "stddev": [
+          57.12396056919215,
+          53.33813266523948,
+          50.87427809436092
         ]
       }
     },
@@ -531,8 +675,8 @@
       "status": "pass",
       "detail": {
         "id": "frame_2",
-        "x": 794.264410454989,
-        "y": 491.51263855309054
+        "x": 794.2643786772715,
+        "y": 491.5125396211097
       }
     },
     "pointer_raycast": {
@@ -655,9 +799,9 @@
           1000
         ],
         "stddev": [
-          38.45935353381844,
-          37.537704593832295,
-          37.129919389949784
+          38.50214866613279,
+          37.57015079422662,
+          37.1602046996053
         ]
       }
     },
@@ -665,8 +809,8 @@
       "status": "pass",
       "detail": {
         "id": "frame_2",
-        "x": 918.3473620282971,
-        "y": 711.4822921660192
+        "x": 1161.7879512092647,
+        "y": 200.10420867251776
       }
     },
     "clipped_surface_not_pickable": {
@@ -764,9 +908,9 @@
           1688
         ],
         "stddev": [
-          43.019838994156984,
-          40.95211294257481,
-          39.72215918538184
+          42.94714639939132,
+          40.87606013575658,
+          39.642447385427865
         ]
       }
     },
@@ -798,6 +942,10 @@
     "renders/demo_v2_frame_reverse.png",
     "renders/demo_v2_gasket_isolated.png",
     "renders/demo_v2_electrode_isolated.png",
+    "renders/demo_v2_tab_fit_left.png",
+    "renders/demo_v2_tab_fit_right.png",
+    "renders/demo_v2_gasket_left_slot.png",
+    "renders/demo_v2_gasket_right_slot.png",
     "renders/demo_v2_section.png",
     "renders/demo_v2_mobile.png"
   ],
@@ -810,9 +958,9 @@
     "file:///workspace/Kolbe_Codex_handoff/CAD_v2/non_through_clamp/demo_v2.html"
   ],
   "http_requests": [],
-  "html_bytes": 1940417,
-  "html_mib": 1.8505258560180664,
-  "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa",
+  "html_bytes": 1911467,
+  "html_mib": 1.8229169845581055,
+  "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731",
   "url_hits": [
     {
       "url": "http://www.w3.org/1999/xhtml",
@@ -826,13 +974,13 @@
   "build": {
     "three": "0.170.0",
     "esbuild": "0.24.0",
-    "source_sha256": "f09b2e3bd677537428075461464d67caefc25de57165ff0d07be77f61610fde7",
+    "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
     "inputs": {
       "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
-      "scripts/demo_v2/app.js": "b8beb2aa69f30a3430226a6566513c8c7f752f48d5045929994b8c7dcc78a78f",
+      "scripts/demo_v2/app.js": "b53578d0baebc012624b3507ae04d1bf41776a62774a4b9f5bcb75a581fa0df7",
       "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
-      "scripts/demo_v2/template.html": "2c498634082d597b720583196fc87d0bcc5fbf3c9786dc3ef1318ad98e47a165",
-      "stack_manifest.json": "d1584e1949fed413a57b45a768240240d179557516a5e41d3cd4273e1ed305bf"
+      "scripts/demo_v2/template.html": "b4edb3c5597666c9855477d8dddbeb2d4bcf10f30bcd1a39d94f9c658e15277b",
+      "stack_manifest.json": "5cb0709493afcde450f3b5c365191585af9b33964f7fa6c5d74728ae5fd7c84c"
     },
     "geometry": {
       "stls/bolt.stl": {
@@ -870,9 +1018,9 @@
         "retained_triangles": 1172
       },
       "stls/electrode_tab.stl": {
-        "triangles": 2376,
-        "source_vertices": 1184,
-        "vertices": 2376,
+        "triangles": 2400,
+        "source_vertices": 1192,
+        "vertices": 2408,
         "source_bbox": [
           [
             -33,
@@ -901,12 +1049,12 @@
         "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 0,
-        "retained_triangles": 2376
+        "retained_triangles": 2400
       },
       "stls/electrode_tab_right.stl": {
-        "triangles": 2376,
-        "source_vertices": 1184,
-        "vertices": 2376,
+        "triangles": 2400,
+        "source_vertices": 1192,
+        "vertices": 2408,
         "source_bbox": [
           [
             -33,
@@ -935,12 +1083,12 @@
         "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 0,
-        "retained_triangles": 2376
+        "retained_triangles": 2400
       },
       "stls/frame.stl": {
-        "triangles": 10464,
-        "source_vertices": 5228,
-        "vertices": 10504,
+        "triangles": 9328,
+        "source_vertices": 4660,
+        "vertices": 9400,
         "source_bbox": [
           [
             -37,
@@ -965,11 +1113,11 @@
             7.400000095367432
           ]
         ],
-        "max_error_mm": 0,
-        "encoding": "float32",
+        "max_error_mm": 0.0006250568464665207,
+        "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
-        "quantized_flipped_triangles": 2,
-        "retained_triangles": 10464
+        "quantized_flipped_triangles": 0,
+        "retained_triangles": 9328
       },
       "stls/front_endplate.stl": {
         "triangles": 9908,
@@ -1006,9 +1154,9 @@
         "retained_triangles": 9908
       },
       "stls/gasket.stl": {
-        "triangles": 1616,
-        "source_vertices": 804,
-        "vertices": 1624,
+        "triangles": 1584,
+        "source_vertices": 788,
+        "vertices": 1576,
         "source_bbox": [
           [
             -33,
@@ -1037,7 +1185,75 @@
         "encoding": "uint16",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 0,
-        "retained_triangles": 1616
+        "retained_triangles": 1584
+      },
+      "stls/gasket_tab_left.stl": {
+        "triangles": 1600,
+        "source_vertices": 796,
+        "vertices": 1600,
+        "source_bbox": [
+          [
+            -33,
+            -37,
+            0
+          ],
+          [
+            33,
+            37,
+            0.800000011920929
+          ]
+        ],
+        "decoded_bbox": [
+          [
+            -33,
+            -37,
+            0
+          ],
+          [
+            33,
+            37,
+            0.800000011920929
+          ]
+        ],
+        "max_error_mm": 0.0005639734498856797,
+        "encoding": "uint16",
+        "quantized_collapsed_triangles": 0,
+        "quantized_flipped_triangles": 0,
+        "retained_triangles": 1600
+      },
+      "stls/gasket_tab_right.stl": {
+        "triangles": 1600,
+        "source_vertices": 796,
+        "vertices": 1600,
+        "source_bbox": [
+          [
+            -33,
+            -37,
+            0
+          ],
+          [
+            33,
+            37,
+            0.800000011920929
+          ]
+        ],
+        "decoded_bbox": [
+          [
+            -33,
+            -37,
+            0
+          ],
+          [
+            33,
+            37,
+            0.800000011920929
+          ]
+        ],
+        "max_error_mm": 0.0005639734498856797,
+        "encoding": "uint16",
+        "quantized_collapsed_triangles": 0,
+        "quantized_flipped_triangles": 0,
+        "retained_triangles": 1600
       },
       "stls/heatset_nut.stl": {
         "triangles": 768,
@@ -1176,29 +1392,29 @@
         "retained_triangles": 768
       }
     },
-    "html_bytes": 1940417,
-    "html_sha256": "a655868e65d63c77cae71389d163bf255792973a628e2c57866ecdbf3a6494fa"
+    "html_bytes": 1911467,
+    "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
   },
   "browser": "156.0.8078.47",
   "three": "170",
   "desktop_performance": {
-    "renderedFrames": 205,
-    "samples": 205,
-    "frame_time_samples": 191,
+    "renderedFrames": 262,
+    "samples": 262,
+    "frame_time_samples": 244,
     "frame_time_ms_median": 150,
-    "frame_time_ms_p95": 716.6999999999971,
-    "render_ms_median": 0.6000000014901161,
-    "render_ms_p95": 284.90000000037253
+    "frame_time_ms_p95": 633.4000000000015,
+    "render_ms_median": 0.5,
+    "render_ms_p95": 82.40000000037253
   },
   "mobile_performance": {
-    "renderedFrames": 109,
-    "samples": 109,
-    "frame_time_samples": 103,
-    "frame_time_ms_median": 183.29999999999927,
-    "frame_time_ms_p95": 366.6999999999971,
-    "render_ms_median": 0.6999999992549419,
-    "render_ms_p95": 2.600000001490116
+    "renderedFrames": 106,
+    "samples": 106,
+    "frame_time_samples": 100,
+    "frame_time_ms_median": 166.69999999999982,
+    "frame_time_ms_p95": 500,
+    "render_ms_median": 0.7000000011175871,
+    "render_ms_p95": 2
   },
   "performance_note": "Software SwiftShader active-frame intervals and render submission times; not physical phone FPS. Includes shader compilation.",
-  "elapsed_seconds": 80.14
+  "elapsed_seconds": 84.64
 }

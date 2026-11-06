@@ -41,8 +41,10 @@ electrode_corner_r_mm = 1.5;
 electrode_flange_w_mm = 66;
 electrode_flange_h_mm = 74;
 electrode_flange_r_mm = 3;
-// No bridges or necks: the central pad is a separate, unsupported solid.
-// The outer carrier and its top tab remain joined; neither fixes/powers the pad.
+// Integral broad lateral lands support/power the pad via the perimeter flange.
+// The old upper/lower central bridges stay absent; two fluid openings remain.
+electrode_land_h_mm = 25;
+electrode_land_overlap_mm = 0.5;
 electrode_pin_d_mm = 6.6;
 tab_w_mm = 8;
 tab_len_mm = 28;
@@ -52,7 +54,8 @@ tab_offset_mm = -14;
 tab_hole_d_mm = 3.2;
 tab_hole_offset_mm = 6;
 tab_channel_clearance_mm = 0.3;
-tab_gasket_notch_depth_mm = 0.5;
+// Dry-side slots are XY openings extruded through each relevant layer, not Z pockets.
+tab_slot_start_y_mm = 35.5;
 nest_radial_clearance_mm = 0.25;
 nest_lip_w_mm = 2;
 nest_lip_h_mm = 1.2;
@@ -132,6 +135,8 @@ seal_cl_h = window_h_mm+2*oring_centerline_pad_mm;
 seal_cl_r = window_corner_r_mm+oring_centerline_pad_mm;
 tab_start_y = electrode_flange_h_mm/2-tab_overlap_mm;
 tab_end_y = tab_start_y+tab_len_mm;
+tab_slot_w_mm = tab_w_mm+2*tab_channel_clearance_mm;
+tab_slot_seal_margin_mm = tab_slot_start_y_mm-(seal_cl_h+oring_groove_w_mm)/2;
 slot_angle = atan2(locator_points[1][1]-locator_points[0][1],locator_points[1][0]-locator_points[0][0]);
 side_wall_mm = frame_w_mm/2-(nest_side_x_mm+nest_lip_w_mm/2+nest_radial_clearance_mm);
 end_wall_mm = frame_h_mm/2-(nest_end_y_mm+nest_lip_w_mm/2+nest_radial_clearance_mm);
@@ -157,6 +162,9 @@ assert(2*oring_groove_d_mm<frame_t_mm && oring_compressed_w<oring_groove_w_mm);
 assert(locator_rear_clearance_mm>0 && locator_press_depth_mm<endplate_t_mm);
 assert(bolt_length_mm>0, "no standard bolt satisfies engagement and projection");
 assert(heatset_depth_mm<endplate_t_mm && bolt_clear_d_mm>bolt_shank_d_mm);
+assert(abs(tab_slot_w_mm-8.6)<1e-6 && abs(tab_channel_clearance_mm-0.3)<1e-6, "tab clearance must be 0.3 per side");
+assert(tab_slot_start_y_mm<tab_start_y && tab_slot_seal_margin_mm>=0.5, "slot must stay outside closed seal");
+assert(electrode_land_h_mm>0 && electrode_land_h_mm<=electrode_h_mm-2*electrode_corner_r_mm);
 for (b=bolt_points) {
     assert(norm([max(abs(b[0])-frame_w_mm/2,0),max(abs(b[1])-frame_h_mm/2,0)])-washer_od_mm/2>=2);
     assert(endplate_w_mm/2-abs(b[0])-washer_od_mm/2>=3 && endplate_h_mm/2-abs(b[1])-washer_od_mm/2>=3);
@@ -172,9 +180,9 @@ module slot2d(d,extra) {
 module locator_holes2d(d,extra=0) {
     for (i=[0:1]) translate(locator_points[i]) if (i==0) circle(d=d); else slot2d(d,extra);
 }
-module tab_channels2d() {
-    for (x=tab_x_offsets_mm) translate([x,tab_start_y+frame_h_mm/2])
-        square([tab_w_mm+2*tab_channel_clearance_mm,frame_h_mm],center=true);
+module tab_channels2d(offsets=tab_x_offsets_mm) {
+    for (x=offsets) translate([x,tab_slot_start_y_mm+frame_h_mm/2])
+        square([tab_slot_w_mm,frame_h_mm],center=true);
 }
 module shoulder2d() {
     difference() {
@@ -242,22 +250,23 @@ module seal_band2d(width) {
 module oring_groove(z) {
     translate([0,0,z]) linear_extrude(oring_groove_d_mm+csg_eps_mm) seal_band2d(oring_groove_w_mm);
 }
-module flat_gasket() {
+module flat_gasket(x=undef) {
     linear_extrude(gasket_t_mm) difference() {
         rr(gasket_w_mm,gasket_h_mm,gasket_corner_r_mm);
         window2d();
         locator_holes2d(gasket_pin_d_mm,gasket_slot_extra_mm);
-        for (x=tab_x_offsets_mm) translate([x,gasket_h_mm/2])
-            square([tab_w_mm+2*tab_channel_clearance_mm,2*tab_gasket_notch_depth_mm],center=true);
+        // G1 is unslotted; each electrode's two adjacent seals get its own side.
+        if (!is_undef(x)) tab_channels2d([x]);
     }
 }
 module electrode(tab=true,x=tab_offset_mm) {
-    // Two disconnected solids in one STL. A separate support and electrical
-    // connection scheme is still required; this is not a one-piece electrode.
+    // One-piece plate: 25 mm high lateral lands join pad -> flange -> offset tab.
+    // No vertical connection at x=0 above/below the 28 mm pad.
     linear_extrude(electrode_t_mm) difference() {
         union() {
             difference() { rr(electrode_flange_w_mm,electrode_flange_h_mm,electrode_flange_r_mm); window2d(); }
             rr(electrode_w_mm,electrode_h_mm,electrode_corner_r_mm);
+            square([window_w_mm+2*electrode_land_overlap_mm,electrode_land_h_mm],center=true);
             if (tab) translate([x,tab_start_y+tab_len_mm/2]) square([tab_w_mm,tab_len_mm],center=true);
         }
         locator_holes2d(electrode_pin_d_mm);
@@ -288,6 +297,7 @@ module frame() {
             shoulder_lip(frame_t_mm,frame_stop_h);
         }
         rabbet_cut();
+        translate([0,0,-csg_eps_mm]) linear_extrude(frame_bbox_h+2*csg_eps_mm) tab_channels2d();
         translate([0,0,-csg_eps_mm]) linear_extrude(frame_bbox_h+2*csg_eps_mm) locator_holes2d(locator_slip_d_mm,locator_slot_extra_mm);
         if (seal_mode=="oring") { oring_groove(-csg_eps_mm); oring_groove(frame_t_mm-oring_groove_d_mm); }
     }
@@ -368,7 +378,9 @@ function rec(id,k,pos,sc,ex,esc,zh,en,mat,nom,adim,grp,seq=-1,hw=-1)=[id,k,pos,s
 function central_record(s)=let(k=central_kind(s),i=floor((s-2)/4),
     is_seal=k=="gasket" || k=="gasket_oring",n=is_seal ? seal_number(s) : i+1,
     id=is_seal ? str("gasket_",n) : k=="frame" ? str("frame_",n) : k=="electrode_tab" ? str("electrode_",n) : k,
-    kp=k=="electrode_tab" && tab_x_offsets_mm[i%len(tab_x_offsets_mm)]>0 ? "electrode_tab_right" : k,
+    seal_tab_x=n>=2 ? tab_x_offsets_mm[floor((n-2)/2)%len(tab_x_offsets_mm)] : 0,
+    kp=k=="electrode_tab" && tab_x_offsets_mm[i%len(tab_x_offsets_mm)]>0 ? "electrode_tab_right" :
+       k=="gasket" && n>=2 ? (seal_tab_x<0 ? "gasket_tab_left" : "gasket_tab_right") : k,
     nom=k=="front_endplate" || k=="rear_endplate" ? [endplate_w_mm,endplate_h_mm,endplate_t_mm] :
         k=="frame" ? [frame_w_mm,frame_h_mm,frame_t_mm] : k=="electrode_tab" ? [electrode_flange_w_mm,tab_end_y+electrode_flange_h_mm/2,electrode_t_mm] :
         k=="gasket" ? [gasket_w_mm,gasket_h_mm,gasket_t_mm] : [seal_cl_w+oring_cs_mm,seal_cl_h+oring_cs_mm,oring_cs_mm],
@@ -390,6 +402,8 @@ module geometry(k,compressed=false) {
     else if (k=="rear_endplate") rear_endplate();
     else if (k=="frame") frame();
     else if (k=="gasket") { if (seal_mode=="flat_gasket") flat_gasket(); else gasket_oring(compressed); }
+    else if (k=="gasket_tab_left") flat_gasket(tab_x_offsets_mm[0]);
+    else if (k=="gasket_tab_right") flat_gasket(tab_x_offsets_mm[1]);
     else if (k=="gasket_oring" || k=="gasket_oring_compressed") gasket_oring(compressed || k=="gasket_oring_compressed");
     else if (k=="electrode_tab") electrode();
     else if (k=="electrode_tab_right") electrode(true,abs(tab_x_offsets_mm[1]));
@@ -402,14 +416,26 @@ module geometry(k,compressed=false) {
 }
 module assembly(exploded=false) {
     for (r=instance_records()) {
-        c=r[11]=="stack" ? (r[1]=="frame" ? [0.55,0.72,0.85] : r[8]=="polymer" ? [0.24,0.28,0.34] : r[1]=="gasket" || r[1]=="gasket_oring" ? [0.16,0.16,0.16] : [0.68,0.69,0.72]) : r[11]=="heatsets" ? [0.72,0.52,0.20] : [0.75,0.78,0.81];
+        c=r[11]=="stack" ? (r[1]=="frame" ? [0.55,0.72,0.85] : r[8]=="polymer" ? [0.24,0.28,0.34] : r[1]=="gasket" || r[1]=="gasket_tab_left" || r[1]=="gasket_tab_right" || r[1]=="gasket_oring" ? [0.16,0.16,0.16] : [0.68,0.69,0.72]) : r[11]=="heatsets" ? [0.72,0.52,0.20] : [0.75,0.78,0.81];
         color(c) translate(exploded ? r[4] : r[2]) scale(exploded ? r[5] : r[3]) geometry(r[1],!exploded);
+    }
+}
+// Cropped, assembled section from the actual instance records; no demo solids.
+module tab_fit_view(number) {
+    x=tab_x_offsets_mm[(number-1)%len(tab_x_offsets_mm)];
+    names=[str("frame_",number),str("gasket_",2*number),str("electrode_",number),str("gasket_",2*number+1),
+           number<frame_count ? str("frame_",number+1) : "rear_endplate"];
+    intersection() {
+        translate([x-10,31,-10]) cube([20,34,total_stack_t+20]);
+        union() for (r=instance_records()) if (len([for (name=names) if (name==r[0]) name])>0)
+            translate(r[2]) scale(r[3]) geometry(r[1],true);
     }
 }
 // Manifest parameter and derived echo definitions are appended next.
 if (part=="assembly" || part=="exploded") assembly(part=="exploded");
+else if (part=="tab_fit_left" || part=="tab_fit_right") tab_fit_view(part=="tab_fit_left" ? 1 : 2);
 else if (part!="manifest") {
-    assert(len([for (k=["front_endplate","rear_endplate","frame","gasket","gasket_oring","gasket_oring_compressed","electrode_tab","electrode_plain","locator_pin","bolt","washer","heatset_nut","bolt_with_washer"]) if (k==part) k])>0,"unknown part");
+    assert(len([for (k=["front_endplate","rear_endplate","frame","gasket","gasket_tab_left","gasket_tab_right","gasket_oring","gasket_oring_compressed","electrode_tab","electrode_tab_right","electrode_plain","locator_pin","bolt","washer","heatset_nut","bolt_with_washer"]) if (k==part) k])>0,"unknown part");
     geometry(part);
 }
 
@@ -454,6 +480,8 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["electrode_flange_w_mm",electrode_flange_w_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_flange_h_mm",electrode_flange_h_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_flange_r_mm",electrode_flange_r_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_land_h_mm",electrode_land_h_mm]]);
+    echo(["KOLBE_V1","parameter",["electrode_land_overlap_mm",electrode_land_overlap_mm]]);
     echo(["KOLBE_V1","parameter",["electrode_pin_d_mm",electrode_pin_d_mm]]);
     echo(["KOLBE_V1","parameter",["tab_w_mm",tab_w_mm]]);
     echo(["KOLBE_V1","parameter",["tab_len_mm",tab_len_mm]]);
@@ -463,7 +491,7 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["tab_hole_d_mm",tab_hole_d_mm]]);
     echo(["KOLBE_V1","parameter",["tab_hole_offset_mm",tab_hole_offset_mm]]);
     echo(["KOLBE_V1","parameter",["tab_channel_clearance_mm",tab_channel_clearance_mm]]);
-    echo(["KOLBE_V1","parameter",["tab_gasket_notch_depth_mm",tab_gasket_notch_depth_mm]]);
+    echo(["KOLBE_V1","parameter",["tab_slot_start_y_mm",tab_slot_start_y_mm]]);
     echo(["KOLBE_V1","parameter",["nest_radial_clearance_mm",nest_radial_clearance_mm]]);
     echo(["KOLBE_V1","parameter",["nest_lip_w_mm",nest_lip_w_mm]]);
     echo(["KOLBE_V1","parameter",["nest_lip_h_mm",nest_lip_h_mm]]);
@@ -515,9 +543,11 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["port_boss_flat_mm",port_boss_flat_mm]]);
     echo(["KOLBE_V1","derived",["gasket_count",gasket_count]]);
     echo(["KOLBE_V1","derived",["electrode_bridge_count",0]]);
-    echo(["KOLBE_V1","derived",["electrode_components",2]]);
-    echo(["KOLBE_V1","derived",["central_pad_support_provided",false]]);
-    echo(["KOLBE_V1","derived",["central_pad_connected_to_tab",false]]);
+    echo(["KOLBE_V1","derived",["electrode_components",1]]);
+    echo(["KOLBE_V1","derived",["central_pad_support_provided",true]]);
+    echo(["KOLBE_V1","derived",["central_pad_connected_to_tab",true]]);
+    echo(["KOLBE_V1","derived",["tab_slot_w_mm",tab_slot_w_mm]]);
+    echo(["KOLBE_V1","derived",["tab_slot_seal_margin_mm",tab_slot_seal_margin_mm]]);
     echo(["KOLBE_V1","derived",["gasket_compressed_t",gasket_compressed_t]]);
     echo(["KOLBE_V1","derived",["oring_compressed_h",oring_compressed_h]]);
     echo(["KOLBE_V1","derived",["oring_compressed_w",oring_compressed_w]]);
