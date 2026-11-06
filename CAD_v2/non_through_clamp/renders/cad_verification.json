@@ -189,8 +189,8 @@
       "components": 1,
       "expected_components": 1,
       "pass": true,
-      "triangles": 9908,
-      "volume_mm3": 263970.91276933666
+      "triangles": 9140,
+      "volume_mm3": 262342.7609632717
     },
     {
       "actual": [
@@ -3389,9 +3389,9 @@
     },
     {
       "check": "interference front_endplate/gasket_1",
-      "forbidden_volume_mm3": 5.393014051828515e-14,
+      "forbidden_volume_mm3": 0.0,
       "pass": true,
-      "raw_volume_mm3": 5.393014051828515e-14
+      "raw_volume_mm3": 0.0
     },
     {
       "check": "interference front_endplate/frame_1",
@@ -6181,25 +6181,25 @@
     },
     {
       "actual": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "check": "port measured diameter (-1, -7.9)",
       "expected": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "pass": true
     },
     {
       "actual": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
-      "check": "port measured diameter (-1, -4.9)",
+      "check": "port measured diameter (-1, -7.9)",
       "expected": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
       "pass": true
     },
@@ -6209,25 +6209,25 @@
     },
     {
       "actual": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "check": "port measured diameter (1, -7.9)",
       "expected": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "pass": true
     },
     {
       "actual": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
-      "check": "port measured diameter (1, -4.9)",
+      "check": "port measured diameter (1, -7.9)",
       "expected": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
       "pass": true
     },
@@ -6464,42 +6464,42 @@
   "instance_count": 41,
   "invalid_inputs": [
     {
-      "assert_message": "ERROR: Assertion '(((frame_count >= 1) && (frame_count <= 6)) && (frame_count == floor(frame_count)))' failed: \"frame_count must be integer 1..6\" in file kolbe_non_through.scad, line 148",
+      "assert_message": "ERROR: Assertion '(((frame_count >= 1) && (frame_count <= 6)) && (frame_count == floor(frame_count)))' failed: \"frame_count must be integer 1..6\" in file kolbe_non_through.scad, line 155",
       "name": "zero frames",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '(electrode_count == frame_count)' failed: \"electrode_count must equal frame_count\" in file kolbe_non_through.scad, line 149",
+      "assert_message": "ERROR: Assertion '(electrode_count == frame_count)' failed: \"electrode_count must equal frame_count\" in file kolbe_non_through.scad, line 156",
       "name": "unequal electrodes",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '((seal_mode == \"flat_gasket\") || (seal_mode == \"oring\"))' failed: \"invalid seal_mode\" in file kolbe_non_through.scad, line 150",
+      "assert_message": "ERROR: Assertion '((seal_mode == \"flat_gasket\") || (seal_mode == \"oring\"))' failed: \"invalid seal_mode\" in file kolbe_non_through.scad, line 157",
       "name": "invalid seal",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '!((gasket_material == \"PTFE\") && (seal_mode == \"oring\"))' failed: \"PTFE oring not supported\" in file kolbe_non_through.scad, line 153",
+      "assert_message": "ERROR: Assertion '!((gasket_material == \"PTFE\") && (seal_mode == \"oring\"))' failed: \"PTFE oring not supported\" in file kolbe_non_through.scad, line 160",
       "name": "PTFE O-ring",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '(nest_axial_gap > 0)' failed: \"nest axial clearance must be positive\" in file kolbe_non_through.scad, line 157",
+      "assert_message": "ERROR: Assertion '(nest_axial_gap > 0)' failed: \"nest axial clearance must be positive\" in file kolbe_non_through.scad, line 164",
       "name": "zero axial clearance",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '(min(side_wall_mm, end_wall_mm) >= min_structural_wall_mm)' failed: \"insufficient rabbet outer wall\" in file kolbe_non_through.scad, line 158",
+      "assert_message": "ERROR: Assertion '(min(side_wall_mm, end_wall_mm) >= min_structural_wall_mm)' failed: \"insufficient rabbet outer wall\" in file kolbe_non_through.scad, line 165",
       "name": "thin structural wall",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '((tab_slot_start_y_mm < tab_start_y) && (tab_slot_seal_margin_mm >= 0.5))' failed: \"slot must stay outside closed seal\" in file kolbe_non_through.scad, line 166",
+      "assert_message": "ERROR: Assertion '((tab_slot_start_y_mm < tab_start_y) && (tab_slot_seal_margin_mm >= 0.5))' failed: \"slot must stay outside closed seal\" in file kolbe_non_through.scad, line 173",
       "name": "slot cuts sealing land",
       "pass": true
     },
     {
-      "assert_message": "ERROR: Assertion '((abs((tab_slot_w_mm - 8.6)) < 1e-6) && (abs((tab_channel_clearance_mm - 0.3)) < 1e-6))' failed: \"tab clearance must be 0.3 per side\" in file kolbe_non_through.scad, line 165",
+      "assert_message": "ERROR: Assertion '((abs((tab_slot_w_mm - 8.6)) < 1e-6) && (abs((tab_channel_clearance_mm - 0.3)) < 1e-6))' failed: \"tab clearance must be 0.3 per side\" in file kolbe_non_through.scad, line 172",
       "name": "wrong tab side clearance",
       "pass": true
     }
@@ -6702,8 +6702,8 @@
           "components": 1,
           "expected_components": 1,
           "pass": true,
-          "triangles": 9908,
-          "volume_mm3": 263970.91276933666
+          "triangles": 9140,
+          "volume_mm3": 262342.7609632717
         },
         {
           "actual": [
@@ -9262,9 +9262,9 @@
         },
         {
           "check": "interference front_endplate/gasket_1",
-          "forbidden_volume_mm3": 5.393014051828515e-14,
+          "forbidden_volume_mm3": 0.0,
           "pass": true,
-          "raw_volume_mm3": 5.393014051828515e-14
+          "raw_volume_mm3": 0.0
         },
         {
           "check": "interference front_endplate/frame_1",
@@ -11196,25 +11196,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (-1, -4.9)",
+          "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -11224,25 +11224,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (1, -4.9)",
+          "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -11708,8 +11708,8 @@
           "components": 1,
           "expected_components": 1,
           "pass": true,
-          "triangles": 9908,
-          "volume_mm3": 263970.91276933666
+          "triangles": 9140,
+          "volume_mm3": 262342.7609632717
         },
         {
           "actual": [
@@ -15072,9 +15072,9 @@
         },
         {
           "check": "interference front_endplate/gasket_1",
-          "forbidden_volume_mm3": 5.393014051828515e-14,
+          "forbidden_volume_mm3": 0.0,
           "pass": true,
-          "raw_volume_mm3": 5.393014051828515e-14
+          "raw_volume_mm3": 0.0
         },
         {
           "check": "interference front_endplate/frame_1",
@@ -18275,25 +18275,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (-1, -4.9)",
+          "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -18303,25 +18303,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (1, -4.9)",
+          "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -18783,8 +18783,8 @@
           "components": 1,
           "expected_components": 1,
           "pass": true,
-          "triangles": 9908,
-          "volume_mm3": 263970.91276933666
+          "triangles": 9140,
+          "volume_mm3": 262342.7609632717
         },
         {
           "actual": [
@@ -22683,9 +22683,9 @@
         },
         {
           "check": "interference front_endplate/gasket_1",
-          "forbidden_volume_mm3": 5.393014051828515e-14,
+          "forbidden_volume_mm3": 0.0,
           "pass": true,
-          "raw_volume_mm3": 5.393014051828515e-14
+          "raw_volume_mm3": 0.0
         },
         {
           "check": "interference front_endplate/frame_1",
@@ -26732,25 +26732,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (-1, -4.9)",
+          "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -26760,25 +26760,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (1, -4.9)",
+          "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -27240,8 +27240,8 @@
           "components": 1,
           "expected_components": 1,
           "pass": true,
-          "triangles": 9908,
-          "volume_mm3": 263970.91276933666
+          "triangles": 9140,
+          "volume_mm3": 262342.7609632717
         },
         {
           "actual": [
@@ -30440,9 +30440,9 @@
         },
         {
           "check": "interference front_endplate/gasket_1",
-          "forbidden_volume_mm3": 5.393014051828515e-14,
+          "forbidden_volume_mm3": 0.0,
           "pass": true,
-          "raw_volume_mm3": 5.393014051828515e-14
+          "raw_volume_mm3": 0.0
         },
         {
           "check": "interference front_endplate/frame_1",
@@ -33232,25 +33232,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (-1, -4.9)",
+          "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -33260,25 +33260,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (1, -4.9)",
+          "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -33740,8 +33740,8 @@
           "components": 1,
           "expected_components": 1,
           "pass": true,
-          "triangles": 9908,
-          "volume_mm3": 264096.26087153534
+          "triangles": 9140,
+          "volume_mm3": 262468.1090654704
         },
         {
           "actual": [
@@ -36836,9 +36836,9 @@
         },
         {
           "check": "interference front_endplate/gasket_1",
-          "forbidden_volume_mm3": 5.393014051828515e-14,
+          "forbidden_volume_mm3": 0.0,
           "pass": true,
-          "raw_volume_mm3": 5.393014051828515e-14
+          "raw_volume_mm3": 0.0
         },
         {
           "check": "interference front_endplate/frame_1",
@@ -39616,25 +39616,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (-1, -4.9)",
+          "check": "port measured diameter (-1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -39644,25 +39644,25 @@
         },
         {
           "actual": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -5.25,
-            5.25
+            -4.5,
+            4.5
           ],
           "pass": true
         },
         {
           "actual": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
-          "check": "port measured diameter (1, -4.9)",
+          "check": "port measured diameter (1, -7.9)",
           "expected": [
-            -3.0,
-            3.0
+            -4.5,
+            4.5
           ],
           "pass": true
         },
@@ -39978,7 +39978,7 @@
     "stl_hashes_equal": true
   },
   "schema_version": 1,
-  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+  "source_sha256": "99c4200c224ab1aba4a658a260bea15a3ebe9154c26ba6b3bc1b4a45c6989589",
   "tolerances": {
     "bbox_mm": 0.02,
     "length_mm": 0.02,
@@ -39992,7 +39992,7 @@
     "trimesh": "5.2.0"
   },
   "verification_inputs": {
-    "manifest_sha256": "5cb0709493afcde450f3b5c365191585af9b33964f7fa6c5d74728ae5fd7c84c",
+    "manifest_sha256": "8f98218654a454b93f4674a6642973920f2140e7cacaff5049cdada62f3d34a0",
     "verifier_sha256": "7d2be99d126cc8f188aeae1f66d782a08e38baaa6c32012fa3d96c4782d80855"
   }
 }

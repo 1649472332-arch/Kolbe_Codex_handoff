@@ -162,10 +162,10 @@
           21.799999237060547
         ]
       ],
-      "sha256": "794e6eafb0bfae45d775a1f7ffd5e6c8e67aef5b7d4215f4eed1b9c4f6d738a1",
-      "triangles": 9908,
-      "vertices": 4936,
-      "volume_mm3": 263970.91276933666
+      "sha256": "9ea38552947b43d8268af2b096df624cad65a0a81bceaf87d40646fccd7fe269",
+      "triangles": 9140,
+      "vertices": 4552,
+      "volume_mm3": 262342.7609632717
     },
     "stls/gasket.stl": {
       "components": 1,
@@ -4390,9 +4390,12 @@
     "port_boss_flat_mm": 12,
     "port_boss_h_mm": 8,
     "port_boss_od_mm": 14,
-    "port_counterbore_d_mm": 10.5,
-    "port_counterbore_depth_mm": 3,
-    "port_through_d_mm": 6,
+    "port_counterbore_d_mm": 9,
+    "port_counterbore_depth_mm": 0,
+    "port_thread_major_mm": 10,
+    "port_thread_pitch_mm": 1,
+    "port_thread_spec": "M10x1 (provisional; pitch not confirmed - check with thread gauge)",
+    "port_through_d_mm": 9,
     "port_x_mm": 0,
     "port_y_mm": 27,
     "rear_fastener_mode": "heatset",
@@ -4419,7 +4422,7 @@
   },
   "schema_version": 1,
   "seal_mode": "flat_gasket",
-  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+  "source_sha256": "99c4200c224ab1aba4a658a260bea15a3ebe9154c26ba6b3bc1b4a45c6989589",
   "tab_clearance": {
     "flat_gaskets": "G1 intact; G2/G3 -> E1; G4/G5 -> E2; etc.; full Z cuts in dry land only",
     "groove_outer_margin_mm": 0.6,

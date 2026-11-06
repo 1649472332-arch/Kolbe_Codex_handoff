@@ -1,13 +1,13 @@
 {
   "three": "0.170.0",
   "esbuild": "0.24.0",
-  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+  "source_sha256": "99c4200c224ab1aba4a658a260bea15a3ebe9154c26ba6b3bc1b4a45c6989589",
   "inputs": {
     "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
     "scripts/demo_v2/app.js": "b53578d0baebc012624b3507ae04d1bf41776a62774a4b9f5bcb75a581fa0df7",
     "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
     "scripts/demo_v2/template.html": "b4edb3c5597666c9855477d8dddbeb2d4bcf10f30bcd1a39d94f9c658e15277b",
-    "stack_manifest.json": "5cb0709493afcde450f3b5c365191585af9b33964f7fa6c5d74728ae5fd7c84c"
+    "stack_manifest.json": "8f98218654a454b93f4674a6642973920f2140e7cacaff5049cdada62f3d34a0"
   },
   "geometry": {
     "stls/bolt.stl": {
@@ -147,9 +147,9 @@
       "retained_triangles": 9328
     },
     "stls/front_endplate.stl": {
-      "triangles": 9908,
-      "source_vertices": 4936,
-      "vertices": 9944,
+      "triangles": 9140,
+      "source_vertices": 4552,
+      "vertices": 9176,
       "source_bbox": [
         [
           -56,
@@ -178,7 +178,7 @@
       "encoding": "float32",
       "quantized_collapsed_triangles": 0,
       "quantized_flipped_triangles": 4,
-      "retained_triangles": 9908
+      "retained_triangles": 9140
     },
     "stls/gasket.stl": {
       "triangles": 1584,
@@ -419,6 +419,6 @@
       "retained_triangles": 768
     }
   },
-  "html_bytes": 1911467,
-  "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
+  "html_bytes": 1887026,
+  "html_sha256": "99edf553437683df0e43776dc5d5c3bc1af8f59fd8679d57d3bb86193ab2a8d8"
 }

@@ -4,13 +4,13 @@
     "reproducible_build": {
       "status": "pass",
       "detail": [
-        "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731",
-        "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
+        "99edf553437683df0e43776dc5d5c3bc1af8f59fd8679d57d3bb86193ab2a8d8",
+        "99edf553437683df0e43776dc5d5c3bc1af8f59fd8679d57d3bb86193ab2a8d8"
       ]
     },
     "file_size": {
       "status": "pass",
-      "detail": 1911467
+      "detail": 1887026
     },
     "static_offline_resources": {
       "status": "pass",
@@ -170,9 +170,9 @@
           "retained_triangles": 9328
         },
         "stls/front_endplate.stl": {
-          "triangles": 9908,
-          "source_vertices": 4936,
-          "vertices": 9944,
+          "triangles": 9140,
+          "source_vertices": 4552,
+          "vertices": 9176,
           "source_bbox": [
             [
               -56,
@@ -201,7 +201,7 @@
           "encoding": "float32",
           "quantized_collapsed_triangles": 0,
           "quantized_flipped_triangles": 4,
-          "retained_triangles": 9908
+          "retained_triangles": 9140
         },
         "stls/gasket.stl": {
           "triangles": 1584,
@@ -470,9 +470,9 @@
           1000
         ],
         "stddev": [
-          64.31307401280458,
-          63.54440206710471,
-          62.1525627952153
+          64.30639146331454,
+          63.5388524624648,
+          62.14743081481973
         ]
       }
     },
@@ -493,9 +493,9 @@
           1000
         ],
         "stddev": [
-          39.89348355433034,
-          37.86456138365755,
-          36.65523320852003
+          39.89295094444031,
+          37.86409166138191,
+          36.654827579153675
         ]
       }
     },
@@ -799,9 +799,9 @@
           1000
         ],
         "stddev": [
-          38.50214866613279,
-          37.57015079422662,
-          37.1602046996053
+          38.809722331289855,
+          37.882065277899365,
+          37.458749809685074
         ]
       }
     },
@@ -908,9 +908,9 @@
           1688
         ],
         "stddev": [
-          42.94714639939132,
-          40.87606013575658,
-          39.642447385427865
+          42.946696825185924,
+          40.87590605743814,
+          39.6425890833919
         ]
       }
     },
@@ -958,9 +958,9 @@
     "file:///workspace/Kolbe_Codex_handoff/CAD_v2/non_through_clamp/demo_v2.html"
   ],
   "http_requests": [],
-  "html_bytes": 1911467,
-  "html_mib": 1.8229169845581055,
-  "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731",
+  "html_bytes": 1887026,
+  "html_mib": 1.7996082305908203,
+  "html_sha256": "99edf553437683df0e43776dc5d5c3bc1af8f59fd8679d57d3bb86193ab2a8d8",
   "url_hits": [
     {
       "url": "http://www.w3.org/1999/xhtml",
@@ -974,13 +974,13 @@
   "build": {
     "three": "0.170.0",
     "esbuild": "0.24.0",
-    "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+    "source_sha256": "99c4200c224ab1aba4a658a260bea15a3ebe9154c26ba6b3bc1b4a45c6989589",
     "inputs": {
       "scripts/build_demo_v2.mjs": "207459eda65c048224f6488801edb8c7250c085c2eb0fceaccfad887ad2fb289",
       "scripts/demo_v2/app.js": "b53578d0baebc012624b3507ae04d1bf41776a62774a4b9f5bcb75a581fa0df7",
       "scripts/demo_v2/style.css": "84eb3ef43bc5955ba948d45d62f4c19b7a530f1b5e179134ab04181ecb64b043",
       "scripts/demo_v2/template.html": "b4edb3c5597666c9855477d8dddbeb2d4bcf10f30bcd1a39d94f9c658e15277b",
-      "stack_manifest.json": "5cb0709493afcde450f3b5c365191585af9b33964f7fa6c5d74728ae5fd7c84c"
+      "stack_manifest.json": "8f98218654a454b93f4674a6642973920f2140e7cacaff5049cdada62f3d34a0"
     },
     "geometry": {
       "stls/bolt.stl": {
@@ -1120,9 +1120,9 @@
         "retained_triangles": 9328
       },
       "stls/front_endplate.stl": {
-        "triangles": 9908,
-        "source_vertices": 4936,
-        "vertices": 9944,
+        "triangles": 9140,
+        "source_vertices": 4552,
+        "vertices": 9176,
         "source_bbox": [
           [
             -56,
@@ -1151,7 +1151,7 @@
         "encoding": "float32",
         "quantized_collapsed_triangles": 0,
         "quantized_flipped_triangles": 4,
-        "retained_triangles": 9908
+        "retained_triangles": 9140
       },
       "stls/gasket.stl": {
         "triangles": 1584,
@@ -1392,29 +1392,29 @@
         "retained_triangles": 768
       }
     },
-    "html_bytes": 1911467,
-    "html_sha256": "a4a84ef9d23a37a421e1e2749c9fdefe39e3c835c2937f81467cf54898a2f731"
+    "html_bytes": 1887026,
+    "html_sha256": "99edf553437683df0e43776dc5d5c3bc1af8f59fd8679d57d3bb86193ab2a8d8"
   },
   "browser": "156.0.8078.47",
   "three": "170",
   "desktop_performance": {
-    "renderedFrames": 262,
-    "samples": 262,
-    "frame_time_samples": 244,
-    "frame_time_ms_median": 150,
-    "frame_time_ms_p95": 633.4000000000015,
+    "renderedFrames": 267,
+    "samples": 267,
+    "frame_time_samples": 249,
+    "frame_time_ms_median": 133.29999999999927,
+    "frame_time_ms_p95": 549.8999999999996,
     "render_ms_median": 0.5,
-    "render_ms_p95": 82.40000000037253
+    "render_ms_p95": 183.20000000298023
   },
   "mobile_performance": {
-    "renderedFrames": 106,
-    "samples": 106,
-    "frame_time_samples": 100,
-    "frame_time_ms_median": 166.69999999999982,
-    "frame_time_ms_p95": 500,
-    "render_ms_median": 0.7000000011175871,
-    "render_ms_p95": 2
+    "renderedFrames": 113,
+    "samples": 113,
+    "frame_time_samples": 107,
+    "frame_time_ms_median": 150,
+    "frame_time_ms_p95": 383.3999999999978,
+    "render_ms_median": 0.5,
+    "render_ms_p95": 1.800000000745058
   },
   "performance_note": "Software SwiftShader active-frame intervals and render submission times; not physical phone FPS. Includes shader compilation.",
-  "elapsed_seconds": 84.64
+  "elapsed_seconds": 82.82
 }

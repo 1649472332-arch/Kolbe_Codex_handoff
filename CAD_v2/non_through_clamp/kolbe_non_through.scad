@@ -99,9 +99,16 @@ heatset_bore_d_mm = 6.2;
 heatset_pocket_d_mm = 8;
 port_x_mm = 0;
 port_y_mm = 27;
-port_through_d_mm = 6;
-port_counterbore_d_mm = 10.5;
-port_counterbore_depth_mm = 3;
+// Fluid ports (0,+-27): old d6 + d10.5x3 counterbore removed; re-drilled as a
+// through tap-drill hole for an M10x1 (fine) internal thread, provisional.
+// NOMINAL ONLY: user's fitting measured ~10 mm OD; pitch never gauged/confirmed.
+// Thread teeth are not modeled; tap M10x1 after machining (minor/drill 9.0).
+port_thread_spec = "M10x1 (provisional; pitch not confirmed - check with thread gauge)";
+port_thread_major_mm = 10;
+port_thread_pitch_mm = 1;
+port_through_d_mm = 9;          // M10x1 tap drill, through boss + front plate into window
+port_counterbore_d_mm = 9;      // no counterbore any more (kept = bore so checks stay valid)
+port_counterbore_depth_mm = 0;
 port_boss_od_mm = 14;
 port_boss_h_mm = 8;
 port_boss_flat_mm = 12;
@@ -535,6 +542,9 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["heatset_pocket_d_mm",heatset_pocket_d_mm]]);
     echo(["KOLBE_V1","parameter",["port_x_mm",port_x_mm]]);
     echo(["KOLBE_V1","parameter",["port_y_mm",port_y_mm]]);
+    echo(["KOLBE_V1","parameter",["port_thread_spec",port_thread_spec]]);
+    echo(["KOLBE_V1","parameter",["port_thread_major_mm",port_thread_major_mm]]);
+    echo(["KOLBE_V1","parameter",["port_thread_pitch_mm",port_thread_pitch_mm]]);
     echo(["KOLBE_V1","parameter",["port_through_d_mm",port_through_d_mm]]);
     echo(["KOLBE_V1","parameter",["port_counterbore_d_mm",port_counterbore_d_mm]]);
     echo(["KOLBE_V1","parameter",["port_counterbore_depth_mm",port_counterbore_depth_mm]]);

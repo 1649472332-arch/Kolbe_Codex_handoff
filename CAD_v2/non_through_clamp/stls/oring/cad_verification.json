@@ -189,8 +189,8 @@
       "components": 1,
       "expected_components": 1,
       "pass": true,
-      "triangles": 9908,
-      "volume_mm3": 263970.91276933666
+      "triangles": 9140,
+      "volume_mm3": 262342.7609632717
     },
     {
       "actual": [
@@ -5775,25 +5775,25 @@
     },
     {
       "actual": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "check": "port measured diameter (-1, -7.9)",
       "expected": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "pass": true
     },
     {
       "actual": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
-      "check": "port measured diameter (-1, -4.9)",
+      "check": "port measured diameter (-1, -7.9)",
       "expected": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
       "pass": true
     },
@@ -5803,25 +5803,25 @@
     },
     {
       "actual": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "check": "port measured diameter (1, -7.9)",
       "expected": [
-        -5.25,
-        5.25
+        -4.5,
+        4.5
       ],
       "pass": true
     },
     {
       "actual": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
-      "check": "port measured diameter (1, -4.9)",
+      "check": "port measured diameter (1, -7.9)",
       "expected": [
-        -3.0,
-        3.0
+        -4.5,
+        4.5
       ],
       "pass": true
     },
@@ -5998,7 +5998,7 @@
   "pass": true,
   "physical_validation": "not_run: pressure, loads, chemistry, insulation, creep and service life",
   "schema_version": 1,
-  "source_sha256": "81133caf5a96b5fca81b299dd53a94c5ef7020ac02310b7a886bb6bf0e5ee42e",
+  "source_sha256": "99c4200c224ab1aba4a658a260bea15a3ebe9154c26ba6b3bc1b4a45c6989589",
   "tolerances": {
     "bbox_mm": 0.02,
     "length_mm": 0.02,
@@ -6012,7 +6012,7 @@
     "trimesh": "5.2.0"
   },
   "verification_inputs": {
-    "manifest_sha256": "cb437ecb39b7b0f02dd8785049ae486e8f8e2029045018ecbb47c0786bc98237",
+    "manifest_sha256": "bb227aa678f1bbb16a2b936f33a6e9dac9e5fae19ddf043ede617136062ae62b",
     "verifier_sha256": "7d2be99d126cc8f188aeae1f66d782a08e38baaa6c32012fa3d96c4782d80855"
   }
 }
