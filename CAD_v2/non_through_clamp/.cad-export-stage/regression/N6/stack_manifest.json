@@ -1,0 +1,5653 @@
+{
+  "axis": {
+    "stack": "+Z",
+    "up": "+Y"
+  },
+  "derived": {
+    "active_stack_t": 37.8,
+    "bolt_engagement_mm": 8,
+    "bolt_length_mm": 80,
+    "bolt_rear_projection_mm": 0.6,
+    "bolt_tip_recess_mm": -0.6,
+    "central_pad_connected_to_tab": true,
+    "central_pad_support_provided": true,
+    "electrode_bridge_count": 0,
+    "electrode_components": 1,
+    "end_wall_mm": 1,
+    "frame_bbox_h": 7.4,
+    "frame_stop_h": 2.2,
+    "free_gap": 0.8,
+    "free_total_stack_t": 80.4,
+    "front_bbox_max_z": 21.8,
+    "front_stop_h": 0.6,
+    "gasket_compressed_t": 0.6,
+    "gasket_count": 13,
+    "heatset_z": 69.8,
+    "locator_len_mm": 48.6,
+    "locator_rear_clearance_mm": 1.2,
+    "nest_axial_gap": 0.3,
+    "oring_compressed_h": 0.9,
+    "oring_compressed_w": 1.6,
+    "pin_z": 14,
+    "rear_z": 57.8,
+    "seal_cl_h": 68,
+    "seal_cl_r": 5.5,
+    "seal_cl_w": 48,
+    "seal_gap": 0.6,
+    "side_wall_mm": 1,
+    "slot_angle": -32.5381,
+    "tab_end_y": 64.5,
+    "tab_slot_seal_margin_mm": 0.6,
+    "tab_slot_w_mm": 8.6,
+    "tab_start_y": 36.5,
+    "total_stack_t": 77.8
+  },
+  "electrode_design": {
+    "central_pad_connected_to_tab": true,
+    "central_pad_supported": true,
+    "central_upper_lower_bridge_count": 0,
+    "components_per_stl": 1,
+    "lateral_land_height_mm": 25,
+    "manufacturing_status": "geometrically continuous one-piece metal blank; strength, contact resistance, coating and sealing remain unqualified",
+    "support_scheme": "one-piece broad lateral lands and perimeter flange; flange clamped between seals"
+  },
+  "exploded_gap_mm": 14,
+  "files": {
+    "stls/bolt.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "sha256": "a8887fb51b4babf3df5492c0504e0d0a94e715cc3a3021f05dbfc3169ea9e5b7",
+      "triangles": 1172,
+      "vertices": 588,
+      "volume_mm3": 2662.6761128453527
+    },
+    "stls/electrode_plain.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          1.0
+        ]
+      ],
+      "sha256": "446aadb0416e549c8caed8a137670e6079dc6527386198afa2586f35cf38a795",
+      "triangles": 1996,
+      "vertices": 992,
+      "volume_mm3": 3263.6888536690512
+    },
+    "stls/electrode_tab.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "sha256": "ac05dcc97eaa9f363cf3e4e5fba678dab0dd20e0a92a1f1f7ea00f7c53491441",
+      "triangles": 2400,
+      "vertices": 1192,
+      "volume_mm3": 3475.6520543233655
+    },
+    "stls/electrode_tab_right.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "sha256": "55f572dc56350d9d2a178cd3f04855ddcccb6a572f26a632e9305963d00a8f29",
+      "triangles": 2400,
+      "vertices": 1192,
+      "volume_mm3": 3475.6520543233655
+    },
+    "stls/frame.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "sha256": "8c8e969ce1ec8e281b90e6d06ebb0d7583361484e711b7ea790abeea79da4fb2",
+      "triangles": 9328,
+      "vertices": 4660,
+      "volume_mm3": 14869.583402610768
+    },
+    "stls/front_endplate.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          21.799999237060547
+        ]
+      ],
+      "sha256": "870c186ad2e3e9c2126ea26e27f5b95ba63098a8762559ced5afbe1a10b3946e",
+      "triangles": 8324,
+      "vertices": 4144,
+      "volume_mm3": 261131.62661146364
+    },
+    "stls/gasket.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "sha256": "3e89ddc3e4c4f0463d04876568fd987a28c3e330782d919225fe4b2b5b452320",
+      "triangles": 1584,
+      "vertices": 788,
+      "volume_mm3": 1711.2206252793221
+    },
+    "stls/gasket_tab_left.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "sha256": "6c86821378e9d96fbcc30020cb8984499f935b37f55cfd6d84433c722faae168",
+      "triangles": 1600,
+      "vertices": 796,
+      "volume_mm3": 1700.9006258121874
+    },
+    "stls/gasket_tab_right.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "sha256": "dc033e8397820f071af8811b32430a17c47e46dd2a231d93134c22414a851896",
+      "triangles": 1600,
+      "vertices": 796,
+      "volume_mm3": 1700.9006258121874
+    },
+    "stls/heatset_nut.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "sha256": "daa8ed268f61ac6be645d23b73c8bac9d4b3ef93c36e82ef8eb05d7a01db99ce",
+      "triangles": 768,
+      "vertices": 384,
+      "volume_mm3": 160.48377490113504
+    },
+    "stls/locator_pin.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -2.0,
+          -2.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          48.599998474121094
+        ]
+      ],
+      "sha256": "eea7e437c13cd7226573aad0308b320329af5ae3efb4cdcf17540f5118e89876",
+      "triangles": 764,
+      "vertices": 384,
+      "volume_mm3": 609.2160866969097
+    },
+    "stls/rear_endplate.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          20.0
+        ]
+      ],
+      "sha256": "ad1c8b11d3c284afb873251e5d3c965dfb1110f003c06f1b81f74cddd66685ea",
+      "triangles": 13348,
+      "vertices": 6660,
+      "volume_mm3": 260666.25724467039
+    },
+    "stls/washer.stl": {
+      "components": 1,
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "sha256": "eabe3cd49278ad41fec9af5955b07d0859d976a64ac528662647a752c04279e8",
+      "triangles": 768,
+      "vertices": 384,
+      "volume_mm3": 129.39144567611652
+    }
+  },
+  "gasket_material": "EPDM",
+  "groups": {
+    "bolts": [
+      "bolt_1",
+      "bolt_2",
+      "bolt_3",
+      "bolt_4",
+      "bolt_5",
+      "bolt_6",
+      "bolt_7",
+      "bolt_8"
+    ],
+    "heatsets": [
+      "heatset_1",
+      "heatset_2",
+      "heatset_3",
+      "heatset_4",
+      "heatset_5",
+      "heatset_6",
+      "heatset_7",
+      "heatset_8"
+    ],
+    "locators": [
+      "locator_pin_1",
+      "locator_pin_2"
+    ],
+    "stack": [
+      "front_endplate",
+      "gasket_1",
+      "frame_1",
+      "gasket_2",
+      "electrode_1",
+      "gasket_3",
+      "frame_2",
+      "gasket_4",
+      "electrode_2",
+      "gasket_5",
+      "frame_3",
+      "gasket_6",
+      "electrode_3",
+      "gasket_7",
+      "frame_4",
+      "gasket_8",
+      "electrode_4",
+      "gasket_9",
+      "frame_5",
+      "gasket_10",
+      "electrode_5",
+      "gasket_11",
+      "frame_6",
+      "gasket_12",
+      "electrode_6",
+      "gasket_13",
+      "rear_endplate"
+    ],
+    "tab_fit_1": [
+      "frame_1",
+      "gasket_2",
+      "electrode_1",
+      "gasket_3",
+      "frame_2"
+    ],
+    "tab_fit_2": [
+      "frame_2",
+      "gasket_4",
+      "electrode_2",
+      "gasket_5",
+      "frame_3"
+    ],
+    "tab_fit_3": [
+      "frame_3",
+      "gasket_6",
+      "electrode_3",
+      "gasket_7",
+      "frame_4"
+    ],
+    "tab_fit_4": [
+      "frame_4",
+      "gasket_8",
+      "electrode_4",
+      "gasket_9",
+      "frame_5"
+    ],
+    "tab_fit_5": [
+      "frame_5",
+      "gasket_10",
+      "electrode_5",
+      "gasket_11",
+      "frame_6"
+    ],
+    "tab_fit_6": [
+      "frame_6",
+      "gasket_12",
+      "electrode_6",
+      "gasket_13",
+      "rear_endplate"
+    ],
+    "washers": [
+      "washer_1",
+      "washer_2",
+      "washer_3",
+      "washer_4",
+      "washer_5",
+      "washer_6",
+      "washer_7",
+      "washer_8"
+    ]
+  },
+  "instances": [
+    {
+      "assembled_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          21.799999237060547
+        ]
+      ],
+      "assembled_dims_mm": [
+        112,
+        120,
+        20
+      ],
+      "display_name": {
+        "en": "front_endplate",
+        "zh": "前端板"
+      },
+      "exploded_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          21.799999237060547
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        0
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "front_endplate",
+      "local_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          21.799999237060547
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        112,
+        120,
+        20
+      ],
+      "part": "front_endplate",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 0,
+      "stl": "stls/front_endplate.stl",
+      "translation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          20.0
+        ],
+        [
+          33.0,
+          37.0,
+          20.600000008940697
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 1",
+        "zh": "密封件1"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          161.0
+        ],
+        [
+          33.0,
+          37.0,
+          161.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        161
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_1",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 1,
+      "stl": "stls/gasket.stl",
+      "translation": [
+        0,
+        0,
+        20
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          20.6
+        ],
+        [
+          37.0,
+          41.0,
+          28.000000095367433
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 1",
+        "zh": "框1"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          175.8
+        ],
+        [
+          37.0,
+          41.0,
+          183.20000009536744
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        175.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_1",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 2,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        20.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          24.6
+        ],
+        [
+          33.0,
+          37.0,
+          25.200000008940698
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 2",
+        "zh": "密封件2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          197.2
+        ],
+        [
+          33.0,
+          37.0,
+          198.00000001192092
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        197.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_2",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 3,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        24.6
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_2",
+        "gasket_3"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          25.2
+        ],
+        [
+          33.0,
+          64.5,
+          26.2
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 1",
+        "zh": "电极1"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          212.0
+        ],
+        [
+          33.0,
+          64.5,
+          213.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        212
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_1",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 4,
+      "stl": "stls/electrode_tab.stl",
+      "translation": [
+        0,
+        0,
+        25.2
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          26.2
+        ],
+        [
+          33.0,
+          37.0,
+          26.800000008940696
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 3",
+        "zh": "密封件3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          227.0
+        ],
+        [
+          33.0,
+          37.0,
+          227.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        227
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_3",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 5,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        26.2
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          26.8
+        ],
+        [
+          37.0,
+          41.0,
+          34.20000009536743
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 2",
+        "zh": "框2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          241.8
+        ],
+        [
+          37.0,
+          41.0,
+          249.20000009536744
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        241.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_2",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 6,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        26.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          30.8
+        ],
+        [
+          33.0,
+          37.0,
+          31.400000008940697
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 4",
+        "zh": "密封件4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          263.2
+        ],
+        [
+          33.0,
+          37.0,
+          264.0000000119209
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        263.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_4",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 7,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        30.8
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_4",
+        "gasket_5"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          31.4
+        ],
+        [
+          33.0,
+          64.5,
+          32.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 2",
+        "zh": "电极2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          278.0
+        ],
+        [
+          33.0,
+          64.5,
+          279.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        278
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_2",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 8,
+      "stl": "stls/electrode_tab_right.stl",
+      "translation": [
+        0,
+        0,
+        31.4
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          32.4
+        ],
+        [
+          33.0,
+          37.0,
+          33.000000008940695
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 5",
+        "zh": "密封件5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          293.0
+        ],
+        [
+          33.0,
+          37.0,
+          293.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        293
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_5",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 9,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        32.4
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          33.0
+        ],
+        [
+          37.0,
+          41.0,
+          40.40000009536743
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 3",
+        "zh": "框3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          307.8
+        ],
+        [
+          37.0,
+          41.0,
+          315.20000009536744
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        307.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_3",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 10,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        33
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          37.0
+        ],
+        [
+          33.0,
+          37.0,
+          37.6000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 6",
+        "zh": "密封件6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          329.2
+        ],
+        [
+          33.0,
+          37.0,
+          330.0000000119209
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        329.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_6",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 11,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        37
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_6",
+        "gasket_7"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          37.6
+        ],
+        [
+          33.0,
+          64.5,
+          38.6
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 3",
+        "zh": "电极3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          344.0
+        ],
+        [
+          33.0,
+          64.5,
+          345.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        344
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_3",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 12,
+      "stl": "stls/electrode_tab.stl",
+      "translation": [
+        0,
+        0,
+        37.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          38.6
+        ],
+        [
+          33.0,
+          37.0,
+          39.2000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 7",
+        "zh": "密封件7"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          359.0
+        ],
+        [
+          33.0,
+          37.0,
+          359.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        359
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_7",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 13,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        38.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          39.2
+        ],
+        [
+          37.0,
+          41.0,
+          46.600000095367434
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 4",
+        "zh": "框4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          373.8
+        ],
+        [
+          37.0,
+          41.0,
+          381.20000009536744
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        373.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_4",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 14,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        39.2
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          43.2
+        ],
+        [
+          33.0,
+          37.0,
+          43.8000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 8",
+        "zh": "密封件8"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          395.2
+        ],
+        [
+          33.0,
+          37.0,
+          396.0000000119209
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        395.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_8",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 15,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        43.2
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_8",
+        "gasket_9"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          43.8
+        ],
+        [
+          33.0,
+          64.5,
+          44.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 4",
+        "zh": "电极4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          410.0
+        ],
+        [
+          33.0,
+          64.5,
+          411.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        410
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_4",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 16,
+      "stl": "stls/electrode_tab_right.stl",
+      "translation": [
+        0,
+        0,
+        43.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          44.8
+        ],
+        [
+          33.0,
+          37.0,
+          45.400000008940694
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 9",
+        "zh": "密封件9"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          425.0
+        ],
+        [
+          33.0,
+          37.0,
+          425.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        425
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_9",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 17,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        44.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          45.4
+        ],
+        [
+          37.0,
+          41.0,
+          52.80000009536743
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 5",
+        "zh": "框5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          439.8
+        ],
+        [
+          37.0,
+          41.0,
+          447.20000009536744
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        439.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_5",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 18,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        45.4
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          49.4
+        ],
+        [
+          33.0,
+          37.0,
+          50.000000008940695
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 10",
+        "zh": "密封件10"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          461.2
+        ],
+        [
+          33.0,
+          37.0,
+          462.0000000119209
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        461.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_10",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 19,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        49.4
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_10",
+        "gasket_11"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          50.0
+        ],
+        [
+          33.0,
+          64.5,
+          51.0
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 5",
+        "zh": "电极5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          476.0
+        ],
+        [
+          33.0,
+          64.5,
+          477.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        476
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_5",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 20,
+      "stl": "stls/electrode_tab.stl",
+      "translation": [
+        0,
+        0,
+        50
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          51.0
+        ],
+        [
+          33.0,
+          37.0,
+          51.6000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 11",
+        "zh": "密封件11"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          491.0
+        ],
+        [
+          33.0,
+          37.0,
+          491.80000001192093
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        491
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_11",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_left",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 21,
+      "stl": "stls/gasket_tab_left.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": -14,
+      "translation": [
+        0,
+        0,
+        51
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          51.6
+        ],
+        [
+          37.0,
+          41.0,
+          59.00000009536743
+        ]
+      ],
+      "assembled_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "display_name": {
+        "en": "Frame 6",
+        "zh": "框6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          505.8
+        ],
+        [
+          37.0,
+          41.0,
+          513.2000000953674
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        505.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "frame_6",
+      "local_bbox_mm": [
+        [
+          -37.0,
+          -41.0,
+          0.0
+        ],
+        [
+          37.0,
+          41.0,
+          7.400000095367432
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        74,
+        82,
+        4
+      ],
+      "part": "frame",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 22,
+      "stl": "stls/frame.stl",
+      "translation": [
+        0,
+        0,
+        51.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          55.6
+        ],
+        [
+          33.0,
+          37.0,
+          56.2000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 12",
+        "zh": "密封件12"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          527.2
+        ],
+        [
+          33.0,
+          37.0,
+          528.000000011921
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        527.2
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_12",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 23,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        55.6
+      ]
+    },
+    {
+      "active_pad_dims_mm": [
+        28,
+        28,
+        1
+      ],
+      "adjacent_gaskets": [
+        "gasket_12",
+        "gasket_13"
+      ],
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          56.2
+        ],
+        [
+          33.0,
+          64.5,
+          57.2
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "central_pad_connected_to_tab": true,
+      "central_pad_support": "integral broad lateral lands -> clamped perimeter flange -> single offset tab",
+      "display_name": {
+        "en": "Electrode 6",
+        "zh": "电极6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          542.0
+        ],
+        [
+          33.0,
+          64.5,
+          543.0
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        542
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "electrode_6",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          64.5,
+          1.0
+        ]
+      ],
+      "material": "titanium",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        101.5,
+        1
+      ],
+      "part": "electrode_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 24,
+      "stl": "stls/electrode_tab_right.stl",
+      "translation": [
+        0,
+        0,
+        56.2
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          57.2
+        ],
+        [
+          33.0,
+          37.0,
+          57.8000000089407
+        ]
+      ],
+      "assembled_dims_mm": [
+        66,
+        74,
+        0.6
+      ],
+      "display_name": {
+        "en": "Gasket 13",
+        "zh": "密封件13"
+      },
+      "exploded_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          557.0
+        ],
+        [
+          33.0,
+          37.0,
+          557.8000000119209
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        557
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "gasket_13",
+      "local_bbox_mm": [
+        [
+          -33.0,
+          -37.0,
+          0.0
+        ],
+        [
+          33.0,
+          37.0,
+          0.800000011920929
+        ]
+      ],
+      "material": "EPDM",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        66,
+        74,
+        0.8
+      ],
+      "part": "gasket_tab_right",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        0.75
+      ],
+      "sequence_index": 25,
+      "stl": "stls/gasket_tab_right.stl",
+      "tab_slot_through_thickness": true,
+      "tab_slot_x_mm": 14,
+      "translation": [
+        0,
+        0,
+        57.2
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          57.8
+        ],
+        [
+          56.0,
+          60.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        112,
+        120,
+        20
+      ],
+      "display_name": {
+        "en": "rear_endplate",
+        "zh": "后端板"
+      },
+      "exploded_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          571.8
+        ],
+        [
+          56.0,
+          60.0,
+          591.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        0,
+        571.8
+      ],
+      "group": "stack",
+      "hardware_index": null,
+      "id": "rear_endplate",
+      "local_bbox_mm": [
+        [
+          -56.0,
+          -60.0,
+          0.0
+        ],
+        [
+          56.0,
+          60.0,
+          20.0
+        ]
+      ],
+      "material": "polymer",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        112,
+        120,
+        20
+      ],
+      "part": "rear_endplate",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": 26,
+      "stl": "stls/rear_endplate.stl",
+      "translation": [
+        0,
+        0,
+        57.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          41.0,
+          45.0,
+          -7.6
+        ],
+        [
+          51.0,
+          55.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 1",
+        "zh": "螺栓1"
+      },
+      "exploded_bbox_mm": [
+        [
+          41.0,
+          45.0,
+          -115.6
+        ],
+        [
+          51.0,
+          55.0,
+          -29.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        50,
+        -109.6
+      ],
+      "group": "bolts",
+      "hardware_index": 0,
+      "id": "bolt_1",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        46,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -5.0,
+          45.0,
+          -7.6
+        ],
+        [
+          5.0,
+          55.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 2",
+        "zh": "螺栓2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -5.0,
+          45.0,
+          -117.6
+        ],
+        [
+          5.0,
+          55.0,
+          -31.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        50,
+        -111.6
+      ],
+      "group": "bolts",
+      "hardware_index": 1,
+      "id": "bolt_2",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        0,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -51.0,
+          45.0,
+          -7.6
+        ],
+        [
+          -41.0,
+          55.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 3",
+        "zh": "螺栓3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -51.0,
+          45.0,
+          -119.6
+        ],
+        [
+          -41.0,
+          55.0,
+          -33.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        50,
+        -113.6
+      ],
+      "group": "bolts",
+      "hardware_index": 2,
+      "id": "bolt_3",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        -46,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -51.0,
+          -5.0,
+          -7.6
+        ],
+        [
+          -41.0,
+          5.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 4",
+        "zh": "螺栓4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -51.0,
+          -5.0,
+          -121.6
+        ],
+        [
+          -41.0,
+          5.0,
+          -35.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        0,
+        -115.6
+      ],
+      "group": "bolts",
+      "hardware_index": 3,
+      "id": "bolt_4",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        -46,
+        0,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -51.0,
+          -55.0,
+          -7.6
+        ],
+        [
+          -41.0,
+          -45.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 5",
+        "zh": "螺栓5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -51.0,
+          -55.0,
+          -123.6
+        ],
+        [
+          -41.0,
+          -45.0,
+          -37.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        -50,
+        -117.6
+      ],
+      "group": "bolts",
+      "hardware_index": 4,
+      "id": "bolt_5",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        -46,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -5.0,
+          -55.0,
+          -7.6
+        ],
+        [
+          5.0,
+          -45.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 6",
+        "zh": "螺栓6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -5.0,
+          -55.0,
+          -125.6
+        ],
+        [
+          5.0,
+          -45.0,
+          -39.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        -50,
+        -119.6
+      ],
+      "group": "bolts",
+      "hardware_index": 5,
+      "id": "bolt_6",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        0,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          41.0,
+          -55.0,
+          -7.6
+        ],
+        [
+          51.0,
+          -45.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 7",
+        "zh": "螺栓7"
+      },
+      "exploded_bbox_mm": [
+        [
+          41.0,
+          -55.0,
+          -127.6
+        ],
+        [
+          51.0,
+          -45.0,
+          -41.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        -50,
+        -121.6
+      ],
+      "group": "bolts",
+      "hardware_index": 6,
+      "id": "bolt_7",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        46,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          41.0,
+          -5.0,
+          -7.6
+        ],
+        [
+          51.0,
+          5.0,
+          78.4
+        ]
+      ],
+      "assembled_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "display_name": {
+        "en": "Bolt 8",
+        "zh": "螺栓8"
+      },
+      "exploded_bbox_mm": [
+        [
+          41.0,
+          -5.0,
+          -129.6
+        ],
+        [
+          51.0,
+          5.0,
+          -43.599999999999994
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        0,
+        -123.6
+      ],
+      "group": "bolts",
+      "hardware_index": 7,
+      "id": "bolt_8",
+      "local_bbox_mm": [
+        [
+          -5.0,
+          -5.0,
+          -6.0
+        ],
+        [
+          5.0,
+          5.0,
+          80.0
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        6,
+        80,
+        6
+      ],
+      "part": "bolt",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/bolt.stl",
+      "translation": [
+        46,
+        0,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          40.0,
+          44.0,
+          -1.6
+        ],
+        [
+          52.0,
+          56.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 1",
+        "zh": "垫圈1"
+      },
+      "exploded_bbox_mm": [
+        [
+          40.0,
+          44.0,
+          -15.6
+        ],
+        [
+          52.0,
+          56.0,
+          -13.999999976158142
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        50,
+        -15.6
+      ],
+      "group": "washers",
+      "hardware_index": 0,
+      "id": "washer_1",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        46,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -6.0,
+          44.0,
+          -1.6
+        ],
+        [
+          6.0,
+          56.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 2",
+        "zh": "垫圈2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -6.0,
+          44.0,
+          -17.6
+        ],
+        [
+          6.0,
+          56.0,
+          -15.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        50,
+        -17.6
+      ],
+      "group": "washers",
+      "hardware_index": 1,
+      "id": "washer_2",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        0,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -52.0,
+          44.0,
+          -1.6
+        ],
+        [
+          -40.0,
+          56.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 3",
+        "zh": "垫圈3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -52.0,
+          44.0,
+          -19.6
+        ],
+        [
+          -40.0,
+          56.0,
+          -17.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        50,
+        -19.6
+      ],
+      "group": "washers",
+      "hardware_index": 2,
+      "id": "washer_3",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        -46,
+        50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -52.0,
+          -6.0,
+          -1.6
+        ],
+        [
+          -40.0,
+          6.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 4",
+        "zh": "垫圈4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -52.0,
+          -6.0,
+          -21.6
+        ],
+        [
+          -40.0,
+          6.0,
+          -19.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        0,
+        -21.6
+      ],
+      "group": "washers",
+      "hardware_index": 3,
+      "id": "washer_4",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        -46,
+        0,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -52.0,
+          -56.0,
+          -1.6
+        ],
+        [
+          -40.0,
+          -44.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 5",
+        "zh": "垫圈5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -52.0,
+          -56.0,
+          -23.6
+        ],
+        [
+          -40.0,
+          -44.0,
+          -21.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        -50,
+        -23.6
+      ],
+      "group": "washers",
+      "hardware_index": 4,
+      "id": "washer_5",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        -46,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -6.0,
+          -56.0,
+          -1.6
+        ],
+        [
+          6.0,
+          -44.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 6",
+        "zh": "垫圈6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -6.0,
+          -56.0,
+          -25.6
+        ],
+        [
+          6.0,
+          -44.0,
+          -23.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        -50,
+        -25.6
+      ],
+      "group": "washers",
+      "hardware_index": 5,
+      "id": "washer_6",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        0,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          40.0,
+          -56.0,
+          -1.6
+        ],
+        [
+          52.0,
+          -44.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 7",
+        "zh": "垫圈7"
+      },
+      "exploded_bbox_mm": [
+        [
+          40.0,
+          -56.0,
+          -27.6
+        ],
+        [
+          52.0,
+          -44.0,
+          -25.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        -50,
+        -27.6
+      ],
+      "group": "washers",
+      "hardware_index": 6,
+      "id": "washer_7",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        46,
+        -50,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          40.0,
+          -6.0,
+          -1.6
+        ],
+        [
+          52.0,
+          6.0,
+          2.3841857821338408e-08
+        ]
+      ],
+      "assembled_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "display_name": {
+        "en": "Washer 8",
+        "zh": "垫圈8"
+      },
+      "exploded_bbox_mm": [
+        [
+          40.0,
+          -6.0,
+          -29.6
+        ],
+        [
+          52.0,
+          6.0,
+          -27.999999976158144
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        0,
+        -29.6
+      ],
+      "group": "washers",
+      "hardware_index": 7,
+      "id": "washer_8",
+      "local_bbox_mm": [
+        [
+          -6.0,
+          -6.0,
+          0.0
+        ],
+        [
+          6.0,
+          6.0,
+          1.600000023841858
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        12,
+        6.4,
+        1.6
+      ],
+      "part": "washer",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/washer.stl",
+      "translation": [
+        46,
+        0,
+        -1.6
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          42.0,
+          46.0,
+          69.8
+        ],
+        [
+          50.0,
+          54.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 1",
+        "zh": "热熔螺母1"
+      },
+      "exploded_bbox_mm": [
+        [
+          42.0,
+          46.0,
+          605.8
+        ],
+        [
+          50.0,
+          54.0,
+          613.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        50,
+        605.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 0,
+      "id": "heatset_1",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        46,
+        50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -4.0,
+          46.0,
+          69.8
+        ],
+        [
+          4.0,
+          54.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 2",
+        "zh": "热熔螺母2"
+      },
+      "exploded_bbox_mm": [
+        [
+          -4.0,
+          46.0,
+          607.8
+        ],
+        [
+          4.0,
+          54.0,
+          615.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        50,
+        607.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 1,
+      "id": "heatset_2",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        0,
+        50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -50.0,
+          46.0,
+          69.8
+        ],
+        [
+          -42.0,
+          54.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 3",
+        "zh": "热熔螺母3"
+      },
+      "exploded_bbox_mm": [
+        [
+          -50.0,
+          46.0,
+          609.8
+        ],
+        [
+          -42.0,
+          54.0,
+          617.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        50,
+        609.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 2,
+      "id": "heatset_3",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        -46,
+        50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -50.0,
+          -4.0,
+          69.8
+        ],
+        [
+          -42.0,
+          4.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 4",
+        "zh": "热熔螺母4"
+      },
+      "exploded_bbox_mm": [
+        [
+          -50.0,
+          -4.0,
+          611.8
+        ],
+        [
+          -42.0,
+          4.0,
+          619.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        0,
+        611.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 3,
+      "id": "heatset_4",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        -46,
+        0,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -50.0,
+          -54.0,
+          69.8
+        ],
+        [
+          -42.0,
+          -46.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 5",
+        "zh": "热熔螺母5"
+      },
+      "exploded_bbox_mm": [
+        [
+          -50.0,
+          -54.0,
+          613.8
+        ],
+        [
+          -42.0,
+          -46.0,
+          621.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -46,
+        -50,
+        613.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 4,
+      "id": "heatset_5",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        -46,
+        -50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -4.0,
+          -54.0,
+          69.8
+        ],
+        [
+          4.0,
+          -46.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 6",
+        "zh": "热熔螺母6"
+      },
+      "exploded_bbox_mm": [
+        [
+          -4.0,
+          -54.0,
+          615.8
+        ],
+        [
+          4.0,
+          -46.0,
+          623.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        0,
+        -50,
+        615.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 5,
+      "id": "heatset_6",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        0,
+        -50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          42.0,
+          -54.0,
+          69.8
+        ],
+        [
+          50.0,
+          -46.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 7",
+        "zh": "热熔螺母7"
+      },
+      "exploded_bbox_mm": [
+        [
+          42.0,
+          -54.0,
+          617.8
+        ],
+        [
+          50.0,
+          -46.0,
+          625.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        -50,
+        617.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 6,
+      "id": "heatset_7",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        46,
+        -50,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          42.0,
+          -4.0,
+          69.8
+        ],
+        [
+          50.0,
+          4.0,
+          77.8
+        ]
+      ],
+      "assembled_dims_mm": [
+        8,
+        8
+      ],
+      "display_name": {
+        "en": "Heatset 8",
+        "zh": "热熔螺母8"
+      },
+      "exploded_bbox_mm": [
+        [
+          42.0,
+          -4.0,
+          619.8
+        ],
+        [
+          50.0,
+          4.0,
+          627.8
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        46,
+        0,
+        619.8
+      ],
+      "group": "heatsets",
+      "hardware_index": 7,
+      "id": "heatset_8",
+      "local_bbox_mm": [
+        [
+          -4.0,
+          -4.0,
+          0.0
+        ],
+        [
+          4.0,
+          4.0,
+          8.0
+        ]
+      ],
+      "material": "brass",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        8,
+        8
+      ],
+      "part": "heatset_nut",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/heatset_nut.stl",
+      "translation": [
+        46,
+        0,
+        69.8
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          -29.3536,
+          16.8645,
+          14.0
+        ],
+        [
+          -25.3536,
+          20.8645,
+          62.599998474121094
+        ]
+      ],
+      "assembled_dims_mm": [
+        4,
+        48.6
+      ],
+      "display_name": {
+        "en": "Locator pin 1",
+        "zh": "定位销1"
+      },
+      "exploded_bbox_mm": [
+        [
+          -29.3536,
+          16.8645,
+          35.8
+        ],
+        [
+          -25.3536,
+          20.8645,
+          84.39999847412109
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        -27.3536,
+        18.8645,
+        35.8
+      ],
+      "group": "locators",
+      "hardware_index": 0,
+      "id": "locator_pin_1",
+      "local_bbox_mm": [
+        [
+          -2.0,
+          -2.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          48.599998474121094
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        4,
+        48.6
+      ],
+      "part": "locator_pin",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/locator_pin.stl",
+      "translation": [
+        -27.3536,
+        18.8645,
+        14
+      ]
+    },
+    {
+      "assembled_bbox_mm": [
+        [
+          25.2746,
+          -17.988599999999998,
+          14.0
+        ],
+        [
+          29.2746,
+          -13.9886,
+          62.599998474121094
+        ]
+      ],
+      "assembled_dims_mm": [
+        4,
+        48.6
+      ],
+      "display_name": {
+        "en": "Locator pin 2",
+        "zh": "定位销2"
+      },
+      "exploded_bbox_mm": [
+        [
+          25.2746,
+          -17.988599999999998,
+          98.4
+        ],
+        [
+          29.2746,
+          -13.9886,
+          146.9999984741211
+        ]
+      ],
+      "exploded_rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "exploded_scale": [
+        1,
+        1,
+        1
+      ],
+      "exploded_translation": [
+        27.2746,
+        -15.9886,
+        98.4
+      ],
+      "group": "locators",
+      "hardware_index": 1,
+      "id": "locator_pin_2",
+      "local_bbox_mm": [
+        [
+          -2.0,
+          -2.0,
+          0.0
+        ],
+        [
+          2.0,
+          2.0,
+          48.599998474121094
+        ]
+      ],
+      "material": "steel",
+      "mirror": [
+        false,
+        false,
+        false
+      ],
+      "nominal_dims_mm": [
+        4,
+        48.6
+      ],
+      "part": "locator_pin",
+      "rotation_deg": [
+        0,
+        0,
+        0
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ],
+      "sequence_index": null,
+      "stl": "stls/locator_pin.stl",
+      "translation": [
+        27.2746,
+        -15.9886,
+        14
+      ]
+    }
+  ],
+  "parameters": {
+    "$fn": 96,
+    "bolt_clear_d_mm": 6.6,
+    "bolt_head_chamfer_mm": 0.3,
+    "bolt_head_d_mm": 10,
+    "bolt_head_h_mm": 6,
+    "bolt_max_rear_projection_mm": 3.5,
+    "bolt_min_engagement_mm": 6,
+    "bolt_points": [
+      [
+        46,
+        50
+      ],
+      [
+        0,
+        50
+      ],
+      [
+        -46,
+        50
+      ],
+      [
+        -46,
+        0
+      ],
+      [
+        -46,
+        -50
+      ],
+      [
+        0,
+        -50
+      ],
+      [
+        46,
+        -50
+      ],
+      [
+        46,
+        0
+      ]
+    ],
+    "bolt_shank_d_mm": 6,
+    "bolt_socket_af_mm": 5,
+    "bolt_socket_depth_mm": 3,
+    "bolt_standard_lengths_mm": [
+      40,
+      45,
+      50,
+      55,
+      60,
+      65,
+      70,
+      75,
+      80,
+      85,
+      90
+    ],
+    "bolt_tip_chamfer_mm": 0.5,
+    "csg_eps_mm": 0.01,
+    "electrode_corner_r_mm": 1.5,
+    "electrode_count": 6,
+    "electrode_flange_h_mm": 74,
+    "electrode_flange_r_mm": 3,
+    "electrode_flange_w_mm": 66,
+    "electrode_h_mm": 28,
+    "electrode_land_h_mm": 25,
+    "electrode_land_overlap_mm": 0.5,
+    "electrode_material": "titanium",
+    "electrode_pin_d_mm": 6.6,
+    "electrode_t_mm": 1,
+    "electrode_w_mm": 28,
+    "endplate_corner_r_mm": 6,
+    "endplate_h_mm": 120,
+    "endplate_t_mm": 20,
+    "endplate_w_mm": 112,
+    "explode_gap_mm": 14,
+    "frame_corner_r_mm": 4,
+    "frame_count": 6,
+    "frame_h_mm": 82,
+    "frame_t_mm": 4,
+    "frame_w_mm": 74,
+    "gasket_compression_ratio": 0.25,
+    "gasket_corner_r_mm": 3,
+    "gasket_h_mm": 74,
+    "gasket_material": "EPDM",
+    "gasket_pin_d_mm": 4.6,
+    "gasket_slot_extra_mm": 0.6,
+    "gasket_t_mm": 0.8,
+    "gasket_w_mm": 66,
+    "hardware_explode_stagger_mm": 2,
+    "heatset_bore_d_mm": 6.2,
+    "heatset_depth_mm": 8,
+    "heatset_od_mm": 8,
+    "heatset_pocket_d_mm": 8,
+    "locator_d_mm": 4,
+    "locator_points": [
+      [
+        -27.3536,
+        18.8645
+      ],
+      [
+        27.2746,
+        -15.9886
+      ]
+    ],
+    "locator_points_old": [
+      [
+        -29,
+        20
+      ],
+      [
+        29,
+        -17
+      ]
+    ],
+    "locator_press_d_mm": 3.96,
+    "locator_press_depth_mm": 6,
+    "locator_rear_depth_mm": 6,
+    "locator_rear_engagement_mm": 4.8,
+    "locator_shift_mm": 2,
+    "locator_slip_d_mm": 4.4,
+    "locator_slot_extra_mm": 0.6,
+    "locator_tip_chamfer_mm": 0.3,
+    "min_structural_wall_mm": 1,
+    "nest_end_len_mm": 54,
+    "nest_end_y_mm": 38.75,
+    "nest_leadin_mm": 0.3,
+    "nest_lip_h_mm": 1.2,
+    "nest_lip_w_mm": 2,
+    "nest_rabbet_d_mm": 1.5,
+    "nest_radial_clearance_mm": 0.25,
+    "nest_segment_r_mm": 0.5,
+    "nest_side_len_mm": 60,
+    "nest_side_x_mm": 34.75,
+    "oring_centerline_pad_mm": 2.5,
+    "oring_compression_ratio": 0.25,
+    "oring_cs_mm": 1.2,
+    "oring_groove_d_mm": 0.3,
+    "oring_groove_w_mm": 1.8,
+    "part": "manifest",
+    "port_through_d_mm": 9,
+    "port_x_mm": 0,
+    "port_y_mm": 27,
+    "rear_fastener_mode": "heatset",
+    "seal_mode": "flat_gasket",
+    "shoulder_inner_clearance_mm": 0.25,
+    "tab_channel_clearance_mm": 0.3,
+    "tab_hole_d_mm": 3.2,
+    "tab_hole_offset_mm": 6,
+    "tab_len_mm": 28,
+    "tab_offset_mm": -14,
+    "tab_overlap_mm": 0.5,
+    "tab_slot_start_y_mm": 35.5,
+    "tab_w_mm": 8,
+    "tab_x_offsets_mm": [
+      -14,
+      14
+    ],
+    "washer_id_mm": 6.4,
+    "washer_od_mm": 12,
+    "washer_t_mm": 1.6,
+    "window_corner_r_mm": 3,
+    "window_h_mm": 63,
+    "window_w_mm": 43
+  },
+  "schema_version": 1,
+  "seal_mode": "flat_gasket",
+  "source_sha256": "b6b6f0aa076053ed1db29d6791f68d97641a6cf5da68cc1d63379dd234a7dcd6",
+  "tab_clearance": {
+    "flat_gaskets": "G1 intact; G2/G3 -> E1; G4/G5 -> E2; etc.; full Z cuts in dry land only",
+    "groove_outer_margin_mm": 0.6,
+    "open_to": "+Y exterior",
+    "oring_compatible": true,
+    "oring_reason": "closed ring and 1.8 mm groove end below slot root, with measured dry-land clearance",
+    "per_side_mm": 0.3,
+    "start_y_mm": 35.5,
+    "width_mm": 8.6
+  },
+  "tools": {
+    "manifold3d": "3.5.4",
+    "numpy": "2.5.4",
+    "openscad": "OpenSCAD version 2021.01",
+    "python": "3.13.5",
+    "trimesh": "5.2.0"
+  },
+  "units": "mm"
+}

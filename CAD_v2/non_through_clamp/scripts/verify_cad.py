@@ -107,6 +107,7 @@ class Audit:
         self.seals_and_electrodes()
         self.tab_clearances()
         self.fasteners_and_pins()
+        self.locator_contract()
         self.polarity()
         return {'pass': all(r['pass'] for r in self.results), 'schema_version': 1,
                 'source_sha256': self.m['source_sha256'], 'tools': self.m['tools'],
@@ -135,7 +136,7 @@ class Audit:
                        components=len(components), expected_components=expected_components)
             self.near('local bbox '+rel, mesh.bounds, info['local_bbox_mm'])
         # Compare echo records with parsed fields using precisely the stored parameters.
-        defines = [k+'='+json.dumps(v) for k, v in self.p.items() if k != 'part']
+        defines = [k+'='+json.dumps(v) for k, v in self.p.items() if k not in ['part', 'locator_points']]
         echoed = echo_records(defines)
         echoed_instances = [v for t, v in echoed if t == 'instance']
         self.check('echo ids and transforms', len(echoed_instances) == len(self.records) and
@@ -143,13 +144,13 @@ class Audit:
                        and np.allclose(v[4], self.records[v[0]]['exploded_translation'], atol=1e-5)
                        for v in echoed_instances))
 
-        radius = max(self.p['endplate_corner_r_mm'],self.p['port_boss_od_mm']/2,
+        radius = max(self.p['endplate_corner_r_mm'],self.p['port_through_d_mm']/2,
                      self.p['washer_od_mm']/2,self.d['seal_cl_r'])
         chord_error = radius*(1-np.cos(np.pi/self.p['$fn']))
         self.check('circle chord error',chord_error<LENGTH_TOL,max_mm=float(chord_error))
         p,d = self.p,self.d
         expected = {
-            'front_endplate': [[-p['endplate_w_mm']/2,-p['endplate_h_mm']/2,-p['port_boss_h_mm']],
+            'front_endplate': [[-p['endplate_w_mm']/2,-p['endplate_h_mm']/2,0],
                               [p['endplate_w_mm']/2,p['endplate_h_mm']/2,d['front_bbox_max_z']]],
             'rear_endplate': [[-p['endplate_w_mm']/2,-p['endplate_h_mm']/2,0],
                              [p['endplate_w_mm']/2,p['endplate_h_mm']/2,p['endplate_t_mm']]],
@@ -211,7 +212,7 @@ class Audit:
             self.near('PLAN default exploded Z table', [r['exploded_translation'][2] for r in chain],
                       [0,123.8,138.6,160,174.8,189.8,204.6,226,240.8,255.8,270.6,292,306.8,321.8,336.6])
             bbox = np.array([bounds(s) for s in self.world.values()])
-            self.near('PLAN overall bbox', [bbox[:,0].min(axis=0),bbox[:,1].max(axis=0)], [[-56,-60,-8],[56,64.5,59.2]])
+            self.near('PLAN overall bbox', [bbox[:,0].min(axis=0),bbox[:,1].max(axis=0)], [[-56,-60,-7.6],[56,64.5,59.2]])
 
     def interference(self):
         checked, raw_press = 0, []
@@ -490,9 +491,9 @@ class Audit:
             for tx in p['tab_x_offsets_mm']:
                 delta = np.maximum(np.abs(np.array(xy)-[tx,(d['tab_start_y']+d['tab_end_y'])/2])-[p['tab_w_mm']/2,p['tab_len_mm']/2],0)
                 tab_gaps.append(float(np.linalg.norm(delta)-p['washer_od_mm']/2))
-            boss_gap = min(np.linalg.norm(np.array(xy)-[p['port_x_mm'],s*p['port_y_mm']])-p['washer_od_mm']/2-p['port_boss_od_mm']/2 for s in [-1,1])
-            self.check('conservative hardware XY clearance '+str(i),frame_gap>=2 and min(tab_gaps)>=2 and boss_gap>=2 and edge_margin>=3,
-                       frame_mm=float(frame_gap),tab_mm=min(tab_gaps),boss_mm=float(boss_gap),edge_mm=float(edge_margin))
+            port_gap = min(np.linalg.norm(np.array(xy)-[p['port_x_mm'],s*p['port_y_mm']])-p['washer_od_mm']/2-p['port_through_d_mm']/2 for s in [-1,1])
+            self.check('conservative hardware XY clearance '+str(i),frame_gap>=2 and min(tab_gaps)>=2 and port_gap>=2 and edge_margin>=3,
+                       frame_mm=float(frame_gap),tab_mm=min(tab_gaps),port_edge_mm=float(port_gap),edge_mm=float(edge_margin))
             clearances.append(float(frame_gap))
             # Actual hole sections, not just centerline/bbox tests.
             for name,z in [('front_endplate',p['endplate_t_mm']/2),('rear_endplate',(p['endplate_t_mm']-p['heatset_depth_mm'])/2)]:
@@ -536,13 +537,7 @@ class Audit:
             seal_outer = np.array([d['seal_cl_w'],d['seal_cl_h']])/2+p['oring_groove_w_mm']/2
             self.check('pin outside seal dry zone '+str(i),abs(xy[0])-p['locator_d_mm']/2>seal_outer[0] or abs(xy[1])-p['locator_d_mm']/2>seal_outer[1])
         front = self.get('front_endplate')
-        for sign in [-1,1]:
-            xy = [p['port_x_mm'],sign*p['port_y_mm']]
-            bore = cylinder(p['port_through_d_mm'],p['endplate_t_mm']+p['port_boss_h_mm'],[*xy,-p['port_boss_h_mm']])
-            self.check('port bore continuity '+str(sign),(bore ^ front).volume()<=VOLUME_TOL)
-            for z,diam in [(-p['port_boss_h_mm']+0.1,p['port_counterbore_d_mm']),(-p['port_boss_h_mm']+p['port_counterbore_depth_mm']+0.1,p['port_through_d_mm'])]:
-                h = section_hits(front,z,0,xy[1])
-                self.near('port measured diameter '+str((sign,z)),[min(h,key=lambda v:abs(v+diam/2)),min(h,key=lambda v:abs(v-diam/2))],[-diam/2,diam/2])
+        self.flat_front_ports(front)
         theta = np.arctan2(p['locator_points'][1][1]-p['locator_points'][0][1],
                            p['locator_points'][1][0]-p['locator_points'][0][0])
         along = np.array([np.cos(theta),np.sin(theta)])
@@ -562,6 +557,91 @@ class Audit:
         # Nest pockets are intentionally additional contours on the -Z face.
         contours = self.get('frame').slice(p['frame_t_mm']/2).to_polygons()
         self.check('frame has no extra manifold bores',len(contours)==4,section_contours=len(contours))
+
+    def flat_front_ports(self, front):
+        """Measure the actual plate: two constant bores, flat exterior and blind floors."""
+        p = self.p
+        plate_t = p['endplate_t_mm']
+        self.near('front outer plane Z minimum', bounds(front)[0,2], 0, tol=1e-6)
+        self.check('no front material below Z=0',
+                   abs(front.trim_by_plane((0,0,-1),0).volume())<1e-8)
+        for z in [-8,-4,-0.01]:
+            self.check('front exterior empty Z='+str(z),len(front.slice(z).to_polygons())==0)
+        mesh = self.meshes[self.file_for('front_endplate')]
+        outer = mesh.triangles[mesh.face_normals[:,2]<-0.999999]
+        self.check('all outer facing front triangles lie at Z=0',
+                   len(outer)>0 and np.all(np.abs(outer[:,:,2])<1e-6))
+        # Count all cross-section contours, then identify each circular hole by
+        # centroid, radial envelope and polygon area, rather than probe absence alone.
+        def circular(poly, xy, diameter):
+            poly=np.asarray(poly)
+            radius=diameter/2
+            radii=np.linalg.norm(poly-xy,axis=1)
+            area=abs(np.sum(poly[:,0]*np.roll(poly,-1,axis=0)[:,1]-poly[:,1]*np.roll(poly,-1,axis=0)[:,0]))/2
+            expected=96*radius**2*np.sin(2*np.pi/96)/2
+            return (np.linalg.norm(poly.mean(axis=0)-xy)<1e-4
+                    and radii.min()>=radius*np.cos(np.pi/96)-1e-4
+                    and radii.max()<=radius+1e-4 and abs(area-expected)<1e-3)
+        for z in [0.001,0.01,1,plate_t/2,self.d['pin_z']-0.01,self.d['pin_z']+0.01,plate_t-0.01,plate_t-0.001]:
+            contours=front.slice(z).to_polygons()
+            count=sum(any(circular(c,[p['port_x_mm'],sign*p['port_y_mm']],p['port_through_d_mm'])
+                          for sign in [-1,1]) for c in contours)
+            self.check('exactly two actual liquid channels Z='+str(z),count==2,count=count)
+            self.check('no extra plate openings Z='+str(z),
+                       len(contours)==(11 if z<self.d['pin_z'] else 13),contour_count=len(contours))
+            for sign in [-1,1]:
+                xy=[p['port_x_mm'],sign*p['port_y_mm']]
+                self.check('plain circular port profile '+str((sign,z)),
+                           sum(circular(c,xy,p['port_through_d_mm']) for c in contours)==1,
+                           centre_xy_mm=xy,diameter_mm=p['port_through_d_mm'])
+        for sign in [-1,1]:
+            xy=[p['port_x_mm'],sign*p['port_y_mm']]
+            bore=cylinder(p['port_through_d_mm'],plate_t,[*xy,0])
+            self.check('port bore continuity '+str(sign),(bore^front).volume()<=VOLUME_TOL)
+            # A full-height annulus rules out a larger entrance or hidden counterbore.
+            annulus=cylinder(p['port_through_d_mm']+1,plate_t,[*xy,0])-cylinder(p['port_through_d_mm']+0.02,plate_t,[*xy,0])
+            self.check('constant port wall full 20 mm '+str(sign),(annulus-front).volume()<1e-6)
+
+    def locator_contract(self):
+        p,d=self.p,self.d
+        old=np.array([[-29,20],[29,-17]],dtype=float)
+        expected=old*(1-2/np.linalg.norm(old,axis=1))[:,None]
+        self.near('locator original datum',p['locator_points_old'],old,tol=1e-12)
+        self.near('locator radial shift',p['locator_shift_mm'],2,tol=1e-12)
+        # OpenSCAD echo serializes six significant digits; STL checks below use
+        # the unrounded formula and 0.0001 mm coordinate tolerance.
+        self.near('locator echo formula coordinates',p['locator_points'],expected,tol=5e-5)
+        front=self.get('front_endplate')
+        for i,xy in enumerate(expected,1):
+            r=self.records[f'locator_pin_{i}']
+            self.near('assembled locator XY '+str(i),r['translation'][:2],xy,tol=5e-5)
+            self.near('pin axial origin '+str(i),r['translation'][2],p['endplate_t_mm']-p['locator_press_depth_mm'])
+            for name in ['front_endplate','rear_endplate','frame','gasket','gasket_tab_left',
+                         'gasket_tab_right','electrode_plain','electrode_tab','electrode_tab_right']:
+                if name=='gasket' and p['seal_mode']=='oring':
+                    continue  # The alias exports the closed O-ring, which has no locator holes.
+                z=(d['pin_z']+p['endplate_t_mm'])/2 if name=='front_endplate' else (
+                    p['locator_rear_depth_mm']/2 if name=='rear_endplate' else
+                    p['frame_t_mm']/2 if name=='frame' else
+                    p['gasket_t_mm']/2 if name.startswith('gasket') else p['electrode_t_mm']/2)
+                polygons=[np.asarray(c) for c in self.get(name).slice(z).to_polygons()]
+                # Signed shoelace centroid works for circles and rotated slots,
+                # independently of triangulation and cross-section sampling density.
+                centres=[]
+                for c in polygons:
+                    n=np.roll(c,-1,axis=0)
+                    cross=c[:,0]*n[:,1]-n[:,0]*c[:,1]
+                    centres.append(np.sum((c+n)*cross[:,None],axis=0)/(3*cross.sum()))
+                centre=min(centres,key=lambda v:np.linalg.norm(v-xy))
+                self.near('measured locator centre '+name+'/'+str(i),centre,xy,tol=1e-4)
+            cavity=cylinder(p['locator_press_d_mm']-0.02,p['locator_press_depth_mm']-0.002,[*xy,d['pin_z']+0.001])
+            floor=cylinder(p['locator_press_d_mm']-0.02,d['pin_z'],[*xy,0])
+            self.check('front blind press cavity '+str(i),(front^cavity).volume()<1e-8,
+                       diameter_mm=p['locator_press_d_mm'],physical_z_mm=[d['pin_z'],p['endplate_t_mm']])
+            self.check('front blind outer floor intact '+str(i),(floor-front).volume()<1e-8,thickness_mm=d['pin_z'])
+            rear=self.get('rear_endplate')
+            floor=cylinder(p['locator_slip_d_mm']-0.02,0.1,[*xy,p['locator_rear_depth_mm']+0.001])
+            self.check('rear blind floor intact '+str(i),(floor-rear).volume()<1e-8)
 
     def polarity(self):
         samples = ['frame_1','electrode_1']

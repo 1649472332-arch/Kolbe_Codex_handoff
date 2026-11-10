@@ -68,7 +68,9 @@ nest_end_len_mm = 54;
 nest_segment_r_mm = 0.5;
 shoulder_inner_clearance_mm = 0.25;
 min_structural_wall_mm = 1;
-locator_points = [[-29,20],[29,-17]];
+locator_points_old = [[-29,20],[29,-17]];
+locator_shift_mm = 2;
+locator_points = [for (old = locator_points_old) old * (1 - locator_shift_mm / norm(old))];
 locator_d_mm = 4;
 locator_press_d_mm = 3.96;
 locator_press_depth_mm = 6;
@@ -99,19 +101,8 @@ heatset_bore_d_mm = 6.2;
 heatset_pocket_d_mm = 8;
 port_x_mm = 0;
 port_y_mm = 27;
-// Fluid ports (0,+-27): old d6 + d10.5x3 counterbore removed; re-drilled as a
-// through tap-drill hole for an M10x1 (fine) internal thread, provisional.
-// NOMINAL ONLY: user's fitting measured ~10 mm OD; pitch never gauged/confirmed.
-// Thread teeth are not modeled; tap M10x1 after machining (minor/drill 9.0).
-port_thread_spec = "M10x1 (provisional; pitch not confirmed - check with thread gauge)";
-port_thread_major_mm = 10;
-port_thread_pitch_mm = 1;
-port_through_d_mm = 9;          // M10x1 tap drill, through boss + front plate into window
-port_counterbore_d_mm = 9;      // no counterbore any more (kept = bore so checks stay valid)
-port_counterbore_depth_mm = 0;
-port_boss_od_mm = 14;
-port_boss_h_mm = 8;
-port_boss_flat_mm = 12;
+// Two plain liquid through holes in the flat outer front face, Z=0..20.
+port_through_d_mm = 9;
 
 // Derived: no second set of stack constants in Python.
 gasket_count = 2*frame_count+1;
@@ -314,19 +305,12 @@ module front_endplate() {
         union() {
             linear_extrude(endplate_t_mm) rr(endplate_w_mm,endplate_h_mm,endplate_corner_r_mm);
             shoulder_lip(endplate_t_mm,front_stop_h);
-            // Outer wrench section plus a true cylindrical base, both united
-            // with the plate. The counterbore starts at the exact outer end.
-            for (s=[-1,1]) translate([port_x_mm,s*port_y_mm,-port_boss_h_mm]) {
-                cylinder(d=port_boss_flat_mm/cos(30),h=port_boss_h_mm/2+csg_eps_mm,$fn=6);
-                translate([0,0,port_boss_h_mm/2]) cylinder(d=port_boss_od_mm,h=port_boss_h_mm/2);
-            }
+
         }
         for (p=bolt_points) translate([p[0],p[1],-csg_eps_mm]) cylinder(d=bolt_clear_d_mm,h=endplate_t_mm+2*csg_eps_mm);
         translate([0,0,pin_z]) linear_extrude(locator_press_depth_mm+csg_eps_mm) locator_holes2d(locator_press_d_mm);
-        for (s=[-1,1]) {
-            translate([port_x_mm,s*port_y_mm,-port_boss_h_mm-csg_eps_mm]) cylinder(d=port_through_d_mm,h=port_boss_h_mm+endplate_t_mm+2*csg_eps_mm);
-            translate([port_x_mm,s*port_y_mm,-port_boss_h_mm-csg_eps_mm]) cylinder(d=port_counterbore_d_mm,h=port_counterbore_depth_mm+csg_eps_mm);
-        }
+        for (s=[-1,1])
+            translate([port_x_mm,s*port_y_mm,-csg_eps_mm]) cylinder(d=port_through_d_mm,h=endplate_t_mm+2*csg_eps_mm);
     }
 }
 module rear_endplate() {
@@ -378,7 +362,7 @@ function central_h(s)=s==0 ? front_bbox_max_z : s==central_count()-1 ? endplate_
     central_kind(s)=="frame" ? frame_bbox_h : central_kind(s)=="electrode_tab" ? electrode_t_mm : seal_free_h;
 function pin_exploded_z(i)=front_bbox_max_z+explode_gap_mm+i*(locator_len_mm+explode_gap_mm);
 function central_exploded_z(s)=s==0 ? 0 : s==1 ? pin_exploded_z(1)+locator_len_mm+explode_gap_mm : central_exploded_z(s-1)+central_h(s-1)+explode_gap_mm;
-function washer_exploded_z(i)=-port_boss_h_mm-explode_gap_mm-washer_t_mm-i*hardware_explode_stagger_mm;
+function washer_exploded_z(i)=-explode_gap_mm-washer_t_mm-i*hardware_explode_stagger_mm;
 function bolt_exploded_z(i)=washer_exploded_z(0)-explode_gap_mm-bolt_length_mm-i*hardware_explode_stagger_mm;
 function heatset_exploded_z(i)=central_exploded_z(central_count()-1)+endplate_t_mm+explode_gap_mm+i*hardware_explode_stagger_mm;
 function rec(id,k,pos,sc,ex,esc,zh,en,mat,nom,adim,grp,seq=-1,hw=-1)=[id,k,pos,sc,ex,esc,zh,en,mat,nom,adim,grp,seq,hw];
@@ -511,6 +495,8 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["nest_segment_r_mm",nest_segment_r_mm]]);
     echo(["KOLBE_V1","parameter",["shoulder_inner_clearance_mm",shoulder_inner_clearance_mm]]);
     echo(["KOLBE_V1","parameter",["min_structural_wall_mm",min_structural_wall_mm]]);
+    echo(["KOLBE_V1","parameter",["locator_points_old",locator_points_old]]);
+    echo(["KOLBE_V1","parameter",["locator_shift_mm",locator_shift_mm]]);
     echo(["KOLBE_V1","parameter",["locator_points",locator_points]]);
     echo(["KOLBE_V1","parameter",["locator_d_mm",locator_d_mm]]);
     echo(["KOLBE_V1","parameter",["locator_press_d_mm",locator_press_d_mm]]);
@@ -542,15 +528,7 @@ module manifest_echo() {
     echo(["KOLBE_V1","parameter",["heatset_pocket_d_mm",heatset_pocket_d_mm]]);
     echo(["KOLBE_V1","parameter",["port_x_mm",port_x_mm]]);
     echo(["KOLBE_V1","parameter",["port_y_mm",port_y_mm]]);
-    echo(["KOLBE_V1","parameter",["port_thread_spec",port_thread_spec]]);
-    echo(["KOLBE_V1","parameter",["port_thread_major_mm",port_thread_major_mm]]);
-    echo(["KOLBE_V1","parameter",["port_thread_pitch_mm",port_thread_pitch_mm]]);
     echo(["KOLBE_V1","parameter",["port_through_d_mm",port_through_d_mm]]);
-    echo(["KOLBE_V1","parameter",["port_counterbore_d_mm",port_counterbore_d_mm]]);
-    echo(["KOLBE_V1","parameter",["port_counterbore_depth_mm",port_counterbore_depth_mm]]);
-    echo(["KOLBE_V1","parameter",["port_boss_od_mm",port_boss_od_mm]]);
-    echo(["KOLBE_V1","parameter",["port_boss_h_mm",port_boss_h_mm]]);
-    echo(["KOLBE_V1","parameter",["port_boss_flat_mm",port_boss_flat_mm]]);
     echo(["KOLBE_V1","derived",["gasket_count",gasket_count]]);
     echo(["KOLBE_V1","derived",["electrode_bridge_count",0]]);
     echo(["KOLBE_V1","derived",["electrode_components",1]]);

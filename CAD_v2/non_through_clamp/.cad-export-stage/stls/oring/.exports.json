@@ -1,0 +1,20 @@
+{
+  "files": {
+    "bolt": "638eaa5819e764831a2e44d6f37d37faf4ce7b9271cc0a95471b0ee977748267",
+    "electrode_plain": "446aadb0416e549c8caed8a137670e6079dc6527386198afa2586f35cf38a795",
+    "electrode_tab": "ac05dcc97eaa9f363cf3e4e5fba678dab0dd20e0a92a1f1f7ea00f7c53491441",
+    "electrode_tab_right": "55f572dc56350d9d2a178cd3f04855ddcccb6a572f26a632e9305963d00a8f29",
+    "frame": "6da954f06b2343090db344aeaebc686232bdebb6a4e6188273382eca705a61de",
+    "front_endplate": "870c186ad2e3e9c2126ea26e27f5b95ba63098a8762559ced5afbe1a10b3946e",
+    "gasket": "c4c561fdd907d5426c33cf2badc5b7f606b839fdccdf069fb89009962a8c0777",
+    "gasket_oring": "c4c561fdd907d5426c33cf2badc5b7f606b839fdccdf069fb89009962a8c0777",
+    "gasket_oring_compressed": "0b196eb9031f1b0239c1c93bc6dbc0cb6a1644fb3d60246d928e0ebc3469b869",
+    "gasket_tab_left": "6c86821378e9d96fbcc30020cb8984499f935b37f55cfd6d84433c722faae168",
+    "gasket_tab_right": "dc033e8397820f071af8811b32430a17c47e46dd2a231d93134c22414a851896",
+    "heatset_nut": "daa8ed268f61ac6be645d23b73c8bac9d4b3ef93c36e82ef8eb05d7a01db99ce",
+    "locator_pin": "c8a784fcb9fa4ef213ebb324ebcac83f818eecb255ffb2dca5be6f338ee8ac0f",
+    "rear_endplate": "84ed8ce83d7f8926763014222938521254471736cd88e0405de6a27a1756d44f",
+    "washer": "eabe3cd49278ad41fec9af5955b07d0859d976a64ac528662647a752c04279e8"
+  },
+  "input_sha256": "668be385dcda3c1d328d6e6a9342606b67f4663d2f66a7de0c667253d92d4588"
+}

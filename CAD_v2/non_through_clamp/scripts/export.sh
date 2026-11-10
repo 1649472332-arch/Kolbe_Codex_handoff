@@ -50,14 +50,16 @@ ex.OSC = osc
 
 def checked(manifest, report):
     inputs={'manifest_sha256':ex.sha(manifest),'verifier_sha256':ex.sha(root/'scripts/verify_cad.py')}
+    # Always rerun the mesh checks. A retained stage may reuse source-matched
+    # meshes, but a cached passing report is never evidence for a fresh run.
     try:
-        previous=json.loads(report.read_text())
-    except (OSError,ValueError):
-        previous={}
-    if previous.get('pass') and previous.get('verification_inputs')==inputs:
-        print('  reused passing checks '+str(manifest.relative_to(stage)),flush=True)
-        return previous
-    result=verify(manifest,report)
+        result=verify(manifest,report)
+    except RuntimeError:
+        result=json.loads(report.read_text())
+        if result.get('error'):
+            raise
+        # Collect genuine geometry failures across every requested suite, then
+        # fail the publication gate below. No failed check is waived.
     result['verification_inputs']=inputs
     ex.write_json(report,result)
     return result
@@ -114,6 +116,17 @@ repro = {'manifest_equal':ex.sha(stage/'stack_manifest.json')==ex.sha(repeat_dir
          'stl_hashes_equal':all(default['files'][k]['sha256']==repeat['files'][k]['sha256'] for k in default['files'])}
 if not all(repro.values()):
     raise RuntimeError('Non-reproducible default export: '+str(repro))
+
+# Persist every fresh suite result before the render/publication gate. A failed
+# geometry check must remain reviewable even on a host without an X/OpenGL view.
+default_report.update(regressions=regression,
+    oring={'pass':oring_report['pass'],'report':'stls/oring/cad_verification.json'},
+    invalid_inputs=invalid,reproducibility=repro)
+ex.write_json(stage/'renders/cad_verification.json',default_report)
+failed_suites = [name for name, report in [('default',default_report),('oring',oring_report)] if not report['pass']]
+failed_suites += [r['name'] for r in regression if not r['pass']]
+if failed_suites:
+    raise RuntimeError('Publication blocked by failed CAD suites: '+', '.join(failed_suites))
 
 # Deterministic orthographic fit in both screen axes using the actual manifest
 # bboxes. OpenSCAD's orthographic vertical FOV is 22.5 degrees. The gimbal

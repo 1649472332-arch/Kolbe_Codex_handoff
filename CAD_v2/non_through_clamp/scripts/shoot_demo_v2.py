@@ -37,6 +37,7 @@ class Resources(HTMLParser):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--html', type=Path, default=ROOT / 'demo_v2.html')
+    parser.add_argument('--manifest',type=Path,default=ROOT/'stack_manifest.json')
     parser.add_argument('--out', type=Path, default=ROOT / 'renders')
     args = parser.parse_args()
     html = args.html.resolve()
@@ -123,9 +124,11 @@ def main():
     try:
         # Every invocation proves the generator is deterministic; preserve source and geometry.
         before = html.read_bytes()
+        custom = args.manifest.resolve()!=ROOT/'stack_manifest.json' or html!=ROOT/'demo_v2.html'
+        build_args = [str(args.manifest.resolve()),str(html)] if custom else []
         builds = []
         for _ in range(2):
-            result = subprocess.run(['node', 'scripts/build_demo_v2.mjs'], cwd=ROOT, capture_output=True, text=True, check=True)
+            result = subprocess.run(['node', 'scripts/build_demo_v2.mjs', *build_args], cwd=ROOT, capture_output=True, text=True, check=True)
             builds.append(sha(html.read_bytes()))
         check('reproducible_build', builds[0] == builds[1] == sha(before), builds)
         data = html.read_bytes()
@@ -140,8 +143,8 @@ def main():
                               for u in sorted(set(re.findall(r'https?://[^\s<>"\'`\\]+', text)))]
         check('static_offline_resources', not resources.loads and not css_urls and not source_loads,
               {'element_loads': resources.loads, 'css_urls': css_urls, 'literal_network_loads': source_loads, 'url_hits': report['url_hits']})
-        manifest = json.loads((ROOT/'stack_manifest.json').read_text())
-        build = json.loads((ROOT/'renders/demo_v2_build.json').read_text())
+        manifest = json.loads(args.manifest.read_text())
+        build = json.loads((Path(str(html)+'.build.json') if custom else ROOT/'renders/demo_v2_build.json').read_text())
         report['build'] = build
         check('geometry_encoding', all(g['triangles'] == g['retained_triangles'] == manifest['files'][f]['triangles'] and
               g['max_error_mm'] <= .002 and (g['encoding']=='float32' or not (g['quantized_collapsed_triangles'] or g['quantized_flipped_triangles'])) for f, g in build['geometry'].items()), build['geometry'])
